@@ -96,7 +96,7 @@
                         </li>
                         <li>
                            <%if(loginMember == null) {%>
-                            <a href="goLogin">마이페이지</a>
+                            <a href="goLogin">마이페이지</a>5
                             <%}else{ %>
                             <a href="goMyPage">마이페이지</a>
                             <%} %>
