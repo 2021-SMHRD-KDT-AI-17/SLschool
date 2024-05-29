@@ -47,6 +47,13 @@ public class MemberController {
 		return "join";
 	}
 	
+	// 회원가입 
+	@RequestMapping("/goJoin")
+	public String goJoin(Member member, Model model) {
+		memberMapper.goJoin(member);
+		model.addAttribute("id", member.getId());
+		return "main";
+	}
 	
-
+	
 }

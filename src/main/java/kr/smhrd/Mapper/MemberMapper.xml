@@ -6,7 +6,7 @@
 	select * from Member where m_id=#{id} and m_pw=#{pw}
 </select>
 
-<insert id="newLogin" parameterType="kr.smhrd.entity.Member">
+<insert id="goJoin" parameterType="kr.smhrd.entity.Member">
 	insert into Member values(#{id},#{pw},#{name},#{birth},#{pro})
 </insert>
 
