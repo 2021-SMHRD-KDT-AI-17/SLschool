@@ -13,8 +13,8 @@
 
 .login-form .login-top h1 {
   font-family: Montserrat, sans-serif;
-  font-weight: normal;
-  font-size: 24px;
+  font-weight: 200;
+  font-size: 36px;
   color: #7AB2B2;
   letter-spacing: -1.7px;
 }
@@ -46,7 +46,7 @@
   font-weight: bold;
   color: #888;
   font-size: 14px;
-  margin-top: -44px;
+  margin-top: -47px;
   left: 45px;
   cursor: pointer;
   transition: 0.3s all;
@@ -78,7 +78,7 @@
   color: #FFF;
   font-weight: 700;
   padding: 12px 47px;
-  margin: 20px auto;
+  margin-top: 20px auto;
   font-size: 14px;
   border-radius: 5px;
   cursor: pointer;
@@ -90,20 +90,18 @@
 }
 
 .login-form .login-bottom {
-  padding: 10px;
-  background-color: #56596a;
+  padding-bottom: 10px;
+  margin-bottom: 50px;
 }
 
 .login-form .login-bottom a {
-  color: #CCC;
+  color: #7AB2B2;
   font-family: Montserrat, sans-serif;
-  font-size: 13px;
+  font-size: 14px;
+  font-weight: bold;
   text-decoration: none;
 }
 
-.login-form .login-bottom a:hover {
-  text-decoration: underline;
-}
 
 .login-form .company-name {
   font-family: Montserrat, sans-serif;
