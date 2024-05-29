@@ -18,50 +18,23 @@
     <meta property="og:url" content="">
 	<title>퀴즈</title>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="js/jquery-ui.js"></script>
-    <script src="js/topmenu_script.js"></script>
-	<link rel="stylesheet" href="css/sh_common.css"> 
-    <link rel="stylesheet" href="css/sh_sub.css">    
-    <link rel="stylesheet" href="css/aos.css">
-    <script src="js/aos.js"></script>
+    <script src="resources/js/jquery-ui.js"></script>
+    <script src="resources/js/topmenu_script.js"></script>
+	<link rel="stylesheet" href="resources/css/sh_common.css"> 
+    <link rel="stylesheet" href="resources/css/sh_sub.css">    
+    <link rel="stylesheet" href="resources/css/aos.css">
+    <script src="resources/js/aos.js"></script>
     <!-- Bibliothèque d'icones-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.4/css/mdb.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/mypage.css">  
-    <link rel="stylesheet" href="css/login.css">  
-    <link rel="stylesheet" href="css/bootstrap.css">  
+    <link rel="stylesheet" href="resources/css/mypage.css">  
+    <link rel="stylesheet" href="resources/css/login.css">  
+    <link rel="stylesheet" href="resources/css/bootstrap.css">  
 
 </head>
 <body>
-    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-body">
-              <div class="login-form">
-                <div class="login-top">
-                  <h1 class="login-header">로그인</h1>
-                  <form action="#" method="post">
-                    <input type="text" id="user-name" name="user-name" />
-                    <label for="user-name" class="input-prefix">아이디</label>
-                    <input type="password" id="password" name="password" />
-                    <label for="password" class="input-prefix">비밀번호</label>
-                    <input type="submit" id="sign-in" name="Sign-in" value="로그인" />
-                  </form>
-                </div>
-                <div class="login-bottom">
-                  <a href="#" class="forgot-password">아직 회원이 아니시라면</a>
-                </div>
-                <div class="company-name">
-                  <span class="company-icon"></span>
-                  수어스쿨
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- 로그인 모달 [e] -->
+
 <!-- sh_wrapper [s] -->
 <div id="sh_wrapper">
     <!-- sh_hd [s] -->
@@ -92,7 +65,7 @@
 
                 <!-- 상단 메뉴 [s] -->
                 <div class="topmenu_main">
-                    <h1 id="top_logo"><a href="main.html"><img src="img/common/logo_2.png" alt="Sample" /></a></h1>
+                    <h1 id="top_logo"><a href="main.html"><img src="resources/img/common/logo_2.png" alt="Sample" /></a></h1>
                     <ul id="top_nav">
                         <li>
                             <a href="">사이트소개</a>
@@ -135,7 +108,7 @@
                         </li> 
                     </ul>
                     <ul id="topmenu_line">
-                        <li><a href="" data-toggle="modal" data-target="#loginModal"><i data-feather="log-in"></i>Login</a></li>
+                        <li><a href=""><i data-feather="log-in"></i>Login</a></li>
                         <li><a href=""><i data-feather="user-plus"></i>Join us</a></li>
                     </ul>
                 </div>
@@ -144,7 +117,7 @@
             <!-- topmenu_wrapper [e] -->
             <!-- 반응형메뉴 [s] -->
             <div id="topmenuM">
-                <h1 id="m_logo"><a href="main.html"><img src="img/common/logo_2.png" alt="Sample" /></a></h1>
+                <h1 id="m_logo"><a href="main.html"><img src="resources/img/common/logo_2.png" alt="Sample" /></a></h1>
                 <!-- 메뉴 버튼 [s] -->
                 <div id="m_navBtn"><span></span></div>
                 <!-- 메뉴 버튼 [e] -->
@@ -373,7 +346,7 @@
     <!-- sh_ft [s] -->
     <div id="sh_ft">
         <div class="ft_txt">
-            <img class="ft_logo" src="img/common/logo_1.png" alt="Sample" />
+            <img class="ft_logo" src="resources/img/common/logo_1.png" alt="Sample" />
             <div class="ft_text">
                 <a onclick="">이용약관</a>
                 <a onclick="">개인정보취급방침</a>
