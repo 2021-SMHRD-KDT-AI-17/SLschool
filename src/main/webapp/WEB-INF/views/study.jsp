@@ -1,3 +1,4 @@
+<%@page import="kr.smhrd.entity.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -27,6 +28,8 @@
     <script src="resources/js/aos.js"></script>       
 </head>
 <body>
+
+	<% Member loginMember = (Member)session.getAttribute("loginMember"); %>
 
 <!-- sh_wrapper [s] -->
 <div id="sh_wrapper">
@@ -106,8 +109,13 @@
 
 <!--                       <div class="topmenu_line">--> 
                             <ul id="topmenu_line">
-                                <li><a href=""><i data-feather="log-in"></i>Login</a></li>
+                               <% if(loginMember == null) {%>
+                                <li><a href="goLogin"><i data-feather="log-in"></i>Login</a></li>
                                 <li><a href=""><i data-feather="user-plus"></i>Join us</a></li>
+                                <%} else{ %>
+                                <li><span><%=loginMember.getName() %>님 환영합니다.</span></li>
+                                <li><a href="goLogout"><i data-feather="user-plus"></i>Log-out</a></li>
+                                <%} %>
                             </ul>
                             <!-- </div> -->
                     </div>
