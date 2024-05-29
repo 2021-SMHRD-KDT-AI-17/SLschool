@@ -200,9 +200,9 @@
             <div id="sh_aside">
     	        <div id="sh_snb">
                     <ul>
-                        <li><a href="study_a.html" style="color: #4D869C;">A난이도</a></li>
-                        <li><a href="">B난이도</a></li>
-                        <li><a href="">C난이도</a></li>
+                        <li><a href="goStudyA" style="color: #4D869C;">A난이도</a></li>
+                        <li><a href="goStudyB">B난이도</a></li>
+                        <li><a href="goStudyC">C난이도</a></li>
                     </ul>            
 				</div>
             </div>
@@ -221,19 +221,19 @@
                             <div class="s_tit">
                                 <div class="l_cont">
                                     <span>어린 아이 수준</span>
-                                    <p>A난이도</p>
+                                    <p>C난이도</p>
                                 </div>
                                 <ul>
-                                <c:forEach items="${ word_listA}" var="A" varStatus="s">
+                                <c:forEach items="${ word_listC}" var="C" varStatus="s">
                                 <li>
-                                        <a href="goWordDetail?word_num${A.word_num }">
+                                        <a href="goWordDetail?word_num${C.word_num }">
                                             <div class="txt">
                                                 <video controls style="width:100%;">
-                                                    <source src="${A.video_url }">
+                                                    <source src="${C.video_url }">
                                                 </video>
                                                 <br>
                                                 <span>${s.count }</span>
-                                                <p style="text-align: center;">${A.word_name }</p>
+                                                <p style="text-align: center;">${C.word_name }</p>
                                             </div>
                                         </a>
                                     </li>

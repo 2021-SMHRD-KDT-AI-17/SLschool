@@ -53,4 +53,21 @@ public class StudyController {
 		return "study_a";
 	}
 	
+	@RequestMapping("/goStudyB")
+	public String goStudyB(Model model) {
+		
+		List<Word> word_listB = studyMapper.selectWordAllB();
+		model.addAttribute("word_listB", word_listB);
+		return "study_b";
+	}
+	
+	@RequestMapping("/goStudyC")
+	public String goStudyC(Model model) {
+		
+		List<Word> word_listC = studyMapper.selectWordAllC();
+		model.addAttribute("word_listC", word_listC);
+		return "study_c";
+	}
+	
+	
 }
