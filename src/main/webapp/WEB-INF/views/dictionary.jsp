@@ -17,15 +17,15 @@
     <meta property="og:image" content="img/common/logo.png">
     <meta property="og:url" content="">
 	<title>수어사전</title>
-    <script src="js/jquery-ui.js"></script>
-    <script src="js/jquery-1.8.3.min.js"></script>
-    <script src="js/topmenu_script.js"></script>
-	<link rel="stylesheet" href="css/sh_common.css"> 
-    <link rel="stylesheet" href="css/sh_sub.css">  
+    <script src="resources/js/jquery-1.8.3.min.js"></script>
+    <script src="resources/js/jquery-ui.js"></script>
+    <script src="resources/js/topmenu_script.js"></script>
+	<link rel="stylesheet" href="resources/css/sh_common.css"> 
+    <link rel="stylesheet" href="resources/css/sh_sub.css">  
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"> 
     <script src="https://kit.fontawesome.com/85915fb54c.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/aos.css">
-    <script src="js/aos.js"></script>
+    <link rel="stylesheet" href="resources/css/aos.css">
+    <script src="resources/js/aos.js"></script>
 </head>
 <body>
 
@@ -93,7 +93,7 @@
                             </ul> -->
                         </li>
                         <li>
-                            <a href="">마이페이지</a>
+                            <a href="mypage.html">마이페이지</a>
                             <ul>
                                 <li><a href="">수업 현황</a></li>
                                 <li><a href="">내 정보 수정</a></li>
@@ -167,7 +167,7 @@
                              <li>
                                 <button class="m_bmenu" type="button">마이페이지</button>
                                 <ul class="m_smenu">
-                                    <li><a href="">강의 현황</a> </li>
+                                    <li><a href="mypage.html">강의 현황</a> </li>
                                     <li><a href="">내 정보 수정</a> </li>
                                     <li><a href="">문의하기</a> </li>
                                 </ul>

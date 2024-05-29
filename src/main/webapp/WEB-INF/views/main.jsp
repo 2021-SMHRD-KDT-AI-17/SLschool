@@ -21,12 +21,9 @@
     <script src="resources/js/jquery-1.8.3.min.js"></script>
     <script src="resources/js/topmenu_script.js"></script>
     <script src="resources/js/swiper.min.js"></script>
-    <script src="resources/js/aos.js"></script>
     <link rel="stylesheet" href="resources/css/swiper.min.css">
     <link rel="stylesheet" href="resources/css/sh_common.css">
     <link rel="stylesheet" href="resources/css/sh_main.css">
-    <link rel="stylesheet" href="resources/css/aos.css">
-    <link rel="stylesheet" href="resources/css/sh_sub.css">
 </head>
 <body>
 
@@ -61,7 +58,7 @@
 
                 <!-- 상단 메뉴 [s] -->
                 <div class="topmenu_main">
-                    <h1 id="top_logo"><a href="goMain"><img src="${pageContext.request.contextPath}/resources/img/common/logo_2.png" alt="Sample" /></a></h1>
+                    <h1 id="top_logo"><a href="goMain"><img src="resources/img/common/logo_2.png" alt="Sample" /></a></h1>
                     <ul id="top_nav">
                         <li>
                             <a href="">사이트소개</a>
@@ -123,7 +120,7 @@
 
             <!-- 반응형메뉴 [s] -->
             <div id="topmenuM">
-                <h1 id="m_logo"><a href="goMain"><img src="img/common/logo_2.png" alt="Sample" /></a></h1>
+                <h1 id="m_logo"><a href="goMain"><img src="resources/img/common/logo_2.png" alt="Sample" /></a></h1>
                 <!-- 메뉴 버튼 [s] -->
                 <div id="m_navBtn"><span></span></div>
                 <!-- 메뉴 버튼 [e] -->
@@ -153,7 +150,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <button class="m_bmenu" type="button" onclick="location.href='quiz'">퀴즈</button>
+                                <button class="m_bmenu" type="button">퀴즈</button>
                                 <ul class="m_smenu">
                                     <li><a href="">A버전</a> </li>
                                     <li><a href="">B버전</a> </li>
@@ -236,14 +233,11 @@
                             
                             <!-- 아이콘 배너 [s] -->
                             <div class="icon_links">
-						    <a href=""><div class="icon"><img src="${pageContext.request.contextPath}/resources/img/main/main_icon_01.png" alt="학습시스템" /></div>학습시스템</a>
-						    <a href=""><div class="icon"><img src="${pageContext.request.contextPath}/resources/img/main/main_icon_04.png" alt="강의보기" /></div>강의보기</a>
-						    <a href=""><div class="icon"><img src="${pageContext.request.contextPath}/resources/img/main/main_icon_03.png" alt="자료실" /></div>퀴즈</a>
-						    <a href=""><div class="icon"><img src="${pageContext.request.contextPath}/resources/img/main/main_icon_02.png" alt="교재안내" /></div>수어사전</a>
-							</div>
-
-                            
-                            
+                                <a href=""><div class="icon"><img src="resources/img/main/main_icon_01.png" alt="학습시스템" /></div>학습시스템</a>
+                                <a href=""><div class="icon"><img src="resources/img/main/main_icon_04.png" alt="강의보기" /></div>강의보기</a>
+                                <a href=""><div class="icon"><img src="resources/img/main/main_icon_03.png" alt="자료실" /></div>퀴즈</a>
+                                <a href=""><div class="icon"><img src="resources/img/main/main_icon_02.png" alt="교재안내" /></div>수어사전</a>
+                            </div>
                             <!-- 아이콘 배너 [e] -->
                             
                             <!-- 바로가기 [s] -->
@@ -417,7 +411,7 @@
     <!-- sh_ft [s] -->
     <div id="sh_ft">
         <div class="ft_txt">
-            <img class="ft_logo" src="${pageContext.request.contextPath}/resources/img/common/logo_1.png" alt="Sample" />
+            <img class="ft_logo" src="resources/img/common/logo_1.png" alt="Sample" />
             <div class="ft_text">
                 <a onclick="">이용약관</a>
                 <a onclick="">개인정보취급방침</a>
