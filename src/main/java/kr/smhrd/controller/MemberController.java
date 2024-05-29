@@ -47,6 +47,7 @@ public class MemberController {
 		return "join";
 	}
 	
+
 	// 회원가입 
 	@RequestMapping("/newMember")
 	public String newMember(HttpServletRequest request) {

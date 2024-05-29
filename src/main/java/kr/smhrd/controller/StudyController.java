@@ -1,6 +1,9 @@
 package kr.smhrd.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -69,5 +72,18 @@ public class StudyController {
 		return "study_c";
 	}
 	
-	
+
+    @RequestMapping("/goDic")
+    public String getDictionary(Model model) {
+        String[] consonants = {"ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㅁ", "ㅂ", "ㅅ", "ㅇ", "ㅈ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"};
+        Map<String, List<Word>> wordsByConsonant = new TreeMap<>();
+
+        for (String consonant : consonants) {
+            List<Word> words = studyMapper.getWordsByConsonant(consonant);
+            wordsByConsonant.put(consonant, words);
+        }
+
+        model.addAttribute("wordsByConsonant", wordsByConsonant);
+        return "dictionary";
+    }
 }
