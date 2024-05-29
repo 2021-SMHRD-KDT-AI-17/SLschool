@@ -12,20 +12,68 @@
     <meta name="naver-site-verification" content=""/><!-- 네이버 소유확인 -->
     <meta name="description" content=""><!-- 사이트 설명문구 -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="회사소개-회사소개">
+    <meta property="og:title" content="강의듣기">
     <meta property="og:description" content=""><!-- 사이트 설명문구 -->
     <meta property="og:image" content="img/common/logo.png">
     <meta property="og:url" content="">
-	<title>회사소개-회사소개</title>
-    <script src="resources/js/jquery-ui.js"></script>
-    <script src="resources/js/jquery-1.8.3.min.js"></script>
-    <script src="resources/js/topmenu_script.js"></script>
-	<link rel="stylesheet" href="resources/css/sh_common.css"> 
-    <link rel="stylesheet" href="resources/css/sh_sub.css">  
+	<title>강의듣기</title>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/topmenu_script.js"></script>
+	<link rel="stylesheet" href="css/sh_common.css"> 
+    <link rel="stylesheet" href="css/sh_sub.css">  
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"> 
     <script src="https://kit.fontawesome.com/85915fb54c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/aos.css">
-    <script src="resources/js/aos.js"></script>
+    <script src="js/aos.js"></script>
+    <style>
+
+    .s_tit .word-title {
+        text-align: center;
+        background: linear-gradient(to right top, #4D869C, #CDE8E5);
+            background-clip: text; /* 텍스트에 그라데이션 적용 */
+            color: transparent;
+            font-weight: 900;
+            font-size: 70px;
+            letter-spacing: 0px;
+            line-height: 110px;
+    }
+    .video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .s_tit {
+
+    flex-direction: column; /* 변경된 부분 */
+    align-items: center;
+    }
+    .s_tit .slid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .l_cont, .r_cont {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+    }
+    
+    .l_cont video, .r_cont video {
+        width: 450px;
+        max-width: 100%;
+    }
+
+    .l_cont {
+        margin-right: 10px; /* 비디오 사이의 간격을 좁게 설정 */
+    }
+
+    .r_cont {
+        margin-left: 10px; /* 비디오 사이의 간격을 좁게 설정 */
+    }
+    </style>
 </head>
 <body>
 
@@ -120,7 +168,7 @@
 
             <!-- 반응형메뉴 [s] -->
             <div id="topmenuM">
-                <h1 id="m_logo"><a href="goMain"><img src="resources/img/common/logo_2.png" alt="Sample" /></a></h1>
+                <h1 id="m_logo"><a href="main.html"><img src="img/common/logo_2.png" alt="Sample" /></a></h1>
                 <!-- 메뉴 버튼 [s] -->
                 <div id="m_navBtn"><span></span></div>
                 <!-- 메뉴 버튼 [e] -->
@@ -191,7 +239,7 @@
             <div id="sub_main_banner">
 				<div id="sh_content_tit">
 					<h3>강의 듣기</h3>
-					<p><a href="goMain"><i class="fa fa-home"></i><span class="sound_only">홈으로</span></a> 
+					<p><a href="main.html"><i class="fa fa-home"></i><span class="sound_only">홈으로</span></a> 
 					<i class="fa fa-angle-right"></i> 강의 듣기 <i class="fa fa-angle-right"></i> A난이도</p>
 				</div>
 			</div>
@@ -218,45 +266,36 @@
                         
                         <!-- cont01 [s] -->
                         <div class="tab_cont cont01">
-                            <div>
-                            </div>
-                            <div class="s_tit"  data-aos="fade-up">
+                            <div class="s_tit" data-aos="fade-up">
+                                <div class="word-title">고양이</div>
                                 <div class="slid">
                                     <i id='left' class="fa-solid fa-chevron-left"></i>
-                                        <div class="slidImg">
-                                            <img src="https://images.unsplash.com/photo-1606491048802-8342506d6471?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=433&q=80" >
-                                            <img src="https://images.unsplash.com/photo-1567270671170-fdc10a5bf831?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" >
-                                            <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" >
-                                            <img src="https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" >
-                                            <img src="https://images.unsplash.com/photo-1618826411640-d6df44dd3f7a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60" >
-                                            <img src="https://images.unsplash.com/photo-1615111784767-4d7c527f32a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60" >
+                                    <div class="slidImg">
+                                        <img src="https://images.unsplash.com/photo-1606491048802-8342506d6471?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=433&q=80">
+                                        <img src="https://images.unsplash.com/photo-1567270671170-fdc10a5bf831?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80">
+                                        <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80">
+                                        <img src="https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80">
+                                        <img src="https://images.unsplash.com/photo-1618826411640-d6df44dd3f7a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60">
+                                        <img src="https://images.unsplash.com/photo-1615111784767-4d7c527f32a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60">
                                     </div>
                                     <i id='right' class="fa-solid fa-chevron-right"></i>
-                                    </div>
-                                <div class="l_cont">
-                                    <span>
-                                        <video controls class="responsive-video">
-                                            <source src="${quizURL}" type="video/mp4">
-                                        </video>
-                                    </span>
                                 </div>
-                                <div class="r_cont">
-                                    <ul class="tabs" data-aos="fade-down" style="display: flex; flex-direction: column;">
-                                        <li class="li1">단어1</li>
-                                        <li class="li2">단어2</li>
-                                        <li class="li3">단어3</li>
-                                        <li class="li4">단어4</li>
-                                        <li class="li5">단어5</li>
-                                        <li class="li6">단어6</li>
-                                        <li class="li7">단어7</li>
-                                    </ul>
-                                    
-                                    <div class="frame">
-                                        <button class="custom-btn btn-16">내 캠 보기</button>
+                                <div class="video-container">
+                                    <div class="l_cont">
+                                        <span>
+                                            <video controls class="responsive-video">
+                                                <source src="http://sldict.korean.go.kr/multimedia/multimedia_files/convert/20200901/739060/MOV000251190_700X466.mp4" type="video/mp4">
+                                            </video>
+                                        </span>
+                                    </div>
+                                    <div class="r_cont">
+                                        <span>
+                                            <video controls class="responsive-video">
+                                                <source src="http://sldict.korean.go.kr/multimedia/multimedia_files/convert/20200901/739060/MOV000251190_700X466.mp4" type="video/mp4">
+                                            </video>
+                                        </span>
                                     </div>
                                 </div>
-                                
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -321,19 +360,19 @@ $(document).ready(function() {
 
         // 각 li 요소에 따라 비디오 주소 변경
         if ($(this).hasClass("li1")) {
-            $("#service1014 video source").attr("src", "http://sldict.korean.go.kr/multimedia/multimedia_files/convert/20200901/739060/MOV000251190_700X466.mp4");
+            $("#service1014 video source").attr("src", "../img/main/abc.mp4");
         } else if ($(this).hasClass("li2")) {
-            $("#service1014 video source").attr("src", "http://sldict.korean.go.kr/multimedia/multimedia_files/convert/20191101/633208/MOV000248783_700X466.mp4");
+            $("#service1014 video source").attr("src", "../img/main/def.mp4");
         } else if ($(this).hasClass("li3")) {
-            $("#service1014 video source").attr("src", "http://sldict.korean.go.kr/multimedia/multimedia_files/convert/20200901/739060/MOV000251190_700X466.mp4");
+            $("#service1014 video source").attr("src", "../img/main/abc.mp4");
         } else if ($(this).hasClass("li4")) {
-            $("#service1014 video source").attr("src", "http://sldict.korean.go.kr/multimedia/multimedia_files/convert/20200901/739060/MOV000251190_700X466.mp4");
+            $("#service1014 video source").attr("src", "../img/main/def.mp4");
         } else if ($(this).hasClass("li5")) {
-            $("#service1014 video source").attr("src", "http://sldict.korean.go.kr/multimedia/multimedia_files/convert/20200901/739060/MOV000251190_700X466.mp4");
+            $("#service1014 video source").attr("src", "../img/main/abc.mp4");
         } else if ($(this).hasClass("li6")) {
-            $("#service1014 video source").attr("src", "http://sldict.korean.go.kr/multimedia/multimedia_files/convert/20200901/739060/MOV000251190_700X466.mp4");
+            $("#service1014 video source").attr("src", "../img/main/def.mp4");
         } else if ($(this).hasClass("li7")) {
-            $("#service1014 video source").attr("src", "http://sldict.korean.go.kr/multimedia/multimedia_files/convert/20200901/739060/MOV000251190_700X466.mp4");
+            $("#service1014 video source").attr("src", "../img/main/abc.mp4");
         }
 
         // 비디오 새로고침
