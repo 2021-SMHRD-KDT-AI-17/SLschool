@@ -44,6 +44,7 @@
   position: absolute;
   font-family: Montserrat, sans-serif;
   font-weight: bold;
+  transition: opacity 0.2s ease, top 0.2s ease, font-size 0.2s ease;
   color: #888;
   font-size: 14px;
   margin-top: -47px;
@@ -51,6 +52,7 @@
   cursor: pointer;
   transition: 0.3s all;
 }
+
 
 .login-form .input-prefix:after {
   content: '';
@@ -110,4 +112,9 @@
   font-size: 18px;
   color: #6a6c79;
   margin-top: 10px;
+}
+
+.input-container input:focus + .input-prefix,
+.input-container input:not(:placeholder-shown) + .input-prefix {
+  opacity: 0;
 }

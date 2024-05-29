@@ -194,15 +194,19 @@
                     <div class="login-form">
                       <div class="login-top">
                         <h1 class="login-header">로그인</h1>
-						<form action="Login" method="post">
+						<form action="Login" method="post" class="input-container">
 
-                          <input type="text" id="user-name" name="id" />
-                          <label for="user-name" class="input-prefix">아이디</label>
-
-                          <input type="password" id="password" name="password" />
-                          <label for="password" class="input-prefix">비밀번호</label>
+                            <div class="input-container">
+                              <input type="text" id="user-name" name="user-name" placeholder=" " />
+                              <label for="user-name" class="input-prefix">아이디</label>
+                            </div>
                           
-                          <input type="submit" id="sign-in" name="Sign-in" value="로그인" />
+                            <div class="input-container">
+                              <input type="password" id="password" name="password" placeholder=" " />
+                              <label for="password" class="input-prefix">비밀번호</label>
+                            </div>
+                          
+                            <input type="submit" id="sign-in" name="Sign-in" value="로그인" />
                         </form>
                       </div>
                       <div class="login-bottom">
@@ -309,7 +313,7 @@
 </div>
 <!-- sh_wrapper [e] -->
 <script>
-    const signUpButton = document.getElementById('signUp');
+const signUpButton = document.getElementById('signUp');
 const signInButton = document.getElementById('signIn');
 const container = document.getElementById('container');
 
