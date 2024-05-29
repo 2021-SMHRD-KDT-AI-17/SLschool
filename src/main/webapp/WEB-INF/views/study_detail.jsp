@@ -17,15 +17,15 @@
     <meta property="og:image" content="img/common/logo.png">
     <meta property="og:url" content="">
 	<title>강의듣기</title>
-    <script src="js/jquery-1.8.3.min.js"></script>
-    <script src="js/jquery-ui.js"></script>
-    <script src="js/topmenu_script.js"></script>
-	<link rel="stylesheet" href="css/sh_common.css"> 
-    <link rel="stylesheet" href="css/sh_sub.css">  
+    <script src="resources/js/jquery-1.8.3.min.js"></script>
+    <script src="resources/js/jquery-ui.js"></script>
+    <script src="resources/js/topmenu_script.js"></script>
+	<link rel="stylesheet" href="resources/css/sh_common.css"> 
+    <link rel="stylesheet" href="resources/css/sh_sub.css">  
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"> 
     <script src="https://kit.fontawesome.com/85915fb54c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/aos.css">
-    <script src="js/aos.js"></script>
+    <script src="resources/js/aos.js"></script>
     <style>
 
     .s_tit .word-title {
@@ -120,13 +120,13 @@
                         <li>
                             <a href="study.html">강의 듣기</a>
                             <ul>
-                                <li><a href="study_a.html">A난이도</a></li>
-                                <li><a href="">B난이도</a></li>
-                                <li><a href="">C난이도</a></li>
+                                <li><a href="goStudyA">A난이도</a></li>
+                                <li><a href="goStudyB">B난이도</a></li>
+                                <li><a href="goStudyC">C난이도</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="quiz.html">퀴즈</a>
+                            <a href="quiz">퀴즈</a>
                             <ul>
                                 <li><a href="">A버전</a></li>
                                 <li><a href="">B버전</a></li>
@@ -168,7 +168,7 @@
 
             <!-- 반응형메뉴 [s] -->
             <div id="topmenuM">
-                <h1 id="m_logo"><a href="main.html"><img src="img/common/logo_2.png" alt="Sample" /></a></h1>
+                <h1 id="m_logo"><a href="goMain"><img src="resources/img/common/logo_2.png" alt="Sample" /></a></h1>
                 <!-- 메뉴 버튼 [s] -->
                 <div id="m_navBtn"><span></span></div>
                 <!-- 메뉴 버튼 [e] -->
@@ -192,9 +192,9 @@
                             <li>
                                 <button class="m_bmenu" type="button">강의 듣기</button>
                                 <ul class="m_smenu">
-                                    <li><a href="study_a.html">A난이도</a> </li>
-                                    <li><a href="">B난이도</a> </li>
-                                    <li><a href="">C난이도</a> </li>
+                                    <li><a href="goStudyA">A난이도</a> </li>
+                                    <li><a href="goStudyB">B난이도</a> </li>
+                                    <li><a href="goStudyC">C난이도</a> </li>
                                 </ul>
                             </li>
                             <li>
@@ -249,9 +249,9 @@
             <div id="sh_aside">
     	        <div id="sh_snb">
                     <ul>
-                        <li><a href="study_a.html" style="color: #4D869C;">A난이도</a></li>
-                        <li><a href="">B난이도</a></li>
-                        <li><a href="">C난이도</a></li>
+                        <li><a href="goStudyA" style="color: #4D869C;">A난이도</a></li>
+                        <li><a href="goStudyB">B난이도</a></li>
+                        <li><a href="goStudyC">C난이도</a></li>
                     </ul>            
 				</div>
             </div>
@@ -284,7 +284,7 @@
                                     <div class="l_cont">
                                         <span>
                                             <video controls class="responsive-video">
-                                                <source src="http://sldict.korean.go.kr/multimedia/multimedia_files/convert/20200901/739060/MOV000251190_700X466.mp4" type="video/mp4">
+                                                <source src="${quizURL }" type="video/mp4">
                                             </video>
                                         </span>
                                     </div>
