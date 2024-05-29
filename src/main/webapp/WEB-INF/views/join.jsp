@@ -12,8 +12,8 @@
 	<input type="text" placeholder="아이디를 입력하세요" name="id" id="inputID">
 	<button type="button" onclick="checkE()">아이디 중복체크</button>
 	<div>
-					<span id="resultCheck" style="color: red"></span>
-				</div>
+		<span id="resultCheck" style="color: red"></span>
+	</div>
 	<input type="password" placeholder="비밀번호를 입력하세요" name="pw" id="inputPW">
 	<input type="password" placeholder="비밀번호를 입력하세요" name="pwConfirm" id="inputPWConfirm" />
 	<div id="passwordMatchMsg" style="color: red;"></div>
