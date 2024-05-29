@@ -61,7 +61,7 @@
                     <h1 id="top_logo"><a href="goMain"><img src="resources/img/common/logo_2.png" alt="Sample" /></a></h1>
                     <ul id="top_nav">
                         <li>
-                            <a href="sub1.html">사이트소개</a>
+                            <a href="">사이트소개</a>
                             <!-- <ul>
                                 <li><a href="sub1.html">수어스쿨</a></li>
                                 <li><a href="">소분류</a></li>
@@ -69,7 +69,7 @@
                             </ul>-->
                         </li>
                         <li>
-                            <a href="study.html">강의 듣기</a>
+                            <a href="goStudy">강의 듣기</a>
                             <ul>
                                 <li><a href="goStudyA">A난이도</a></li>
                                 <li><a href="goStudyB">B난이도</a></li>
@@ -77,7 +77,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="quiz.html">퀴즈</a>
+                            <a href="quiz">퀴즈</a>
                             <ul>
                                 <li><a href="">A버전</a></li>
                                 <li><a href="">B버전</a></li>
@@ -119,7 +119,7 @@
 
             <!-- 반응형메뉴 [s] -->
             <div id="topmenuM">
-                <h1 id="m_logo"><a href="main.html"><img src="img/common/logo_2.png" alt="Sample" /></a></h1>
+                <h1 id="m_logo"><a href="goMain"><img src="resources/img/common/logo_2.png" alt="Sample" /></a></h1>
                 <!-- 메뉴 버튼 [s] -->
                 <div id="m_navBtn"><span></span></div>
                 <!-- 메뉴 버튼 [e] -->
@@ -135,7 +135,7 @@
                             <li>
                                 <button class="m_bmenu" type="button">사이트소개</button>
                                 <ul class="m_smenu">
-                                    <li><a href="sub1.html">수어스쿨</a> </li>
+                                    <li><a href="">수어스쿨</a> </li>
                                     <!-- <li><a href="">소분류</a> </li>
                                     <li><a href="">소분류</a> </li> -->
                                 </ul>

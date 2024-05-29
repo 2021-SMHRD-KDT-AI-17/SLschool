@@ -226,7 +226,7 @@
                                 <ul>
                                 <c:forEach items="${ word_listB}" var="B" varStatus="s">
                                 <li>
-                                        <a href="goWordDetail?word_num${B.word_num }">
+                                        <a href="goWordDetail?word_num=${B.word_num }">
                                             <div class="txt">
                                                 <video controls style="width:100%;">
                                                     <source src="${B.video_url }">
