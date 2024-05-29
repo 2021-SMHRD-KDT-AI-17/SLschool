@@ -67,5 +67,11 @@ public class MemberController {
 		return "main";
 	}
 	
+	
+	@RequestMapping("/goMyPage")
+	public String goMyPage() {
+		return "mypage";
+	}
+	
 
 }
