@@ -60,7 +60,7 @@
                 <!-- topmenu_line_wrap [e] -->
 
                 <!-- 상단 메뉴 [s] -->
-                <div class="topmenu_main">
+				<div class="topmenu_main">
                     <h1 id="top_logo"><a href="goMain"><img src="resources/img/common/logo_2.png" alt="Sample" /></a></h1>
                     <ul id="top_nav">
                         <li>
@@ -82,7 +82,7 @@
                         <li>
                             <a href="quiz">퀴즈</a>
                             <ul>
-                                <li><a href="">A버전</a></li>
+                                <li><a href="quizWord">A버전</a></li>
                                 <li><a href="">B버전</a></li>
                             </ul>
                         </li>
@@ -95,9 +95,9 @@
                             </ul> -->
                         </li>
                         <li>
-                            <a href="">마이페이지</a>
+                            <a href="goMyPage">마이페이지</a>
                             <ul>
-                                <li><a href="">수업 현황</a></li>
+                                <li><a href="goMyPage">수업 현황</a></li>
                                 <li><a href="">내 정보 수정</a></li>
                                 <li><a href="">문의하기</a></li>
                             </ul>
@@ -109,11 +109,11 @@
 
 <!--                       <div class="topmenu_line">--> 
                             <ul id="topmenu_line">
-                               <% if(loginMember == null) {%>
+                                <% if(loginMember == null) {%>
                                 <li><a href="goLogin"><i data-feather="log-in"></i>Login</a></li>
                                 <li><a href="goJoin"><i data-feather="user-plus"></i>Join us</a></li>
                                 <%} else{ %>
-                                <li><span><%=loginMember.getName() %>님 환영합니다.</span></li>
+                                <li><span><strong><%=loginMember.getName() %></strong>님 환영합니다.</span></li>
                                 <li><a href="goLogout"><i data-feather="user-plus"></i>Log-out</a></li>
                                 <%} %>
                             </ul>
@@ -127,7 +127,7 @@
 
             <!-- 반응형메뉴 [s] -->
             <div id="topmenuM">
-                <h1 id="m_logo"><a href="goMain"><img src="resources/img/common/logo_2.png" alt="Sample" /></a></h1>
+                <h1 id="m_logo"><a href="goMain"><img src="img/common/logo_2.png" alt="Sample" /></a></h1>
                 <!-- 메뉴 버튼 [s] -->
                 <div id="m_navBtn"><span></span></div>
                 <!-- 메뉴 버튼 [e] -->
@@ -136,8 +136,8 @@
                 <div id="navWrap">
                     <div class="inner">
                         <ul class="user_tip">
-                            <li><a href="" class="small_tip">회원가입</a></li>
-                            <li><a href="" class="small_tip">로그인</a></li>
+                            <li><a href="login" class="small_tip">회원가입</a></li>
+                            <li><a href="goLogin" class="small_tip">로그인</a></li>
                         </ul>
                         <ul class="m_lnb">
                             <li>
@@ -159,7 +159,7 @@
                             <li>
                                 <button class="m_bmenu" type="button">퀴즈</button>
                                 <ul class="m_smenu">
-                                    <li><a href="">A버전</a> </li>
+                                    <li><a href="quizWord">A버전</a> </li>
                                     <li><a href="">B버전</a> </li>
                                 </ul>
                             </li>
@@ -174,7 +174,7 @@
                              <li>
                                 <button class="m_bmenu" type="button">마이페이지</button>
                                 <ul class="m_smenu">
-                                    <li><a href="">강의 현황</a> </li>
+                                    <li><a href="goMyPage">강의 현황</a> </li>
                                     <li><a href="">내 정보 수정</a> </li>
                                     <li><a href="">문의하기</a> </li>
                                 </ul>

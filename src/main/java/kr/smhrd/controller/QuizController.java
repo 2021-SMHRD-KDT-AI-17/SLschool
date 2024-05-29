@@ -26,6 +26,12 @@ public class QuizController {
 		return "quiz";
 	}
 	
+	// 퀴즈 (단어) 에서 그림 or 단어쓰기
+	@RequestMapping("/quizWord")
+	public String goQuizWord() {
+		return "quiz_word";
+	}
+	
 	// 퀴즈 문제 이동
 	@RequestMapping("/quizDetail")
 	public String goQuizDetail(Model model) {
