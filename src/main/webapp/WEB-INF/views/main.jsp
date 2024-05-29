@@ -353,8 +353,11 @@
                                     <a href="">
                                         <span class="cate">문의하기</span>
                                         <p>1:1 문의</p>
-                                        <span class="date">로그인 후 사용해주세요</span>
-                                    </a>
+                                         </a>
+                                        <% if(loginMember == null) {%>
+                                <span class="date">로그인 후 사용해주세요</span>
+                                <%}%>
+                                   
                                 </li>
                             </ul>
                             <!-- <a href="" class="more_btn">MORE VIEW</a> -->
