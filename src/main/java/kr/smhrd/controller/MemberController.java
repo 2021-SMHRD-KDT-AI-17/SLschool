@@ -62,5 +62,37 @@ public class MemberController {
 		return "main";
 	}
 	
+	// 로그인 기능
+	@RequestMapping("/Login")
+	public String Login(HttpServletRequest request, HttpSession session) {
+		
+		String id = request.getParameter("id");
+		String pw = request.getParameter("pw");
+		
+		Member member = new Member(id, pw);
+		
+		Member member2 = memberMapper.SelectMember(member);
+		
+		if(member2 == null) {
+			
+		}else {
+			session.setAttribute("loginMember", member2);
+			return "main";
+		}
+		
+		return "";
+	}
+	
+	// 로그아웃 기능
+	@RequestMapping("/goLogout")
+	public String goLogout(HttpSession session) {
+		
+		// 세션 삭제 ( = 로그아웃)
+		session.invalidate();
+		
+		return "main";
+	}
+	
+	
 	
 }

@@ -14,7 +14,9 @@
 		select * from Member where id=#{id}
 	</select>
 
-
+	<select id="SelectMember" parameterType="kr.smhrd.entity.Member" resultType="kr.smhrd.entity.Member">
+		select * from Member where id=#{id} and pw=#{pw}
+	</select>
 
 
 </mapper>

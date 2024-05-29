@@ -19,6 +19,8 @@ public interface MemberMapper {
 
 	public Member emailCheck(String id);
 
+	public Member SelectMember(Member member);
+
 
 
 }
