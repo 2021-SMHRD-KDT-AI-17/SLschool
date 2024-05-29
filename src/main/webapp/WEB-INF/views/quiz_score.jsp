@@ -73,9 +73,9 @@
                         <li>
                             <a href="study.html">강의 듣기</a>
                             <ul>
-                                <li><a href="study_a.html">A난이도</a></li>
-                                <li><a href="">B난이도</a></li>
-                                <li><a href="">C난이도</a></li>
+                                <li><a href="goStudyA">A난이도</a></li>
+                                <li><a href="goStudyB">B난이도</a></li>
+                                <li><a href="goStudyC">C난이도</a></li>
                             </ul>
                         </li>
                         <li>
