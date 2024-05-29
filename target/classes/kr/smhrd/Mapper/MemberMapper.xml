@@ -10,8 +10,8 @@
 	insert into Member values(#{id},#{pw},#{name},#{birth},#{pro})
 </insert>
 
-	<select id="emailCheck" parameterType="String" resultType="String">
-		select id from Member where id=#{id}
+	<select id="emailCheck" parameterType="String" resultType="kr.smhrd.entity.Member">
+		select * from Member where id=#{id}
 	</select>
 
 

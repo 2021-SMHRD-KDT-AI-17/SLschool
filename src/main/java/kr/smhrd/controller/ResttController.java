@@ -1,23 +1,22 @@
 package kr.smhrd.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import kr.smhrd.Mapper.MemberMapper;
 import kr.smhrd.entity.Member;
 
-@org.springframework.web.bind.annotation.RestController
-public class RestController {
+@RestController
+public class ResttController {
 	
 	@Autowired
 	private MemberMapper memberMapper;
 	
-	@RequestMapping("/emailCheck")
-	public @ResponseBody int emailCheck(@RequestParam("inputE") String id) {
+	public @ResponseBody int idCheck(@RequestParam("inputID") String id) {
 		Member member = memberMapper.emailCheck(id);
-
+		
 		if (member == null) {
 			// 사용가능
 			return 1;
@@ -25,7 +24,8 @@ public class RestController {
 			// 사용불가능
 			return 0;
 		}
-
 	}
+	
+	
 
 }
