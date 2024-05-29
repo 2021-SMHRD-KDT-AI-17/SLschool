@@ -200,9 +200,9 @@
             <div id="sh_aside">
     	        <div id="sh_snb">
                     <ul>
-                        <li><a href="study_a.html" style="color: #4D869C;">A난이도</a></li>
-                        <li><a href="">B난이도</a></li>
-                        <li><a href="">C난이도</a></li>
+                        <li><a href="goStudyA" style="color: #4D869C;">A난이도</a></li>
+                        <li><a href="goStudyB">B난이도</a></li>
+                        <li><a href="goStudyC">C난이도</a></li>
                     </ul>            
 				</div>
             </div>
