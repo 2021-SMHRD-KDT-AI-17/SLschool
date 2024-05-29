@@ -71,9 +71,9 @@
                         <li>
                             <a href="study.html">강의 듣기</a>
                             <ul>
-                                <li><a href="study_a.html">A난이도</a></li>
-                                <li><a href="">B난이도</a></li>
-                                <li><a href="">C난이도</a></li>
+                                <li><a href="goStudyA">A난이도</a></li>
+                                <li><a href="goStudyB">B난이도</a></li>
+                                <li><a href="goStudyC">C난이도</a></li>
                             </ul>
                         </li>
                         <li>
@@ -143,9 +143,9 @@
                             <li>
                                 <button class="m_bmenu" type="button">강의 듣기</button>
                                 <ul class="m_smenu">
-                                    <li><a href="study_a.html">A난이도</a> </li>
-                                    <li><a href="">B난이도</a> </li>
-                                    <li><a href="">C난이도</a> </li>
+                                    <li><a href="goStudyA">A난이도</a> </li>
+                                    <li><a href="goStudyB">B난이도</a> </li>
+                                    <li><a href="goStudyC">C난이도</a> </li>
                                 </ul>
                             </li>
                             <li>
@@ -201,8 +201,8 @@
     	        <div id="sh_snb">
                     <ul>
                         <li><a href="goStudyA">A난이도</a></li>
-                        <li><a href="">B난이도</a></li>
-                        <li><a href="">C난이도</a></li>
+                        <li><a href="goStudyB">B난이도</a></li>
+                        <li><a href="goStudyC">C난이도</a></li>
                     </ul>            
 				</div>
             </div>
@@ -299,41 +299,21 @@
                                         <div class="late_wrap">
                                             <div class="swiper late_slide">
                                                 <ul class="swiper-wrapper">	
-                                                    <li class="swiper-slide">
-                                                        <a href="">
+                                                   <c:forEach items="${word_listB}" var="B" end="2" >
+                                                <li class="swiper-slide">
+                                                        <a href="goWordDetail?word_num=${B.word_num }">
                                                             <p class="subj">
                                                                 <video controls style="width: 100%;">
-                                                                <source src="http://sldict.korean.go.kr/multimedia/multimedia_files/convert/20200901/739060/MOV000251190_700X466.mp4" type="video/mp4">
+                                                                <source src="${B.video_url }" type="video/mp4">
                                                                 </video>
                                                                 <br>
-                                                                가위
+                                                                ${B.word_name }
                                                             </p>
                                                         </a>
                                                     </li>
+                                                </c:forEach>
                                                     <li class="swiper-slide">
-                                                        <a href="">
-                                                            <p class="subj">
-                                                                <video controls style="width: 100%;">
-                                                                <source src="http://sldict.korean.go.kr/multimedia/multimedia_files/convert/20200901/739060/MOV000251190_700X466.mp4" type="video/mp4">
-                                                                </video>
-                                                                <br>
-                                                                바위
-                                                            </p>
-                                                        </a>
-                                                    </li>
-                                                    <li class="swiper-slide">
-                                                        <a href="">
-                                                            <p class="subj">
-                                                                <video controls style="width: 100%;">
-                                                                <source src="http://sldict.korean.go.kr/multimedia/multimedia_files/convert/20200901/739060/MOV000251190_700X466.mp4" type="video/mp4">
-                                                                </video>
-                                                                <br>
-                                                                보
-                                                            </p>
-                                                        </a>
-                                                    </li>
-                                                    <li class="swiper-slide">
-                                                        <a href="">
+                                                        <a href="goStudyB">
                                                             <br>
                                                             <p class="subj" style="font-size: 25px;">B난이도</p>
                                                             <br>
@@ -386,41 +366,21 @@
                                         <div class="late_wrap">
                                             <div class="swiper late_slide">
                                                 <ul class="swiper-wrapper">	
-                                                    <li class="swiper-slide">
-                                                        <a href="">
+                                                    <c:forEach items="${word_listC}" var="C" end="2" >
+                                                <li class="swiper-slide">
+                                                        <a href="goWordDetail?word_num=${C.word_num }">
                                                             <p class="subj">
                                                                 <video controls style="width: 100%;">
-                                                                <source src="http://sldict.korean.go.kr/multimedia/multimedia_files/convert/20200901/739060/MOV000251190_700X466.mp4" type="video/mp4">
+                                                                <source src="${C.video_url }" type="video/mp4">
                                                                 </video>
                                                                 <br>
-                                                                가위
+                                                                ${C.word_name }
                                                             </p>
                                                         </a>
                                                     </li>
+                                                </c:forEach>
                                                     <li class="swiper-slide">
-                                                        <a href="">
-                                                            <p class="subj">
-                                                                <video controls style="width: 100%;">
-                                                                <source src="http://sldict.korean.go.kr/multimedia/multimedia_files/convert/20200901/739060/MOV000251190_700X466.mp4" type="video/mp4">
-                                                                </video>
-                                                                <br>
-                                                                바위
-                                                            </p>
-                                                        </a>
-                                                    </li>
-                                                    <li class="swiper-slide">
-                                                        <a href="">
-                                                            <p class="subj">
-                                                                <video controls style="width: 100%;">
-                                                                <source src="http://sldict.korean.go.kr/multimedia/multimedia_files/convert/20200901/739060/MOV000251190_700X466.mp4" type="video/mp4">
-                                                                </video>
-                                                                <br>
-                                                                보
-                                                            </p>
-                                                        </a>
-                                                    </li>
-                                                    <li class="swiper-slide">
-                                                        <a href="">
+                                                        <a href="goStudyC">
                                                             <br>
                                                             <p class="subj" style="font-size: 25px;">C난이도</p>
                                                             <br>
