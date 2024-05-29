@@ -19,4 +19,33 @@
 
 
 </body>
+
+<script type="text/javascript">
+	function checkE() {
+		var inputE = $('#inputE').val()
+
+		$.ajax( /* JSON(JavaScript Object Notation) */
+		{
+			// 어디로 요청할건지
+			url : 'emailCheck',
+			// 요청데이터 형태 -> JSON
+			data : {
+				'inputE' : inputE
+			},
+			// 요청방식
+			type : 'get',
+			// 요청 응답 성공했을 때 / 실패했을 때 
+			success : function(data) {
+				if (data == 1) {
+					$('#resultCheck').text('사용 가능한 아이디입니다.')
+				} else {
+					$('#resultCheck').text('사용 불가능한 아이디입니다.')
+				}
+			},
+			error : function() {
+				alert("통신실패!")
+			}
+		})
+	}
+</script>
 </html>

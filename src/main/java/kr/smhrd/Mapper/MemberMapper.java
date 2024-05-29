@@ -17,6 +17,8 @@ public interface MemberMapper {
 
 	public String selectattendance(@NonNull String id);
 
+	public Member emailCheck(String id);
+
 
 
 }

@@ -8,8 +8,11 @@
 
 <insert id="newLogin" parameterType="kr.smhrd.entity.Member">
 	insert into Member values(#{id},#{pw},#{name},#{birth},#{pro})
-	
 </insert>
+
+	<select id="emailCheck" parameterType="String" resultType="String">
+		select id from Member where id=#{id}
+	</select>
 
 
 
