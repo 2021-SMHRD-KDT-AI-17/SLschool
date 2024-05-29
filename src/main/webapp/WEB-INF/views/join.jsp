@@ -9,7 +9,7 @@
 <body>
 
 	<form action="JoinMember" method="post">
-	<input type="text" placeholder="아이디를 입력하세요" name="id">
+	<input type="text" placeholder="아이디를 입력하세요" name="id" id="inputID">
 	<button type="button" onclick="checkE()">아이디 중복체크</button>
 	<input type="password" placeholder="비밀번호를 입력하세요" name="pw">
 	<input type="text" placeholder="이름을 입력하세요" name="name">
@@ -22,7 +22,7 @@
 
 <script type="text/javascript">
 	function checkE() {
-		var inputE = $('#inputE').val()
+		var inputE = $('#inputID').val()
 
 		$.ajax( /* JSON(JavaScript Object Notation) */
 		{
@@ -30,7 +30,7 @@
 			url : 'emailCheck',
 			// 요청데이터 형태 -> JSON
 			data : {
-				'inputE' : inputE
+				'inputID' : inputID
 			},
 			// 요청방식
 			type : 'get',

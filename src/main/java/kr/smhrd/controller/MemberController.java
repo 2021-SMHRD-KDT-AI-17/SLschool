@@ -20,6 +20,11 @@ public class MemberController {
 	@Autowired
 	private MemberMapper memberMapper;
 	
+	 @RequestMapping("/")
+	   public String Main() {
+	      return "main";
+	   }
+	   
 	@RequestMapping("/goMain")
 	public String goMain() {
 		return "main";

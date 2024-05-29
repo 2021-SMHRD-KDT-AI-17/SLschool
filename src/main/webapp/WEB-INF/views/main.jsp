@@ -106,7 +106,7 @@
 
 <!--                       <div class="topmenu_line">--> 
                             <ul id="topmenu_line">
-                                <li><a href=""><i data-feather="log-in"></i>Login</a></li>
+                                <li><a href="goLogin"><i data-feather="log-in"></i>Login</a></li>
                                 <li><a href=""><i data-feather="user-plus"></i>Join us</a></li>
                             </ul>
                             <!-- </div> -->
