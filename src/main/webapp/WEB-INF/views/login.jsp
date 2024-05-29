@@ -100,7 +100,7 @@
 
             <!-- 반응형메뉴 [s] -->
             <div id="topmenuM">
-                <h1 id="m_logo"><a href="main.html"><img src="resources/img/common/logo_2.png" alt="Sample" /></a></h1>
+                <h1 id="m_logo"><a href="goMain"><img src="resources/img/common/logo_2.png" alt="Sample" /></a></h1>
                 <!-- 메뉴 버튼 [s] -->
                 <!-- 메뉴 버튼 [e] -->
                 
@@ -197,12 +197,12 @@
 						<form action="Login" method="post" class="input-container">
 
                             <div class="input-container">
-                              <input type="text" id="user-name" name="user-name" placeholder=" " />
+                              <input type="text" id="user-name" name="id" placeholder=" " />
                               <label for="user-name" class="input-prefix">아이디</label>
                             </div>
                           
                             <div class="input-container">
-                              <input type="password" id="password" name="password" placeholder=" " />
+                              <input type="password" id="password" name="pw" placeholder=" " />
                               <label for="password" class="input-prefix">비밀번호</label>
                             </div>
                           
