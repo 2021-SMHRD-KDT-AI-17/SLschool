@@ -87,7 +87,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="dictionary.html">수어사전</a>
+                            <a href="goDic">수어사전</a>
                             <!-- <ul>
                                 <li><a href="">소분류</a></li>
                                 <li><a href="">소분류</a></li>
@@ -95,11 +95,23 @@
                             </ul> -->
                         </li>
                         <li>
+                        	<%if(loginMember == null) {%>
+                            <a href="goLogin">마이페이지</a>
+                            <%}else{ %>
                             <a href="goMyPage">마이페이지</a>
+                            <%} %>
                             <ul>
                                 <li><a href="">수업 현황</a></li>
-                                <li><a href="">내 정보 수정</a></li>
-                                <li><a href="">문의하기</a></li>
+                                <%if(loginMember == null) {%>
+                                  <li><a href="goLogin">내 정보 수정</a></li>
+                                  <%}else{ %>
+                                  <li><a href="goUpdateMember">내 정보 수정</a></li>
+                                  <%} %>
+                                  <%if(loginMember == null) {%>
+                                  <li><a href="goLogin">문의하기</a></li>
+                                  <%}else{ %>
+                                  <li><a href="">문의하기</a></li>
+                                  <%} %>
                             </ul>
                         </li> 
                     </ul>
@@ -241,10 +253,10 @@
                             
                             <!-- 아이콘 배너 [s] -->
                             <div class="icon_links">
-                                <a href=""><div class="icon"><img src="resources/img/main/main_icon_01.png" alt="학습시스템" /></div>학습시스템</a>
-                                <a href=""><div class="icon"><img src="resources/img/main/main_icon_04.png" alt="강의보기" /></div>강의보기</a>
-                                <a href=""><div class="icon"><img src="resources/img/main/main_icon_03.png" alt="자료실" /></div>퀴즈</a>
-                                <a href=""><div class="icon"><img src="resources/img/main/main_icon_02.png" alt="교재안내" /></div>수어사전</a>
+                                <a href="goStudy"><div class="icon"><img src="resources/img/main/main_icon_01.png" alt="학습시스템" /></div>학습시스템</a>
+                                <a href="goStudy"><div class="icon"><img src="resources/img/main/main_icon_04.png" alt="강의보기" /></div>강의보기</a>
+                                <a href="quiz"><div class="icon"><img src="resources/img/main/main_icon_03.png" alt="자료실" /></div>퀴즈</a>
+                                <a href="goDic"><div class="icon"><img src="resources/img/main/main_icon_02.png" alt="교재안내" /></div>수어사전</a>
                             </div>
                             <!-- 아이콘 배너 [e] -->
                             

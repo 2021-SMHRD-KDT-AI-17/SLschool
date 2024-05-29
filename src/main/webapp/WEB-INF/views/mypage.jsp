@@ -104,7 +104,7 @@
                             <a href="goMyPage">마이페이지</a>
                             <ul>
                                 <li><a href="goMyPage">수업 현황</a></li>
-                                <li><a href="">내 정보 수정</a></li>
+                                <li><a href="goUpdateMember">내 정보 수정</a></li>
                                 <li><a href="">문의하기</a></li>
                             </ul>
                         </li> 
@@ -228,7 +228,7 @@
                                                 <div class="col-lg-4 col-md-5 col-xs-12">
                                                     <div class="user-profile-box">
                                                         <div class="header clearfix d-flex flex-column align-items-center">
-                                                            <h2>이모씨</h2>
+                                                            <h2>${member.name }</h2>
                                                             <img id="g-profile-img"
                                                                 class="img-fuid mb-3"
                                                                 width="80" height="80"
@@ -236,7 +236,7 @@
                                                                 src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEyMjdfMTA1%2FMDAxNzAzNjYyMjg4MDQz.sJvE_4lC7aSvn2qNjDFqck8-QvTYqEjjFQ4Wy-idGNQg.51a80329ezIx2HeuIMF2C44V5mkqzWj_vfntWtvzELcg.JPEG.animalandhuman%2FGettyImages-491143647.jpg&type=sc960_832">
                                                         </div>
                                                         <div class="mt-1 d-flex justify-content-center">
-                                                            <button class="btn btn-primary btn-sm mt-3">내 정보 수정</button>
+                                                            <button class="btn btn-primary btn-sm mt-3" onclick="location.href='goUpdateMember'">내 정보 수정</button>
                                                         </div>
                                                         <div class="detail clearfix">
                                                             <ul class="list-group list-group-flush">

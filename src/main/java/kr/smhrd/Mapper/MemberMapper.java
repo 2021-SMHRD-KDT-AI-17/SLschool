@@ -21,6 +21,9 @@ public interface MemberMapper {
 
 	public Member SelectMember(Member member);
 
+	public int updateMember(Member member);
+
+
 
 
 }

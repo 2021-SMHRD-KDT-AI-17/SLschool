@@ -17,6 +17,11 @@
 	<select id="SelectMember" parameterType="kr.smhrd.entity.Member" resultType="kr.smhrd.entity.Member">
 		select * from Member where id=#{id} and pw=#{pw}
 	</select>
+	
+	<update id="updateMember" parameterType="kr.smhrd.entity.Member">
+		update Member set pw=#{pw}, name=#{name} where id=#{id}
+	</update>
+	
 
 
 </mapper>

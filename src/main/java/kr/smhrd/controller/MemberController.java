@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.smhrd.Mapper.MemberMapper;
 import kr.smhrd.entity.Member;
@@ -31,7 +32,10 @@ public class MemberController {
 	}
 	
 	@RequestMapping("/goMyPage")
-	public String goMyPage() {
+	public String goMyPage(HttpSession session, Model model) {
+		Member member = (Member) session.getAttribute("loginMember");
+		model.addAttribute("member", member);
+		
 		return "mypage";
 	}
 	
@@ -56,6 +60,7 @@ public class MemberController {
 		String pw = request.getParameter("pw");
 		String name = request.getParameter("name");
 		String birthday = request.getParameter("birthday");
+		
 		
 		Member member = new Member(id, pw, name, birthday);
 		
@@ -92,6 +97,32 @@ public class MemberController {
 		session.invalidate();
 		
 		return "main";
+	}
+	
+	// 회원정보 수정하러 가기
+	@RequestMapping("goUpdateMember")
+	public String goUpdateMember(HttpSession session, Model model) {
+		Member member = (Member) session.getAttribute("loginMember");
+		model.addAttribute("member", member);
+		
+		return "update_member";
+	}
+	
+	// 회원정보 수정기능
+	@RequestMapping("updateMember")
+	public String updateMember(HttpSession session, HttpServletRequest request) {
+		String id = request.getParameter("id");
+		String pw = request.getParameter("pw");
+		String name = request.getParameter("name");
+		
+		Member member = new Member(id, pw, name);
+		int cnt = memberMapper.updateMember(member);
+		Member member2 = memberMapper.emailCheck(id);
+		
+		// session 덮어쓰기
+		session.setAttribute("loginMember", member2);
+		
+		return "goMyPage";
 	}
 	
 	

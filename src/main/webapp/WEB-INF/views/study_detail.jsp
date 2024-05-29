@@ -144,11 +144,23 @@
                             </ul> -->
                         </li>
                         <li>
+                            <%if(loginMember == null) {%>
+                            <a href="goLogin">마이페이지</a>
+                            <%}else{ %>
                             <a href="goMyPage">마이페이지</a>
+                            <%} %>
                             <ul>
-                                <li><a href="goMyPage">수업 현황</a></li>
-                                <li><a href="">내 정보 수정</a></li>
-                                <li><a href="">문의하기</a></li>
+                                <li><a href="">수업 현황</a></li>
+                                <%if(loginMember == null) {%>
+                                  <li><a href="goLogin">내 정보 수정</a></li>
+                                  <%}else{ %>
+                                  <li><a href="goUpdateMember">내 정보 수정</a></li>
+                                  <%} %>
+                                  <%if(loginMember == null) {%>
+                                  <li><a href="goLogin">문의하기</a></li>
+                                  <%}else{ %>
+                                  <li><a href="">문의하기</a></li>
+                                  <%} %>
                             </ul>
                         </li> 
                     </ul>
@@ -176,7 +188,7 @@
 
             <!-- 반응형메뉴 [s] -->
             <div id="topmenuM">
-                <h1 id="m_logo"><a href="goMain"><img src="img/common/logo_2.png" alt="Sample" /></a></h1>
+                <h1 id="m_logo"><a href="goMain"><img src="resources/img/common/logo_2.png" alt="Sample" /></a></h1>
                 <!-- 메뉴 버튼 [s] -->
                 <div id="m_navBtn"><span></span></div>
                 <!-- 메뉴 버튼 [e] -->
@@ -275,7 +287,7 @@
                         <!-- cont01 [s] -->
                         <div class="tab_cont cont01">
                             <div class="s_tit" data-aos="fade-up">
-                                <div class="word-title">고양이</div>
+                                <div class="word-title">${word.word_name }</div>
                                 <div class="slid">
                                     <i id='left' class="fa-solid fa-chevron-left"></i>
                                     <div class="slidImg">

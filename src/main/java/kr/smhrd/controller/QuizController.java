@@ -26,6 +26,13 @@ public class QuizController {
 		return "quiz";
 	}
 	
+	// 퀴즈 (단어) 에서 그림으로 맞추기
+	@RequestMapping("goQuizPic")
+	public String goQuizPic() {
+		
+		return "quiz_a_detail_pic";
+	}
+	
 	// 퀴즈 (단어) 에서 그림 or 단어쓰기
 	@RequestMapping("/quizWord")
 	public String goQuizWord() {

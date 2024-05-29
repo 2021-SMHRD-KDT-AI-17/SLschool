@@ -94,11 +94,23 @@
                             </ul> -->
                         </li>
                         <li>
+                            <%if(loginMember == null) {%>
+                            <a href="goLogin">마이페이지</a>
+                            <%}else{ %>
                             <a href="goMyPage">마이페이지</a>
+                            <%} %>
                             <ul>
-                                <li><a href="goMyPage">수업 현황</a></li>
-                                <li><a href="">내 정보 수정</a></li>
-                                <li><a href="">문의하기</a></li>
+                                <li><a href="">수업 현황</a></li>
+                                <%if(loginMember == null) {%>
+                                  <li><a href="goLogin">내 정보 수정</a></li>
+                                  <%}else{ %>
+                                  <li><a href="goUpdateMember">내 정보 수정</a></li>
+                                  <%} %>
+                                  <%if(loginMember == null) {%>
+                                  <li><a href="goLogin">문의하기</a></li>
+                                  <%}else{ %>
+                                  <li><a href="">문의하기</a></li>
+                                  <%} %>
                             </ul>
                         </li> 
                     </ul>
@@ -231,7 +243,7 @@
                                     </a>
                                 </dl>
                                 <dl data-aos="flip-left" data-aos-delay="300">
-                                    <a href="quiz_a_detail2.html">
+                                    <a href="goQuizPic">
                                     <dt>그림 맞추기</dt>
                                     <dd>나는 수화에 맞는 그림을 고를래요!</dd>
                                     </a>

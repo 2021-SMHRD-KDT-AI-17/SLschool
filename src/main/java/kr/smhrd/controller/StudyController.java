@@ -39,7 +39,7 @@ public class StudyController {
 		
 		Word word = studyMapper.selectWord(word_num);
 		
-		// model.addAttribute("word", word); -> 원래 사용해야할 코드
+		model.addAttribute("word", word);
 		
 		String word_url = word.getVideo_url(); // 임시조치
 		System.out.println(word_url);
