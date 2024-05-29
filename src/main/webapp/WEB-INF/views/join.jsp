@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<form action="" method="post">
+	<form action="newMember" method="post">
 	<input type="text" placeholder="아이디를 입력하세요" name="id" id="inputID">
 	<button type="button" onclick="checkE()">아이디 중복체크</button>
 	<div>

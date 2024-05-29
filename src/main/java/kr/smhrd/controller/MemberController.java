@@ -48,10 +48,17 @@ public class MemberController {
 	}
 	
 	// 회원가입 
-	@RequestMapping("/goJoin")
-	public String goJoin(Member member, Model model) {
-		memberMapper.goJoin(member);
-		model.addAttribute("id", member.getId());
+	@RequestMapping("/newMember")
+	public String newMember(HttpServletRequest request) {
+		
+		String id = request.getParameter("id");
+		String pw = request.getParameter("pw");
+		String name = request.getParameter("name");
+		String birthday = request.getParameter("birthday");
+		
+		Member member = new Member(id, pw, name, birthday);
+		
+		int cnt = memberMapper.newMember(member);
 		return "main";
 	}
 	

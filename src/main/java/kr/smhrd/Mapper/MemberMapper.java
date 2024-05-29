@@ -13,7 +13,7 @@ public interface MemberMapper {
 	
 	public Member loginMember(Member member);
 	
-	public int goJoin(Member member);
+	public int newMember(Member member);
 
 	public String selectattendance(@NonNull String id);
 
