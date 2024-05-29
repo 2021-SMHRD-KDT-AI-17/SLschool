@@ -190,7 +190,7 @@
             <div id="sub_main_banner">
 				<div id="sh_content_tit">
 					<h3>강의 듣기</h3>
-					<p><a href="main.html"><i class="fa fa-home"></i><span class="sound_only">홈으로</span></a> 
+					<p><a href="goMain"><i class="fa fa-home"></i><span class="sound_only">홈으로</span></a> 
 					<i class="fa fa-angle-right"></i> 강의 듣기 <i class="fa fa-angle-right"></i> A난이도</p>
 				</div>
 			</div>
@@ -200,9 +200,9 @@
             <div id="sh_aside">
     	        <div id="sh_snb">
                     <ul>
-                        <li><a href="study_a.html" style="color: #4D869C;">A난이도</a></li>
-                        <li><a href="">B난이도</a></li>
-                        <li><a href="">C난이도</a></li>
+                        <li><a href="goStudyA" style="color: #4D869C;">A난이도</a></li>
+                        <li><a href="goStudyB">B난이도</a></li>
+                        <li><a href="goStudyC">C난이도</a></li>
                     </ul>            
 				</div>
             </div>

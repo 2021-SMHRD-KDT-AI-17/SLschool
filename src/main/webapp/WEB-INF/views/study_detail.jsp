@@ -107,7 +107,7 @@
 
                 <!-- 상단 메뉴 [s] -->
                 <div class="topmenu_main">
-                    <h1 id="top_logo"><a href="main.html"><img src="img/common/logo_2.png" alt="Sample" /></a></h1>
+                    <h1 id="top_logo"><a href="goMain"><img src="resources/img/common/logo_2.png" alt="Sample" /></a></h1>
                     <ul id="top_nav">
                         <li>
                             <a href="sub1.html">사이트소개</a>
@@ -239,7 +239,7 @@
             <div id="sub_main_banner">
 				<div id="sh_content_tit">
 					<h3>강의 듣기</h3>
-					<p><a href="main.html"><i class="fa fa-home"></i><span class="sound_only">홈으로</span></a> 
+					<p><a href="goMain"><i class="fa fa-home"></i><span class="sound_only">홈으로</span></a> 
 					<i class="fa fa-angle-right"></i> 강의 듣기 <i class="fa fa-angle-right"></i> A난이도</p>
 				</div>
 			</div>
@@ -330,7 +330,7 @@
     <!-- sh_ft [s] -->
     <div id="sh_ft">
         <div class="ft_txt">
-            <img class="ft_logo" src="img/common/logo_1.png" alt="Sample" />
+            <img class="ft_logo" src="resources/img/common/logo_1.png" alt="Sample" />
             <div class="ft_text">
                 <a onclick="">이용약관</a>
                 <a onclick="">개인정보취급방침</a>

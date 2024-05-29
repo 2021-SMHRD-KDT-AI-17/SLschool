@@ -302,21 +302,21 @@
                                 <div class="swiper late_slide">
                                     <ul class="swiper-wrapper">	
                                         <li class="swiper-slide">
-                                            <a href="">
+                                            <a href="goStudyA">
                                                 <p class="subj">A난이도</p>
                                                 <div class="cont">어린아이 수준으로 쉽게</div>
                                                 <span>#강의보기</span>
                                             </a>
                                         </li>
                                         <li class="swiper-slide">
-                                            <a href="">
+                                            <a href="goStudyB">
                                                 <p class="subj">B난이도</p>
                                                 <div class="cont">초등학생 수준으로 쉽게</div>
                                                 <span>#강의보기</span>
                                             </a>
                                         </li>
                                         <li class="swiper-slide">
-                                            <a href="">
+                                            <a href="goStudyC">
                                                 <p class="subj">C난이도</p>
                                                 <div class="cont">중학생 수준으로 쉽게</div>
                                                 <span>#강의보기</span>
