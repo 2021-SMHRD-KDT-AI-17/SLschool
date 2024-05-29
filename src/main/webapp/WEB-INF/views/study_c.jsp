@@ -190,7 +190,7 @@
             <div id="sub_main_banner">
 				<div id="sh_content_tit">
 					<h3>강의 듣기</h3>
-					<p><a href="main.html"><i class="fa fa-home"></i><span class="sound_only">홈으로</span></a> 
+					<p><a href="goMain"><i class="fa fa-home"></i><span class="sound_only">홈으로</span></a> 
 					<i class="fa fa-angle-right"></i> 강의 듣기 <i class="fa fa-angle-right"></i> A난이도</p>
 				</div>
 			</div>
