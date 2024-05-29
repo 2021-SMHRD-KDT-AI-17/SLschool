@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.smhrd.Mapper.MemberMapper">
+
+<select id="memberSelect" parameterType="kr.smhrd.entity.Member" resultType="kr.smhrd.entity.Member">
+	select * from Member where m_id=#{id} and m_pw=#{pw}
+</select>
+
+<insert id="newLogin" parameterType="kr.smhrd.entity.Member">
+	insert into Member values(#{id},#{pw},#{name},#{birth},#{pro})
+	
+</insert>
+
+
+
+
+</mapper>
