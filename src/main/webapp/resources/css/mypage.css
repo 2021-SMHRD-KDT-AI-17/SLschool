@@ -1,0 +1,301 @@
+/* Colors =========================== */
+.mypage{
+    margin-top:-200px;
+    margin-bottom: 50px;
+}
+#sh_content2{position:relative;z-index:4;width:100%;max-width:1070px;padding:0px;margin:0px auto 40px;font-size:14px;color:#888;zoom:1}
+.btn-primary {
+    background-color: #7AB2B2 !important;
+    border-color: #7AB2B2 !important;
+}
+.g-blue {
+    background-color: blue;
+  }
+  
+  .g-green {
+    background-color: green;
+  }
+  
+  .g-purple {
+    background-color: purple;
+  }
+  
+  .g-non-atteint {
+    color: #FF0066;
+  }
+  
+  .g-atteint {
+    color: #00ee99;
+  }
+  
+  .g-alerte {
+    color: #ff9955;
+  }
+  
+  #g-profile-img {
+    border: 5px solid #fff;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    margin-left: auto;
+    top: 100px;
+  }
+  
+  .g-action {
+    margin: 0 5px;
+  }
+  
+  .g-action:hover {
+    color: #0dcdbd;
+  }
+  
+  /* User Box =========================== */
+  
+  .user-profile-box {
+    background: #ffffff;
+    box-shadow: 0 0 20px rgba(38, 38, 38, 0.2);
+    margin: 0 auto 50px;
+    height: 97.4%;
+  }
+  
+  .user-profile-box .header {
+    padding: 30px 20px 120px;
+    text-align: center;
+    position: relative;
+    background-repeat: no-repeat;
+    border: none;
+    margin-bottom: 50px;
+    background: #4D869C top left repeat;
+    color: #ffffff;
+    max-height: 100px;
+  }
+  
+  .user-profile-box .header h2 {
+    text-shadow: 0px 0px 2px #AAAA;
+    margin-top: 35px;
+    margin-left:0px;
+    color: #fff;
+    font-size: 20px;
+  }
+  
+  .user-profile-box .profile-img {
+    background-clip: padding-box;
+    float: left;
+    height: 200px;
+    width: 200px;
+    margin-left: 0px;
+    position: absolute;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1), 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-profile-box .detail {
+    padding-top: 50px;
+  }
+  
+  .user-profile-box .detail ul li {
+    color: #727272;
+    border-bottom: 1px solid #f5f5f5;
+    padding: 12px 20px;
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  
+  .user-profile-box .detail ul.list-group {
+    display: block;
+    padding-left: 0;
+    list-style: none;
+    width: 100%;
+}
+
+.user-profile-box .detail ul.list-group a {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.user-profile-box .detail ul.list-group a.list-group-item {
+    display: block;
+    width: 100%;
+}
+
+  div.detail ul.list-group a.list-group-item.active {
+    background: #f5f5f5;
+    color: #727272;
+    font-weight: 500;
+    border-color: #f5f5f5;
+  }
+  
+  /* Dashboard Body =========================== */
+  
+  .dashborad-box {
+    padding: 30px;
+    margin-bottom: 30px;
+    -webkit-box-shadow: 0 0 20px rgba(38, 38, 38, 0.2);
+    box-shadow: 0 0 20px rgba(38, 38, 38, 0.2);
+  }
+  
+  .dashborad-box .title {
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .dashborad-box .item {
+    margin-bottom: 20px;
+  }
+  
+  .dashborad-box .item .icon {
+    float: left;
+    width: 50px;
+    position: relative;
+  }
+  
+  .dashborad-box .item .icon:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 1px;
+    background: #d7d7d7;
+  }
+  
+  .dashborad-box .item .icon span {
+    font-size: 32px;
+  }
+  
+  .dashborad-box .item .info {
+    padding-left: 20px;
+    float: left;
+  }
+  
+  .dashborad-box .item .info .number {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+    color: #272727;
+  }
+  
+  .dashborad-box .item .info .type {
+    font-size: 14px;
+    color: #888;
+  }
+  
+  .dashborad-box .item:after {
+    display: table;
+    content: "";
+    clear: both;
+  }
+  
+  .listing-table .table {
+    width: 100%; /* 테이블의 넓이를 100%로 설정 */
+  }
+  
+  .table th, .table td {
+    word-wrap: break-word; /* 긴 텍스트가 잘리지 않고 다음 줄로 넘어가도록 설정 */
+  }
+  
+  .listing-table .table thead tr .edit a span {
+    color: #0dcdbd !important;
+  }
+  
+  .listing-table .table thead tr th {
+    margin-bottom: 0;
+    border: none;
+  }
+  
+  .table th.title-col {
+    width: 80%; /* 강의 제목 열의 너비를 80%로 설정 */
+  }
+  
+  .table th.action-col, .table td.action-col {
+    width: 20%; /* 보러가기 열의 너비를 20%로 설정 */
+  }
+  
+  .messages .message {
+    margin-top: 30px;
+  }
+  
+  .messages .message:after {
+    display: table;
+    content: '';
+    clear: both;
+  }
+  
+  .messages .message .thumb {
+    height: 120px;
+    width: 120px;
+    float: left;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .messages .message .body {
+    position: relative;
+    float: left;
+    width: calc(100% - 120px);
+    padding-left: 20px;
+  }
+  
+  .messages .message .body h6 {
+    font-size: 18px;
+  }
+  
+  .messages .message .body h6 .badge {
+    background: #0dcdbd;
+    color: #ffffff;
+  }
+  
+  .messages .message .body .post-time {
+    margin-bottom: 0;
+    color: #0dcdbd;
+  }
+  
+  .messages .message .body .controller {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  
+  .messages .message .body .controller ul li {
+    display: inline-block;
+    margin-left: 6px;
+  }
+  
+  .messages .message .body .controller ul li a {
+    color: #888;
+  }
+  
+  .messages .message .body .controller ul li a:hover {
+    color: #0dcdbd;
+  }
+  
+  select {
+    border: 0;
+    font-size: 14px;
+    width: 100%;
+    line-height: 30px;
+    padding: 0 15px;
+    color: #727272;
+    background: #ffffff;
+    z-index: 1;
+    position: relative;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    position: relative;
+    min-height: 45px;
+    box-shadow: none;
+    border: 1px solid #f3f3f3;
+    background: #fff;
+    border-radius: 4px;
+    width: 100% !important;
+    cursor: pointer;
+  }
+  
+  select:focus {
+    outline: none;
+    box-shadow: none;
+  }

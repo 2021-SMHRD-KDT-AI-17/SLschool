@@ -1,0 +1,115 @@
+.login-form {
+  position: relative;
+  display: block;
+  text-align: center;
+  margin: 20px auto;
+  width: 100%;
+}
+
+.login-form .login-top {
+  background-color: #FFF;
+  padding: 10px 20px;
+}
+
+.login-form .login-top h1 {
+  font-family: Montserrat, sans-serif;
+  font-weight: normal;
+  font-size: 24px;
+  color: #7AB2B2;
+  letter-spacing: -1.7px;
+}
+
+.login-form input {
+  display: block;
+  font-family: Montserrat, sans-serif;
+}
+
+.login-form input[type="text"], .login-form input[type="password"] {
+  margin: 10px auto;
+  border-radius: 3px;
+  padding: 10px;
+  padding-left: 10px;
+  border: 1px solid #CCC;
+  background-color: #FEFEFE;
+  color: #323440;
+  width: 100%;
+  transition: 0.3s all;
+}
+
+.login-form input[type="text"]:focus, .login-form input[type="password"]:focus {
+  background-color: #f7f9fc;
+}
+
+.login-form .input-prefix {
+  position: absolute;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  color: #888;
+  font-size: 14px;
+  margin-top: -44px;
+  left: 45px;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+.login-form .input-prefix:after {
+  content: '';
+  position: relative;
+  display: block;
+  top: 100%;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #7AB2B2;
+  transition: 0.3s all;
+}
+
+.login-form input:focus + .input-prefix {
+  color: #7AB2B2;
+}
+
+.login-form input:focus + .input-prefix:after {
+  width: 100%;
+}
+
+.login-form input[type="submit"] {
+  border: none;
+  background-image: linear-gradient(135deg, #7AB2B2 70%, #7AB2B2);
+  color: #FFF;
+  font-weight: 700;
+  padding: 12px 47px;
+  margin: 20px auto;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+.login-form input[type="submit"]:hover,.login-form input[type="submit"]:focus {
+  box-shadow: 0 0px 15px 2px #CCC;
+}
+
+.login-form .login-bottom {
+  padding: 10px;
+  background-color: #56596a;
+}
+
+.login-form .login-bottom a {
+  color: #CCC;
+  font-family: Montserrat, sans-serif;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.login-form .login-bottom a:hover {
+  text-decoration: underline;
+}
+
+.login-form .company-name {
+  font-family: Montserrat, sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 18px;
+  color: #6a6c79;
+  margin-top: 10px;
+}
