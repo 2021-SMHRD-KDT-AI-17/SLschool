@@ -2,6 +2,8 @@ package kr.smhrd.Mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import kr.smhrd.entity.Word;
 
 public interface StudyMapper {
@@ -13,5 +15,7 @@ public interface StudyMapper {
 	public List<Word> selectWordAllC();
 
 	public Word selectWord(int word_num);
+	
+	public List<Word> getWordsByConsonant(@Param("consonant") String consonant);
 
 }

@@ -1,4 +1,7 @@
 <%@page import="kr.smhrd.entity.Member"%>
+<%@ page import="java.util.List" %>
+<%@ page import="kr.smhrd.entity.Word"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!doctype html>
@@ -199,7 +202,7 @@
             <div id="sub_main_banner">
 				<div id="sh_content_tit">
 					<h3>수어 사전</h3>
-					<p><a href="goMain"><i class="fa fa-home"></i><span class="sound_only">홈으로</span></a> 
+					<p><a href="main.html"><i class="fa fa-home"></i><span class="sound_only">홈으로</span></a> 
 					<i class="fa fa-angle-right"></i> 수어 사전 </p>
 				</div>
 			</div>
@@ -242,192 +245,24 @@
                                 <div id="faq">
                                     <h2>수어사전</h2>
                                     <ol class="qna-list accordion">
-                                      <li class="qna-item">
-                                        <div class="question-article">
-                                          <a href="#!" class="question btn-fold">
-                                            <strong class="blind">질문:</strong>
-                                            <span class="q">ㄱ</span> 단어 목록
-                                          </a>
-                                        </div>
-                                        <div class="answer-article">
-                                          <strong class="blind">답변</strong>
-                                          <div id="answer-cnt">
-                                            <p>가위</p>
-                                            <p>가지</p>
-                                            <p>가방</p>
-                                          </div>
-                                        </div>
-                                      </li>
-                                      <li class="qna-item">
-                                        <div class="question-article">
-                                          <a href="#!" class="question btn-fold">
-                                            <strong class="blind">질문:</strong>
-                                            <span class="q">ㄴ</span> 단어 목록
-                                          </a>
-                                        </div>
-                                        <div class="answer-article">
-                                          <strong class="blind">답변</strong>
-                                          <div id="answer-cnt">
-                                            <p>나비</p>
-                                          </div>
-                                        </div>
-                                      </li>
-                                      <li class="qna-item">
-                                        <div class="question-article">
-                                          <a href="#!" class="question btn-fold">
-                                            <strong class="blind">질문:</strong>
-                                            <span class="q">ㄷ</span> 단어 목록
-                                          </a>
-                                        </div>
-                                        <div class="answer-article">
-                                          <strong class="blind">답변</strong>
-                                          <div id="answer-cnt">
-                                            <p>단어</p>
-                                          </div>
-                                        </div>
-                                      </li>
-                                      <li class="qna-item">
-                                        <div class="question-article">
-                                          <a href="#!" class="question btn-fold">
-                                            <strong class="blind">질문:</strong>
-                                            <span class="q">ㄹ</span> 단어 목록
-                                          </a>
-                                        </div>
-                                        <div class="answer-article">
-                                          <strong class="blind">답변</strong>
-                                          <div id="answer-cnt">
-                                            <p>로마</p>
-                                          </div>
-                                        </div>
-                                      </li>
-                                      <li class="qna-item">
-                                        <div class="question-article">
-                                          <a href="#!" class="question btn-fold">
-                                            <strong class="blind">질문:</strong>
-                                            <span class="q">ㅁ</span> 단어 목록
-                                          </a>
-                                        </div>
-                                        <div class="answer-article">
-                                          <strong class="blind">답변</strong>
-                                          <div id="answer-cnt">
-                                            <p>마법</p>
-                                          </div>
-                                        </div>
-                                      </li>
-                                      <li class="qna-item">
-                                        <div class="question-article">
-                                          <a href="#!" class="question btn-fold">
-                                            <strong class="blind">질문:</strong>
-                                            <span class="q">ㅂ</span> 단어 목록
-                                          </a>
-                                        </div>
-                                        <div class="answer-article">
-                                          <strong class="blind">답변</strong>
-                                          <div id="answer-cnt">
-                                            <p>바보</p>
-                                          </div>
-                                        </div>
-                                      </li>
-                                      <li class="qna-item">
-                                        <div class="question-article">
-                                          <a href="#!" class="question btn-fold">
-                                            <strong class="blind">질문:</strong>
-                                            <span class="q">ㅅ</span> 단어 목록
-                                          </a>
-                                        </div>
-                                        <div class="answer-article">
-                                          <strong class="blind">답변</strong>
-                                          <div id="answer-cnt">
-                                            <p>사랑</p>
-                                            <p>사자</p>
-                                          </div>
-                                        </div>
-                                      </li>
-                                      <li class="qna-item">
-                                        <div class="question-article">
-                                          <a href="#!" class="question btn-fold">
-                                            <strong class="blind">질문:</strong>
-                                            <span class="q">ㅇ</span> 단어 목록
-                                          </a>
-                                        </div>
-                                        <div class="answer-article">
-                                          <strong class="blind">답변</strong>
-                                          <div id="answer-cnt">
-                                            <p>우리</p>
-                                          </div>
-                                        </div>
-                                      </li>
-                                      <li class="qna-item">
-                                        <div class="question-article">
-                                          <a href="#!" class="question btn-fold">
-                                            <strong class="blind">질문:</strong>
-                                            <span class="q">ㅈ</span> 단어 목록
-                                          </a>
-                                        </div>
-                                        <div class="answer-article">
-                                          <strong class="blind">답변</strong>
-                                          <div id="answer-cnt">
-                                            <p>자전거</p>
-                                          </div>
-                                        </div>
-                                      </li>
-                                      <li class="qna-item">
-                                        <div class="question-article">
-                                          <a href="#!" class="question btn-fold">
-                                            <strong class="blind">질문:</strong>
-                                            <span class="q">ㅊ</span> 단어 목록
-                                          </a>
-                                        </div>
-                                        <div class="answer-article">
-                                          <strong class="blind">답변</strong>
-                                          <div id="answer-cnt">
-                                            <p>치타</p>
-                                          </div>
-                                        </div>
-                                      </li>
-                                      <li class="qna-item">
-                                        <div class="question-article">
-                                          <a href="#!" class="question btn-fold">
-                                            <strong class="blind">질문:</strong>
-                                            <span class="q">ㅌ</span> 단어 목록
-                                          </a>
-                                        </div>
-                                        <div class="answer-article">
-                                          <strong class="blind">답변</strong>
-                                          <div id="answer-cnt">
-                                            <p>타조</p>
-                                          </div>
-                                        </div>
-                                      </li>
-                                      <li class="qna-item">
-                                        <div class="question-article">
-                                          <a href="#!" class="question btn-fold">
-                                            <strong class="blind">질문:</strong>
-                                            <span class="q">ㅍ</span> 단어 목록
-                                          </a>
-                                        </div>
-                                        <div class="answer-article">
-                                          <strong class="blind">답변</strong>
-                                          <div id="answer-cnt">
-                                            <p>파</p>
-                                          </div>
-                                        </div>
-                                      </li>
-                                      <li class="qna-item">
-                                        <div class="question-article">
-                                          <a href="#!" class="question btn-fold">
-                                            <strong class="blind">질문:</strong>
-                                            <span class="q">ㅎ</span> 단어 목록
-                                          </a>
-                                        </div>
-                                        <div class="answer-article">
-                                          <strong class="blind">답변</strong>
-                                          <div id="answer-cnt">
-                                            <p>해</p>
-                                            <p>하지</p>
-                                          </div>
-                                        </div>
-                                      </li>
+    <c:forEach var="entry" items="${wordsByConsonant}">
+        <li class="qna-item">
+            <div class="question-article">
+                <a href="#!" class="question btn-fold">
+                    <strong class="blind">질문:</strong>
+                    <span class="q">${entry.key}</span> 단어 목록
+                </a>
+            </div>
+            <div class="answer-article">
+                <strong class="blind">답변</strong>
+                <div id="answer-cnt">
+                    <c:forEach var="word" items="${entry.value}">
+ 						<a href="goWordDetail?word_num=${word.word_num}"><p>${word.word_name}</p></a>
+                    </c:forEach>
+                </div>
+            </div>
+        </li>
+    </c:forEach>
                                     </ol>
                                   </div>                            
                             </div>
