@@ -33,7 +33,13 @@ public class MemberController {
 	@RequestMapping("/goLogin")
 	public String goLogin() {
 		
-		return "";
+		return "login";
+	}
+	
+	@RequestMapping("/goJoin")
+	public String goJoin() {
+		
+		return "join";
 	}
 	
 	
