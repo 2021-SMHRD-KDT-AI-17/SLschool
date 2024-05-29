@@ -113,7 +113,7 @@
                             <ul id="topmenu_line">
                                 <% if(loginMember == null) {%>
                                 <li><a href="goLogin"><i data-feather="log-in"></i>Login</a></li>
-                                <li><a href=""><i data-feather="user-plus"></i>Join us</a></li>
+                                <li><a href="goJoin"><i data-feather="user-plus"></i>Join us</a></li>
                                 <%} else{ %>
                                 <li><span><%=loginMember.getName() %>님 환영합니다.</span></li>
                                 <li><a href="goLogout"><i data-feather="user-plus"></i>Log-out</a></li>

@@ -210,7 +210,7 @@
                         </form>
                       </div>
                       <div class="login-bottom">
-                        <a href="location.href='goJoin'" class="forgot-password">아직 회원이 아니시라면</a>
+                        <a href="goJoin" class="forgot-password">아직 회원이 아니시라면</a>
                       </div>
                     </div>
                   </div>
