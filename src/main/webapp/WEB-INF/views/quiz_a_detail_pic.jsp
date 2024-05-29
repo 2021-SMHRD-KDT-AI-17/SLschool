@@ -15,18 +15,18 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="퀴즈-뜻 맞추기">
     <meta property="og:description" content=""><!-- 사이트 설명문구 -->
-    <meta property="og:image" content="img/common/logo.png">
+    <meta property="og:image" content="resources/img/common/logo.png">
     <meta property="og:url" content="">
 	<title>퀴즈-뜻 맞추기</title>
-    <script src="js/jquery-1.8.3.min.js"></script>
-    <script src="js/jquery-ui.js"></script>
-    <script src="js/topmenu_script.js"></script>
-	<link rel="stylesheet" href="css/sh_common.css"> 
-    <link rel="stylesheet" href="css/sh_sub.css">  
+    <script src="resources/js/jquery-1.8.3.min.js"></script>
+    <script src="resources/js/jquery-ui.js"></script>
+    <script src="resources/js/topmenu_script.js"></script>
+	<link rel="stylesheet" href="resources/css/sh_common.css"> 
+    <link rel="stylesheet" href="resources/css/sh_sub.css">  
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"> 
     <script src="https://kit.fontawesome.com/85915fb54c.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/aos.css">
-    <script src="js/aos.js"></script>
+    <link rel="stylesheet" href="resources/css/aos.css">
+    <script src="resources/js/aos.js"></script>
     <style>
         h1 {
   font-size: 1em;
@@ -146,8 +146,8 @@
                 <!-- topmenu_line_wrap [e] -->
 
                 <!-- 상단 메뉴 [s] -->
-                <div class="topmenu_main">
-                    <h1 id="top_logo"><a href="main.html"><img src="img/common/logo_2.png" alt="Sample" /></a></h1>
+				<div class="topmenu_main">
+                    <h1 id="top_logo"><a href="goMain"><img src="resources/img/common/logo_2.png" alt="Sample" /></a></h1>
                     <ul id="top_nav">
                         <li>
                             <a href="">사이트소개</a>
@@ -158,17 +158,17 @@
                             </ul>-->
                         </li>
                         <li>
-                            <a href="study.html">강의 듣기</a>
+                            <a href="goStudy">강의 듣기</a>
                             <ul>
-                                <li><a href="study_a.html">A난이도</a></li>
-                                <li><a href="">B난이도</a></li>
-                                <li><a href="">C난이도</a></li>
+                                <li><a href="goStudyA">A난이도</a></li>
+                                <li><a href="goStudyB">B난이도</a></li>
+                                <li><a href="goStudyC">C난이도</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="quiz.html">퀴즈</a>
+                            <a href="quiz">퀴즈</a>
                             <ul>
-                                <li><a href="quiz_a_detail.html">A버전</a></li>
+                                <li><a href="quizWord">A버전</a></li>
                                 <li><a href="">B버전</a></li>
                             </ul>
                         </li>
@@ -181,9 +181,9 @@
                             </ul> -->
                         </li>
                         <li>
-                            <a href="">마이페이지</a>
+                            <a href="goMyPage">마이페이지</a>
                             <ul>
-                                <li><a href="">수업 현황</a></li>
+                                <li><a href="goMyPage">수업 현황</a></li>
                                 <li><a href="">내 정보 수정</a></li>
                                 <li><a href="">문의하기</a></li>
                             </ul>
@@ -199,7 +199,7 @@
                                 <li><a href="goLogin"><i data-feather="log-in"></i>Login</a></li>
                                 <li><a href="goJoin"><i data-feather="user-plus"></i>Join us</a></li>
                                 <%} else{ %>
-                                <li><span><%=loginMember.getName() %>님 환영합니다.</span></li>
+                                <li><span><strong><%=loginMember.getName() %></strong>님 환영합니다.</span></li>
                                 <li><a href="goLogout"><i data-feather="user-plus"></i>Log-out</a></li>
                                 <%} %>
                             </ul>
@@ -213,7 +213,7 @@
 
             <!-- 반응형메뉴 [s] -->
             <div id="topmenuM">
-                <h1 id="m_logo"><a href="main.html"><img src="img/common/logo_2.png" alt="Sample" /></a></h1>
+                <h1 id="m_logo"><a href="goMain"><img src="img/common/logo_2.png" alt="Sample" /></a></h1>
                 <!-- 메뉴 버튼 [s] -->
                 <div id="m_navBtn"><span></span></div>
                 <!-- 메뉴 버튼 [e] -->
@@ -222,8 +222,8 @@
                 <div id="navWrap">
                     <div class="inner">
                         <ul class="user_tip">
-                            <li><a href="" class="small_tip">회원가입</a></li>
-                            <li><a href="" class="small_tip">로그인</a></li>
+                            <li><a href="login" class="small_tip">회원가입</a></li>
+                            <li><a href="goLogin" class="small_tip">로그인</a></li>
                         </ul>
                         <ul class="m_lnb">
                             <li>
@@ -237,15 +237,15 @@
                             <li>
                                 <button class="m_bmenu" type="button">강의 듣기</button>
                                 <ul class="m_smenu">
-                                    <li><a href="study_a.html">A난이도</a> </li>
-                                    <li><a href="">B난이도</a> </li>
-                                    <li><a href="">C난이도</a> </li>
+                                    <li><a href="goStudyA">A난이도</a> </li>
+                                    <li><a href="goStudyB">B난이도</a> </li>
+                                    <li><a href="goStudyC">C난이도</a> </li>
                                 </ul>
                             </li>
                             <li>
                                 <button class="m_bmenu" type="button">퀴즈</button>
                                 <ul class="m_smenu">
-                                    <li><a href="quiz_a_detail.html">A버전</a> </li>
+                                    <li><a href="quizWord">A버전</a> </li>
                                     <li><a href="">B버전</a> </li>
                                 </ul>
                             </li>
@@ -260,7 +260,7 @@
                              <li>
                                 <button class="m_bmenu" type="button">마이페이지</button>
                                 <ul class="m_smenu">
-                                    <li><a href="">강의 현황</a> </li>
+                                    <li><a href="goMyPage">강의 현황</a> </li>
                                     <li><a href="">내 정보 수정</a> </li>
                                     <li><a href="">문의하기</a> </li>
                                 </ul>
@@ -284,7 +284,7 @@
             <div id="sub_main_banner">
 				<div id="sh_content_tit">
 					<h3>강의 듣기</h3>
-					<p><a href="main.html"><i class="fa fa-home"></i><span class="sound_only">홈으로</span></a> 
+					<p><a href="goMain"><i class="fa fa-home"></i><span class="sound_only">홈으로</span></a> 
 					<i class="fa fa-angle-right"></i> 퀴즈 <i class="fa fa-angle-right"></i> 뜻 맞추기</p>
 				</div>
 			</div>
@@ -294,7 +294,7 @@
             <div id="sh_aside">
     	        <div id="sh_snb">
                     <ul>
-                        <li><a href="quiz_a_detail.html" style="color: #4D869C;">뜻 맞추기</a></li>
+                        <li><a href="quizWord" style="color: #4D869C;">뜻 맞추기</a></li>
                         <li><a href="">수어 하기</a></li>
                     </ul>            
 				</div>
