@@ -176,3 +176,7 @@ body{font-size:0.81em}
 #sh_ft .ft_info .inner .copy{float:none}
 }
 /* 반응형 [e] */
+
+a > dd {
+    color: #888;
+}

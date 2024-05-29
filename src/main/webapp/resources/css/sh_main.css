@@ -3,9 +3,9 @@
 /* =========================== MAIN */
 /* 메인슬라이드 */
 #main_banner_wrap{overflow:hidden;position:relative;width:100%;height:615px;padding:50px 0;border-top:1px solid #e1e1e1;font-family:'Pretendard'}
-#main_banner_wrap:before{position:absolute;width:75%;height:100%;left:480px;top:0;content:'';background:#f1f2f4}
+#main_banner_wrap:before{position:absolute;width:100%;height:100%;left:480px;top:0;content:'';background:#f1f2f4}
 .main_wrap{display:flex;max-width:1400px;height:490px;margin:0 auto}
-.slide_wrap{position:relative}
+.slide_wrap{position:relative;width:100%;height:100%;}
 .slide_wrap .main_slide{width:860px;height:100%;overflow:hidden;border-radius:10px}
 .slide_wrap .main_slide_box{position:relative;height:100%}
 .slide_wrap .main_slide_box>div{border-radius:10px;background-size:cover;background-position:center}
@@ -18,7 +18,7 @@
 .main_wrap .main_control .main_pager span{margin:0 5px}
 .main_wrap .main_control .main_pager .swiper-pagination-current{color:#111}
 /* 메인컨텐츠 */
-.main_cont{z-index:1;display:flex;flex-flow:column;justify-content:center;width:calc(100% - 860px);padding-left:50px}
+.main_cont{z-index:1;display:flex;flex-flow:column;justify-content:center;padding-left:50px}
 .main_cont .cont_tit{text-align:center;font-size:37px;line-height:1.2;font-family:'EstablishRetrosans'}
 .main_cont .cont_tit span{color:var(--primary-r)}
 .main_cont .cont_tit ul{display:flex;justify-content:center;margin-top:30px}
@@ -41,7 +41,7 @@
 #main_banner_wrap{padding:50px 15px}
 .slide_wrap{width:65%}
 .slide_wrap .main_slide{width:100%}
-.main_cont{width:35%;padding-left:30px}
+.main_cont{width:100%;padding-left:30px}
 .main_cont .cont_txt{padding:30px 15px 0}
 .main_cont .icon_links a{font-size:16px}
 .main_cont .icon_links a .icon{width:75px;height:75px}
