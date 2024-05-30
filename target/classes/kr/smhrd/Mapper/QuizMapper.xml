@@ -13,11 +13,14 @@
 	<select id="selectQuizURL" parameterType="int" resultType="String">
 		select video_url from quiz where quiz_num=#{quiz_num}
 	</select>
+	
+    <select id="selectRandomWord" resultType="kr.smhrd.entity.Word">
+        SELECT * FROM SSC_word ORDER BY RAND() LIMIT 1
+    </select>
 
-
-
-
-
+    <select id="selectRandomWordOptions" resultType="String">
+        SELECT word_name FROM SSC_word ORDER BY RAND() LIMIT 4
+    </select>
 
 
 </mapper>

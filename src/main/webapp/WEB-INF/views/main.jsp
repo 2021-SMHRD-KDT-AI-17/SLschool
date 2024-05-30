@@ -83,7 +83,7 @@
                             <a href="quiz">퀴즈</a>
                             <ul>
                                 <li><a href="">A버전</a></li>
-                                <li><a href="">B버전</a></li>
+                                <li><a href="quiz2">B버전</a></li>
                             </ul>
                         </li>
                         <li>

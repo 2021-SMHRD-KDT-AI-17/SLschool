@@ -1,7 +1,9 @@
 package kr.smhrd.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -9,10 +11,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.smhrd.Mapper.QuizMapper;
 import kr.smhrd.entity.Quiz;
+import kr.smhrd.entity.Word;
 
 @Controller
 public class QuizController {
@@ -96,6 +101,28 @@ public class QuizController {
 		return "study_detail";
 	}
 	
-	
-	
+
+    @RequestMapping("/quiz2")
+    public String getQuiz(Model model) {
+        Word randomWord = quizMapper.selectRandomWord();
+        String videoUrl = randomWord.getVideo_url();
+        String correctWord = randomWord.getWord_name();
+
+        List<String> options = quizMapper.selectRandomWordOptions();
+
+        if (!options.contains(correctWord)) {
+            options.remove(0);
+            options.add(correctWord);
+        }
+
+        model.addAttribute("question", "이 수화가 뜻하는 단어는 무엇일까요?");
+        model.addAttribute("videoUrl", videoUrl);
+        model.addAttribute("options", options);
+        model.addAttribute("correctAnswer", correctWord);
+
+        return "quiz_b_num";
+    }
+    
+
+
 }
