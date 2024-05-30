@@ -123,7 +123,7 @@ public class MemberController {
 		session.setAttribute("loginMember", member2);
 		model.addAttribute("member", member2);  // redirect:/goMyPage 오류 해결하면 사용 안해도 됨
 		
-		return "mypage";
+		return "redirect:/goMyPage";
 	}
 	
 	// 문의사항 페이지 이동
