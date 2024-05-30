@@ -3,6 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!doctype html>
 <html lang="ko">
 <head>
@@ -395,6 +396,9 @@ $(document).ready(function() {
     Chart.defaults.global.legend.display = false;
     Chart.defaults.global.elements.line.tension = 0.3;
     ctx = document.getElementById('myChart').getContext('2d');
+    
+    var scorelist = ${fn:escapeXml(scorelist)};
+    
     var chart = new Chart(ctx, {
         // The type of chart we want to create
         type: 'line',
@@ -405,7 +409,7 @@ $(document).ready(function() {
                 label: "점수",
                 backgroundColor: 'rgb(238, 247, 255)',
                 borderColor: 'rgb(122, 178, 178)',
-                data: [10, 20, 30, 40, 50]
+                data: scorelist
             
             }]
         },
