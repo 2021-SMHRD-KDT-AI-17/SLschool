@@ -19,9 +19,9 @@
 	</select>
 	
 	<select id="getWordsByConsonant" parameterType="string" resultType="kr.smhrd.entity.Word">
-	    SELECT * FROM SSC_word 
-	    WHERE consonant = #{consonant}
-	    ORDER BY word_name
+   	SELECT * FROM SSC_word 
+    WHERE consonant = #{consonant}
+    ORDER BY word_name
 	</select>
 
 
