@@ -19,10 +19,19 @@
 	</select>
 	
 	<select id="getWordsByConsonant" parameterType="string" resultType="kr.smhrd.entity.Word">
-   	SELECT * FROM SSC_word 
-    WHERE consonant = #{consonant}
-    ORDER BY word_name
+	    SELECT * FROM SSC_word 
+	    WHERE consonant = #{consonant}
+	    ORDER BY word_name
 	</select>
+	
+	<insert id="insertRecord" parameterType="kr.smhrd.entity.Record">
+		insert into SSC_record(user_id, word_num) values(#{user_id}, #{word_num})
+	</insert>
+	
+	<select id="selectRecordWord" parameterType="string" resultType="kr.smhrd.entity.Word">
+		SELECT w.*FROM (SELECT word_num FROM SSC_record WHERE user_id = #{user_id} GROUP BY word_num ORDER BY MAX(study_time) DESC LIMIT 3) AS recent_records JOIN SSC_word AS w ON w.word_num = recent_records.word_num;
+	</select>
+
 
 
 
