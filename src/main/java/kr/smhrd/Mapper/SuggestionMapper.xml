@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.smhrd.Mapper.SuggestionMapper">
+
+
+	<insert id="insertSuggestion" parameterType="kr.smhrd.entity.Suggestion">
+		insert into SSC_suggestion(sug_writer, sug_title, sug_content) values(#{sug_writer}, #{sug_title}, #{sug_content})
+	</insert>
+	
+	<select id="selectMySuggestion" parameterType="String" resultType="kr.smhrd.entity.Suggestion">
+		select * from SSC_suggestion where sug_writer = #{sug_writer}
+	</select>
+
+
+</mapper>

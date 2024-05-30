@@ -1,6 +1,7 @@
 <%@page import="kr.smhrd.entity.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <html lang="ko">
 <head>
@@ -240,18 +241,15 @@
                                                         </div>
                                                         <div class="detail clearfix">
                                                             <ul class="list-group list-group-flush">
-                                                                <a href="" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                                                                    첫 문의입니다
+                                                            
+                                                            
+                                                            <c:forEach items="${suggestionList }" var="SL" varStatus="s">
+                                                            	<a href="" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                                                    ${SL.sug_title }
                                                                     <span class="badge badge-light badge-pill">N</span>
                                                                 </a>
-                                                                <a href="" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                                                                    두번째 문의입니다
-                                                                    <span class="badge badge-light badge-pill">N</span>
-                                                                </a>
-                                                                <a href="" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                                                                    세번째 문의입니다
-                                                                    <span class="badge badge-light badge-pill">N</span>
-                                                                </a>
+                                                            </c:forEach>
+                                                            
                                                             </ul>
                                                         </div><!-- Détail-->
                                                     </div><!-- User profile box-->
