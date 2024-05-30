@@ -6,7 +6,10 @@
 	<insert id="insertSuggestion" parameterType="kr.smhrd.entity.Suggestion">
 		insert into SSC_suggestion(sug_writer, sug_title, sug_content) values(#{sug_writer}, #{sug_title}, #{sug_content})
 	</insert>
-
+	
+	<select id="selectMySuggestion" parameterType="String" resultType="kr.smhrd.entity.Suggestion">
+		select * from SSC_suggestion where sug_writer = #{sug_writer}
+	</select>
 
 
 </mapper>

@@ -1,5 +1,7 @@
 package kr.smhrd.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -10,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.smhrd.Mapper.MemberMapper;
+import kr.smhrd.Mapper.SuggestionMapper;
 import kr.smhrd.entity.Member;
+import kr.smhrd.entity.Suggestion;
 
 
 
@@ -20,6 +24,9 @@ public class MemberController {
 	
 	@Autowired
 	private MemberMapper memberMapper;
+	
+	@Autowired
+	private SuggestionMapper suggestionMapper;
 	
 	 @RequestMapping("/")
 	   public String Main() {
@@ -34,7 +41,13 @@ public class MemberController {
 	@RequestMapping("/goMyPage")
 	public String goMyPage(HttpSession session, Model model) {
 		Member member = (Member) session.getAttribute("loginMember");
+		String sug_writer = member.getId();
+		
+		List<Suggestion> suggestionList = suggestionMapper.selectMySuggestion(sug_writer);
+		
+		model.addAttribute("suggestionList", suggestionList);
 		model.addAttribute("member", member);
+		
 		
 		return "mypage";
 	}
