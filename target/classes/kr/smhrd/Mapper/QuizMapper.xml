@@ -18,11 +18,11 @@
         SELECT * FROM SSC_word ORDER BY RAND() LIMIT 1
     </select>
 
-<<<<<<< HEAD
+
     <select id="selectRandomWordOptions" resultType="String">
         SELECT word_name FROM SSC_word ORDER BY RAND() LIMIT 4
     </select>
-=======
+
 	<insert id="insertScore" parameterType="kr.smhrd.entity.QuizRank">
 		insert into SSC_rank(user_id, quiz_score) values(#{user_id},#{quiz_score})
 	</insert>
@@ -32,7 +32,7 @@
 	</select>
 
 
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-AI-17/HUMAN.git
+
 
 
 </mapper>
