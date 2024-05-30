@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="kr.smhrd.entity.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -272,7 +273,7 @@
                                                                     <div class="item">
                                                                         <div class="icon"><span class="g-alerte fa fa-check-circle"></span></div>
                                                                         <div class="info">
-                                                                            <h6 class="number">60점</h6>
+                                                                            <h6 class="number">${quizRankList[0].quiz_score}점</h6>
                                                                             <p class="type">최근 퀴즈 점수</p>
                                                                         </div>
                                                                     </div>
@@ -373,6 +374,7 @@
     <!-- sh_ft [e] -->
 </div>
 <!-- sh_wrapper [e] -->
+
 <script>
     $(document).ready(function () {
         AOS.init();
@@ -403,7 +405,8 @@ $(document).ready(function() {
                 label: "점수",
                 backgroundColor: 'rgb(238, 247, 255)',
                 borderColor: 'rgb(122, 178, 178)',
-                data: [20,60,100,80,0]
+                data: [10, 20, 30, 40, 50]
+            
             }]
         },
         options: {

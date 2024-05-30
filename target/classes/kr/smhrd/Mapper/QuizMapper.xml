@@ -14,8 +14,13 @@
 		select video_url from quiz where quiz_num=#{quiz_num}
 	</select>
 
-
-
+	<insert id="insertScore" parameterType="kr.smhrd.entity.QuizRank">
+		insert into SSC_rank(user_id, quiz_score) values(#{user_id},#{quiz_score})
+	</insert>
+	
+	<select id="selectQuizScore" parameterType="String" resultType="kr.smhrd.entity.QuizRank">
+		select * from SSC_rank where user_id = #{user_id} order by quiz_time desc limit 5;
+	</select>
 
 
 

@@ -1,5 +1,6 @@
 package kr.smhrd.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,9 +13,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.smhrd.Mapper.MemberMapper;
+import kr.smhrd.Mapper.QuizMapper;
 import kr.smhrd.Mapper.StudyMapper;
 import kr.smhrd.Mapper.SuggestionMapper;
 import kr.smhrd.entity.Member;
+import kr.smhrd.entity.QuizRank;
 import kr.smhrd.entity.Suggestion;
 import kr.smhrd.entity.Word;
 
@@ -33,6 +36,9 @@ public class MemberController {
 	@Autowired
 	private StudyMapper studyMapper;
 	
+	@Autowired
+	private QuizMapper quizMapper;
+	
 	 @RequestMapping("/")
 	   public String Main() {
 	      return "main";
@@ -44,25 +50,33 @@ public class MemberController {
 	}
 	
 	@RequestMapping("/goMyPage")
-	public String goMyPage(HttpSession session, Model model) {
+	public String goMyPage(HttpSession session, Model model, HttpServletRequest request) {
 		Member member = (Member) session.getAttribute("loginMember");
 		String sug_writer = member.getId();
 		
-		
+		// DB를 통해 정보를 가져오는 구문
 		List<Word> wordList = studyMapper.selectRecordWord(sug_writer);
-		
-		
-		
 		List<Suggestion> suggestionList = suggestionMapper.selectMySuggestion(sug_writer);
+		List<QuizRank> quizRankList = quizMapper.selectQuizScore(sug_writer);
+		
+		ArrayList<Integer> scorelist = new ArrayList<Integer>();
+		
+		for(int i=0; i<quizRankList.size();i++) {
+			scorelist.add(quizRankList.get(i).getQuiz_score());
+		}
+		
 		
 		// size() 함수 : 리스트(배열)의 갯수를 세는 함수 
 		int s_size = suggestionList.size();
 		
+		
+		// 가져온 데이터를 mypage에 보내주는 기능
 		model.addAttribute("s_size", s_size);
 		model.addAttribute("suggestionList", suggestionList);
 		model.addAttribute("member", member);
 		model.addAttribute("wordList", wordList);
-		
+		model.addAttribute("quizRankList", quizRankList);
+		request.setAttribute("scorelist", scorelist);
 		
 		return "mypage";
 	}
