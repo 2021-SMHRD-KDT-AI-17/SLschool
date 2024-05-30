@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.smhrd.Mapper.StudyMapper;
+import kr.smhrd.entity.Member;
+import kr.smhrd.entity.Record;
 import kr.smhrd.entity.Word;
 
 @Controller
@@ -35,14 +39,22 @@ public class StudyController {
 	}
 	
 	@RequestMapping("/goWordDetail")
-	public String goWordDetail(@RequestParam("word_num") int word_num, Model model) {
+	public String goWordDetail(@RequestParam("word_num") int word_num, Model model, HttpSession session) {
+		
+		
+		Member member = (Member) session.getAttribute("loginMember");
+		
+		if(member != null) {
+			String user_id = member.getId();
+			Record record = new Record(user_id, word_num);
+			int cnt = studyMapper.insertRecord(record);
+		}
 		
 		Word word = studyMapper.selectWord(word_num);
 		
 		model.addAttribute("word", word);
 		
 		String word_url = word.getVideo_url(); // 임시조치
-		System.out.println(word_url);
 		model.addAttribute("quizURL", word_url); // 임시조치
 		
 		return "study_detail";

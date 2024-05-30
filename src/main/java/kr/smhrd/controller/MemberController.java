@@ -12,9 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.smhrd.Mapper.MemberMapper;
+import kr.smhrd.Mapper.StudyMapper;
 import kr.smhrd.Mapper.SuggestionMapper;
 import kr.smhrd.entity.Member;
 import kr.smhrd.entity.Suggestion;
+import kr.smhrd.entity.Word;
 
 
 
@@ -27,6 +29,9 @@ public class MemberController {
 	
 	@Autowired
 	private SuggestionMapper suggestionMapper;
+	
+	@Autowired
+	private StudyMapper studyMapper;
 	
 	 @RequestMapping("/")
 	   public String Main() {
@@ -43,10 +48,15 @@ public class MemberController {
 		Member member = (Member) session.getAttribute("loginMember");
 		String sug_writer = member.getId();
 		
+		
+		List<Word> wordList = studyMapper.selectRecordWord(sug_writer);
+		
 		List<Suggestion> suggestionList = suggestionMapper.selectMySuggestion(sug_writer);
+		
 		
 		model.addAttribute("suggestionList", suggestionList);
 		model.addAttribute("member", member);
+		model.addAttribute("wordList", wordList);
 		
 		
 		return "mypage";

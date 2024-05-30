@@ -263,7 +263,7 @@
                                                                     <div class="item">
                                                                         <div class="icon"><span class="g-atteint fa fa-check-circle"></span></div>
                                                                         <div class="info">
-                                                                            <h6 class="number">가위</h6>
+                                                                            <h6 class="number">${wordList[0].word_name }</h6>
                                                                             <p class="type">최근 강의 영상</p>
                                                                         </div>
                                                                     </div>
@@ -299,24 +299,14 @@
                                                                         <th><strong>보러가기</strong></th>
                                                                     </thead>
                                                                     <tbody>
-                                                                        <tr>
-                                                                            <td>가위</td>
-                                                                            <td>
+                                                                        <c:forEach items="${wordList }" var="WL" end="2" varStatus="s">
+                                                                        	<tr>
+                                                                        		<td>${WL.word_name }</td>
+                                                                            	<td>
                                                                                 <a href=""><span class="g-action fa fa-eye"> 클릭</span></a>
                                                                             </td>
                                                                         </tr>
-                                                                        <tr>
-                                                                            <td>바위</td>
-                                                                            <td>
-                                                                                <a href=""><span class="g-action fa fa-eye"> 클릭</span></a>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>보</td>
-                                                                            <td>
-                                                                                <a href=""><span class="g-action fa fa-eye"> 클릭</span></a>
-                                                                            </td>
-                                                                        </tr>
+                                                                        </c:forEach>
                                                                     </tbody>
                                                                 </table>
                                                             </div>

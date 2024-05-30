@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
+import kr.smhrd.entity.Record;
 import kr.smhrd.entity.Word;
 
 public interface StudyMapper {
@@ -17,5 +18,12 @@ public interface StudyMapper {
 	public Word selectWord(int word_num);
 	
 	public List<Word> getWordsByConsonant(@Param("consonant") String consonant);
+
+	public int insertRecord(Record record);
+
+	public List<Word> selectRecordWord(String sug_writer);
+
+
+
 
 }
