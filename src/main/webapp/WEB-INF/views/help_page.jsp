@@ -10,7 +10,7 @@
 
 	<form action="">
 		<h2>작성자</h2>
-		<input type="text" value="${Member.id }" readonly name="id"><br>
+		<input type="text" value="${member.id }" readonly name="id"><br>
 		<h2>제목</h2>
 		<input type="text" name="title"><br>
 		<h2>내용</h2>

@@ -100,7 +100,7 @@ public class MemberController {
 	}
 	
 	// 회원정보 수정하러 가기
-	@RequestMapping("goUpdateMember")
+	@RequestMapping("/goUpdateMember")
 	public String goUpdateMember(HttpSession session, Model model) {
 		Member member = (Member) session.getAttribute("loginMember");
 		model.addAttribute("member", member);
@@ -109,7 +109,7 @@ public class MemberController {
 	}
 	
 	// 회원정보 수정기능
-	@RequestMapping("updateMember")
+	@RequestMapping("/updateMember")
 	public String updateMember(HttpSession session, HttpServletRequest request, Model model) {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
@@ -126,6 +126,14 @@ public class MemberController {
 		return "mypage";
 	}
 	
+	// 문의사항 페이지 이동
+	@RequestMapping("/goHelp")
+	public String goHelp(HttpSession session, Model model) {
+		
+		Member member = (Member) session.getAttribute("loginMember");
+		model.addAttribute("member", member);
+		return "help_page";
+	}
 	
 	
 }
