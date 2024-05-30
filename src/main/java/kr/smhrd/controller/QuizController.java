@@ -123,6 +123,27 @@ public class QuizController {
         return "quiz_b_num";
     }
     
+    @RequestMapping(value = "/getNewQuiz", method = RequestMethod.GET, produces = "application/json")
+    @ResponseBody
+    public Map<String, Object> getNewQuiz() {
+        Word randomWord = quizMapper.selectRandomWord();
+        String videoUrl = randomWord.getVideo_url();
+        String correctWord = randomWord.getWord_name();
+
+        List<String> options = quizMapper.selectRandomWordOptions();
+        if (!options.contains(correctWord)) {
+            options.remove(0);
+            options.add(correctWord);
+        }
+
+        Map<String, Object> quizData = new HashMap<>();
+        quizData.put("question", "이 수화가 뜻하는 단어는 무엇일까요?");
+        quizData.put("videoUrl", videoUrl);
+        quizData.put("options", options);
+        quizData.put("correctAnswer", correctWord);
+
+        return quizData;
+    }
 
 
 }

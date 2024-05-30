@@ -66,7 +66,7 @@
 
 
 .quiz_box {
-    margin-top: 350px; /* 퀴즈 박스가 화면에 바로 나타나도록 상단 마진 조정 */
+margin-top:00px;
     background: #fff;
     border-radius: 5px;
     transform: translate(-50%, 0); /* translate 속성 변경 */
@@ -564,7 +564,7 @@ footer button.show{
 					
 					        <!-- Footer of Quiz Box -->
 					        <footer>
-					            <a href="quiz2"><button class="next_btn">새로운 문제</button></a>
+ 								<button class="next_btn" onclick="loadNewQuestion()">새로운 문제</button>
 					        </footer>
 					    </div>
 					
@@ -624,121 +624,89 @@ footer button.show{
 </div>
 <!-- sh_wrapper [e] -->
 <script>
+let correctAnswer = "${correctAnswer}"; // 초기 정답 값
 
-$(document).ready(function() {
-    AOS.init();
-});
+function loadNewQuestion() {
+    $.ajax({
+        url: 'getNewQuiz',
+        method: 'GET',
+        success: function(response) {
+            // response로부터 새로운 문제 데이터를 받아서 페이지를 업데이트합니다.
+            console.log('New question data received:', response); // 데이터를 콘솔에 출력
+            updateQuizBox(response);
+        },
+        error: function(error) {
+            console.error('Error fetching new quiz:', error);
+        }
+    });
+}
 
-var current_fs, next_fs, previous_fs; //fieldsets
-var left, opacity, scale; //fieldset properties which we will animate
-var animating; //flag to prevent quick multi-click glitches
+function updateQuizBox(data) {
+    // 문제 텍스트 업데이트
+    $('.que_text span').text(data.question);
+    console.log('Question updated:', data.question); // 문제 텍스트가 업데이트되었는지 확인
+    
+    // 비디오 URL 업데이트
+    $('.video_container video source').attr('src', data.videoUrl);
+    $('.video_container video')[0].load();  // 비디오 재로드
+    console.log('Video URL updated:', data.videoUrl); // 비디오 URL이 업데이트되었는지 확인
+    
+    // 선택지 업데이트
+    $('.option_list').empty(); // 기존 옵션 제거
+    data.options.forEach(option => {
+        console.log('Option:', option); // 각 옵션을 콘솔에 출력
+        let optionElement = $('<div class="option"><span></span></div>');
+        optionElement.find('span').text(option);
+        $('.option_list').append(optionElement);
+    });
 
-$(".next").click(function(){
-	if(animating) return false;
-	animating = true;
-	
-	current_fs = $(this).parent();
-	next_fs = $(this).parent().next();
-	
-	//activate next step on progressbar using the index of next_fs
-	$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
-	
-	//show the next fieldset
-	next_fs.show(); 
-	//hide the current fieldset with style
-	current_fs.animate({opacity: 0}, {
-		step: function(now, mx) {
-			//as the opacity of current_fs reduces to 0 - stored in "now"
-			//1. scale current_fs down to 80%
-			scale = 1 - (1 - now) * 0.2;
-			//2. bring next_fs from the right(50%)
-			left = (now * 50)+"%";
-			//3. increase opacity of next_fs to 1 as it moves in
-			opacity = 1 - now;
-			current_fs.css({
-        'transform': 'scale('+scale+')',
-        'position': 'absolute'
-      });
-			next_fs.css({'left': left, 'opacity': opacity});
-		}, 
-		duration: 800, 
-		complete: function(){
-			current_fs.hide();
-			animating = false;
-		}, 
-		//this comes from the custom easing plugin
-		easing: 'easeInOutBack'
-	});
-});
+    
+    // 정답 업데이트
+    correctAnswer = data.correctAnswer.trim(); // 트림 추가
+    console.log('Correct answer updated:', correctAnswer); // 정답이 업데이트되었는지 확인
 
-$(".previous").click(function(){
-	if(animating) return false;
-	animating = true;
-	
-	current_fs = $(this).parent();
-	previous_fs = $(this).parent().prev();
-	
-	//de-activate current step on progressbar
-	$("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
-	
-	//show the previous fieldset
-	previous_fs.show(); 
-	//hide the current fieldset with style
-	current_fs.animate({opacity: 0}, {
-		step: function(now, mx) {
-			//as the opacity of current_fs reduces to 0 - stored in "now"
-			//1. scale previous_fs from 80% to 100%
-			scale = 0.8 + (1 - now) * 0.2;
-			//2. take current_fs to the right(50%) - from 0%
-			left = ((1-now) * 50)+"%";
-			//3. increase opacity of previous_fs to 1 as it moves in
-			opacity = 1 - now;
-			current_fs.css({'left': left});
-			previous_fs.css({'transform': 'scale('+scale+')', 'opacity': opacity});
-		}, 
-		duration: 800, 
-		complete: function(){
-			current_fs.hide();
-			animating = false;
-		}, 
-		//this comes from the custom easing plugin
-		easing: 'easeInOutBack'
-	});
-});
-const correctAnswer = "${correctAnswer}";
+    // 새로운 문제로 인해 기존 스타일을 초기화합니다.
+    $('.option').removeClass('correct incorrect disabled');
+    $(".next_btn").removeClass("show");
 
-document.querySelectorAll('.option').forEach(option => {
-    option.onclick = function() {
-        const userAns = this.textContent;
-        const allOptions = document.querySelector('.option_list').children;
+    // 선택지 클릭 이벤트 다시 바인딩
+    bindOptionClickEvents();
+}
 
-        if (userAns == correctAnswer) {
-            this.classList.add("correct");
-            this.insertAdjacentHTML("beforeend", '<div class="icon tick"><i class="fas fa-check"></i></div>');
-        } else {
-            this.classList.add("incorrect");
-            this.insertAdjacentHTML("beforeend", '<div class="icon cross"><i class="fas fa-times"></i></div>');
+function bindOptionClickEvents() {
+    document.querySelectorAll('.option').forEach(option => {
+        option.onclick = function() {
+            const userAns = this.textContent.trim();
+            const allOptions = document.querySelector('.option_list').children;
 
-            for (let i = 0; i < allOptions.length; i++) {
-                if (allOptions[i].textContent == correctAnswer) {
-                    allOptions[i].classList.add("correct");
-                    allOptions[i].insertAdjacentHTML("beforeend", '<div class="icon tick"><i class="fas fa-check"></i></div>');
+            if (userAns === correctAnswer) {
+                this.classList.add("correct");
+                this.insertAdjacentHTML("beforeend", '<div class="icon tick"><i class="fas fa-check"></i></div>');
+            } else {
+                this.classList.add("incorrect");
+                this.insertAdjacentHTML("beforeend", '<div class="icon cross"><i class="fas fa-times"></i></div>');
+
+                for (let i = 0; i < allOptions.length; i++) {
+                    if (allOptions[i].textContent.trim() === correctAnswer) {
+                        allOptions[i].classList.add("correct");
+                        allOptions[i].insertAdjacentHTML("beforeend", '<div class="icon tick"><i class="fas fa-check"></i></div>');
+                    }
                 }
             }
+
+            for (let i = 0; i < allOptions.length; i++) {
+                allOptions[i].classList.add("disabled");
+            }
+            document.querySelector(".next_btn").classList.add("show");
         }
+    });
+}
 
-        for (let i = 0; i < allOptions.length; i++) {
-            allOptions[i].classList.add("disabled");
-        }
-        document.querySelector(".next_btn").classList.add("show");
-    }
+// 문서가 준비되면 처음으로 이벤트 바인딩을 수행합니다.
+$(document).ready(function() {
+    AOS.init();
+    bindOptionClickEvents();
 });
-
-document.addEventListener("DOMContentLoaded", function() {
-    document.querySelector(".quiz_box").classList.add("activeQuiz");
-});
-
-
 </script> 
 </body>
 </html>
