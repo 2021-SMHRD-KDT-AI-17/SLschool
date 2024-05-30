@@ -216,9 +216,7 @@
                             <div class="swiper main_slide">
                                 <div class="main_slide_box swiper-wrapper">
                                     <div class="swiper-slide slide1">
-                                        <video autoplay muted loop width="100%" height="100%">
-                                            <source src="../img/main/abc.mp4" type="video/mp4">
-                                        </video>
+                                        <video id="webcam" autoplay playsinline width="700" height="466"></video>
                                     </div>
                                     <div class="swiper-slide slide2">
                                         <video autoplay muted loop width="100%" height="100%">
@@ -453,7 +451,20 @@
     <!-- sh_ft [e] -->
 </div>
 <!-- sh_wrapper [e] -->
+<script>
 
+async function startWebcam() {
+    const videoElement = document.getElementById('webcam');
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        videoElement.srcObject = stream;
+    } catch (error) {
+        console.error('Error accessing the webcam: ', error);
+    }
+}
+
+window.addEventListener('load', startWebcam);
+</script>
 </body>
 </html>
 

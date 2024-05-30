@@ -39,11 +39,6 @@
             letter-spacing: 0px;
             line-height: 110px;
     }
-    .video-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
     .s_tit {
 
     flex-direction: column; /* 변경된 부분 */
@@ -55,25 +50,47 @@
         align-items: center;
     }
     
-    .l_cont, .r_cont {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 20px;
-    }
-    
-    .l_cont video, .r_cont video {
-        width: 450px;
-        max-width: 100%;
-    }
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    .l_cont {
-        margin-right: 10px; /* 비디오 사이의 간격을 좁게 설정 */
-    }
+.video-container video {
+    width: 450px; /* 원하는 크기로 설정 */
+    height: 300px; /* 원하는 높이로 설정 */
+    object-fit: cover; /* 비율을 무시하고 자르기 */
+    max-width: 100%;
+}
 
-    .r_cont {
-        margin-left: 10px; /* 비디오 사이의 간격을 좁게 설정 */
-    }
+.l_cont, .r_cont {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* 위쪽 정렬로 변경 */
+    margin: 20px;
+}
+
+.l_cont {
+    margin-right: 10px; /* 비디오 사이의 간격을 좁게 설정 */
+}
+
+.r_cont {
+    margin-left: 10px; /* 비디오 사이의 간격을 좁게 설정 */
+}
+.l_cont, .r_cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.l_cont {
+    margin-right: 10px; /* 비디오 사이의 간격을 좁게 설정 */
+}
+
+.r_cont {
+    margin-left: 10px; /* 비디오 사이의 간격을 좁게 설정 */
+}
     </style>
 </head>
 <body>
@@ -308,13 +325,9 @@
                                             </video>
                                         </span>
                                     </div>
-                                    <div class="r_cont">
-                                        <span>
-                                            <video controls class="responsive-video">
-                                                <source src="http://sldict.korean.go.kr/multimedia/multimedia_files/convert/20200901/739060/MOV000251190_700X466.mp4" type="video/mp4">
-                                            </video>
-                                        </span>
-                                    </div>
+								    <div class="r_cont">
+								        <video id="webcam" autoplay playsinline></video>
+								    </div>
                                 </div>
                         </div>
                     </div>
@@ -441,7 +454,17 @@ slidImg.addEventListener("mouseup", stopSwip);
 $(document).ready(function() {
     AOS.init();
 });
+async function startWebcam() {
+    const videoElement = document.getElementById('webcam');
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        videoElement.srcObject = stream;
+    } catch (error) {
+        console.error('Error accessing the webcam: ', error);
+    }
+}
 
+window.addEventListener('load', startWebcam);
 </script> 
 </body>
 </html>
