@@ -23,15 +23,6 @@
 	    WHERE consonant = #{consonant}
 	    ORDER BY word_name
 	</select>
-	
-	<insert id="insertRecord" parameterType="kr.smhrd.entity.Record">
-		insert into SSC_record(user_id, word_num) values(#{user_id}, #{word_num})
-	</insert>
-	
-	<select id="selectRecordWord" parameterType="string" resultType="kr.smhrd.entity.Word">
-		select * from SSC_word join SSC_record where SSC_word.word_num = SSC_record.word_num and SSC_record.user_id=#{sug_writer} order by SSC_record.study_time desc;
-	</select>
-
 
 
 
