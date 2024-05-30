@@ -350,6 +350,7 @@
             </div>
             <div class="back">
             <h2>산</h2>
+            <input type="radio" name="answer" value="산">
             </div>
         </div>
         <div class="flip">
@@ -358,11 +359,13 @@
             </div>
             <div class="back">
             <h2>바다</h2>
+            <input type="radio" name="answer" value="바다">
             </div>
         </div>
         <div class="flip">
             <div class="front" style="background-image: url(https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb)">
             <h1 class="text-shadow">나무</hi>
+            <input type="radio" name="answer" value="나무">
             </div>
             <div class="back">
             <h2>나무</h2>
@@ -374,8 +377,11 @@
             </div>
             <div class="back">
             <h2>고양이</h2>
+            <input type="radio" name="answer" value="고양이">
             </div>
         </div>
+        <Br>
+        <input type="button" name="next" class="next action-button" value="다음문제" />
     </fieldset>
     <fieldset>
         <h2 class="fs-title">2번 문제</h2>
