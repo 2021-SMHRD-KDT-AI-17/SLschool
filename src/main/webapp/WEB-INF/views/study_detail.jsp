@@ -80,7 +80,7 @@
 .l_cont, .r_cont {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* 위쪽 정렬로 변경 */
     margin: 20px;
 }
 
