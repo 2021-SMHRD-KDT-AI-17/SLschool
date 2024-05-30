@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,8 +17,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.smhrd.Mapper.QuizMapper;
+import kr.smhrd.entity.Member;
 import kr.smhrd.entity.Quiz;
 import kr.smhrd.entity.Word;
+import kr.smhrd.entity.QuizRank;
+
 
 @Controller
 public class QuizController {
@@ -58,7 +62,7 @@ public class QuizController {
 	
 	// 퀴즈 정답 제출 및 점수 확인
 	@RequestMapping("/goQuizScore")
-	public String goQuizScore(HttpServletRequest request, Model model) {
+	public String goQuizScore(HttpServletRequest request, Model model, HttpSession session) {
 		
 		String[] answer = request.getParameterValues("answer");
 		String[] quiz_numL = request.getParameterValues("quiz_num");
@@ -82,7 +86,15 @@ public class QuizController {
 		}
 		
 		int wrong_size = wrong_num_list.size();
-		System.out.println(wrong_question_list.size()+"개");
+		
+		Member member = (Member) session.getAttribute("loginMember");
+		if(member != null ) {
+			
+			String user_id = member.getId();
+			QuizRank quizRank = new QuizRank(user_id, score);
+			
+			int cnt = quizMapper.insertScore(quizRank);
+		}
 		
 		model.addAttribute("score", score);
 		model.addAttribute("wrong_num_list", wrong_num_list);
@@ -101,6 +113,7 @@ public class QuizController {
 		return "study_detail";
 	}
 	
+
 
     @RequestMapping("/quiz2")
     public String getQuiz(Model model) {
@@ -144,6 +157,5 @@ public class QuizController {
 
         return quizData;
     }
-
 
 }

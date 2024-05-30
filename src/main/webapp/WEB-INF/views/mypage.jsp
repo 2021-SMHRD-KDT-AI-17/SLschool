@@ -1,7 +1,9 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="kr.smhrd.entity.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!doctype html>
 <html lang="ko">
 <head>
@@ -242,7 +244,7 @@
                                                         <div class="detail clearfix">
                                                             <ul class="list-group list-group-flush">
                                                             
-                                                            
+                                                            <!-- 문의 현황 -->
                                                             <c:forEach items="${suggestionList }" var="SL" varStatus="s">
                                                             	<a href="" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                                                                     ${SL.sug_title }
@@ -272,7 +274,7 @@
                                                                     <div class="item">
                                                                         <div class="icon"><span class="g-alerte fa fa-check-circle"></span></div>
                                                                         <div class="info">
-                                                                            <h6 class="number">60점</h6>
+                                                                            <h6 class="number">${quizRankList[0].quiz_score}점</h6>
                                                                             <p class="type">최근 퀴즈 점수</p>
                                                                         </div>
                                                                     </div>
@@ -281,7 +283,7 @@
                                                                     <div class="item">
                                                                         <div class="icon"><span class="g-non-atteint fa fa-check-circle"></span></div>
                                                                         <div class="info">
-                                                                            <h6 class="number">3개</h6>
+                                                                            <h6 class="number">${s_size }개</h6>
                                                                             <p class="type">내 문의 현황</p>
                                                                         </div>
                                                                     </div>
@@ -373,6 +375,7 @@
     <!-- sh_ft [e] -->
 </div>
 <!-- sh_wrapper [e] -->
+
 <script>
     $(document).ready(function () {
         AOS.init();
@@ -393,6 +396,9 @@ $(document).ready(function() {
     Chart.defaults.global.legend.display = false;
     Chart.defaults.global.elements.line.tension = 0.3;
     ctx = document.getElementById('myChart').getContext('2d');
+    
+    var scorelist = ${fn:escapeXml(scorelist)};
+    
     var chart = new Chart(ctx, {
         // The type of chart we want to create
         type: 'line',
@@ -403,7 +409,8 @@ $(document).ready(function() {
                 label: "점수",
                 backgroundColor: 'rgb(238, 247, 255)',
                 borderColor: 'rgb(122, 178, 178)',
-                data: [20,60,100,80,0]
+                data: scorelist
+            
             }]
         },
         options: {
