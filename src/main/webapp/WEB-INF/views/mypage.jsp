@@ -242,7 +242,7 @@
                                                         <div class="detail clearfix">
                                                             <ul class="list-group list-group-flush">
                                                             
-                                                            
+                                                            <!-- 문의 현황 -->
                                                             <c:forEach items="${suggestionList }" var="SL" varStatus="s">
                                                             	<a href="" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                                                                     ${SL.sug_title }
@@ -281,7 +281,7 @@
                                                                     <div class="item">
                                                                         <div class="icon"><span class="g-non-atteint fa fa-check-circle"></span></div>
                                                                         <div class="info">
-                                                                            <h6 class="number">3개</h6>
+                                                                            <h6 class="number">${s_size }개</h6>
                                                                             <p class="type">내 문의 현황</p>
                                                                         </div>
                                                                     </div>

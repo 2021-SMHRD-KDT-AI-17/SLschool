@@ -51,9 +51,14 @@ public class MemberController {
 		
 		List<Word> wordList = studyMapper.selectRecordWord(sug_writer);
 		
+		
+		
 		List<Suggestion> suggestionList = suggestionMapper.selectMySuggestion(sug_writer);
 		
+		// size() 함수 : 리스트(배열)의 갯수를 세는 함수 
+		int s_size = suggestionList.size();
 		
+		model.addAttribute("s_size", s_size);
 		model.addAttribute("suggestionList", suggestionList);
 		model.addAttribute("member", member);
 		model.addAttribute("wordList", wordList);
