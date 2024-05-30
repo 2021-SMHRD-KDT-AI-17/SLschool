@@ -305,7 +305,7 @@
                                                                         	<tr>
                                                                         		<td>${WL.word_name }</td>
                                                                             	<td>
-                                                                                <a href=""><span class="g-action fa fa-eye"> 클릭</span></a>
+                                                                                <a href="goWordDetail?word_num=${WL.word_num }"><span class="g-action fa fa-eye"> 클릭</span></a>
                                                                             </td>
                                                                         </tr>
                                                                         </c:forEach>
