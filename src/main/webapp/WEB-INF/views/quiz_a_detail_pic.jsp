@@ -180,26 +180,16 @@
                                 <li><a href="">소분류</a></li>
                             </ul> -->
                         </li>
-                        <li>
-                            <%if(loginMember == null) {%>
-                            <a href="goLogin">마이페이지</a>
-                            <%}else{ %>
+                        <%if(loginMember != null) {%>
+                            <li>
                             <a href="goMyPage">마이페이지</a>
-                            <%} %>
                             <ul>
-                                <li><a href="">수업 현황</a></li>
-                                <%if(loginMember == null) {%>
-                                  <li><a href="goLogin">내 정보 수정</a></li>
-                                  <%}else{ %>
-                                  <li><a href="goUpdateMember">내 정보 수정</a></li>
-                                  <%} %>
-                                  <%if(loginMember == null) {%>
-                                  <li><a href="goLogin">문의하기</a></li>
-                                  <%}else{ %>
-                                  <li><a href="">문의하기</a></li>
-                                  <%} %>
+                            <li><a href="">수업 현황</a></li>
+                            <li><a href="goUpdateMember">내 정보 수정</a></li>
+                            <li><a href="">문의하기</a></li>
                             </ul>
-                        </li> 
+                            </li> 
+                        <%}%> 
                     </ul>
 <!--                    <div class="menu_icon">
                         <img src="img/common/menu_icon.png" alt="메뉴아이콘" />
