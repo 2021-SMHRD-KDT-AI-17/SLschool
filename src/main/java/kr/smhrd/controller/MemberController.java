@@ -126,14 +126,6 @@ public class MemberController {
 		return "redirect:/goMyPage";
 	}
 	
-	// 문의사항 페이지 이동
-	@RequestMapping("/goHelp")
-	public String goHelp(HttpSession session, Model model) {
-		
-		Member member = (Member) session.getAttribute("loginMember");
-		model.addAttribute("member", member);
-		return "help_page";
-	}
-	
+
 	
 }
