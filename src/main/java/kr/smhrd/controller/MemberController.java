@@ -110,7 +110,7 @@ public class MemberController {
 	
 	// 회원정보 수정기능
 	@RequestMapping("updateMember")
-	public String updateMember(HttpSession session, HttpServletRequest request) {
+	public String updateMember(HttpSession session, HttpServletRequest request, Model model) {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		String name = request.getParameter("name");
@@ -121,8 +121,9 @@ public class MemberController {
 		
 		// session 덮어쓰기
 		session.setAttribute("loginMember", member2);
+		model.addAttribute("member", member2);
 		
-		return "goMyPage";
+		return "mypage";
 	}
 	
 	
