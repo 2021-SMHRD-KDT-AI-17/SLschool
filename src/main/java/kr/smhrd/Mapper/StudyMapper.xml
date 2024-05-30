@@ -29,7 +29,7 @@
 	</insert>
 	
 	<select id="selectRecordWord" parameterType="string" resultType="kr.smhrd.entity.Word">
-		select * from SSC_word join SSC_record where SSC_word.word_num = SSC_record.word_num and SSC_record.user_id=#{sug_writer} order by SSC_record.study_time desc;
+		SELECT w.*FROM (SELECT word_num FROM SSC_record WHERE user_id = #{user_id} GROUP BY word_num ORDER BY MAX(study_time) DESC LIMIT 3) AS recent_records JOIN SSC_word AS w ON w.word_num = recent_records.word_num;
 	</select>
 
 
