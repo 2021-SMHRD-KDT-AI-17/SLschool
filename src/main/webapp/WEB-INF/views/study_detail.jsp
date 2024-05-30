@@ -90,6 +90,8 @@
 
 .r_cont {
     margin-left: 10px; /* 비디오 사이의 간격을 좁게 설정 */
+    margin-top:-0.05px;
+    
 }
     </style>
 </head>
