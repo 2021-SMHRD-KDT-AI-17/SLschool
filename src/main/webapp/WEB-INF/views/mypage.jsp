@@ -240,7 +240,7 @@
                                                             <button class="btn btn-primary btn-sm mt-3" onclick="location.href='goUpdateMember'">내 정보 수정</button>
                                                         </div>
                                                         <div class="detail clearfix">
-                                                            <ul class="list-group list-group-flush">\
+                                                            <ul class="list-group list-group-flush">
                                                             
                                                             
                                                             <c:forEach items="${suggestionList }" var="SL" varStatus="s">
@@ -250,15 +250,6 @@
                                                                 </a>
                                                             </c:forEach>
                                                             
-                                                                
-                                                                <a href="" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                                                                    두번째 문의입니다
-                                                                    <span class="badge badge-light badge-pill">N</span>
-                                                                </a>
-                                                                <a href="" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                                                                    세번째 문의입니다
-                                                                    <span class="badge badge-light badge-pill">N</span>
-                                                                </a>
                                                             </ul>
                                                         </div><!-- Détail-->
                                                     </div><!-- User profile box-->
