@@ -267,56 +267,7 @@
       </c:choose>
     </fieldset>
     </c:forEach>
-     </form>  
-    
-   <!--    <fieldset>
-      <h2 class="fs-title">1번 문제</h2>
-      <h3 class="fs-subtitle">영상을 보고 정답을 맞춰주세요</h3>
-      <video controls style="width:100%;">
-        <source src="http://sldict.korean.go.kr/multimedia/multimedia_files/convert/20200901/739060/MOV000251190_700X466.mp4" type="video/mp4">
-    </video>
-      <input type="text" name="answer" placeholder="정답입력" />
-      <input type="button" name="next" class="next action-button" value="다음문제" />
-    </fieldset>
-    <fieldset>
-        <h2 class="fs-title">2번 문제</h2>
-        <h3 class="fs-subtitle">영상을 보고 정답을 맞춰주세요</h3>
-        <video controls style="width:100%;">
-          <source src="http://sldict.korean.go.kr/multimedia/multimedia_files/convert/20200901/739060/MOV000251190_700X466.mp4" type="video/mp4">
-      </video>
-        <input type="text" name="answer" placeholder="정답입력" />
-        <input type="button" name="next" class="next action-button" value="다음문제" />
-    </fieldset>
-    <fieldset>
-        <h2 class="fs-title">3번 문제</h2>
-        <h3 class="fs-subtitle">영상을 보고 정답을 맞춰주세요</h3>
-        <video controls style="width:100%;">
-          <source src="http://sldict.korean.go.kr/multimedia/multimedia_files/convert/20200901/739060/MOV000251190_700X466.mp4" type="video/mp4">
-      </video>
-        <input type="text" name="answer" placeholder="정답입력" />
-        <input type="button" name="next" class="next action-button" value="다음문제" />
-    </fieldset>
-    <fieldset>
-        <h2 class="fs-title">4번 문제</h2>
-        <h3 class="fs-subtitle">영상을 보고 정답을 맞춰주세요</h3>
-        <video controls style="width:100%;">
-          <source src="http://sldict.korean.go.kr/multimedia/multimedia_files/convert/20200901/739060/MOV000251190_700X466.mp4" type="video/mp4">
-      </video>
-        <input type="text" name="answer" placeholder="정답입력" />
-        <input type="button" name="next" class="next action-button" value="다음문제" />
-      </fieldset>
-      <fieldset>
-        <h2 class="fs-title">5번 문제</h2>
-        <h3 class="fs-subtitle">영상을 보고 정답을 맞춰주세요</h3>
-        <video controls style="width:100%;">
-          <source src="http://sldict.korean.go.kr/multimedia/multimedia_files/convert/20200901/739060/MOV000251190_700X466.mp4" type="video/mp4">
-      </video>
-        <input type="text" name="answer" placeholder="정답입력" />
-        <a href="quiz_score.html">
-        <input type="button" name="next" class="next action-button" value="결과보기" />
-        </a>
-      </fieldset> 
-  </form> -->
+    </form>  
                                 
                             </div>
                         </div>
