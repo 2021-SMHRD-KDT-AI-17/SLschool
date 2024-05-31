@@ -421,8 +421,8 @@ section.notice {
                 <thead>
                 <tr>
                     <th scope="col" class="th-title">제목</th>
-                    <th scope="col" class="th-date">등록일</th>
                     <th scope="col" class="th-date">작성자</th>
+                    <th scope="col" class="th-date">등록일</th>
                   
                 </tr>
                 </thead>
@@ -430,8 +430,8 @@ section.notice {
 				    <c:forEach items="${suggestionList}" var="sug" end="9" varStatus="s">
 				        <tr>
 				            <td><a href="goSuggestionDetail?sug_num=${sug.sug_num }">${sug.sug_title}</a></td>
-				            <td>${sug.sug_time}</td>
 				            <td>${sug.sug_writer}</td>
+				            <td>${sug.sug_time}</td>
 				        </tr>
 				    </c:forEach>
 				</tbody>
