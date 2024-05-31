@@ -35,6 +35,18 @@
     <link rel="stylesheet" href="resources/css/mypage.css">  
     <link rel="stylesheet" href="resources/css/login.css">  
     <link rel="stylesheet" href="resources/css/bootstrap.css">  
+    <style>
+    .list {
+    font-size: 1.2em; /* 원하는 크기로 조정 */
+    font-weight: bold; /* 굵게 지정 */
+    color:#4D869C;
+    
+}
+	.list2{
+		margin-left:30px;
+		margin-bottom:10px;
+	}
+    </style>
 
 </head>
 <body>
@@ -242,6 +254,9 @@
                                                             <button class="btn btn-primary btn-sm mt-3" onclick="location.href='goUpdateMember'">내 정보 수정</button>
                                                         </div>
                                                         <div class="detail clearfix">
+                                                        	<div class="list2">
+                                                        	<span class="list">내 문의 현황 </span>
+                                                        	</div>
                                                             <ul class="list-group list-group-flush">
                                                             
                                                             <!-- 문의 현황 -->
@@ -284,7 +299,7 @@
                                                                         <div class="icon"><span class="g-non-atteint fa fa-check-circle"></span></div>
                                                                         <div class="info">
                                                                             <h6 class="number">${s_size }개</h6>
-                                                                            <p class="type">내 문의 현황</p>
+                                                                            <p class="type"> 내 문의 현황</p>
                                                                         </div>
                                                                     </div>
                                                                 </div>
