@@ -38,7 +38,14 @@
     color: #fff;
     background: #007bff;
 }
+.que_text span{
+	font-size:24px;
 
+}
+.que_text{
+margin-bottom:10px;
+margin-left:40px;
+}
 .start_btn,
 .info_box,
 .quiz_box,
@@ -88,7 +95,7 @@ margin-top:00px;
 }
 
 .quiz_box header .title{
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
 }
 
