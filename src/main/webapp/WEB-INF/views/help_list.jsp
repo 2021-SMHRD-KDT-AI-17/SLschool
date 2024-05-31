@@ -53,6 +53,10 @@
 		    margin-top: 30px; /* 이미지에 여백 추가 */
 		    margin-bottom: -40px;
 		}
+		#buttonans{
+		margin-left:583px;
+		margin-top:-10px !important;
+		}
     </style>
 </head>
 <body>
@@ -306,7 +310,7 @@
                                                         </div><!-- sbody -->
                                                     </div><!-- dashbox -->
                                                     <%if(loginMember.getId().equals("admin")) {%>
-                                                    <a href="goWriteA?sug_num=${suggestion.sug_num }">답변작성</a>
+                                                    <a href="goWriteA?sug_num=${suggestion.sug_num }"><button class="btn btn-primary btn-sm mt-3" id="buttonans">답변하기</button></a>
                                                     <%} %>
                                                     	</c:when>
                                                     	<c:otherwise>
