@@ -79,6 +79,7 @@ public class QuizController {
 		
 		ArrayList<Integer> wrong_num_list = new ArrayList<Integer>();  // AraayList를 사용하는 이유는 확실한 범위를 모를때 사용한다
 		ArrayList<Integer> wrong_question_list = new ArrayList<Integer>();
+		ArrayList<String> wrong_question_label_list = new ArrayList<String>();
 		
 		int score = 0;
 		
@@ -91,6 +92,9 @@ public class QuizController {
 				int question_num = Integer.valueOf(question_number[i]).intValue();
 				wrong_question_list.add(question_num);    // 1~5 번 문제중 어떤 문제를 틀렸는지 저장하기 (짝수 번호 배열)
 				wrong_num_list.add(quiz_num);        // 틀린 문제에 대한 고유번호(나중에 랜덤으로 할 것) 을 홀수 번호에 저장
+				String quiz_label2 = quizMapper.selectLabel(quiz_num);
+				wrong_question_label_list.add(quiz_label2);
+				
 			}
 		}
 		
@@ -105,6 +109,7 @@ public class QuizController {
 			int cnt = quizMapper.insertScore(quizRank);
 		}
 		
+		model.addAttribute("wrong_question_label_list", wrong_question_label_list);
 		model.addAttribute("score", score);
 		model.addAttribute("wrong_num_list", wrong_num_list);
 		model.addAttribute("wrong_question_list", wrong_question_list);
@@ -129,6 +134,7 @@ public class QuizController {
 				
 		ArrayList<Integer> wrong_num_list = new ArrayList<Integer>();  // AraayList를 사용하는 이유는 확실한 범위를 모를때 사용한다
 		ArrayList<Integer> wrong_question_list = new ArrayList<Integer>();
+		ArrayList<String> wrong_question_label_list = new ArrayList<String>();
 		
 		int score = 0;
 		
@@ -141,6 +147,8 @@ public class QuizController {
 				int question_num = Integer.valueOf(question_number[i]).intValue();
 				wrong_question_list.add(question_num);    // 1~5 번 문제중 어떤 문제를 틀렸는지 저장하기 (짝수 번호 배열)
 				wrong_num_list.add(quiz_num);        // 틀린 문제에 대한 고유번호(나중에 랜덤으로 할 것) 을 홀수 번호에 저장
+				String quiz_label2 = quizMapper.selectLabelPic(quiz_num);
+				wrong_question_label_list.add(quiz_label2);
 			}
 		}
 		
@@ -155,6 +163,7 @@ public class QuizController {
 			int cnt = quizMapper.insertScore(quizRank);
 		}
 		
+		model.addAttribute("wrong_question_label_list", wrong_question_label_list);
 		model.addAttribute("score", score);
 		model.addAttribute("wrong_num_list", wrong_num_list);
 		model.addAttribute("wrong_question_list", wrong_question_list);
