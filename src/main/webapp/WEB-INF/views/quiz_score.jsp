@@ -257,7 +257,7 @@
                             <div class="question-article">
                               <a href="goWrongStudy?quiz_num=${wrong_num_list[s.index] }" class="question btn-fold">
                                 <strong class="blind">질문:</strong>
-                                <span class="q">${wrong_question_list[s.index] }번 영상</span> 바로가기
+                                <span class="q">${wrong_question_list[s.index] }번 문제   ${wrong_question_label_list[s.index] }</span> 바로가기
                               </a>
                             </div>
                           </li>
