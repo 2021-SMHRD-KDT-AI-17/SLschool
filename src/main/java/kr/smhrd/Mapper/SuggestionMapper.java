@@ -10,4 +10,6 @@ public interface SuggestionMapper {
 
 	public List<Suggestion> selectMySuggestion(String sug_writer);
 
+	public List<Suggestion> selectAllSuggestion();
+
 }
