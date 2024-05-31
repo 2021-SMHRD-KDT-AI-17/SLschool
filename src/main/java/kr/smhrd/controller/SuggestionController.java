@@ -47,6 +47,7 @@ public class SuggestionController {
 		return "redirect:/goMyPage";
 	}
 	
+	// 관리자 전용 문의사항 리스트 확인페이지
 	@RequestMapping("/goAdminHelp")
 	public String goAdminHelp(Model model) {
 		
@@ -58,6 +59,7 @@ public class SuggestionController {
 	}
 	
 	
+	// 내가 문의한 내용 확인 페이지 가기
 	@RequestMapping("goSuggestionDetail")
 	public String goSuggestionDetail(@RequestParam("sug_num") int sug_num, Model model) {
 		
@@ -70,5 +72,27 @@ public class SuggestionController {
 		return "help_list";
 	}
 	
+	// 문의에 대한 답변 적으러 이동하기
+	@RequestMapping("/goWriteA")
+	public String goWriteA(@RequestParam("sug_num") int sug_num, Model model) {
+		model.addAttribute("sug_num", sug_num);
+		
+		return "A_suggestion";
+	}
+	
+	// 문의에 대한 답변 적는 기능
+	@RequestMapping("/writeA") 
+	public String writeA(HttpServletRequest request) {
+		
+		String a_title = request.getParameter("title");
+		String a_content = request.getParameter("content");
+		int sug_num = Integer.valueOf(request.getParameter("sug_num"));
+		
+		A_Suggestion a_Suggestion = new A_Suggestion(sug_num, a_title, a_content);
+		
+		int cnt = suggestionMapper.insertA_Suggestion(a_Suggestion);
+		
+		return "redirect:/goAdminHelp";
+	}
 	
 }

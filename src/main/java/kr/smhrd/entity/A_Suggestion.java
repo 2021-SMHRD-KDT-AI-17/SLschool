@@ -18,6 +18,7 @@ import lombok.ToString;
 public class A_Suggestion {
 
 	private int sugA_num;
+	@NonNull
 	private int sug_num;
 	@NonNull
 	private String sugA_title;

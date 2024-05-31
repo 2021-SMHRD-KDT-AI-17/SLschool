@@ -330,10 +330,11 @@
             <div class="row">
                 <div class="col-md-7">
 
-                    <form action="writeSuggestion" method="post">
+                    <form action="writeA" method="post">
                         <div class="row">
                             <div class="col-sm-6">
                                 <input type="text" value="${loginMember.id }" readonly name="id" class="form-control" placeholder="작성자">
+                                <input type="hidden" value="${sug_num }" name="sug_num">
                             </div>
                             <div class="col-sm-12">
                                 <input type="text" name="title"  class="form-control" placeholder="제목">

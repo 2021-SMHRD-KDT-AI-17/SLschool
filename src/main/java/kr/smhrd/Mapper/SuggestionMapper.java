@@ -17,4 +17,6 @@ public interface SuggestionMapper {
 
 	public A_Suggestion selectASuggestion(int sug_num);
 
+	public int insertA_Suggestion(A_Suggestion a_Suggestion);
+
 }

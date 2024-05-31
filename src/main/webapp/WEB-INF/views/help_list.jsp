@@ -306,7 +306,7 @@
                                                         </div><!-- sbody -->
                                                     </div><!-- dashbox -->
                                                     <%if(loginMember.getId().equals("admin")) {%>
-                                                    <a href="">답변작성</a>
+                                                    <a href="goWriteA?sug_num=${suggestion.sug_num }">답변작성</a>
                                                     <%} %>
                                                     	</c:when>
                                                     	<c:otherwise>

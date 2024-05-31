@@ -22,5 +22,9 @@
 	<select id="selectASuggestion" parameterType="int" resultType="kr.smhrd.entity.A_Suggestion">
 		select * from SSC_Asuggestion where sug_num = #{sug_num}
 	</select>
+	
+	<insert id="insertA_Suggestion" parameterType="kr.smhrd.entity.A_Suggestion">
+		insert into SSC_Asuggestion(sug_num, sugA_title, sugA_content) values(#{sug_num}, #{sugA_title}, #{sugA_content})
+	</insert>
 
 </mapper>
