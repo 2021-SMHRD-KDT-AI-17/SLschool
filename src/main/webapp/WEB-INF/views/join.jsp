@@ -336,6 +336,7 @@
 </div>
 <!-- sh_wrapper [e] -->
 <script type="text/javascript">
+
 function checkE() {
 	var inputID = document.getElementById("inputID").value;
 
