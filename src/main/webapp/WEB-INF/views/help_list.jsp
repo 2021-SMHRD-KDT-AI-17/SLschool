@@ -1,3 +1,4 @@
+<%@page import="kr.smhrd.entity.A_Suggestion"%>
 <%@page import="kr.smhrd.entity.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -56,6 +57,7 @@
 </head>
 <body>
 <% Member loginMember = (Member)session.getAttribute("loginMember"); %>
+<% A_Suggestion asuggestion = request.getAttribute("asuggestion"); %>
 
 <!-- sh_wrapper [s] -->
 <div id="sh_wrapper">
@@ -288,6 +290,7 @@
                                                         </div><!-- sbody -->
                                                     </div><!-- dashbox -->
 
+													<%if(asuggestion !=null) {%>
                                                     <div class="dashborad-box">
                                                         <h4 class="title">문의 답변</h4>
                                                         <div class="section-body">
@@ -304,6 +307,9 @@
                                                             </div><!-- row -->
                                                         </div><!-- sbody -->
                                                     </div><!-- dashbox -->
+                                                    <%} else if(){%>
+                                                    	<a href="">답변하기</a>
+                                                    <%} %>
                                                 </div>
                                             </div>
                                         </div>

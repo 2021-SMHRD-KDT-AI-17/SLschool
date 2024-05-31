@@ -19,9 +19,6 @@ public class A_Suggestion {
 
 	private int sugA_num;
 	private int sug_num;
-	
-	@NonNull
-	private String sugA_writer;
 	@NonNull
 	private String sugA_title;
 	@NonNull
