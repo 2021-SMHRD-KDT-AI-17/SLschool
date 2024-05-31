@@ -167,7 +167,12 @@ public class MemberController {
 		
 		return "redirect:/goMyPage";
 	}
+
 	
+	@RequestMapping("/helpPage")
+	public String gohelp() {
+		return "help_page";
+	}
 
 	
 }

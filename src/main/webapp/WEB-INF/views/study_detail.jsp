@@ -90,6 +90,8 @@
 
 .r_cont {
     margin-left: 10px; /* 비디오 사이의 간격을 좁게 설정 */
+
+    
 }
     </style>
 </head>
@@ -166,7 +168,7 @@
                             <ul>
                             <li><a href="">수업 현황</a></li>
                             <li><a href="goUpdateMember">내 정보 수정</a></li>
-                            <li><a href="">문의하기</a></li>
+                            <li><a href="helpPage">문의하기</a></li>
                             </ul>
                             </li> 
                             <%}%>

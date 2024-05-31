@@ -233,7 +233,7 @@
                                     </a>
                                 </dl>
                                 <dl data-aos="flip-left" data-aos-delay="300">
-                                    <a href="goQuizPic">
+                                    <a href="quizDetailPic">
                                     <dt>그림 맞추기</dt>
                                     <dd>나는 수화에 맞는 그림을 고를래요!</dd>
                                     </a>

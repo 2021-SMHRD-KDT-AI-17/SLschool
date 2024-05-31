@@ -28,7 +28,15 @@
 	</insert>
 	
 	<select id="selectQuizScore" parameterType="String" resultType="kr.smhrd.entity.QuizRank">
-		select * from SSC_rank where user_id = #{user_id} order by quiz_time desc limit 5;
+		select * from SSC_rank where user_id = #{user_id} order by quiz_time desc limit 5
+	</select>
+	
+	<select id="selectQuizPic" resultType="kr.smhrd.entity.QuizPic">
+		select * from quiz_pic
+	</select>
+	
+	<select id="selectLabelPic" parameterType="int" resultType="String">
+		select quiz_label from quiz_pic where quiz_num=#{quiz_num}
 	</select>
 
 
