@@ -87,7 +87,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="dictionary.html">수어사전</a>
+                            <a href="goDic">수어사전</a>
                             <!-- <ul>
                                 <li><a href="">소분류</a></li>
                                 <li><a href="">소분류</a></li>

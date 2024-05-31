@@ -98,7 +98,7 @@
                             <li>
                             <a href="goMyPage">마이페이지</a>
                             <ul>
-                            <li><a href="">수업 현황</a></li>
+                            <li><a href="goMyPage">수업 현황</a></li>
                             <li><a href="goUpdateMember">내 정보 수정</a></li>
                             <li><a href="">문의하기</a></li>
                             </ul>
@@ -249,7 +249,7 @@
                             <!-- 아이콘 배너 [e] -->
                             
                             <!-- 바로가기 [s] -->
-                            <a href="" class="cont_txt">
+                            <a href="goStudyA" class="cont_txt">
                                 <p>
                                     <span>수어 첫걸음 나서기</span>
                                     열심히 아자아자 화이팅!
@@ -294,7 +294,7 @@
                        <div class="latest">
                             <!-- 타이틀 & 컨트롤러 [s] -->
                             <div class="tit_area">
-                                <a href="">
+                                <a href="goStudyA">
                                     <span class="tit">수준 맞춤 강의 듣기</span>
                                     수어는 동행입니다.
                                 </a>
