@@ -180,6 +180,9 @@ public class QuizController {
 	public String goWrongStudy(@RequestParam("quiz_num") int quiz_num, Model model) {
 		
 		String quizURL = quizMapper.selectQuizURL(quiz_num);
+		String word_num = quizMapper.selectLabel(quiz_num);
+		Word word = new Word(word_num);
+		model.addAttribute("word", word);
 		model.addAttribute("quizURL", quizURL);
 		
 		return "study_detail";

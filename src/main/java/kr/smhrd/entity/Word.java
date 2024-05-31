@@ -17,5 +17,10 @@ public class Word {
 	private String word_info;
 	private String video_url;
 	private String consonant;
+	
+	public Word(String word_name) {
+		super();
+		this.word_name = word_name;
+	}
 
 }
