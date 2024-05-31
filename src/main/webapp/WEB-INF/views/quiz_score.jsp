@@ -28,6 +28,10 @@
     <script src="https://kit.fontawesome.com/85915fb54c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="resources/css/aos.css">
     <script src="resources/js/aos.js"></script>
+    <style>
+    .qt{width:80%;}
+    .tq{width:20%;}
+    </style>
 </head>
 <body>
 
@@ -255,9 +259,10 @@
                           <c:forEach items="${wrong_num_list}" end="${wrong_size}" varStatus="s">
                           	 <li class="qna-item">
                             <div class="question-article">
-                              <a href="goWrongStudy?quiz_num=${wrong_num_list[s.index] }" class="question btn-fold">
+                              <a href="goWrongStudy?quiz_num=${wrong_num_list[s.index] }" class="question btn-fold" style="display:flex;">
                                 <strong class="blind">질문:</strong>
-                                <span class="q">${wrong_question_list[s.index] }번 문제   ${wrong_question_label_list[s.index] }</span> 바로가기
+                                <div class="qt"><span class="q">${wrong_question_list[s.index] }번 문제   ${wrong_question_label_list[s.index] }</span></div>
+                                <div class="tq"> 바로가기</div>
                               </a>
                             </div>
                           </li>

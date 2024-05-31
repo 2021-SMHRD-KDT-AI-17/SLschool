@@ -98,9 +98,9 @@
                             <li>
                             <a href="goMyPage">마이페이지</a>
                             <ul>
-                            <li><a href="goMyPage">수업 현황</a></li>
+                            <li><a href="goSuggestionDetail">수업 현황</a></li>
                             <li><a href="goUpdateMember">내 정보 수정</a></li>
-                            <li><a href="">문의하기</a></li>
+                            <li><a href="goHelp">문의하기</a></li>
                             </ul>
                             </li> 
                             <%}%>

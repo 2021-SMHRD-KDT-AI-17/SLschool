@@ -1,5 +1,7 @@
 package kr.smhrd.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -43,7 +45,21 @@ public class SuggestionController {
 		return "redirect:/goMyPage";
 	}
 	
+	@RequestMapping("/goAdminHelp")
+	public String goAdminHelp(Model model) {
+		
+		List<Suggestion> suggestionList = suggestionMapper.selectAllSuggestion();
+		
+		model.addAttribute("suggestionList",suggestionList);
+		
+		return "adminHelp";
+	}
 	
+	@RequestMapping("goSuggestionDetail")
+	public String goSuggestionDetail() {
+		
+		return "help_list";
+	}
 	
 	
 }

@@ -10,6 +10,10 @@
 	<select id="selectMySuggestion" parameterType="String" resultType="kr.smhrd.entity.Suggestion">
 		select * from SSC_suggestion where sug_writer = #{sug_writer}
 	</select>
+	
+	<select id="selectAllSuggestion" resultType="kr.smhrd.entity.Suggestion">
+		select * from SSC_suggestion order by sug_time desc
+	</select>
 
 
 </mapper>
