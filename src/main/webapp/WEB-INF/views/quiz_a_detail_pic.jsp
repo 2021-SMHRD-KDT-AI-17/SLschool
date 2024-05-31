@@ -1,6 +1,7 @@
 <%@page import="kr.smhrd.entity.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <html lang="ko">
 <head>
@@ -317,7 +318,7 @@
                             <div class="s_tit"  data-aos="fade-up">
                                 
                                 <!-- multistep form -->
-<form id="msform">
+<form id="msform" action="goQuizScorePic">
     <!-- progressbar -->
     <ul id="progressbar">
       <li class="active">1번 문제</li>
@@ -327,90 +328,63 @@
       <li>5번 문제</li>
     </ul>
     <!-- fieldsets -->
-    <fieldset>
-      <h2 class="fs-title">1번 문제</h2>
+    <c:forEach items="${quiz_pic_list}" var="QL" varStatus="s"> 
+    	<fieldset>
+      <h2 class="fs-title">${s.count }번 문제</h2>
+      <input type="hidden" name="question_number" value="${s.count }">
+      <input type="hidden" name="quiz_num" value="${QL.quiz_num }" >
       <h3 class="fs-subtitle">영상을 보고 정답을 맞춰주세요</h3>
       <video controls style="width:100%;">
-        <source src="http://sldict.korean.go.kr/multimedia/multimedia_files/convert/20200901/739060/MOV000251190_700X466.mp4" type="video/mp4">
+        <source src="${QL.video_url }">
     </video>
       
         <div class="flip">
-            <div class="front" style="background-image: url(https://images.pexels.com/photos/540518/pexels-photo-540518.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb)">
-            <h1 class="text-shadow">산</hi>
+            <div class="front" style="background-image: url(${QL.quiz_image1})">
+            <h1 class="text-shadow">${QL.image1_name }</hi>
             </div>
             <div class="back">
-            <h2>산</h2>
-            <input type="radio" name="answer" value="산">
+            <h2>${QL.image1_name }</h2>
+            <input type="radio" name="answer${s.count }" value="${QL.image1_name }">
             </div>
         </div>
         <div class="flip">
-            <div class="front" style="background-image: url(https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb)">
-            <h1 class="text-shadow">바다</hi>
+            <div class="front" style="background-image: url(${QL.quiz_image2})">
+            <h1 class="text-shadow">${QL.image2_name }</hi>
             </div>
             <div class="back">
-            <h2>바다</h2>
-            <input type="radio" name="answer" value="바다">
+            <h2>${QL.image2_name }</h2>
+            <input type="radio" name="answer${s.count }" value="${QL.image2_name }">
             </div>
         </div>
         <div class="flip">
-            <div class="front" style="background-image: url(https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb)">
-            <h1 class="text-shadow">나무</hi>
-            <input type="radio" name="answer" value="나무">
+            <div class="front" style="background-image: url(${QL.quiz_image3})">
+            <h1 class="text-shadow">${QL.image3_name }</hi>
             </div>
             <div class="back">
-            <h2>나무</h2>
+            <h2>${QL.image3_name }</h2>
+            <input type="radio" name="answer${s.count }" value="${QL.image3_name }">
             </div>
         </div>
         <div class="flip">
-            <div class="front" style="background-image: url(https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb)">
-            <h1 class="text-shadow">고양이</hi>
+            <div class="front" style="background-image: url(${QL.quiz_image4})">
+            <h1 class="text-shadow">${QL.image4_name }</hi>
             </div>
             <div class="back">
-            <h2>고양이</h2>
-            <input type="radio" name="answer" value="고양이">
+            <h2>${QL.image4_name }</h2>
+            <input type="radio" name="answer${s.count }" value="${QL.image4_name }">
             </div>
         </div>
         <Br>
-        <input type="button" name="next" class="next action-button" value="다음문제" />
+        <c:choose>
+      	<c:when test="${s.count <= 2 }">
+      		<input type="button" name="next" class="next action-button" value="다음문제" />
+      	</c:when>
+      	<c:otherwise>
+      		<input type="submit" value="결과보기">
+      	</c:otherwise>
+      </c:choose>
     </fieldset>
-    <fieldset>
-        <h2 class="fs-title">2번 문제</h2>
-        <h3 class="fs-subtitle">영상을 보고 정답을 맞춰주세요</h3>
-        <video controls style="width:100%;">
-          <source src="http://sldict.korean.go.kr/multimedia/multimedia_files/convert/20200901/739060/MOV000251190_700X466.mp4" type="video/mp4">
-      </video>
-        <input type="text" name="answer" placeholder="정답입력" />
-        <input type="button" name="next" class="next action-button" value="다음문제" />
-    </fieldset>
-    <fieldset>
-        <h2 class="fs-title">3번 문제</h2>
-        <h3 class="fs-subtitle">영상을 보고 정답을 맞춰주세요</h3>
-        <video controls style="width:100%;">
-          <source src="http://sldict.korean.go.kr/multimedia/multimedia_files/convert/20200901/739060/MOV000251190_700X466.mp4" type="video/mp4">
-      </video>
-        <input type="text" name="answer" placeholder="정답입력" />
-        <input type="button" name="next" class="next action-button" value="다음문제" />
-    </fieldset>
-    <fieldset>
-        <h2 class="fs-title">4번 문제</h2>
-        <h3 class="fs-subtitle">영상을 보고 정답을 맞춰주세요</h3>
-        <video controls style="width:100%;">
-          <source src="http://sldict.korean.go.kr/multimedia/multimedia_files/convert/20200901/739060/MOV000251190_700X466.mp4" type="video/mp4">
-      </video>
-        <input type="text" name="answer" placeholder="정답입력" />
-        <input type="button" name="next" class="next action-button" value="다음문제" />
-      </fieldset>
-      <fieldset>
-        <h2 class="fs-title">5번 문제</h2>
-        <h3 class="fs-subtitle">영상을 보고 정답을 맞춰주세요</h3>
-        <video controls style="width:100%;">
-          <source src="http://sldict.korean.go.kr/multimedia/multimedia_files/convert/20200901/739060/MOV000251190_700X466.mp4" type="video/mp4">
-      </video>
-        <input type="text" name="answer" placeholder="정답입력" />
-        <a href="quiz_score.html">
-        <input type="button" name="next" class="next action-button" value="결과보기" />
-        </a>
-      </fieldset>
+    </c:forEach>
   </form>
                                 
                             </div>

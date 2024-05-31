@@ -21,6 +21,7 @@ import kr.smhrd.entity.Member;
 import kr.smhrd.entity.Quiz;
 import kr.smhrd.entity.Word;
 import kr.smhrd.entity.QuizRank;
+import kr.smhrd.entity.QuizPic;
 
 
 @Controller
@@ -53,11 +54,19 @@ public class QuizController {
 	public String goQuizDetail(Model model) {
 		
 		List<Quiz> quiz_list= quizMapper.selectQuiz(); // DB를 연동하여 문제데이터를 Quiz형태로 되어있는 리스트에 저장
-		System.out.println(quiz_list.get(0).getQuiz_label());
 		model.addAttribute("quiz_list", quiz_list); // 저장한 리스트(quiz_list)를 quiz_a_detail에 전송 (1회용)
 		
 		
 		return "quiz_a_detail";
+	}
+	
+	// 그림퀴즈 문제 이동
+	@RequestMapping("quizDetailPic")
+	public String quizDetailPic(Model model) {
+		
+		List<QuizPic> quiz_pic_list = quizMapper.selectQuizPic();
+		model.addAttribute("quiz_pic_list", quiz_pic_list);
+		return "quiz_a_detail_pic";
 	}
 	
 	// 퀴즈 정답 제출 및 점수 확인
@@ -103,6 +112,60 @@ public class QuizController {
 		
 		return "quiz_score";
 	}
+	
+	
+	// 퀴즈 정답 제출 및 점수 확인
+	@RequestMapping("/goQuizScorePic")
+	public String goQuizScorePic(HttpServletRequest request, Model model, HttpSession session) {
+		
+		String[] answer = new String[3];
+		
+		for (int i=0; i<3; i++) {
+			answer[i] = request.getParameter("answer"+(i+1));
+		}
+		
+		String[] quiz_numL = request.getParameterValues("quiz_num");
+		String[] question_number = request.getParameterValues("question_number");
+				
+		ArrayList<Integer> wrong_num_list = new ArrayList<Integer>();  // AraayList를 사용하는 이유는 확실한 범위를 모를때 사용한다
+		ArrayList<Integer> wrong_question_list = new ArrayList<Integer>();
+		
+		int score = 0;
+		
+		for (int i=0;i<3;i++) {
+			int quiz_num = Integer.valueOf(quiz_numL[i]).intValue(); // 문제 번호를 가져오는 과정에서 String으로 변환이 되기 때문에 그 값을 다시 int 형태로 바꿔주는 작업
+			String quiz_label = quizMapper.selectLabelPic(quiz_num);
+			if(answer[i].equals(quiz_label)) {
+				score = score + 20; // score+=20;
+			}else {
+				int question_num = Integer.valueOf(question_number[i]).intValue();
+				wrong_question_list.add(question_num);    // 1~5 번 문제중 어떤 문제를 틀렸는지 저장하기 (짝수 번호 배열)
+				wrong_num_list.add(quiz_num);        // 틀린 문제에 대한 고유번호(나중에 랜덤으로 할 것) 을 홀수 번호에 저장
+			}
+		}
+		
+		int wrong_size = wrong_num_list.size();
+		
+		Member member = (Member) session.getAttribute("loginMember");
+		if(member != null ) {
+			
+			String user_id = member.getId();
+			QuizRank quizRank = new QuizRank(user_id, score);
+			
+			int cnt = quizMapper.insertScore(quizRank);
+		}
+		
+		model.addAttribute("score", score);
+		model.addAttribute("wrong_num_list", wrong_num_list);
+		model.addAttribute("wrong_question_list", wrong_question_list);
+		model.addAttribute("wrong_size", wrong_size);
+		
+		return "quiz_score";
+	}
+	
+	
+	
+	
 	
 	@RequestMapping("/goWrongStudy")
 	public String goWrongStudy(@RequestParam("quiz_num") int quiz_num, Model model) {

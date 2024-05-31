@@ -237,7 +237,7 @@
                             <div class="s_tit"  data-aos="fade-up">
                                 
                                 <!-- multistep form -->
-<form id="msform" action="goQuizScore" method=>
+<form id="msform" action="goQuizScore">
     <!-- progressbar -->
     <ul id="progressbar">
       <li class="active">1번 문제</li>
