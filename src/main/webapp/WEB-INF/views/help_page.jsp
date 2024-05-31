@@ -333,7 +333,7 @@
                     <form action="writeSuggestion" method="post">
                         <div class="row">
                             <div class="col-sm-6">
-                                <input type="text" value="${loginMember.name }" readonly name="id" class="form-control" placeholder="작성자">
+                                <input type="text" value="${loginMember.id }" readonly name="id" class="form-control" placeholder="작성자">
                             </div>
                             <div class="col-sm-12">
                                 <input type="text" name="title"  class="form-control" placeholder="제목">
