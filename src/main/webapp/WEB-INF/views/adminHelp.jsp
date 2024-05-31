@@ -18,7 +18,7 @@
 		</tr>
 		
 		<c:forEach items="${suggestionList}" var="sug" end="9" varStatus="s">
-			<a href="">
+			<a href="goSuggestionDetail?sug_num=${sug.sug_num }">
 			<tr>
 			<td>${sug.sug_writer}</td>
 			<td>${sug.sug_title}</td>

@@ -12,4 +12,6 @@ public interface SuggestionMapper {
 
 	public List<Suggestion> selectAllSuggestion();
 
+	public Suggestion selectSuggestionNum(int sug_num);
+
 }

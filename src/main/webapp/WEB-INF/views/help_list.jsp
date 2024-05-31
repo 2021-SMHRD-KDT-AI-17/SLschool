@@ -275,16 +275,14 @@
                                                 </div>
                                                 <div class="col-lg-8 col-md-7 col-xs-12">
                                                     <div class="dashborad-box">
-                                                        <h4 class="title">문의 제목</h4>
+                                                        <h4 class="title">${suggestion.sug_title }</h4>
                                                         <div class="section-body">
                                                             <div class="row">
                                                                 <div class="question">
-                                                                    나의 문의 내용은 오늘 날씨가 너무 덥다는 것입니다 왜이렇게 더운 것인지 참을 수가 없습니다...
-                                                                    점점점... 그렇지만 별 수 있을까요... 어쩔 수 없이 더운 것임을....
-                                                                    오늘은 그렇습니다...
+                                                                   ${suggestion.sug_content}
                                                                 </div>
                                                                 <div class="date">
-                                                                    2024. 05. 30
+                                                                    ${suggestion.sug_time }
                                                                 </div>
                                                             </div><!-- row -->
                                                         </div><!-- sbody -->

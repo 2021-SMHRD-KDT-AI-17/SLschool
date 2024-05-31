@@ -246,7 +246,7 @@
                                                             
                                                             <!-- 문의 현황 -->
                                                             <c:forEach items="${suggestionList }" var="SL" varStatus="s">
-                                                            	<a href="" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                                            	<a href="goSuggestionDetail?sug_num=${SL.sug_num }" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                                                                     ${SL.sug_title }
                                                                     <span class="badge badge-light badge-pill">N</span>
                                                                 </a>

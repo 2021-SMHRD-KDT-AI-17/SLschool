@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.smhrd.Mapper.SuggestionMapper;
 import kr.smhrd.entity.Member;
@@ -56,7 +57,11 @@ public class SuggestionController {
 	}
 	
 	@RequestMapping("goSuggestionDetail")
-	public String goSuggestionDetail() {
+	public String goSuggestionDetail(@RequestParam("sug_num") int sug_num, Model model) {
+		
+		Suggestion suggestion = suggestionMapper.selectSuggestionNum(sug_num);
+		
+		model.addAttribute("suggestion", suggestion);
 		
 		return "help_list";
 	}

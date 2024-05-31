@@ -15,5 +15,8 @@
 		select * from SSC_suggestion order by sug_time desc
 	</select>
 
+	<select id="selectSuggestionNum" parameterType="int" resultType="kr.smhrd.entity.Suggestion">
+		select * from SSC_suggestion where sug_num = #{sug_num}
+	</select>
 
 </mapper>
