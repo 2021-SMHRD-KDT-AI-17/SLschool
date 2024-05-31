@@ -323,8 +323,8 @@
         <div class="container">
             <div class="heading text-center">
                 <h2>
-                  <span>문의 </strong>하기</h2>
-                <p>수어 스쿨에 문의 할 내용을 적어주세요
+                  <span>답변 </strong>하기</h2>
+                <p>문의에 대한 답변 내용을 적어주세요
                     </p>
             </div>
             <div class="row">
