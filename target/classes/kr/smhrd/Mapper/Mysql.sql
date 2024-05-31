@@ -29,3 +29,12 @@ select * from tbl_friendboard;
 
 select * from tbl_message;
 
+select * from quiz_pic;
+
+
+
+
+
+
+
+

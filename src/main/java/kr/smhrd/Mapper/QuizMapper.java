@@ -7,6 +7,7 @@ import kr.smhrd.entity.Quiz;
 import kr.smhrd.entity.Word;
 
 import kr.smhrd.entity.QuizRank;
+import kr.smhrd.entity.QuizPic;
 
 
 public interface QuizMapper {
@@ -24,5 +25,9 @@ public interface QuizMapper {
 	public int insertScore(QuizRank quizRank);
 
 	public List<QuizRank> selectQuizScore(String sug_writer);
+
+	public List<QuizPic> selectQuizPic();
+
+	public String selectLabelPic(int quiz_num);
 
 }
