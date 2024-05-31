@@ -57,7 +57,6 @@
 </head>
 <body>
 <% Member loginMember = (Member)session.getAttribute("loginMember"); %>
-<% A_Suggestion asuggestion = request.getAttribute("asuggestion"); %>
 
 <!-- sh_wrapper [s] -->
 <div id="sh_wrapper">
@@ -289,27 +288,44 @@
                                                             </div><!-- row -->
                                                         </div><!-- sbody -->
                                                     </div><!-- dashbox -->
-
-													<%if(asuggestion !=null) {%>
-                                                    <div class="dashborad-box">
-                                                        <h4 class="title">문의 답변</h4>
-                                                        <div class="section-body">
+                                                    
+                                                    <c:choose>
+                                                    	<c:when test="${empty aSuggestion }">
+                                                    		<div class="dashborad-box">
+                                                        	<h4 class="title"></h4>
+                                                       		<div class="section-body">
                                                             <div class="row">
                                                                 <div class="answer">
-                                                                    안녕하세요 수어스쿨입니다
-                                                                    당신의 문의는 잘 보았습니다 하지만 어쩌고 저쩌고 해서 당신은 어쩌구입니다. 
-                                                                    해결되시지 않으셨다면 다시 문의를 부탁드립니다. 
-                                                                    <a href=""><img src="img/common/logo_2.png" alt="Sample" class="inline-img" style="width:30%"/></a>
+                                                                    아직 답변되지 않았습니다.
+                                                                    <img src="resources/img/common/logo_2.png" alt="Sample" class="inline-img" style="width:30%"/>
                                                                 </div>
                                                                 <div class="date">
-                                                                    2024. 05. 30
+                                                                    
                                                                 </div>
                                                             </div><!-- row -->
                                                         </div><!-- sbody -->
                                                     </div><!-- dashbox -->
-                                                    <%} else if(){%>
-                                                    	<a href="">답변하기</a>
+                                                    <%if(loginMember.getId().equals("admin")) {%>
+                                                    <a href="">답변작성</a>
                                                     <%} %>
+                                                    	</c:when>
+                                                    	<c:otherwise>
+                                                    		<div class="dashborad-box">
+                                                        <h4 class="title">${aSuggestion.sugA_title }</h4>
+                                                        <div class="section-body">
+                                                            <div class="row">
+                                                                <div class="answer">
+                                                                    ${aSuggestion.sugA_content }
+                                                                    <img src="resources/img/common/logo_2.png" alt="Sample" class="inline-img" style="width:30%"/>
+                                                                </div>
+                                                                <div class="date">
+                                                                    ${aSuggestion.sugA_time }
+                                                                </div>
+                                                            </div><!-- row -->
+                                                        </div><!-- sbody -->
+                                                    </div><!-- dashbox -->
+                                                    	</c:otherwise>
+                                                    </c:choose>
                                                 </div>
                                             </div>
                                         </div>

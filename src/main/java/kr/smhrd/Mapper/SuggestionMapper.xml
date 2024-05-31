@@ -18,5 +18,9 @@
 	<select id="selectSuggestionNum" parameterType="int" resultType="kr.smhrd.entity.Suggestion">
 		select * from SSC_suggestion where sug_num = #{sug_num}
 	</select>
+	
+	<select id="selectASuggestion" parameterType="int" resultType="kr.smhrd.entity.A_Suggestion">
+		select * from SSC_Asuggestion where sug_num = #{sug_num}
+	</select>
 
 </mapper>

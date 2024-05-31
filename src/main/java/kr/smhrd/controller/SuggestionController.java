@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.smhrd.Mapper.SuggestionMapper;
+import kr.smhrd.entity.A_Suggestion;
 import kr.smhrd.entity.Member;
 import kr.smhrd.entity.Suggestion;
 
@@ -56,12 +57,15 @@ public class SuggestionController {
 		return "adminHelp";
 	}
 	
+	
 	@RequestMapping("goSuggestionDetail")
 	public String goSuggestionDetail(@RequestParam("sug_num") int sug_num, Model model) {
 		
 		Suggestion suggestion = suggestionMapper.selectSuggestionNum(sug_num);
+		A_Suggestion aSuggestion = suggestionMapper.selectASuggestion(sug_num);
 		
 		model.addAttribute("suggestion", suggestion);
+		model.addAttribute("aSuggestion", aSuggestion);
 		
 		return "help_list";
 	}
