@@ -77,7 +77,7 @@
                         <li>
                             <a href="quiz">퀴즈</a>
                             <ul>
-                                <li><a href="quiz2">단어 맞추기</a></li>
+                                <li><a href="">단어 맞추기</a></li>
                                 <li><a href="">수화 해보기</a></li>
                             </ul>
                         </li>
@@ -148,14 +148,6 @@
                             <li><a href="" class="small_tip">로그인</a></li>
                         </ul>
                         <ul class="m_lnb">
-                            <li>
-                                <button class="m_bmenu" type="button">사이트소개</button>
-                                <ul class="m_smenu">
-                                    <li><a href="">수어스쿨</a> </li>
-                                    <!-- <li><a href="">소분류</a> </li>
-                                    <li><a href="">소분류</a> </li> -->
-                                </ul>
-                            </li>
                             <li>
                                 <button class="m_bmenu" type="button">강의 듣기</button>
                                 <ul class="m_smenu">
