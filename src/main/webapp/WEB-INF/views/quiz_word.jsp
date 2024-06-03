@@ -25,6 +25,21 @@
     <link rel="stylesheet" href="resources/css/sh_sub.css">    
     <link rel="stylesheet" href="resources/css/aos.css">
     <script src="resources/js/aos.js"></script>
+    <style>
+        <style>
+    .icon_area dl {
+    cursor: pointer; /* 클릭 가능하게 커서 추가 */
+}
+
+.icon_area dl dt {
+    transition: transform 0.3s ease;
+}
+
+.icon_area dl:hover dt {
+    transform: scale(1.3); /* dt 글씨 크기 증가 */
+}
+    </style>
+    </style>
 </head>
 <body>
 
