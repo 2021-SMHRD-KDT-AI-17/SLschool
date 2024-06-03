@@ -64,14 +64,6 @@
                     <h1 id="top_logo"><a href="goMain"><img src="resources/img/common/logo_2.png" alt="Sample" /></a></h1>
                     <ul id="top_nav">
                         <li>
-                            <a href="">사이트소개</a>
-                            <!-- <ul>
-                                <li><a href="sub1.html">수어스쿨</a></li>
-                                <li><a href="">소분류</a></li>
-                                <li><a href="">소분류</a></li> 
-                            </ul>-->
-                        </li>
-                        <li>
                             <a href="goStudy">강의 듣기</a>
                             <ul>
                                 <li><a href="goStudyA">음식</a></li>
@@ -85,8 +77,15 @@
                         <li>
                             <a href="quiz">퀴즈</a>
                             <ul>
-                                <li><a href="">A버전</a></li>
-                                <li><a href="quiz2">B버전</a></li>
+                                <li><a href="quiz2">단어 맞추기</a></li>
+                                <li><a href="">수화 해보기</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="quizWord">모의고사</a>
+                            <ul>
+                                <li><a href="quizDetail">단어 맞추기</a></li>
+                                <li><a href="quizDetailPic">그림 맞추기</a></li>
                             </ul>
                         </li>
                         <li>

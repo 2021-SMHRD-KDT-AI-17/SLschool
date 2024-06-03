@@ -26,6 +26,11 @@
     <link rel="stylesheet" href="resources/css/sh_sub.css"> 
     <link rel="stylesheet" href="resources/css/aos.css">
     <script src="resources/js/aos.js"></script>       
+    <style>
+    #greeting .cont {
+    padding: 5px 0 0 15% !important;
+}
+    </style>
 </head>
 <body>
 
