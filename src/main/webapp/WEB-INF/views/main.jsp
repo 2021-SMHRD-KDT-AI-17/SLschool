@@ -18,8 +18,8 @@
     <meta property="og:image" content="img/common/logo.png">
     <meta property="og:url" content="">
 	<title>수어스쿨</title>
+	<script src="resources/js/jquery-1.8.3.min.js"></script>
     <script src="resources/js/jquery-ui.js"></script>
-    <script src="resources/js/jquery-1.8.3.min.js"></script>
     <script src="resources/js/topmenu_script.js"></script>
     <script src="resources/js/swiper.min.js"></script>
     <link rel="stylesheet" href="resources/css/swiper.min.css">
@@ -206,12 +206,10 @@
                             <div class="swiper main_slide">
                                 <div class="main_slide_box swiper-wrapper">
                                     <div class="swiper-slide slide1">
-                                        <video id="webcam" autoplay playsinline width="700" height="466"></video>
+								        <video id="webcam" autoplay playsinline></video>
                                     </div>
                                     <div class="swiper-slide slide2">
-                                        <video autoplay muted loop width="100%" height="100%">
-                                            <source src="../img/main/def.mp4" type="video/mp4">
-                                        </video>
+								        <video id="webcam" autoplay playsinline></video>
                                     </div>
                                 </div>                
                             </div>
@@ -222,20 +220,12 @@
                                 </div>
                                 <div class="main_pager"></div>
                             </div>
-                        </div>
-                        <!-- 좌측 이미지 슬라이드 [e] -->
-                        
-                        <!-- 우측 영역 [s] -->
-                        <div class="main_cont">
+                            
+                             <div class="main_cont">
                             <!-- 텍스트 [s] -->
                             <div class="cont_tit">
-                                <p>어렵지 않아요,</p>
-                                <span>쉽게 배우세요!</span>
-                                <!-- <ul>
-                                    <li>ㄱ</li>
-                                    <li>ㄴ</li>
-                                    <li>ㄷ</li>
-                                </ul> -->
+                                <p>내 모습을 보면서,</p>
+                                <span>수화를 배워보세요!</span>
                             </div>
                             <!-- 텍스트 [e] -->
                             
@@ -249,15 +239,15 @@
                             <!-- 아이콘 배너 [e] -->
                             
                             <!-- 바로가기 [s] -->
-                            <a href="goStudyA" class="cont_txt">
-                                <p>
-                                    <span>수어 첫걸음 나서기</span>
-                                    열심히 아자아자 화이팅!
-                                </p>
-                                <div class="go_btn"><i class="fa fa-solid fa-angle-right" aria-hidden="true"></i><span class="sound_only">강의보기</span></div>
-                            </a>
+
                             <!-- 바로가기 [e] -->
                         </div>
+                        
+                        </div>
+                        <!-- 좌측 이미지 슬라이드 [e] -->
+                        
+                        <!-- 우측 영역 [s] -->
+                      
                         <!-- 우측 영역 [e] -->
                     </div>  
                 </div>
@@ -295,7 +285,7 @@
                             <!-- 타이틀 & 컨트롤러 [s] -->
                             <div class="tit_area">
                                 <a href="goStudyA">
-                                    <span class="tit">수준 맞춤 강의 듣기</span>
+                                    <span class="tit">카테고리 별 강의 듣기</span>
                                     수어는 동행입니다.
                                 </a>
                                 <div class="control">
@@ -443,6 +433,9 @@
 <!-- sh_wrapper [e] -->
 <script>
 
+$(document).ready(function() {
+    AOS.init();
+});
 async function startWebcam() {
     const videoElement = document.getElementById('webcam');
     try {
@@ -450,10 +443,14 @@ async function startWebcam() {
         videoElement.srcObject = stream;
     } catch (error) {
         console.error('Error accessing the webcam: ', error);
+        const imgElement = document.createElement('img');
+        imgElement.src = 'resources/img/common/webcamno.png';
+        imgElement.alt = 'No webcam available';
+        imgElement.style.width = '450px';  // 원하는 크기로 설정
+        imgElement.style.height = '300px';  // 원하는 높이로 설정
+        videoElement.parentNode.replaceChild(imgElement, videoElement);
     }
 }
-
-window.addEventListener('load', startWebcam);
 </script>
 </body>
 </html>
