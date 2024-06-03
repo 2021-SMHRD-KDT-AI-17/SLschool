@@ -88,7 +88,6 @@ public class QuizController {
 	}
 	
 	// 그림퀴즈 문제 이동
-
 	@RequestMapping("/quizDetailPic")          
 	public String quizDetailPic(Model model) {
 	    List<Map<String, Object>> questionList = new ArrayList<>();
@@ -159,7 +158,8 @@ public class QuizController {
 			}else {
 				int question_num = Integer.valueOf(question_number[i]).intValue();
 				wrong_question_list.add(question_num);    // 1~5 번 문제중 어떤 문제를 틀렸는지 저장하기 (짝수 번호 배열)
-				wrong_num_list.add(quiz_num);        // 틀린 문제에 대한 고유번호(나중에 랜덤으로 할 것) 을 홀수 번호에 저장
+				int quiz_num2 = quizMapper.selectNum(quiz_label);
+				wrong_num_list.add(quiz_num2);        // 틀린 문제에 대한 고유번호(나중에 랜덤으로 할 것) 을 홀수 번호에 저장
 				String quiz_label2 = quizMapper.selectLabel(quiz_num);
 				wrong_question_label_list.add(quiz_label2);
 				
@@ -212,10 +212,13 @@ public class QuizController {
 	        } else {
 	            wrong_question_list.add(i + 1); // 틀린 문제 번호 추가
 	            wrong_question_label_list.add(correctAnswer[i]);
+	            int quiz_num2 = quizMapper.selectNum(correctAnswer[i]);
+				wrong_num_list.add(quiz_num2); 
 	        }
 	    }
 	    
-	    int wrong_size = wrong_num_list.size();
+	    int wrong_size = wrong_question_list.size();
+	    System.out.println(wrong_size);
 	    
 	    Member member = (Member) session.getAttribute("loginMember");
 	    if (member != null) {
@@ -226,6 +229,7 @@ public class QuizController {
 	    
 	    model.addAttribute("wrong_question_label_list", wrong_question_label_list);
 	    model.addAttribute("score", score);
+	    model.addAttribute("wrong_num_list", wrong_num_list);
 	    model.addAttribute("wrong_question_list", wrong_question_list);
 	    model.addAttribute("wrong_size", wrong_size);
 	    
@@ -236,15 +240,19 @@ public class QuizController {
 	
 	
 	@RequestMapping("/goWrongStudy")
-	public String goWrongStudy(@RequestParam("quiz_num") int quiz_num, Model model) {
+	public String goWrongStudy(@RequestParam("word_num") int word_num, Model model) {
 		
-		String quizURL = quizMapper.selectQuizURL(quiz_num);
-		String word_num = quizMapper.selectLabel(quiz_num);
-		int word_num2 = quizMapper.selectNum(word_num);
-		Word word = new Word(word_num);
+		// String quizURL = quizMapper.selectQuizURL(quiz_num);
+		// String word_num = quizMapper.selectLabel(quiz_num);
+		Word word = studyMapper.selectWord(word_num);
+		String quizURL = word.getVideo_url();
+		String word_name = word.getWord_name();
+		
+		int word_num2 = quizMapper.selectNum(word_name);
+		// Word word = new Word(word_num);
 		
 		
-		 WordImage wordImage = studyMapper.selectWordImage(word_num2);
+		WordImage wordImage = studyMapper.selectWordImage(word_num2);
 		
 		model.addAttribute("word", word);
 		model.addAttribute("quizURL", quizURL);

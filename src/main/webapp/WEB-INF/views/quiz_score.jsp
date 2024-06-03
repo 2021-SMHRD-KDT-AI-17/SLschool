@@ -256,10 +256,10 @@
                     <div id="faq" style="width:600px" >
                         <h2 style="color:#4D869C;">오답 문제</h2>
                         <ol class="qna-list accordion">
-                          <c:forEach items="${wrong_num_list}" end="${wrong_size}" varStatus="s">
+                          <c:forEach items="${wrong_question_list}" end="${wrong_size}" varStatus="s">
                           	 <li class="qna-item">
                             <div class="question-article">
-                              <a href="goWrongStudy?quiz_num=${wrong_num_list[s.index] }" class="question btn-fold" style="display:flex;">
+                              <a href="goWrongStudy?word_num=${wrong_num_list[s.index] }" class="question btn-fold" style="display:flex;">
                                 <strong class="blind">질문:</strong>
                                 <div class="qt"><span class="q">${wrong_question_list[s.index] }번 문제   ${wrong_question_label_list[s.index] }</span></div>
                                 <div class="tq"> 바로가기</div>
