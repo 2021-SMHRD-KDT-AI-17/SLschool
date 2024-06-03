@@ -233,7 +233,7 @@ public class QuizController {
 	    model.addAttribute("wrong_question_list", wrong_question_list);
 	    model.addAttribute("wrong_size", wrong_size);
 	    
-	    return "quiz_score";
+	    return "quiz_score_pic";
 	}
 	
 	
