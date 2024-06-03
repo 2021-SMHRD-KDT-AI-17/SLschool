@@ -297,63 +297,40 @@
                                             <li>5번 문제</li>
                                         </ul>
                                         <!-- fieldsets -->
-                                        <c:forEach items="${quiz_pic_list}" var="QL" varStatus="s">
-                                            <fieldset>
-                                                <h2 class="fs-title">${s.count }번 문제</h2>
-                                                <input type="hidden" name="question_number" value="${s.count }">
-                                                <input type="hidden" name="quiz_num" value="${QL.quiz_num }">
-                                                <h3 class="fs-subtitle">영상을 보고 정답을 맞춰주세요</h3>
-                                                <video controls style="width:100%;">
-                                                    <source src="${QL.video_url}">
-                                                </video>
+<c:forEach var="question" items="${questionList}" varStatus="s">
+    <fieldset>
+        <h2 class="fs-title">${s.index + 1}번 문제</h2>
+        <input type="hidden" name="question_number" value="${s.index + 1}">
+        <input type="hidden" name="correctAnswer${s.index + 1}" value="${question.correctWord.word_name}">
 
-                                                <div class="flip">
-                                                    <div class="front" style="background-image: url(${QL.quiz_image1})">
-                                                     <h1 class="text-shadow">${QL.image1_name}</h1>
-                                                    </div>
-                                                    <div class="back">
-                                                        <h2>${QL.image1_name}</h2>
-                                                        <input type="radio" name="answer${s.count}" value="${QL.image1_name}">
-                                                    </div>
-                                                </div>
-                                                <div class="flip">
-                                                    <div class="front" style="background-image: url(${QL.quiz_image2})">
-                                                        <h1 class="text-shadow">${QL.image2_name}</h1>
-                                                    </div>
-                                                    <div class="back">
-                                                        <h2>${QL.image2_name}</h2>
-                                                        <input type="radio" name="answer${s.count}" value="${QL.image2_name}">
-                                                    </div>
-                                                </div>
-                                                <div class="flip">
-                                                    <div class="front" style="background-image: url(${QL.quiz_image3})">
-                                                        <h1 class="text-shadow">${QL.image3_name}</h1>
-                                                    </div>
-                                                    <div class="back">
-                                                        <h2>${QL.image3_name}</h2>
-                                                        <input type="radio" name="answer${s.count}" value="${QL.image3_name}">
-                                                    </div>
-                                                </div>
-                                                <div class="flip">
-                                                    <div class="front" style="background-image: url(${QL.quiz_image4})">
-                                                        <h1 class="text-shadow">${QL.image4_name}</h1>
-                                                    </div>
-                                                    <div class="back">
-                                                        <h2>${QL.image4_name}</h2>
-                                                        <input type="radio" name="answer${s.count}" value="${QL.image4_name}">
-                                                    </div>
-                                                </div>
-                                                <br>
-                                                <c:choose>
-                                                    <c:when test="${s.count <= 2}">
-                                                        <input type="button" name="next" class="next action-button" value="다음문제"/>
-                                                    </c:when>
-                                                    <c:otherwise>
-                                                        <input type="submit" value="결과보기">
-                                                    </c:otherwise>
-                                                </c:choose>
-                                            </fieldset>
-                                        </c:forEach>
+        <h3 class="fs-subtitle">영상을 보고 정답을 맞춰주세요</h3>
+        <video controls style="width:100%;">
+            <source src="${question.correctWord.video_url}" type="video/mp4">
+        </video>
+
+        <c:forEach var="choice" items="${question.choices}">
+            <div class="flip" onclick="selectChoice('${choice.key}')">
+                <div class="front" style="background-image: url(${choice.value})">
+                    <h1 class="text-shadow">${choice.key}</h1>
+                </div>
+                <div class="back">
+                    <h2>${choice.key}</h2>
+                    <input type="radio" name="answer${s.index + 1}" value="${choice.key}">
+                </div>
+            </div>
+        </c:forEach>
+
+        <br>
+        <c:choose>
+            <c:when test="${s.index < 4}">
+                <input type="button" name="next" class="next action-button" value="다음문제"/>
+            </c:when>
+            <c:otherwise>
+                <input type="submit" value="결과보기">
+            </c:otherwise>
+        </c:choose>
+    </fieldset>
+</c:forEach>
                                     </form>
                                 </div>
                             </div>
@@ -409,19 +386,31 @@
     <!-- sh_wrapper [e] -->
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const flipCards = document.querySelectorAll(".flip");
+    document.addEventListener("DOMContentLoaded", function () {
+        const flipCards = document.querySelectorAll(".flip");
 
-            flipCards.forEach(card => {
-                card.addEventListener("click", function () {
-                    flipCards.forEach(c => c.classList.remove("clicked"));
-                    this.classList.add("clicked");
-                    this.querySelector("input[type='radio']").checked = true;
-                });
+        flipCards.forEach(card => {
+            card.addEventListener("click", function () {
+                flipCards.forEach(c => c.classList.remove("clicked"));
+                this.classList.add("clicked");
+                this.querySelector("input[type='radio']").checked = true;
             });
-
-            AOS.init();
         });
+
+        AOS.init();
+    });
+
+    function calculateScore() {
+        let correctAnswers = 0;
+        const totalQuestions = 5;
+        for (let i = 1; i <= totalQuestions; i++) {
+            const selectedAnswer = document.querySelector(`input[name="answer${i}"]:checked`);
+            if (selectedAnswer && selectedAnswer.value === document.getElementById(`correctAnswer${i}`).value) {
+                correctAnswers++;
+            }
+        }
+        document.getElementById('score').innerText = `총 ${totalQuestions}문제 중 ${correctAnswers}문제를 맞췄습니다.`;
+    }
 
         // 나머지 기존 스크립트 유지
         $(document).ready(function() {

@@ -42,6 +42,18 @@
 	<select id="selectQuizNum" parameterType="int" resultType="kr.smhrd.entity.Quiz">
 		select * from quiz where quiz_num = #{quiz_num}
 	</select>
-
+	
+	
+	<select id="selectWordImage" parameterType="int" resultType="String">
+        SELECT word_img_url2 FROM SSC_word_image WHERE word_num = #{word_num}
+    </select>
+    
+   <select id="selectWordByName" parameterType="String" resultType="kr.smhrd.entity.Word">
+	    SELECT * FROM SSC_word WHERE word_name = #{word_name}
+	</select>
+	
+	<select id="selectRandomWords" parameterType="int" resultType="kr.smhrd.entity.Word">
+    SELECT * FROM SSC_word ORDER BY RAND() LIMIT #{limit}
+</select>
 
 </mapper>

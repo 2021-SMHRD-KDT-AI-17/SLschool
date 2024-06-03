@@ -32,4 +32,10 @@ public interface QuizMapper {
 
 	public Quiz selectQuizNum(int quiz_num);
 
+	public String selectWordImage(int word_num);
+
+	public Word selectWordByName(String choiceName);
+
+	public List<Word> selectRandomWords(int i);
+
 }
