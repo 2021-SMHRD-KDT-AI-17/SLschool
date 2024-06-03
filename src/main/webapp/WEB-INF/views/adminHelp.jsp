@@ -420,9 +420,9 @@ section.notice {
             <table class="board-table">
                 <thead>
                 <tr>
-                    <th scope="col" class="th-title">제목</th>
-                    <th scope="col" class="th-date">작성자</th>
-                    <th scope="col" class="th-date">등록일</th>
+                    <th scope="col" class="th-title"style="color:black;"><strong>제목</strong></th>
+                    <th scope="col" class="th-date"style="color:black;"><strong>작성자</strong></th>
+                    <th scope="col" class="th-date"style="color:black;"><strong>등록일</strong></th>
                   
                 </tr>
                 </thead>
