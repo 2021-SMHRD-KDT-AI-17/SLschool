@@ -210,9 +210,12 @@
             <div id="sh_aside">
     	        <div id="sh_snb">
                     <ul>
-                        <li><a href="goStudyA" >A난이도</a></li>
-                        <li><a href="goStudyB">B난이도</a></li>
-                        <li><a href="goStudyC" style="color: #4D869C;">C난이도</a></li>
+                        <li><a href="goStudyA">음식</a></li>
+                        <li><a href="goStudyB">스포츠</a></li>
+                        <li><a href="goStudyC" style="color: #4D869C;">직업</a></li>
+                        <li><a href="goStudyC">호칭</a></li>
+                        <li><a href="goStudyC">색깔</a></li>
+                        <li><a href="goStudyC">환경</a></li>
                     </ul>            
 				</div>
             </div>
