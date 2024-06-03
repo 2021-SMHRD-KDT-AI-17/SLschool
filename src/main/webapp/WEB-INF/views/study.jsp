@@ -462,7 +462,7 @@
                                                     </li>
                                                 </c:forEach>
                                                     <li class="swiper-slide">
-                                                        <a href="goStudyA">
+                                                        <a href="goStudyFamily">
                                                             <br>
                                                             <p class="subj" style="font-size: 25px;">가족구성원</p>
                                                             <br>
@@ -529,7 +529,7 @@
                                                     </li>
                                                 </c:forEach>
                                                     <li class="swiper-slide">
-                                                        <a href="goStudyA">
+                                                        <a href="goStudyColor">
                                                             <br>
                                                             <p class="subj" style="font-size: 25px;">색깔</p>
                                                             <br>
@@ -544,7 +544,7 @@
                             </article>
                             <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.8.4/swiper-bundle.min.js"></script>
                             <script>
-                                var swiper1 = new Swiper("#atc01 .late_slide", {
+                                var swiper1 = new Swiper("#atc05 .late_slide", {
                                     slidesPerView: 1,
                                     loop:true,
                                     autoplay: {
@@ -597,7 +597,7 @@
                                                     </li>
                                                 </c:forEach>
                                                     <li class="swiper-slide">
-                                                        <a href="goStudyA">
+                                                        <a href="goStudyEco">
                                                             <br>
                                                             <p class="subj" style="font-size: 25px;">환경</p>
                                                             <br>
