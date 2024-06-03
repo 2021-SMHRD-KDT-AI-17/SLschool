@@ -30,4 +30,6 @@ public interface QuizMapper {
 
 	public String selectLabelPic(int quiz_num);
 
+	public Quiz selectQuizNum(int quiz_num);
+
 }

@@ -1,9 +1,11 @@
 package kr.smhrd.controller;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -53,7 +55,25 @@ public class QuizController {
 	@RequestMapping("/quizDetail")
 	public String goQuizDetail(Model model) {
 		
-		List<Quiz> quiz_list= quizMapper.selectQuiz(); // DB를 연동하여 문제데이터를 Quiz형태로 되어있는 리스트에 저장
+		ArrayList<Quiz> quiz_list = new ArrayList<Quiz>();
+		
+		List<Integer> numbers = new ArrayList<>();
+        for (int i = 7; i <= 67; i++) {
+            numbers.add(i);
+        }
+
+        // 리스트를 랜덤하게 섞음
+        Collections.shuffle(numbers);
+
+        // 랜덤하게 섞인 리스트에서 5개의 숫자만 선택하여 출력
+        List<Integer> selectedNumbers = numbers.subList(0, 5);
+        for (int quiz_num : selectedNumbers) {
+            quiz_list.add(quizMapper.selectQuizNum(quiz_num));
+        }
+		
+        
+        
+		// List<Quiz> quiz_list = quizMapper.selectQuiz(); // DB를 연동하여 문제데이터를 Quiz형태로 되어있는 리스트에 저장
 		model.addAttribute("quiz_list", quiz_list); // 저장한 리스트(quiz_list)를 quiz_a_detail에 전송 (1회용)
 		
 		

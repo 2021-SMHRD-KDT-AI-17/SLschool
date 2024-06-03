@@ -38,6 +38,10 @@
 	<select id="selectLabelPic" parameterType="int" resultType="String">
 		select quiz_label from quiz_pic where quiz_num=#{quiz_num}
 	</select>
+	
+	<select id="selectQuizNum" parameterType="int" resultType="kr.smhrd.entity.Quiz">
+		select * from quiz where quiz_num = #{quiz_num}
+	</select>
 
 
 </mapper>
