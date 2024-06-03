@@ -3,15 +3,15 @@
 <mapper namespace="kr.smhrd.Mapper.StudyMapper">
 
 	<select id="selectWordAllA" resultType="kr.smhrd.entity.Word">
-		select * from SSC_word where word_category = 'A'
+		select * from SSC_word where word_category = '음식'
 	</select>
 	
 	<select id="selectWordAllB" resultType="kr.smhrd.entity.Word">
-		select * from SSC_word where word_category = 'B'
+		select * from SSC_word where word_category = '스포츠'
 	</select>
 	
 	<select id="selectWordAllC" resultType="kr.smhrd.entity.Word">
-		select * from SSC_word where word_category = 'C'
+		select * from SSC_word where word_category = '직업'
 	</select>
 	
 	<select id="selectWord" parameterType="int" resultType="kr.smhrd.entity.Word">

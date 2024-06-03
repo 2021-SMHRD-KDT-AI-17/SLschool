@@ -60,6 +60,7 @@ public class StudyController {
 		return "study_detail";
 	}
 	
+	// A => 음식
 	@RequestMapping("/goStudyA")
 	public String goStudyA(Model model) {
 		
@@ -68,6 +69,7 @@ public class StudyController {
 		return "study_a";
 	}
 	
+	// B => 스포츠
 	@RequestMapping("/goStudyB")
 	public String goStudyB(Model model) {
 		
@@ -76,6 +78,7 @@ public class StudyController {
 		return "study_b";
 	}
 	
+	// C => 직업
 	@RequestMapping("/goStudyC")
 	public String goStudyC(Model model) {
 		
