@@ -236,7 +236,7 @@
                                     <p>색깔</p>
                                 </div>
                                 <ul>
-                                <c:forEach items="${ word_listC}" var="C" varStatus="s">
+                                <c:forEach items="${ word_listColor}" var="C" varStatus="s">
                                 <li>
                                         <a href="goWordDetail?word_num=${C.word_num }">
                                             <div class="txt">

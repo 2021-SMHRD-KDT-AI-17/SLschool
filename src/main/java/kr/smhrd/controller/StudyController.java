@@ -1,6 +1,5 @@
 package kr.smhrd.controller;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -109,7 +108,30 @@ public class StudyController {
 	}
 	
 	
-
+	// goStudyColor => 색깔 
+	@RequestMapping("/goStudyColor")
+	public String goStudyColor(Model model) {
+		
+		List<Word> word_listColor = studyMapper.selectWordAllColor();
+		model.addAttribute("word_listColor", word_listColor);
+		
+		return "study_color";
+	}
+	
+	// goStudyEco => 환경
+	@RequestMapping("/goStudyEco")
+	public String goStudyEco(Model model) {
+		
+		List<Word> word_listEco = studyMapper.selectWordAllEco();
+		model.addAttribute("word_listEco", word_listEco);
+		
+		return "study_eco";
+		
+	}
+	
+	
+	
+	
     @RequestMapping("/goDic")
     public String getDictionary(Model model) {
         String[] consonants = {"ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㅁ", "ㅂ", "ㅅ", "ㅇ", "ㅈ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"};

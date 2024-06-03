@@ -236,16 +236,16 @@
                                     <p>환경</p>
                                 </div>
                                 <ul>
-                                <c:forEach items="${ word_listC}" var="C" varStatus="s">
+                                <c:forEach items="${ word_listEco}" var="E" varStatus="s">
                                 <li>
-                                        <a href="goWordDetail?word_num=${C.word_num }">
+                                        <a href="goWordDetail?word_num=${E.word_num }">
                                             <div class="txt">
                                                 <video controls style="width:395px;height:262px;object-fit: fill;">
-                                                    <source src="${C.video_url }">
+                                                    <source src="${E.video_url }">
                                                 </video>
                                                 <br>
                                                 <span>${s.count }</span>
-                                                <p style="text-align: center;">${C.word_name }</p>
+                                                <p style="text-align: center;">${E.word_name }</p>
                                             </div>
                                         </a>
                                     </li>
