@@ -28,6 +28,7 @@
     <style>
     #webcam {
         margin-bottom: 10px;
+        margin-left:10px;
         border-radius: 10px; /* 원하는 값으로 설정 */
     }
 </style>
