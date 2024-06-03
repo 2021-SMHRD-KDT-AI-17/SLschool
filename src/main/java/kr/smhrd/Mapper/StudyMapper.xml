@@ -14,6 +14,10 @@
 		select * from SSC_word where word_category = '직업'
 	</select>
 	
+	<select id="selectWordAllFamily" resultType="kr.smhrd.entity.Word">
+		select * from SSC_word where word_category = '가족구성원'
+	</select>
+	
 	<select id="selectWord" parameterType="int" resultType="kr.smhrd.entity.Word">
 		select * from SSC_word where word_num=#{word_num}
 	</select>

@@ -71,7 +71,7 @@ public class StudyController {
 		
 		List<Word> word_listA = studyMapper.selectWordAllA();
 		model.addAttribute("word_listA", word_listA);
-		return "study_a";
+		return "study_food";
 	}
 	
 	// B => 스포츠
@@ -80,7 +80,7 @@ public class StudyController {
 		
 		List<Word> word_listB = studyMapper.selectWordAllB();
 		model.addAttribute("word_listB", word_listB);
-		return "study_b";
+		return "study_sport";
 	}
 	
 	// C => 직업
@@ -89,8 +89,19 @@ public class StudyController {
 		
 		List<Word> word_listC = studyMapper.selectWordAllC();
 		model.addAttribute("word_listC", word_listC);
-		return "study_c";
+		return "study_job";
 	}
+	
+	// goStudyFamily => 가족구성원 보러가기
+	@RequestMapping("/goStudyFamily")
+	public String goStudyFamily(Model model) {
+		
+		List<Word> word_listFamily = studyMapper.selectWordAllFamily();
+		model.addAttribute("word_listFamily", word_listFamily);
+		
+		return "study_Family";
+	}
+	
 	
 
     @RequestMapping("/goDic")

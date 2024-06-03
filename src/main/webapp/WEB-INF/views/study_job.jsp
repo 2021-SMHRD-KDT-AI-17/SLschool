@@ -212,9 +212,9 @@
                     <ul>
                         <li><a href="goStudyA">음식</a></li>
                         <li><a href="goStudyB">스포츠</a></li>
-                        <li><a href="goStudyC">직업</a></li>
-                        <li><a href="goStudyD">호칭</a></li>
-                        <li><a href="goStudyC" style="color: #4D869C;">색깔</a></li>
+                        <li><a href="goStudyC" style="color: #4D869C;">직업</a></li>
+                        <li><a href="goStudyFamily">가족구성원</a></li>
+                        <li><a href="goStudyC">색깔</a></li>
                         <li><a href="goStudyC">환경</a></li>
                     </ul>            
 				</div>
@@ -233,7 +233,7 @@
                         <div class="tab_cont cont01">
                             <div class="s_tit">
                                 <div class="l_cont">
-                                    <p>색깔</p>
+                                    <p>직업</p>
                                 </div>
                                 <ul>
                                 <c:forEach items="${ word_listC}" var="C" varStatus="s">

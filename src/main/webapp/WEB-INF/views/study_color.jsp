@@ -18,7 +18,7 @@
     <meta property="og:description" content=""><!-- 사이트 설명문구 -->
     <meta property="og:image" content="img/common/logo.png">
     <meta property="og:url" content="">
-	<title>강의 듣기</title>
+	<title>회사소개-회사소개</title>
     <script src="resources/js/jquery-ui.js"></script>
     <script src="resources/js/jquery-1.8.3.min.js"></script>
     <script src="resources/js/topmenu_script.js"></script>
@@ -94,7 +94,7 @@
                                 <li><a href="">소분류</a></li>
                             </ul> -->
                         </li>
-                       <%if(loginMember != null) {%>
+                        <%if(loginMember != null) {%>
                             <li>
                             <a href="goMyPage">마이페이지</a>
                             <ul>
@@ -201,7 +201,7 @@
 				<div id="sh_content_tit">
 					<h3>강의 듣기</h3>
 					<p><a href="goMain"><i class="fa fa-home"></i><span class="sound_only">홈으로</span></a> 
-					<i class="fa fa-angle-right"></i> 강의 듣기 <i class="fa fa-angle-right"></i> B난이도</p>
+					<i class="fa fa-angle-right"></i> 강의 듣기 <i class="fa fa-angle-right"></i> C난이도</p>
 				</div>
 			</div>
             <!-- sub_main_banner [e] -->
@@ -211,12 +211,11 @@
     	        <div id="sh_snb">
                     <ul>
                         <li><a href="goStudyA">음식</a></li>
-                        <li><a href="goStudyB" style="color: #4D869C;">스포츠</a></li>
+                        <li><a href="goStudyB">스포츠</a></li>
                         <li><a href="goStudyC">직업</a></li>
-                        <li><a href="goStudyC">호칭</a></li>
-                        <li><a href="goStudyC">색깔</a></li>
+                        <li><a href="goStudyFamily">가족구성원</a></li>
+                        <li><a href="goStudyC" style="color: #4D869C;">색깔</a></li>
                         <li><a href="goStudyC">환경</a></li>
-                        
                     </ul>            
 				</div>
             </div>
@@ -234,19 +233,19 @@
                         <div class="tab_cont cont01">
                             <div class="s_tit">
                                 <div class="l_cont">
-                                    <p>스포츠</p>
+                                    <p>색깔</p>
                                 </div>
                                 <ul>
-                                <c:forEach items="${ word_listB}" var="B" varStatus="s">
+                                <c:forEach items="${ word_listC}" var="C" varStatus="s">
                                 <li>
-                                        <a href="goWordDetail?word_num=${B.word_num }">
+                                        <a href="goWordDetail?word_num=${C.word_num }">
                                             <div class="txt">
                                                 <video controls style="width:395px;height:262px;object-fit: fill;">
-                                                    <source src="${B.video_url }">
+                                                    <source src="${C.video_url }">
                                                 </video>
                                                 <br>
                                                 <span>${s.count }</span>
-                                                <p style="text-align: center;">${B.word_name }</p>
+                                                <p style="text-align: center;">${C.word_name }</p>
                                             </div>
                                         </a>
                                     </li>

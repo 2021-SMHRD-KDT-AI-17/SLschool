@@ -26,6 +26,8 @@ public interface StudyMapper {
 
 	public WordImage selectWordImage(int word_num);
 
+	public List<Word> selectWordAllFamily();
+
 
 
 

@@ -213,7 +213,7 @@
                         <li><a href="goStudyA">음식</a></li>
                         <li><a href="goStudyB">스포츠</a></li>
                         <li><a href="goStudyC">직업</a></li>
-                        <li><a href="goStudyD" style="color: #4D869C;">호칭</a></li>
+                        <li><a href="goStudyFamily" style="color: #4D869C;">가족구성원</a></li>
                         <li><a href="goStudyC">색깔</a></li>
                         <li><a href="goStudyC">환경</a></li>
                     </ul>            
@@ -236,16 +236,16 @@
                                     <p>가족구성원</p>
                                 </div>
                                 <ul>
-                                <c:forEach items="${ word_listC}" var="C" varStatus="s">
+                                <c:forEach items="${ word_listFamily}" var="F" varStatus="s">
                                 <li>
-                                        <a href="goWordDetail?word_num=${C.word_num }">
+                                        <a href="goWordDetail?word_num=${F.word_num }">
                                             <div class="txt">
                                                 <video controls style="width:395px;height:262px;object-fit: fill;">
-                                                    <source src="${C.video_url }">
+                                                    <source src="${F.video_url }">
                                                 </video>
                                                 <br>
                                                 <span>${s.count }</span>
-                                                <p style="text-align: center;">${C.word_name }</p>
+                                                <p style="text-align: center;">${F.word_name }</p>
                                             </div>
                                         </a>
                                     </li>

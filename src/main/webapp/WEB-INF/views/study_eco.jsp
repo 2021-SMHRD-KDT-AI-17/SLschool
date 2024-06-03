@@ -213,7 +213,7 @@
                         <li><a href="goStudyA">음식</a></li>
                         <li><a href="goStudyB">스포츠</a></li>
                         <li><a href="goStudyC">직업</a></li>
-                        <li><a href="goStudyD">호칭</a></li>
+                        <li><a href="goStudyFamily">가족구성원</a></li>
                         <li><a href="goStudyC">색깔</a></li>
                         <li><a href="goStudyC" style="color: #4D869C;">환경</a></li>
                     </ul>            
