@@ -230,7 +230,7 @@
                         <div class="tab_cont cont01">
                             <div class="s_tit">
                                 <div class="l_cont">
-                                    <p>직업</p>
+                                    <p>환경</p>
                                 </div>
                                 <ul>
                                 <c:forEach items="${ word_listC}" var="C" varStatus="s">

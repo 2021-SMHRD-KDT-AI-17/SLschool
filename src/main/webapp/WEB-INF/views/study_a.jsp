@@ -230,8 +230,7 @@
                         <div class="tab_cont cont01">
                             <div class="s_tit">
                                 <div class="l_cont">
-                                    <span>어린 아이 수준</span>
-                                    <p>A난이도</p>
+                                    <p>음식</p>
                                 </div>
                                 <ul>
                                 <c:forEach items="${ word_listA}" var="A" varStatus="s">
