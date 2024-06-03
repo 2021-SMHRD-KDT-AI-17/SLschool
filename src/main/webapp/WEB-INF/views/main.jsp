@@ -27,9 +27,14 @@
     <link rel="stylesheet" href="resources/css/sh_main.css">
     <style>
     #webcam {
-        margin-bottom: 10px;
-        margin-left:10px;
-        border-radius: 10px; /* 원하는 값으로 설정 */
+        margin-left:10px; /* 원하는 값으로 설정 */
+    }
+        .video-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+        height: 100%; /* 부모 요소의 높이를 설정 */
     }
 </style>
 </head>
@@ -212,20 +217,15 @@
                         <div class="slide_wrap">
                            <div class="main_cont">
                             <!-- 텍스트 [s] -->
-                            <video id="webcam" autoplay playsinline style="height:500px"></video>
+                            <div class="video-container">
+							    <video id="webcam" autoplay playsinline style="height:500px"></video>
+							</div>
                             <div class="cont_tit">
                                 <p>내 모습을 보면서,</p>
                                 <span>수화를 배워보세요!</span>
                             </div>
                             <!-- 텍스트 [e] -->
                             
-                            <!-- 아이콘 배너 [s] -->
-                            <div class="icon_links">
-                                <a href="goStudy"><div class="icon"><img src="resources/img/main/main_icon_01.png" alt="학습시스템" /></div>학습시스템</a>
-                                <a href="goStudy"><div class="icon"><img src="resources/img/main/main_icon_04.png" alt="강의보기" /></div>강의보기</a>
-                                <a href="quiz"><div class="icon"><img src="resources/img/main/main_icon_03.png" alt="자료실" /></div>퀴즈</a>
-                                <a href="goDic"><div class="icon"><img src="resources/img/main/main_icon_02.png" alt="교재안내" /></div>수어사전</a>
-                            </div>
                             <!-- 아이콘 배너 [e] -->
                             
                             <!-- 바로가기 [s] -->
@@ -437,8 +437,8 @@ async function startWebcam() {
         const imgElement = document.createElement('img');
         imgElement.src = 'resources/img/common/webcamno.png';
         imgElement.alt = 'No webcam available';
-        imgElement.style.width = '450px';  // 원하는 크기로 설정
-        imgElement.style.height = '300px';  // 원하는 높이로 설정
+        imgElement.style.width = '666px';  // 원하는 크기로 설정
+        imgElement.style.height = '500px'; 
         videoElement.parentNode.replaceChild(imgElement, videoElement);
     }
 }
