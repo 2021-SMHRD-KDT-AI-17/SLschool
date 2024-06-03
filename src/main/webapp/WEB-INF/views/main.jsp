@@ -25,6 +25,12 @@
     <link rel="stylesheet" href="resources/css/swiper.min.css">
     <link rel="stylesheet" href="resources/css/sh_common.css">
     <link rel="stylesheet" href="resources/css/sh_main.css">
+    <style>
+    #webcam {
+        margin-bottom: 10px;
+        border-radius: 10px; /* 원하는 값으로 설정 */
+    }
+</style>
 </head>
 <body>
 
@@ -203,26 +209,9 @@
                     <div class="main_wrap">
                         <!-- 좌측 이미지 슬라이드 [s] -->
                         <div class="slide_wrap">
-                            <div class="swiper main_slide">
-                                <div class="main_slide_box swiper-wrapper">
-                                    <div class="swiper-slide slide1">
-								        <video id="webcam" autoplay playsinline></video>
-                                    </div>
-                                    <div class="swiper-slide slide2">
-								        <video id="webcam" autoplay playsinline></video>
-                                    </div>
-                                </div>                
-                            </div>
-                            <div class="main_control">
-                                <div class="main_arrow">
-                                    <span class="main_prev"><i class="fa fa-solid fa-angle-left" aria-hidden="true"></i></span>
-                                    <span class="main_next"><i class="fa fa-solid fa-angle-right" aria-hidden="true"></i></span>
-                                </div>
-                                <div class="main_pager"></div>
-                            </div>
-                            
-                             <div class="main_cont">
+                           <div class="main_cont">
                             <!-- 텍스트 [s] -->
+                            <video id="webcam" autoplay playsinline style="height:500px"></video>
                             <div class="cont_tit">
                                 <p>내 모습을 보면서,</p>
                                 <span>수화를 배워보세요!</span>
@@ -433,9 +422,10 @@
 <!-- sh_wrapper [e] -->
 <script>
 
-$(document).ready(function() {
-    AOS.init();
+document.addEventListener('DOMContentLoaded', (event) => {
+    startWebcam();
 });
+
 async function startWebcam() {
     const videoElement = document.getElementById('webcam');
     try {

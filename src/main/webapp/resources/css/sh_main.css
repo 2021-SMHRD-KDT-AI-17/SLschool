@@ -2,7 +2,7 @@
 
 /* =========================== MAIN */
 /* 메인슬라이드 */
-#main_banner_wrap{overflow:hidden;position:relative;width:100%;height:800px;padding:50px 0;border-top:1px solid #e1e1e1;font-family:'Pretendard'}
+#main_banner_wrap{overflow:hidden;position:relative;width:100%;height:850px;padding:50px 0;border-top:1px solid #e1e1e1;font-family:'Pretendard'}
 #main_banner_wrap:before{position:absolute;width:100%;height:100%;left:0px;top:0;content:'';background:#f1f2f4}
 .main_wrap{display:flex;max-width:1400px;height:490px;margin:0 auto}
 .slide_wrap{position:relative;width:100%;height:100%;}
