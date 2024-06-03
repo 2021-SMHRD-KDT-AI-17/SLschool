@@ -48,6 +48,9 @@
             color: white;
             margin-left: -5px;
         }
+        h2{
+        margin-left:0px !important;
+        }
 
         .flip {
             position: relative;
