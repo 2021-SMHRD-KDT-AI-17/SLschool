@@ -51,7 +51,7 @@
   border-spacing: 0;
 }
 section.notice {
-  margin-top:100px;
+  margin-top:150px;
   padding: 80px 0;
 }
 
@@ -507,40 +507,6 @@ section.notice {
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
 <script>
-$(document).ready(function() {
-    Chart.defaults.global.legend.display = false;
-    Chart.defaults.global.elements.line.tension = 0.3;
-    ctx = document.getElementById('myChart').getContext('2d');
-    
-    var scorelist = ${fn:escapeXml(scorelist)};
-    
-    var chart = new Chart(ctx, {
-        // The type of chart we want to create
-        type: 'line',
-        // The data for our dataset
-        data: {
-            labels: ["최근 1회","최근 2회","최근 3회","최근 4회", "최근 5회"],
-            datasets: [{
-                label: "점수",
-                backgroundColor: 'rgb(238, 247, 255)',
-                borderColor: 'rgb(122, 178, 178)',
-                data: scorelist
-            
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                      min:0,
-                        max: 100,
-                      stepSize: 20
-                    }
-                }]
-            }
-        }
-    });
-});
 // Configuration options go here
 </script>
 </body>

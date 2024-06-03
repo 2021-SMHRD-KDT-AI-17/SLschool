@@ -227,12 +227,12 @@
                         <!-- cont01 [s] -->
                         <div class="tab_cont cont01">
                             <div class="icon_area">
+                           	 	<a href="quizWord">
                                 <dl data-aos="flip-left">
-                                    <a href="quizWord">
                                     <dt>뜻 맞추기</dt>
                                     <dd>수화 영상을 보고 무슨 단어일 지 맞춰보세요</dd>
-                                    </a>
                                 </dl>
+                                 </a>
                                 <dl data-aos="flip-left" data-aos-delay="300">
                                     <dt>수화해보기</dt>
                                     <dd>단어 글자를 보고 무슨 단어일 지 맞춰보세요</dd>

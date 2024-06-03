@@ -71,7 +71,8 @@
 }
 
 .l_cont {
-    margin-right: 10px; /* 비디오 사이의 간격을 좁게 설정 */
+    margin-right: 10px;
+    margin-top:1px; /* 비디오 사이의 간격을 좁게 설정 */
 }
 
 .r_cont {
@@ -92,6 +93,9 @@
     margin-left: 10px; /* 비디오 사이의 간격을 좁게 설정 */
 
     
+}
+.l_cont .lv{
+margin-top:10px;
 }
     </style>
 </head>
@@ -312,7 +316,7 @@
                                 <div class="video-container">
                                     <div class="l_cont">
                                         <span>
-                                            <video controls class="responsive-video">
+                                            <video class="lv" controls class="responsive-video">
                                                 <source src="${quizURL }" type="video/mp4">
                                             </video>
                                         </span>

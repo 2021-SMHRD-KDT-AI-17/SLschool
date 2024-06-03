@@ -74,9 +74,12 @@
                         <li>
                             <a href="goStudy">강의 듣기</a>
                             <ul>
-                                <li><a href="goStudyA">A난이도</a></li>
-                                <li><a href="goStudyB">B난이도</a></li>
-                                <li><a href="goStudyC">C난이도</a></li>
+                                <li><a href="goStudyA">음식</a></li>
+                                <li><a href="goStudyB">스포츠</a></li>
+                                <li><a href="goStudyC">직업</a></li>
+                                <li><a href="goStudyC">호칭</a></li>
+                                <li><a href="goStudyC">색깔</a></li>
+                                <li><a href="goStudyC">환경</a></li>
                             </ul>
                         </li>
                         <li>
@@ -157,9 +160,12 @@
                             <li>
                                 <button class="m_bmenu" type="button">강의 듣기</button>
                                 <ul class="m_smenu">
-                                    <li><a href="goStudyA">A난이도</a> </li>
-                                    <li><a href="goStudyB">B난이도</a> </li>
-                                    <li><a href="goStudyC">C난이도</a> </li>
+	                                <li><a href="goStudyA">음식</a></li>
+	                                <li><a href="goStudyB">스포츠</a></li>
+	                                <li><a href="goStudyC">직업</a></li>
+	                                <li><a href="goStudyC">호칭</a></li>
+	                                <li><a href="goStudyC">색깔</a></li>
+	                                <li><a href="goStudyC">환경</a></li>
                                 </ul>
                             </li>
                             <li>

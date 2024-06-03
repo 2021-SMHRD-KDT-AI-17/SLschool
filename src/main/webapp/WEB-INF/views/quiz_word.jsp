@@ -226,18 +226,20 @@
                         <!-- cont01 [s] -->
                         <div class="tab_cont cont01">
                             <div class="icon_area">
+                            <a href="quizDetail">
                                 <dl data-aos="flip-left">
-                                    <a href="quizDetail">
+                                    
                                     <dt>단어 쓰기</dt>
                                     <dd>나는 수화에 맞는 단어를 써볼래요!</dd>
-                                    </a>
                                 </dl>
+                                </a>
+                                <a href="quizDetailPic">
                                 <dl data-aos="flip-left" data-aos-delay="300">
-                                    <a href="quizDetailPic">
+                                    
                                     <dt>그림 맞추기</dt>
                                     <dd>나는 수화에 맞는 그림을 고를래요!</dd>
-                                    </a>
                                 </dl>
+                                </a>
                             </div>
                         </div>
                 <!-- 서브페이지 [e] -->

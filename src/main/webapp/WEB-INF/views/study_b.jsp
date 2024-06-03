@@ -238,7 +238,7 @@
                                 <li>
                                         <a href="goWordDetail?word_num=${B.word_num }">
                                             <div class="txt">
-                                                <video controls style="width:100%;">
+                                                <video controls style="width:395px;height:262px;object-fit: fill;">
                                                     <source src="${B.video_url }">
                                                 </video>
                                                 <br>
