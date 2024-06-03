@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Param;
 
 import kr.smhrd.entity.Record;
 import kr.smhrd.entity.Word;
+import kr.smhrd.entity.WordImage;
 
 public interface StudyMapper {
 
@@ -22,6 +23,8 @@ public interface StudyMapper {
 	public int insertRecord(Record record);
 
 	public List<Word> selectRecordWord(String sug_writer);
+
+	public WordImage selectWordImage(int word_num);
 
 
 

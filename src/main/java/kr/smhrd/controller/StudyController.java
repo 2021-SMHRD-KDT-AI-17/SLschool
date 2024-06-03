@@ -17,6 +17,7 @@ import kr.smhrd.Mapper.StudyMapper;
 import kr.smhrd.entity.Member;
 import kr.smhrd.entity.Record;
 import kr.smhrd.entity.Word;
+import kr.smhrd.entity.WordImage;
 
 @Controller
 public class StudyController {
@@ -24,6 +25,7 @@ public class StudyController {
 	@Autowired
 	private StudyMapper studyMapper;
 
+	// 강의듣기 페이지
 	@RequestMapping("/goStudy")
 	public String goStudy(Model model) {
 		
@@ -38,6 +40,7 @@ public class StudyController {
 		return "study";
 	}
 	
+	// 단어 보러가기
 	@RequestMapping("/goWordDetail")
 	public String goWordDetail(@RequestParam("word_num") int word_num, Model model, HttpSession session) {
 		
@@ -51,11 +54,13 @@ public class StudyController {
 		}
 		
 		Word word = studyMapper.selectWord(word_num);
+		WordImage wordImage = studyMapper.selectWordImage(word_num);
 		
 		model.addAttribute("word", word);
 		
 		String word_url = word.getVideo_url(); // 임시조치
 		model.addAttribute("quizURL", word_url); // 임시조치
+		model.addAttribute("wordImage", wordImage);
 		
 		return "study_detail";
 	}
