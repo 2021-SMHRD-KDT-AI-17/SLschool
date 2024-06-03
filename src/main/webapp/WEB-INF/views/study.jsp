@@ -238,8 +238,7 @@
                                     <div class="latest">
                                         <div class="tit_area">
                                             <a href="">
-                                                <span class="tit">A난이도</span>
-                                                어린아이 수준
+                                                <span class="tit">음식</span>
                                             </a>
                                             <div class="control">
                                                 <span class="prev"><i class="fa fa-solid fa-angle-left" aria-hidden="true"></i></span>
@@ -266,7 +265,7 @@
                                                     <li class="swiper-slide">
                                                         <a href="goStudyA">
                                                             <br>
-                                                            <p class="subj" style="font-size: 25px;">A난이도</p>
+                                                            <p class="subj" style="font-size: 25px;">음식</p>
                                                             <br>
                                                             <span>더보기</span>
                                                         </a>
@@ -306,8 +305,7 @@
                                     <div class="latest">
                                         <div class="tit_area">
                                             <a href="">
-                                                <span class="tit">B난이도</span>
-                                                초등학교 수준
+                                                <span class="tit">스포츠</span>
                                             </a>
                                             <div class="control">
                                                 <span class="prev"><i class="fa fa-solid fa-angle-left" aria-hidden="true"></i></span>
@@ -333,7 +331,7 @@
                                                     <li class="swiper-slide">
                                                         <a href="goStudyB">
                                                             <br>
-                                                            <p class="subj" style="font-size: 25px;">B난이도</p>
+                                                            <p class="subj" style="font-size: 25px;">스포츠</p>
                                                             <br>
                                                             <span>더보기</span>
                                                         </a>
@@ -373,8 +371,7 @@
                                     <div class="latest">
                                         <div class="tit_area">
                                             <a href="">
-                                                <span class="tit">C난이도</span>
-                                                중학교 수준
+                                                <span class="tit">직업</span>
                                             </a>
                                             <div class="control">
                                                 <span class="prev"><i class="fa fa-solid fa-angle-left" aria-hidden="true"></i></span>
@@ -400,7 +397,7 @@
                                                     <li class="swiper-slide">
                                                         <a href="goStudyC">
                                                             <br>
-                                                            <p class="subj" style="font-size: 25px;">C난이도</p>
+                                                            <p class="subj" style="font-size: 25px;">직업</p>
                                                             <br>
                                                             <span>더보기</span>
                                                         </a>
@@ -434,6 +431,209 @@
                                     }
                                 });
                             </script>
+                            
+                            <article id="atc01">
+                                <div class="inner">
+                                    <div class="latest">
+                                        <div class="tit_area">
+                                            <a href="">
+                                                <span class="tit">가족구성원</span>
+                                            </a>
+                                            <div class="control">
+                                                <span class="prev"><i class="fa fa-solid fa-angle-left" aria-hidden="true"></i></span>
+                                                <span class="next"><i class="fa fa-solid fa-angle-right" aria-hidden="true"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="late_wrap">
+                                            <div class="swiper late_slide">
+                                                <ul class="swiper-wrapper">	
+                                                
+                                                <c:forEach items="${word_listFamily}" var="F" end="2" >
+                                                <li class="swiper-slide">
+                                                        <a href="goWordDetail?word_num=${F.word_num }">
+                                                            <p class="subj">
+                                                                <video controls style="width: 100%;">
+                                                                <source src="${F.video_url }" type="video/mp4">
+                                                                </video>
+                                                                <br>
+                                                                ${F.word_name }
+                                                            </p>
+                                                        </a>
+                                                    </li>
+                                                </c:forEach>
+                                                    <li class="swiper-slide">
+                                                        <a href="goStudyA">
+                                                            <br>
+                                                            <p class="subj" style="font-size: 25px;">가족구성원</p>
+                                                            <br>
+                                                            <span>더보기</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>                    
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.8.4/swiper-bundle.min.js"></script>
+                            <script>
+                                var swiper1 = new Swiper("#atc01 .late_slide", {
+                                    slidesPerView: 1,
+                                    loop:true,
+                                    autoplay: {
+                                    delay: 2500,
+                                    disableOnInteraction: false,
+                                    },
+                                    navigation: {
+                                    nextEl: '#atc01 .next',
+                                    prevEl: '#atc01 .prev',
+                                    },
+                                    breakpoints: {
+                                        531: {
+                                          slidesPerView: '2',
+                                        },
+                                        1025: {
+                                          slidesPerView: '3',
+                                        },
+                                    }
+                                });
+                            </script>
+                            
+                            <article id="atc01">
+                                <div class="inner">
+                                    <div class="latest">
+                                        <div class="tit_area">
+                                            <a href="">
+                                                <span class="tit">색깔</span>
+                                            </a>
+                                            <div class="control">
+                                                <span class="prev"><i class="fa fa-solid fa-angle-left" aria-hidden="true"></i></span>
+                                                <span class="next"><i class="fa fa-solid fa-angle-right" aria-hidden="true"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="late_wrap">
+                                            <div class="swiper late_slide">
+                                                <ul class="swiper-wrapper">	
+                                                
+                                                <c:forEach items="${word_listColor}" var="A" end="2" >
+                                                <li class="swiper-slide">
+                                                        <a href="goWordDetail?word_num=${A.word_num }">
+                                                            <p class="subj">
+                                                                <video controls style="width: 100%;">
+                                                                <source src="${A.video_url }" type="video/mp4">
+                                                                </video>
+                                                                <br>
+                                                                ${A.word_name }
+                                                            </p>
+                                                        </a>
+                                                    </li>
+                                                </c:forEach>
+                                                    <li class="swiper-slide">
+                                                        <a href="goStudyA">
+                                                            <br>
+                                                            <p class="subj" style="font-size: 25px;">색깔</p>
+                                                            <br>
+                                                            <span>더보기</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>                    
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.8.4/swiper-bundle.min.js"></script>
+                            <script>
+                                var swiper1 = new Swiper("#atc01 .late_slide", {
+                                    slidesPerView: 1,
+                                    loop:true,
+                                    autoplay: {
+                                    delay: 2500,
+                                    disableOnInteraction: false,
+                                    },
+                                    navigation: {
+                                    nextEl: '#atc01 .next',
+                                    prevEl: '#atc01 .prev',
+                                    },
+                                    breakpoints: {
+                                        531: {
+                                          slidesPerView: '2',
+                                        },
+                                        1025: {
+                                          slidesPerView: '3',
+                                        },
+                                    }
+                                });
+                            </script>
+                            
+                            <article id="atc01">
+                                <div class="inner">
+                                    <div class="latest">
+                                        <div class="tit_area">
+                                            <a href="">
+                                                <span class="tit">A난이도</span>
+                                                어린아이 수준
+                                            </a>
+                                            <div class="control">
+                                                <span class="prev"><i class="fa fa-solid fa-angle-left" aria-hidden="true"></i></span>
+                                                <span class="next"><i class="fa fa-solid fa-angle-right" aria-hidden="true"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="late_wrap">
+                                            <div class="swiper late_slide">
+                                                <ul class="swiper-wrapper">	
+                                                
+                                                <c:forEach items="${word_listEco}" var="A" end="2" >
+                                                <li class="swiper-slide">
+                                                        <a href="goWordDetail?word_num=${A.word_num }">
+                                                            <p class="subj">
+                                                                <video controls style="width: 100%;">
+                                                                <source src="${A.video_url }" type="video/mp4">
+                                                                </video>
+                                                                <br>
+                                                                ${A.word_name }
+                                                            </p>
+                                                        </a>
+                                                    </li>
+                                                </c:forEach>
+                                                    <li class="swiper-slide">
+                                                        <a href="goStudyA">
+                                                            <br>
+                                                            <p class="subj" style="font-size: 25px;">환경</p>
+                                                            <br>
+                                                            <span>더보기</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>                    
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.8.4/swiper-bundle.min.js"></script>
+                            <script>
+                                var swiper1 = new Swiper("#atc01 .late_slide", {
+                                    slidesPerView: 1,
+                                    loop:true,
+                                    autoplay: {
+                                    delay: 2500,
+                                    disableOnInteraction: false,
+                                    },
+                                    navigation: {
+                                    nextEl: '#atc01 .next',
+                                    prevEl: '#atc01 .prev',
+                                    },
+                                    breakpoints: {
+                                        531: {
+                                          slidesPerView: '2',
+                                        },
+                                        1025: {
+                                          slidesPerView: '3',
+                                        },
+                                    }
+                                });
+                            </script>
+                            
                         </section>
                 </div>
                 <!-- 서브페이지 [e] -->

@@ -27,6 +27,10 @@ public interface StudyMapper {
 	public WordImage selectWordImage(int word_num);
 
 	public List<Word> selectWordAllFamily();
+	
+	public List<Word> selectWordAllColor();
+	
+	public List<Word> selectWordAllEco();
 
 
 

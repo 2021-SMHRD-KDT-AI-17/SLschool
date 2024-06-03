@@ -18,6 +18,14 @@
 		select * from SSC_word where word_category = '가족구성원'
 	</select>
 	
+	<select id="selectWordAllColor" resultType="kr.smhrd.entity.Word">
+		select * from SSC_word where word_category = '색깔'
+	</select>
+	
+	<select id="selectWordAllEco" resultType="kr.smhrd.entity.Word">
+		select * from SSC_word where word_category = '환경'
+	</select>
+	
 	<select id="selectWord" parameterType="int" resultType="kr.smhrd.entity.Word">
 		select * from SSC_word where word_num=#{word_num}
 	</select>

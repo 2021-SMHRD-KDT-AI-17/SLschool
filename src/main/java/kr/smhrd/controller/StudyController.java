@@ -32,10 +32,16 @@ public class StudyController {
 		List<Word> word_listA = studyMapper.selectWordAllA();
 		List<Word> word_listB = studyMapper.selectWordAllB();
 		List<Word> word_listC = studyMapper.selectWordAllC();
+		List<Word> word_listFamily = studyMapper.selectWordAllFamily();
+		List<Word> word_listColor = studyMapper.selectWordAllColor();
+		List<Word> word_listEco = studyMapper.selectWordAllEco();
 		
 		model.addAttribute("word_listA", word_listA);
 		model.addAttribute("word_listB", word_listB);
 		model.addAttribute("word_listC", word_listC);
+		model.addAttribute("word_listFamily", word_listFamily);
+		model.addAttribute("word_listColor", word_listColor);
+		model.addAttribute("word_listEco", word_listEco);
 		
 		return "study";
 	}
