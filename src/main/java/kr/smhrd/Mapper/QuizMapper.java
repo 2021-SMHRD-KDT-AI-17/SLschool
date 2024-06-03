@@ -38,4 +38,6 @@ public interface QuizMapper {
 
 	public List<Word> selectRandomWords(int i);
 
+	public int selectNum(String word_name);
+
 }

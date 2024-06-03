@@ -54,6 +54,10 @@
 	
 	<select id="selectRandomWords" parameterType="int" resultType="kr.smhrd.entity.Word">
     SELECT * FROM SSC_word ORDER BY RAND() LIMIT #{limit}
-</select>
+	</select>
+	
+	<select id="selectNum" parameterType="String" resultType="int">
+		select word_num from SSC_word where word_name = #{word_name}
+	</select>
 
 </mapper>

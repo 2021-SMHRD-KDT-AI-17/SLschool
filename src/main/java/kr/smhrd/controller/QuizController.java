@@ -21,9 +21,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.smhrd.Mapper.QuizMapper;
+import kr.smhrd.Mapper.StudyMapper;
 import kr.smhrd.entity.Member;
 import kr.smhrd.entity.Quiz;
 import kr.smhrd.entity.Word;
+import kr.smhrd.entity.WordImage;
 import kr.smhrd.entity.QuizRank;
 import kr.smhrd.entity.QuizPic;
 
@@ -33,6 +35,9 @@ public class QuizController {
 	
 	@Autowired
 	private QuizMapper quizMapper;
+	
+	@Autowired
+	private StudyMapper  studyMapper;
 	
 	// 퀴즈 선택창으로 이동
 	@RequestMapping("/quiz")
@@ -235,9 +240,15 @@ public class QuizController {
 		
 		String quizURL = quizMapper.selectQuizURL(quiz_num);
 		String word_num = quizMapper.selectLabel(quiz_num);
+		int word_num2 = quizMapper.selectNum(word_num);
 		Word word = new Word(word_num);
+		
+		
+		 WordImage wordImage = studyMapper.selectWordImage(word_num2);
+		
 		model.addAttribute("word", word);
 		model.addAttribute("quizURL", quizURL);
+		 model.addAttribute("wordImage", wordImage);
 		
 		return "study_detail";
 	}
