@@ -282,9 +282,12 @@ margin-top:10px;
             <div id="sh_aside">
     	        <div id="sh_snb">
                     <ul>
-                        <li><a href="goStudyA">A난이도</a></li> <!--  style="color: #4D869C;" -->
-                        <li><a href="goStudyB">B난이도</a></li>
-                        <li><a href="goStudyC">C난이도</a></li>
+                        <li><a href="goStudyA">음식</a></li> <!--  style="color: #4D869C;" -->
+                        <li><a href="goStudyB">스포츠</a></li>
+                        <li><a href="goStudyC">직업</a></li>
+                        <li><a href="goStudyFamily">가족구성원</a></li>
+                        <li><a href="goStudyColor">색깔</a></li>
+                        <li><a href="goStudyEco">환경</a></li>
                     </ul>            
 				</div>
             </div>

@@ -214,8 +214,8 @@
                         <li><a href="goStudyB">스포츠</a></li>
                         <li><a href="goStudyC">직업</a></li>
                         <li><a href="goStudyFamily">가족구성원</a></li>
-                        <li><a href="goStudyC">색깔</a></li>
-                        <li><a href="goStudyC" style="color: #4D869C;">환경</a></li>
+                        <li><a href="goStudyColor">색깔</a></li>
+                        <li><a href="goStudyEco" style="color: #4D869C;">환경</a></li>
                     </ul>            
 				</div>
             </div>
