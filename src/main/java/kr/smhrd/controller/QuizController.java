@@ -108,12 +108,6 @@ public class QuizController {
 	        List<Word> allWords = new ArrayList<>(randomWords);
 	        allWords.add(correctWord);
 	        
-	        while (allWords.size()<4) {
-	        	Word newWord = quizMapper.selectRandomWord();
-	            if (!newWord.getWord_name().equals(correctWord.getWord_name())) {
-	                allWords.add(newWord);
-	            }
-	        }
 	        Collections.shuffle(allWords);
 
 	        Map<String, String> choices = new HashMap<>();
