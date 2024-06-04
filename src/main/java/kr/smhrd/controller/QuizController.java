@@ -27,6 +27,7 @@ import kr.smhrd.entity.Quiz;
 import kr.smhrd.entity.Word;
 import kr.smhrd.entity.WordImage;
 import kr.smhrd.entity.QuizRank;
+import kr.smhrd.entity.Quiz_PR;
 import kr.smhrd.entity.QuizPic;
 
 
@@ -90,58 +91,101 @@ public class QuizController {
 	// 그림퀴즈 문제 이동
 	@RequestMapping("/quizDetailPic")
 	public String quizDetailPic(Model model) {
-	    List<Map<String, Object>> questionList = new ArrayList<>();
-
-	    for (int i = 0; i < 5; i++) {
-	        Word correctWord = quizMapper.selectRandomWord();
-	        List<Word> allRandomWords = quizMapper.selectRandomWords(10); // 충분히 많은 단어를 한 번에 가져옴
-
-	        Set<Word> randomWords = new HashSet<>();
-	        for (Word word : allRandomWords) {
-	            if (!word.getWord_name().equals(correctWord.getWord_name())) {
-	                randomWords.add(word);
-	            }
-	            if (randomWords.size() == 3) {
-	                break;
-	            }
-	        }
-
-	        // 만약 3개의 단어를 채우지 못했다면 추가로 선택
-	        while (randomWords.size() < 3) {
-	            Word newWord = quizMapper.selectRandomWord();
-	            if (!newWord.getWord_name().equals(correctWord.getWord_name()) && !randomWords.contains(newWord)) {
-	                randomWords.add(newWord);
-	            }
-	        }
-
-	        // 정답 단어를 포함한 리스트로 섞기
-	        List<Word> allWords = new ArrayList<>(randomWords);
-	        allWords.add(correctWord);
-	        Collections.shuffle(allWords);
-
-	        Map<String, String> choices = new HashMap<>();
-	        for (Word word : allWords) {
-	            String wordImage = quizMapper.selectWordImage(word.getWord_num());
-	            choices.put(word.getWord_name(), wordImage);
-	        }
-
-	        String correctWordImage = quizMapper.selectWordImage(correctWord.getWord_num());
-	        String correctWordName = correctWord.getWord_name();
-
-	        Map<String, Object> question = new HashMap<>();
-	        question.put("correctWord", correctWord);
-	        question.put("choices", choices);
-	        question.put("correctWordImage", correctWordImage);
-	        question.put("correctWordName", correctWordName);
-
-	        questionList.add(question);
-
-	        // 콘솔에 출력
-	        System.out.println("정답은 " + correctWordName);
-	        System.out.println("보기는 " + choices);
-	    }
-
-	    model.addAttribute("questionList", questionList);
+	    
+		// 문제를 위한 리스트
+		List<Word> word_list = studyMapper.selectAllWord();
+		// 보기를 위한 리스트
+		List<Word> word_list2 = studyMapper.selectAllWord();
+		Collections.shuffle(word_list);
+		
+		ArrayList<Quiz_PR> quiz_list = new ArrayList<Quiz_PR>();
+		for (int i=0; i<10; i++) {
+			// 보기 데이터를 담기위한 리스트
+			ArrayList<Integer> word_see = new ArrayList<Integer>();
+			// 보기데이터 믹스
+			Collections.shuffle(word_list2);
+			
+			word_see.add(word_list.get(i).getWord_num());
+			int j = 0;
+			while(word_see.size()<4) {
+				if(word_list2.get(j).getWord_num() != word_list.get(i).getWord_num()) {
+					word_see.add(word_list2.get(j).getWord_num());
+				}
+				j++;
+			}
+			Collections.shuffle(word_see);
+			
+			int word_num = word_list.get(i).getWord_num();
+			String video_url = word_list.get(i).getVideo_url();
+			String word_name = word_list.get(i).getWord_name();
+			String word_img_url1 = quizMapper.selectWordImage(word_see.get(0));
+			String word_name1 = quizMapper.selectName(word_see.get(0));
+			String word_img_url2 = quizMapper.selectWordImage(word_see.get(1));
+			String word_name2 = quizMapper.selectName(word_see.get(1));
+			String word_img_url3 = quizMapper.selectWordImage(word_see.get(2));
+			String word_name3 = quizMapper.selectName(word_see.get(2));
+			String word_img_url4 = quizMapper.selectWordImage(word_see.get(3));
+			String word_name4 = quizMapper.selectName(word_see.get(3));
+			
+			Quiz_PR quiz = new Quiz_PR(word_num, video_url, word_name, word_img_url1, word_name1, word_img_url2, word_name2, word_img_url3, word_name3, word_img_url4, word_name4);
+			
+			quiz_list.add(quiz);
+			
+		}
+		model.addAttribute("quiz_list", quiz_list);
+		
+//	    List<Map<String, Object>> questionList = new ArrayList<>();
+//
+//	    for (int i = 0; i < 5; i++) {
+//	        Word correctWord = quizMapper.selectRandomWord();
+//	        List<Word> allRandomWords = quizMapper.selectRandomWords(10); // 충분히 많은 단어를 한 번에 가져옴
+//
+//	        Set<Word> randomWords = new HashSet<>();
+//	        for (Word word : allRandomWords) {
+//	            if (!word.getWord_name().equals(correctWord.getWord_name())) {
+//	                randomWords.add(word);
+//	            }
+//	            if (randomWords.size() == 3) {
+//	                break;
+//	            }
+//	        }
+//
+//	        // 만약 3개의 단어를 채우지 못했다면 추가로 선택
+//	        while (randomWords.size() < 3) {
+//	            Word newWord = quizMapper.selectRandomWord();
+//	            if (!newWord.getWord_name().equals(correctWord.getWord_name()) && !randomWords.contains(newWord)) {
+//	                randomWords.add(newWord);
+//	            }
+//	        }
+//
+//	        // 정답 단어를 포함한 리스트로 섞기
+//	        List<Word> allWords = new ArrayList<>(randomWords);
+//	        allWords.add(correctWord);
+//	        Collections.shuffle(allWords);
+//
+//	        Map<String, String> choices = new HashMap<>();
+//	        for (Word word : allWords) {
+//	            String wordImage = quizMapper.selectWordImage(word.getWord_num());
+//	            choices.put(word.getWord_name(), wordImage);
+//	        }
+//
+//	        String correctWordImage = quizMapper.selectWordImage(correctWord.getWord_num());
+//	        String correctWordName = correctWord.getWord_name();
+//
+//	        Map<String, Object> question = new HashMap<>();
+//	        question.put("correctWord", correctWord);
+//	        question.put("choices", choices);
+//	        question.put("correctWordImage", correctWordImage);
+//	        question.put("correctWordName", correctWordName);
+//
+//	        questionList.add(question);
+//
+//	        // 콘솔에 출력
+//	        System.out.println("정답은 " + correctWordName);
+//	        System.out.println("보기는 " + choices);
+//	    }
+//
+//	    model.addAttribute("questionList", questionList);
 	    return "quiz_a_detail_pic";
 	}
 	
@@ -200,10 +244,10 @@ public class QuizController {
 	// 퀴즈 정답 제출 및 점수 확인
 	@RequestMapping("/goQuizScorePic")
 	public String goQuizScorePic(HttpServletRequest request, Model model, HttpSession session) {
-	    String[] answer = new String[5];
-	    String[] correctAnswer = new String[5];
+	    String[] answer = new String[10];
+	    String[] correctAnswer = new String[10];
 
-	    for (int i = 0; i < 5; i++) {
+	    for (int i = 0; i < 10; i++) {
 	        answer[i] = request.getParameter("answer" + (i + 1));
 	        correctAnswer[i] = request.getParameter("correctAnswer" + (i + 1));
 	        System.out.println("Answer " + (i + 1) + ": " + answer[i]);
@@ -216,9 +260,9 @@ public class QuizController {
 	    
 	    int score = 0;
 	    
-	    for (int i = 0; i < 5; i++) {
+	    for (int i = 0; i < 10; i++) {
 	        if (answer[i] != null && answer[i].equals(correctAnswer[i])) {
-	            score += 20; // 정답인 경우 점수 증가
+	            score += 10; // 정답인 경우 점수 증가
 	        } else {
 	            wrong_question_list.add(i + 1); // 틀린 문제 번호 추가
 	            wrong_question_label_list.add(correctAnswer[i]);

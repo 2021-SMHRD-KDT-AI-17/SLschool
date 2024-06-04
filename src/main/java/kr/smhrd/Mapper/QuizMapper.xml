@@ -59,5 +59,9 @@
 	<select id="selectNum" parameterType="String" resultType="int">
 		select word_num from SSC_word where word_name = #{word_name}
 	</select>
+	
+	<select id="selectName" parameterType="int" resultType="String">
+		select word_name from SSC_word where word_num = #{word_num}
+	</select>
 
 </mapper>

@@ -330,32 +330,60 @@
                                             <li>5번 문제</li>
                                         </ul>
                                         <!-- fieldsets -->
-<c:forEach var="question" items="${questionList}" varStatus="s">
+<c:forEach items="${quiz_list}" var="quiz" varStatus="s">
     <fieldset>
         <h2 class="fs-title">${s.index + 1}번 문제</h2>
         <input type="hidden" name="question_number" value="${s.index + 1}">
-        <input type="hidden" name="correctAnswer${s.index + 1}" value="${question.correctWord.word_name}">
+        <input type="hidden" name="correctAnswer${s.index + 1}" value="${quiz.word_name}">
 
         <h3 class="fs-subtitle">영상을 보고 정답을 맞춰주세요</h3>
         <video controls style="width:100%;">
-            <source src="${question.correctWord.video_url}" type="video/mp4">
+            <source src="${quiz.video_url}" type="video/mp4">
         </video>
 
-        <c:forEach var="choice" items="${question.choices}">
-            <div class="flip" onclick="selectChoice('${choice.key}')">
-                <div class="front" style="background-image: url(${choice.value})">
-                    <h1 class="text-shadow">${choice.key}</h1>
+            <div class="flip" onclick="selectChoice('${quiz.word_name1}')">
+                <div class="front" style="background-image: url(${quiz.word_img_url1})">
+                    <h1 class="text-shadow">${quiz.word_name1}</h1>
                 </div>
                 <div class="back">
-                    <h2>${choice.key}</h2>
-                    <input type="radio" name="answer${s.index + 1}" value="${choice.key}">
+                    <h2>${quiz.word_name1}</h2>
+                    <input type="radio" name="answer${s.index + 1}" value="${quiz.word_name1}">
                 </div>
             </div>
-        </c:forEach>
+            
+            <div class="flip" onclick="selectChoice('${quiz.word_name2}')">
+                <div class="front" style="background-image: url(${quiz.word_img_url2})">
+                    <h1 class="text-shadow">${quiz.word_name2}</h1>
+                </div>
+                <div class="back">
+                    <h2>${quiz.word_name2}</h2>
+                    <input type="radio" name="answer${s.index + 1}" value="${quiz.word_name2}">
+                </div>
+            </div>
+            
+            <div class="flip" onclick="selectChoice('${quiz.word_name3}')">
+                <div class="front" style="background-image: url(${quiz.word_img_url3})">
+                    <h1 class="text-shadow">${quiz.word_name3}</h1>
+                </div>
+                <div class="back">
+                    <h2>${quiz.word_name3}</h2>
+                    <input type="radio" name="answer${s.index + 1}" value="${quiz.word_name3}">
+                </div>
+            </div>
+            
+            <div class="flip" onclick="selectChoice('${choic.key}')">
+                <div class="front" style="background-image: url(${quiz.word_img_url4})">
+                    <h1 class="text-shadow">${quiz.word_name4}</h1>
+                </div>
+                <div class="back">
+                    <h2>${quiz.word_name4}</h2>
+                    <input type="radio" name="answer${s.index + 1}" value="${quiz.word_name4}">
+                </div>
+            </div>
 
         <br>
         <c:choose>
-            <c:when test="${s.index < 4}">
+            <c:when test="${s.index < 9}">
                 <input type="button" name="next" class="next action-button" value="다음문제"/>
             </c:when>
             <c:otherwise>
