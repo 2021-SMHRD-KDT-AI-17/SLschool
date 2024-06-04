@@ -85,7 +85,7 @@
 
                 <!-- 상단 메뉴 [s] -->
                 <div class="topmenu_main">
-                    <a href="main.html"><img src="resources/img/common/logo_2.png" alt="Sample" /></a>
+                    <a href="goMain"><img src="resources/img/common/logo_2.png" alt="Sample" /></a>
 <!--                    <div class="menu_icon">
                         <img src="img/common/menu_icon.png" alt="메뉴아이콘" />
                         <p>2023 신입생 모집<br><span>선착순 50명 수강료 할인</span></p> -->
