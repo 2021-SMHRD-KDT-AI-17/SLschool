@@ -8,9 +8,9 @@
 </head>
 <body>
 
-	<input type="text" value="${announcement.title }">
-	<input type="text" value="${announcement.content }">
-	<input type="text" value="${announcement.ann_time }">
+	<p>${announcement.ann_title }</p>
+	<p>${announcement.ann_content }</p>
+	<p>${announcement.ann_time }</p>
 	<button onclick="location.href='goAnnouncement'">뒤로가기</button>
 
 </body>
