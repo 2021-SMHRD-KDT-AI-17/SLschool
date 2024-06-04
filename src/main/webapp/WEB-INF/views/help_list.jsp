@@ -1,9 +1,8 @@
-<%@page import="java.util.ArrayList"%>
+<%@page import="kr.smhrd.entity.A_Suggestion"%>
 <%@page import="kr.smhrd.entity.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!doctype html>
 <html lang="ko">
 <head>
@@ -20,7 +19,7 @@
     <meta property="og:description" content=""><!-- 사이트 설명문구 -->
     <meta property="og:image" content="img/common/logo.png">
     <meta property="og:url" content="">
-	<title>문의</title>
+	<title>마이페이지</title>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="resources/js/jquery-ui.js"></script>
     <script src="resources/js/topmenu_script.js"></script>
@@ -58,17 +57,6 @@
 		margin-left:583px;
 		margin-top:-10px !important;
 		}
-		
-		    .list {
-    font-size: 1.2em; /* 원하는 크기로 조정 */
-    font-weight: bold; /* 굵게 지정 */
-    color:#4D869C;
-    
-}
-	.list2{
-		margin-left:30px;
-		margin-bottom:10px;
-	}
     </style>
 </head>
 <body>
@@ -286,7 +274,7 @@
                                     <section class="user-page section-padding">
                                         <div class="container">
                                             <div class="row align-items-stretch">
-                                                  <div class="col-lg-4 col-md-5 col-xs-12">
+                                                <div class="col-lg-4 col-md-5 col-xs-12">
                                                     <div class="user-profile-box">
                                                         <div class="header clearfix d-flex flex-column align-items-center">
                                                             <h2>${member.name }</h2>
@@ -300,22 +288,15 @@
                                                             <button class="btn btn-primary btn-sm mt-3" onclick="location.href='goUpdateMember'">내 정보 수정</button>
                                                         </div>
                                                         <div class="detail clearfix">
-                                                           <div class="list2">
-                                                           <span class="list">내 문의 현황 </span>
-                                                           </div>
                                                             <ul class="list-group list-group-flush">
                                                             
-                                                            <!-- 문의 현황 -->
+                                                            
                                                             <c:forEach items="${suggestionList }" var="SL" varStatus="s">
-                                                               <a href="goSuggestionDetail?sug_num=${SL.sug_num }" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                                            	<a href="" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                                                                     ${SL.sug_title }
-                                                                    <span class="badge badge-light badge-pill">+</span>
+                                                                    <span class="badge badge-light badge-pill">N</span>
                                                                 </a>
                                                             </c:forEach>
-                                                            <a href="goHelp" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                                                                    <strong>문의 바로 가기</strong>
-                                                                    <span class="badge badge-light badge-pill">></span>
-                                                                </a>
                                                             
                                                             </ul>
                                                         </div><!-- Détail-->
