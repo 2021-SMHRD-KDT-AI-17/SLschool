@@ -262,7 +262,7 @@
                         <!-- cont01 [s] -->
                         <div class="tab_cont cont01">
                             <div class="icon_area">
-                           	 	<a href="quizWord">
+                           	 	<a href="quiz2">
                                 <dl data-aos="flip-left">
                                     <dt>단어 맞추기</dt>
                                     <dd>수화 영상을 보고 무슨 단어일 지 맞춰보세요</dd>
