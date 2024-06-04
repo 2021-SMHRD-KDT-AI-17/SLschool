@@ -365,7 +365,7 @@
                             <p class="tit">고객센터</p>
                             <ul>
                                 <li>
-                                    <a href="">
+                                    <a href="goAnnouncement">
                                         <span class="cate">공지사항</span>
                                         <p>공지 제목</p>
                                         <span class="date">공지 날짜</span>
