@@ -61,13 +61,18 @@ public class SuggestionController {
 	
 	// 내가 문의한 내용 확인 페이지 가기
 	@RequestMapping("goSuggestionDetail")
-	public String goSuggestionDetail(@RequestParam("sug_num") int sug_num, Model model) {
+	public String goSuggestionDetail(@RequestParam("sug_num") int sug_num, Model model, HttpSession session) {
+		Member member = (Member) session.getAttribute("loginMember");
+		String sug_writer = member.getId();
 		
+		List<Suggestion> suggestionList = suggestionMapper.selectMySuggestion(sug_writer);
 		Suggestion suggestion = suggestionMapper.selectSuggestionNum(sug_num);
 		A_Suggestion aSuggestion = suggestionMapper.selectASuggestion(sug_num);
 		
 		model.addAttribute("suggestion", suggestion);
 		model.addAttribute("aSuggestion", aSuggestion);
+		model.addAttribute("member", member);
+		model.addAttribute("suggestionList", suggestionList);
 		
 		return "help_list";
 	}

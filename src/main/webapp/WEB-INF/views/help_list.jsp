@@ -297,7 +297,10 @@
                                                                     <span class="badge badge-light badge-pill">N</span>
                                                                 </a>
                                                             </c:forEach>
-                                                            
+                                                            <a href="goMyPage" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                                                    <strong>마이페이지로 돌아가기</strong>
+                                                                    <span class="badge badge-light badge-pill"> < </span>
+                                                            </a>
                                                             </ul>
                                                         </div><!-- Détail-->
                                                     </div><!-- User profile box-->
