@@ -28,6 +28,9 @@
     <style>
     #webcam {
         margin-left:10px; /* 원하는 값으로 설정 */
+        border-radius:10px;
+        border: 5px solid #4D869C;
+        box-shadow: 0 0 5px #4D869C;
     }
         .video-container {
         display: flex;
@@ -35,6 +38,24 @@
         align-items: center;
         margin-bottom: 30px;
         height: 100%; /* 부모 요소의 높이를 설정 */
+    }
+    
+        .webcam-status {
+        position: absolute;
+        top: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        padding: 5px 10px;
+    }
+    .webcam-status .dot {
+        width: 12px;
+        height: 12px;
+        background-color: red;
+        border-radius: 50%;
+        margin-right: 5px;
     }
 </style>
 </head>
@@ -240,6 +261,10 @@
                             <!-- 텍스트 [s] -->
                             <div class="video-container">
 							    <video id="webcam" autoplay playsinline style="height:500px"></video>
+							        <div class="webcam-status">
+			                        <div class="dot"></div>
+			                        <span>웹캠 사용 중</span>
+                   					</div>
 							</div>
                             <div class="cont_tit">
                                 <p>내 모습을 보면서,</p>
@@ -464,16 +489,17 @@
 </div>
 <!-- sh_wrapper [e] -->
 <script>
-
 document.addEventListener('DOMContentLoaded', (event) => {
     startWebcam();
 });
 
 async function startWebcam() {
     const videoElement = document.getElementById('webcam');
+    const statusElement = document.querySelector('.webcam-status');
     try {
         const stream = await navigator.mediaDevices.getUserMedia({ video: true });
         videoElement.srcObject = stream;
+        statusElement.style.display = 'flex'; // 웹캠 연결 성공 시 상태 표시 div 보이기
     } catch (error) {
         console.error('Error accessing the webcam: ', error);
         const imgElement = document.createElement('img');
@@ -482,6 +508,7 @@ async function startWebcam() {
         imgElement.style.width = '666px';  // 원하는 크기로 설정
         imgElement.style.height = '500px'; 
         videoElement.parentNode.replaceChild(imgElement, videoElement);
+        statusElement.style.display = 'none'; // 웹캠 연결 실패 시 상태 표시 div 숨기기
     }
 }
 </script>
