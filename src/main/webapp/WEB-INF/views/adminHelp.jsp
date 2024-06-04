@@ -416,7 +416,7 @@ section.notice {
             <!-- sub_main_banner [s] -->
             <div id="sub_main_banner">
                 <div id="sh_content_tit">
-                    <h3>관리자 페이지</h3>
+                    <h3>관리자페이지</h3>
                     <p><a href="goMain"><i class="fa fa-home"></i><span class="sound_only">홈으로</span></a>
                         <i class="fa fa-angle-right"></i>마이페이지<i class="fa fa-angle-right"></i>관리자페이지</p>
                 </div>
