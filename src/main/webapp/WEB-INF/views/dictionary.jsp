@@ -187,7 +187,7 @@
                             <li>
                                 <button class="m_bmenu" type="button">수어사전</button>
                                  <ul class="m_smenu">
-                                    <li><a href="goDic">단어검색</a> </li>
+                                    <li><a href="goDic"> </a> </li>
                                     <!-- <li><a href="">소분류</a> </li>
                                     <li><a href="">소분류</a> </li> -->
                                 </ul> 
@@ -248,18 +248,6 @@
                 <div id="service1014" class="pagecommon">
     
                     <div class="cont">
-                        <div class="search">
-                            <fieldset class="field-container">
-                                <input type="text" placeholder="단어 검색" class="field" />
-                                <div class="icons-container">
-                                  <div class="icon-search"></div>
-                                  <div class="icon-close">
-                                    <div class="x-up"></div>
-                                    <div class="x-down"></div>
-                                  </div>
-                                </div>
-                              </fieldset>
-                        </div>
                         
                         <!-- cont01 [s] -->
                         <div class="tab_cont cont01">
