@@ -14,13 +14,13 @@
     <meta name="naver-site-verification" content=""/><!-- 네이버 소유확인 -->
     <meta name="description" content=""><!-- 사이트 설명문구 -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="회사소개-회사소개">
+    <meta property="og:title" content="강의 듣기-환경">
     <meta property="og:description" content=""><!-- 사이트 설명문구 -->
     <meta property="og:image" content="img/common/logo.png">
     <meta property="og:url" content="">
-	<title>회사소개-회사소개</title>
-    <script src="resources/js/jquery-ui.js"></script>
+	<title>강의 듣기-환경</title>
     <script src="resources/js/jquery-1.8.3.min.js"></script>
+    <script src="resources/js/jquery-ui.js"></script>
     <script src="resources/js/topmenu_script.js"></script>
 	<link rel="stylesheet" href="resources/css/sh_common.css"> 
     <link rel="stylesheet" href="resources/css/sh_sub.css">  
@@ -201,7 +201,7 @@
 				<div id="sh_content_tit">
 					<h3>강의 듣기</h3>
 					<p><a href="goMain"><i class="fa fa-home"></i><span class="sound_only">홈으로</span></a> 
-					<i class="fa fa-angle-right"></i> 강의 듣기 <i class="fa fa-angle-right"></i> C난이도</p>
+					<i class="fa fa-angle-right"></i> 강의 듣기 <i class="fa fa-angle-right"></i>환경</p>
 				</div>
 			</div>
             <!-- sub_main_banner [e] -->

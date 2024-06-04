@@ -14,11 +14,11 @@
     <meta name="naver-site-verification" content=""/><!-- 네이버 소유확인 -->
     <meta name="description" content=""><!-- 사이트 설명문구 -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="퀴즈">
+    <meta property="og:title" content="모의고사-단어 맞추기">
     <meta property="og:description" content=""><!-- 사이트 설명문구 -->
     <meta property="og:image" content="img/common/logo.png">
     <meta property="og:url" content="">
-	<title>퀴즈</title>
+	<title>모의고사-단어 맞추기</title>
     <script src="resources/js/jquery-1.8.3.min.js"></script>
     <script src="resources/js/jquery-ui.js"></script>
     <script src="resources/js/topmenu_script.js"></script>
@@ -227,7 +227,7 @@
             <!-- sub_main_banner [s] -->
             <div id="sub_main_banner">
 				<div id="sh_content_tit">
-					<h3>강의 듣기</h3>
+					<h3>단어 맞추기</h3>
 					<p><a href="goMain"><i class="fa fa-home"></i><span class="sound_only">홈으로</span></a> 
 					<i class="fa fa-angle-right"></i> 모의고사 <i class="fa fa-angle-right"></i> 단어 맞추기</p>
 				</div>
@@ -367,7 +367,7 @@
     <!-- sh_ft [s] -->
     <div id="sh_ft">
         <div class="ft_txt">
-            <img class="ft_logo" src="img/common/logo_1.png" alt="Sample" />
+            <img class="ft_logo" src="resources/img/common/logo_1.png" alt="Sample" />
             <div class="ft_text">
                 <a onclick="">이용약관</a>
                 <a onclick="">개인정보취급방침</a>
