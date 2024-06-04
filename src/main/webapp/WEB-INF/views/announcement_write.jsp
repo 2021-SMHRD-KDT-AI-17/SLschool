@@ -8,8 +8,10 @@
 </head>
 <body>
 	<form action="writeAnnouncement">
-		<input type="text" name="title">
-		<input type="text" name="content">
+		<p>제목</p>
+		<input type="text" name="title"><br>
+		<p>내용</p>
+		<input type="text" name="content"><br>
 		<input type="submit" value="작성">
 	</form>
 </body>

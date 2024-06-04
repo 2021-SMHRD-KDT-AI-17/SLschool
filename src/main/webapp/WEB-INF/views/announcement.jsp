@@ -17,7 +17,7 @@
 			<td>제목</td>
 			<td>날짜</td>
 		</tr>
-		<c:forEach itmes="${ann_list }" var="ann" varStatus="s">
+		<c:forEach items="${ann_list }" var="ann" varStatus="s">
 			<tr>
 				<td>${s.count }</td>
 				<td><a href="goDetailAnnouncement?ann_num=${ann.ann_num }">${ann.ann_title }</a></td>
@@ -25,9 +25,9 @@
 			</tr>
 		</c:forEach>
 	</table>
-	<%if (loginMember.getId().equals("admin")) {%>
-	<a href="goWriteAnnouncement">공지사항 작성하러가기</a>
-	<%} %>
+	<% if (loginMember != null && loginMember.getId().equals("admin")) {%>
+		<a href="goWriteAnnouncement">공지사항 작성하러가기</a>
+	<% } %>
 
 </body>
 </html>
