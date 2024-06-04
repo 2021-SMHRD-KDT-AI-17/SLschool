@@ -20,7 +20,7 @@
     <meta property="og:description" content=""><!-- 사이트 설명문구 -->
     <meta property="og:image" content="img/common/logo.png">
     <meta property="og:url" content="">
-	<title>마이페이지</title>
+	<title>관리자페이지</title>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="resources/js/jquery-ui.js"></script>
     <script src="resources/js/topmenu_script.js"></script>
@@ -256,30 +256,32 @@ section.notice {
                 <!-- topmenu_line_wrap [e] -->
 
                 <!-- 상단 메뉴 [s] -->
-				<div class="topmenu_main">
+                <div class="topmenu_main">
                     <h1 id="top_logo"><a href="goMain"><img src="resources/img/common/logo_2.png" alt="Sample" /></a></h1>
                     <ul id="top_nav">
                         <li>
-                            <a href="">사이트소개</a>
-                            <!-- <ul>
-                                <li><a href="sub1.html">수어스쿨</a></li>
-                                <li><a href="">소분류</a></li>
-                                <li><a href="">소분류</a></li> 
-                            </ul>-->
-                        </li>
-                        <li>
                             <a href="goStudy">강의 듣기</a>
                             <ul>
-                                <li><a href="goStudyA">A난이도</a></li>
-                                <li><a href="goStudyB">B난이도</a></li>
-                                <li><a href="goStudyC">C난이도</a></li>
+	                                <li><a href="goStudyA">음식</a></li>
+	                                <li><a href="goStudyB">스포츠</a></li>
+	                                <li><a href="goStudyC">직업</a></li>
+	                                <li><a href="goStudyFamily">가족구성원</a></li>
+	                                <li><a href="goStudyColor">색깔</a></li>
+	                                <li><a href="goStudyEco">환경</a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="quiz">퀴즈</a>
                             <ul>
-                                <li><a href="quizWord">A버전</a></li>
-                                <li><a href="">B버전</a></li>
+                                <li><a href="quiz2">단어 맞추기</a></li>
+                                <li><a href="">수화 해보기</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="quizWord">모의고사</a>
+                            <ul>
+                                <li><a href="quizDetail">단어 맞추기</a></li>
+                                <li><a href="quizDetailPic">그림 맞추기</a></li>
                             </ul>
                         </li>
                         <li>
@@ -290,14 +292,19 @@ section.notice {
                                 <li><a href="">소분류</a></li>
                             </ul> -->
                         </li>
-                        <li>
+                        <%if(loginMember != null) {%>
+                            <li>
                             <a href="goMyPage">마이페이지</a>
                             <ul>
-                                <li><a href="goMyPage">수업 현황</a></li>
-                                <li><a href="goUpdateMember">내 정보 수정</a></li>
-                                <li><a href="">문의하기</a></li>
+                            <li><a href="">수업 현황</a></li>
+                            <li><a href="goUpdateMember">내 정보 수정</a></li>
+                            <li><a href="goHelp">문의하기</a></li>
+                            <%if(loginMember.getId().equals("admin")){ %>
+                            <li><a href="goAdminHelp">관리자페이지</a></li>
+                            <%} %>
                             </ul>
-                        </li> 
+                            </li> 
+                            <%}%>
                     </ul>
 <!--                    <div class="menu_icon">
                         <img src="img/common/menu_icon.png" alt="메뉴아이콘" />
@@ -305,11 +312,11 @@ section.notice {
 
 <!--                       <div class="topmenu_line">--> 
                             <ul id="topmenu_line">
-                                <% if(loginMember == null) {%>
+                            <% if(loginMember == null) {%>
                                 <li><a href="goLogin"><i data-feather="log-in"></i>Login</a></li>
                                 <li><a href="goJoin"><i data-feather="user-plus"></i>Join us</a></li>
                                 <%} else{ %>
-                                <li><span><strong><%=loginMember.getName() %></strong>님 환영합니다.</span></li>
+                                <li><span><%=loginMember.getName() %>님 환영합니다.</span></li>
                                 <li><a href="goLogout"><i data-feather="user-plus"></i>Log-out</a></li>
                                 <%} %>
                             </ul>
@@ -317,13 +324,14 @@ section.notice {
                     </div>
                     
                 </div>
+                
                  <!-- 상단 메뉴 [e] -->
             </div>
             <!-- topmenu_wrapper [e] -->
 
             <!-- 반응형메뉴 [s] -->
             <div id="topmenuM">
-                <h1 id="m_logo"><a href="goMain"><img src="img/common/logo_2.png" alt="Sample" /></a></h1>
+                <h1 id="m_logo"><a href="goMain"><img src="resources/img/common/logo_2.png" alt="Sample" /></a></h1>
                 <!-- 메뉴 버튼 [s] -->
                 <div id="m_navBtn"><span></span></div>
                 <!-- 메뉴 버튼 [e] -->
@@ -332,49 +340,65 @@ section.notice {
                 <div id="navWrap">
                     <div class="inner">
                         <ul class="user_tip">
-                            <li><a href="login" class="small_tip">회원가입</a></li>
-                            <li><a href="goLogin" class="small_tip">로그인</a></li>
+                            <% if(loginMember == null) {%>
+                            	<li><a href="goJoin"class="small_tip"></i>회원가입</a></li>
+                                <li><a href="goLogin"class="small_tip"></i>로그인</a></li>
+                                <%} else{ %>
+                                <li><span><%=loginMember.getName() %>님</span></li>
+                                <li><a href="goLogout"><i data-feather="user-plus"></i>로그아웃</a></li>
+                                <%} %>
                         </ul>
                         <ul class="m_lnb">
                             <li>
-                                <button class="m_bmenu" type="button">사이트소개</button>
-                                <ul class="m_smenu">
-                                    <li><a href="">수어스쿨</a> </li>
-                                    <!-- <li><a href="">소분류</a> </li>
-                                    <li><a href="">소분류</a> </li> -->
-                                </ul>
-                            </li>
-                            <li>
                                 <button class="m_bmenu" type="button">강의 듣기</button>
                                 <ul class="m_smenu">
-                                    <li><a href="goStudyA">A난이도</a> </li>
-                                    <li><a href="goStudyB">B난이도</a> </li>
-                                    <li><a href="goStudyC">C난이도</a> </li>
+	                                <li><a href="goStudyA">음식</a></li>
+	                                <li><a href="goStudyB">스포츠</a></li>
+	                                <li><a href="goStudyC">직업</a></li>
+	                                <li><a href="goStudyFamily">가족구성원</a></li>
+	                                <li><a href="goStudyColor">색깔</a></li>
+	                                <li><a href="goStudyEco">환경</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <button class="m_bmenu" type="button">퀴즈</button>
                                 <ul class="m_smenu">
-                                    <li><a href="quizWord">A버전</a> </li>
-                                    <li><a href="">B버전</a> </li>
+                                    <li><a href="quiz2">단어 맞추기</a> </li>
+                                    <li><a href="">수화 해보기</a> </li>
                                 </ul>
                             </li>
+                            
+                            <li>
+                                <button class="m_bmenu" type="button">모의고사</button>
+                                <ul class="m_smenu">
+                                    <li><a href="quizDetail">단어 맞추기</a> </li>
+                                    <li><a href="quizDetailPic">그림 맞추기</a> </li>
+                                </ul>
+                            </li>
+                            
                             <li>
                                 <button class="m_bmenu" type="button">수어사전</button>
                                  <ul class="m_smenu">
-                                    <li><a href="dictionary.html">단어검색</a> </li>
+                                    <li><a href="goDic">단어검색</a> </li>
                                     <!-- <li><a href="">소분류</a> </li>
                                     <li><a href="">소분류</a> </li> -->
                                 </ul> 
                             </li>
-                             <li>
-                                <button class="m_bmenu" type="button">마이페이지</button>
+                            
+                            <%if(loginMember != null) {%>
+                           <button class="m_bmenu" type="button">마이페이지</button>
                                 <ul class="m_smenu">
-                                    <li><a href="goMyPage">강의 현황</a> </li>
-                                    <li><a href="">내 정보 수정</a> </li>
-                                    <li><a href="">문의하기</a> </li>
-                                </ul>
-                            </li>
+                            <li><a href="">수업 현황</a></li>
+                            <li><a href="goUpdateMember">내 정보 수정</a></li>
+                            <li><a href="goHelp">문의하기</a></li>
+                            <%if(loginMember.getId().equals("admin")){ %>
+                            <li><a href="goAdminHelp">관리자페이지</a></li>
+                            <%} %>
+                            </ul>
+                            </li> 
+                            <%}%>
+                            
+                            
                         </ul>   
                         <p class="mo_hd_copy">ⓒ SSchool</p>         
                     </div>
@@ -382,7 +406,7 @@ section.notice {
                 <!-- 오픈 메뉴 [e] -->
             </div>
             <!-- 반응형메뉴 [e] -->
-        </div>
+		</div>            
     </div>
     <!-- sh_hd [e] -->
     <!-- sh_container [s] -->
@@ -394,7 +418,7 @@ section.notice {
                 <div id="sh_content_tit">
                     <h3>관리자 페이지</h3>
                     <p><a href="goMain"><i class="fa fa-home"></i><span class="sound_only">홈으로</span></a>
-                        <i class="fa fa-angle-right"></i>마이페이지<i class="fa fa-angle-right"></i>관리자 페이지</p>
+                        <i class="fa fa-angle-right"></i>마이페이지<i class="fa fa-angle-right"></i>관리자페이지</p>
                 </div>
             </div>
             <!-- sub_main_banner [e] -->

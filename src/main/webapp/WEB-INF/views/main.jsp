@@ -78,18 +78,18 @@
                         <li>
                             <a href="goStudy">강의 듣기</a>
                             <ul>
-                                <li><a href="goStudyA">음식</a></li>
-                                <li><a href="goStudyB">스포츠</a></li>
-                                <li><a href="goStudyC">직업</a></li>
-                                <li><a href="goStudyC">호칭</a></li>
-                                <li><a href="goStudyC">색깔</a></li>
-                                <li><a href="goStudyC">환경</a></li>
+	                                <li><a href="goStudyA">음식</a></li>
+	                                <li><a href="goStudyB">스포츠</a></li>
+	                                <li><a href="goStudyC">직업</a></li>
+	                                <li><a href="goStudyFamily">가족구성원</a></li>
+	                                <li><a href="goStudyColor">색깔</a></li>
+	                                <li><a href="goStudyEco">환경</a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="quiz">퀴즈</a>
                             <ul>
-                                <li><a href="">단어 맞추기</a></li>
+                                <li><a href="quiz2">단어 맞추기</a></li>
                                 <li><a href="">수화 해보기</a></li>
                             </ul>
                         </li>
@@ -156,8 +156,13 @@
                 <div id="navWrap">
                     <div class="inner">
                         <ul class="user_tip">
-                            <li><a href="" class="small_tip">회원가입</a></li>
-                            <li><a href="" class="small_tip">로그인</a></li>
+                            <% if(loginMember == null) {%>
+                            	<li><a href="goJoin"class="small_tip"></i>회원가입</a></li>
+                                <li><a href="goLogin"class="small_tip"></i>로그인</a></li>
+                                <%} else{ %>
+                                <li><span><%=loginMember.getName() %>님</span></li>
+                                <li><a href="goLogout"><i data-feather="user-plus"></i>로그아웃</a></li>
+                                <%} %>
                         </ul>
                         <ul class="m_lnb">
                             <li>
@@ -166,34 +171,50 @@
 	                                <li><a href="goStudyA">음식</a></li>
 	                                <li><a href="goStudyB">스포츠</a></li>
 	                                <li><a href="goStudyC">직업</a></li>
-	                                <li><a href="goStudyC">호칭</a></li>
-	                                <li><a href="goStudyC">색깔</a></li>
-	                                <li><a href="goStudyC">환경</a></li>
+	                                <li><a href="goStudyFamily">가족구성원</a></li>
+	                                <li><a href="goStudyColor">색깔</a></li>
+	                                <li><a href="goStudyEco">환경</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <button class="m_bmenu" type="button">퀴즈</button>
                                 <ul class="m_smenu">
-                                    <li><a href="">A버전</a> </li>
-                                    <li><a href="">B버전</a> </li>
+                                    <li><a href="quiz2">단어 맞추기</a> </li>
+                                    <li><a href="">수화 해보기</a> </li>
                                 </ul>
                             </li>
+                            
+                            <li>
+                                <button class="m_bmenu" type="button">모의고사</button>
+                                <ul class="m_smenu">
+                                    <li><a href="quizDetail">단어 맞추기</a> </li>
+                                    <li><a href="quizDetailPic">그림 맞추기</a> </li>
+                                </ul>
+                            </li>
+                            
                             <li>
                                 <button class="m_bmenu" type="button">수어사전</button>
                                  <ul class="m_smenu">
-                                    <li><a href="">단어검색</a> </li>
+                                    <li><a href="goDic">단어검색</a> </li>
                                     <!-- <li><a href="">소분류</a> </li>
                                     <li><a href="">소분류</a> </li> -->
                                 </ul> 
                             </li>
-                             <li>
-                                <button class="m_bmenu" type="button">마이페이지</button>
+                            
+                            <%if(loginMember != null) {%>
+                           <button class="m_bmenu" type="button">마이페이지</button>
                                 <ul class="m_smenu">
-                                    <li><a href="goMyPage">강의 현황</a> </li>
-                                    <li><a href="">내 정보 수정</a> </li>
-                                    <li><a href="">문의하기</a> </li>
-                                </ul>
-                            </li>
+                            <li><a href="">수업 현황</a></li>
+                            <li><a href="goUpdateMember">내 정보 수정</a></li>
+                            <li><a href="goHelp">문의하기</a></li>
+                            <%if(loginMember.getId().equals("admin")){ %>
+                            <li><a href="goAdminHelp">관리자페이지</a></li>
+                            <%} %>
+                            </ul>
+                            </li> 
+                            <%}%>
+                            
+                            
                         </ul>   
                         <p class="mo_hd_copy">ⓒ SSchool</p>         
                     </div>
@@ -291,22 +312,43 @@
                                     <ul class="swiper-wrapper">	
                                         <li class="swiper-slide">
                                             <a href="goStudyA">
-                                                <p class="subj">A난이도</p>
-                                                <div class="cont">어린아이 수준으로 쉽게</div>
+                                                <p class="subj">음식</p>
+                                                <div class="cont"></div>
                                                 <span>#강의보기</span>
                                             </a>
                                         </li>
                                         <li class="swiper-slide">
                                             <a href="goStudyB">
-                                                <p class="subj">B난이도</p>
-                                                <div class="cont">초등학생 수준으로 쉽게</div>
+                                                <p class="subj">스포츠</p>
+                                                <div class="cont"></div>
                                                 <span>#강의보기</span>
                                             </a>
                                         </li>
                                         <li class="swiper-slide">
                                             <a href="goStudyC">
-                                                <p class="subj">C난이도</p>
-                                                <div class="cont">중학생 수준으로 쉽게</div>
+                                                <p class="subj">직업</p>
+                                                <div class="cont"></div>
+                                                <span>#강의보기</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="goStudyFamily">
+                                                <p class="subj">가족 구성원</p>
+                                                <div class="cont"></div>
+                                                <span>#강의보기</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="goStudyColor">
+                                                <p class="subj">색깔</p>
+                                                <div class="cont"></div>
+                                                <span>#강의보기</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="goStudyEco">
+                                                <p class="subj">환경</p>
+                                                <div class="cont"></div>
                                                 <span>#강의보기</span>
                                             </a>
                                         </li>
