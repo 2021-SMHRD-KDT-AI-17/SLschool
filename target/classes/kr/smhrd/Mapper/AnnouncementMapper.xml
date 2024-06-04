@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.smhrd.Mapper.AnnouncementMapper">
+	
+	<insert id="insertAnn" parameterType="kr.smhrd.entity.Announcement">
+		insert into SSC_announcement(ann_title, ann_content) values(#{ann_title}, #{ann_content})
+	</insert>
+	
+	<select id="selectAllAnn" resultType="kr.smhrd.entity.Announcement">
+		select * from SSC_announcement order by ann_time desc limit 10
+	</select>
+	
+	<select id="selectAnn" parameterType="int" resultType="kr.smhrd.entity.Announcement">
+		select * from SSC_announcement where ann_num = #{ann_num}
+	</select>
+	
+	
+	
+</mapper>
