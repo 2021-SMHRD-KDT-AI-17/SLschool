@@ -88,18 +88,28 @@ public class QuizController {
 	}
 	
 	// 그림퀴즈 문제 이동
-	@RequestMapping("/quizDetailPic")          
+	@RequestMapping("/quizDetailPic")
 	public String quizDetailPic(Model model) {
 	    List<Map<String, Object>> questionList = new ArrayList<>();
 
 	    for (int i = 0; i < 5; i++) {
 	        Word correctWord = quizMapper.selectRandomWord();
-	        Set<Word> randomWords = new HashSet<>(quizMapper.selectRandomWords(3));
+	        List<Word> allRandomWords = quizMapper.selectRandomWords(10); // 충분히 많은 단어를 한 번에 가져옴
 
-	        // 보기가 3개 미만이면, 중복되지 않는 단어를 추가
+	        Set<Word> randomWords = new HashSet<>();
+	        for (Word word : allRandomWords) {
+	            if (!word.getWord_name().equals(correctWord.getWord_name())) {
+	                randomWords.add(word);
+	            }
+	            if (randomWords.size() == 3) {
+	                break;
+	            }
+	        }
+
+	        // 만약 3개의 단어를 채우지 못했다면 추가로 선택
 	        while (randomWords.size() < 3) {
 	            Word newWord = quizMapper.selectRandomWord();
-	            if (!newWord.getWord_name().equals(correctWord.getWord_name())) {
+	            if (!newWord.getWord_name().equals(correctWord.getWord_name()) && !randomWords.contains(newWord)) {
 	                randomWords.add(newWord);
 	            }
 	        }
@@ -107,7 +117,6 @@ public class QuizController {
 	        // 정답 단어를 포함한 리스트로 섞기
 	        List<Word> allWords = new ArrayList<>(randomWords);
 	        allWords.add(correctWord);
-	        
 	        Collections.shuffle(allWords);
 
 	        Map<String, String> choices = new HashMap<>();
