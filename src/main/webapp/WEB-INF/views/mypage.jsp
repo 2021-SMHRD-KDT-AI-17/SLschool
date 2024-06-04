@@ -20,11 +20,11 @@
     <meta property="og:description" content=""><!-- 사이트 설명문구 -->
     <meta property="og:image" content="img/common/logo.png">
     <meta property="og:url" content="">
-	<title>마이페이지</title>
+   <title>마이페이지</title>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="resources/js/jquery-ui.js"></script>
     <script src="resources/js/topmenu_script.js"></script>
-	<link rel="stylesheet" href="resources/css/sh_common.css"> 
+   <link rel="stylesheet" href="resources/css/sh_common.css"> 
     <link rel="stylesheet" href="resources/css/sh_sub.css">    
     <link rel="stylesheet" href="resources/css/aos.css">
     <script src="resources/js/aos.js"></script>
@@ -42,10 +42,10 @@
     color:#4D869C;
     
 }
-	.list2{
-		margin-left:30px;
-		margin-bottom:10px;
-	}
+   .list2{
+      margin-left:30px;
+      margin-bottom:10px;
+   }
     </style>
 
 </head>
@@ -56,7 +56,7 @@
 <div id="sh_wrapper">
     <!-- sh_hd [s] -->
     <div id="sh_hd">
-    	<div id="sh_hd_wrapper">		
+       <div id="sh_hd_wrapper">      
             <!-- topmenu_wrapper [s] -->
             <div id="topmenu_wrapper">
                 <!-- topmenu_line_wrap [s] -->
@@ -81,7 +81,7 @@
                 <!-- topmenu_line_wrap [e] -->
 
                 <!-- 상단 메뉴 [s] -->
-				<div class="topmenu_main">
+            <div class="topmenu_main">
                     <h1 id="top_logo"><a href="goMain"><img src="resources/img/common/logo_2.png" alt="Sample" /></a></h1>
                     <ul id="top_nav">
                         <li>
@@ -254,14 +254,14 @@
                                                             <button class="btn btn-primary btn-sm mt-3" onclick="location.href='goUpdateMember'">내 정보 수정</button>
                                                         </div>
                                                         <div class="detail clearfix">
-                                                        	<div class="list2">
-                                                        	<span class="list">내 문의 현황 </span>
-                                                        	</div>
+                                                           <div class="list2">
+                                                           <span class="list">내 문의 현황 </span>
+                                                           </div>
                                                             <ul class="list-group list-group-flush">
                                                             
                                                             <!-- 문의 현황 -->
                                                             <c:forEach items="${suggestionList }" var="SL" varStatus="s">
-                                                            	<a href="goSuggestionDetail?sug_num=${SL.sug_num }" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                                               <a href="goSuggestionDetail?sug_num=${SL.sug_num }" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                                                                     ${SL.sug_title }
                                                                     <span class="badge badge-light badge-pill">+</span>
                                                                 </a>
@@ -321,9 +321,9 @@
                                                                     </thead>
                                                                     <tbody>
                                                                         <c:forEach items="${wordList }" var="WL" end="2" varStatus="s">
-                                                                        	<tr>
-                                                                        		<td>${WL.word_name }</td>
-                                                                            	<td>
+                                                                           <tr>
+                                                                              <td>${WL.word_name }</td>
+                                                                               <td>
                                                                                 <a href="goWordDetail?word_num=${WL.word_num }"><span class="g-action fa fa-eye"> 클릭</span></a>
                                                                             </td>
                                                                         </tr>
