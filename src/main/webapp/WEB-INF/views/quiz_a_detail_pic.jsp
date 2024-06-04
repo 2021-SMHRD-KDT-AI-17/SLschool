@@ -322,13 +322,6 @@
                                     <!-- multistep form -->
                                     <form id="msform" action="goQuizScorePic">
                                         <!-- progressbar -->
-                                        <ul id="progressbar">
-                                            <li class="active">1번 문제</li>
-                                            <li>2번 문제</li>
-                                            <li>3번 문제</li>
-                                            <li>4번 문제</li>
-                                            <li>5번 문제</li>
-                                        </ul>
                                         <!-- fieldsets -->
 <c:forEach items="${quiz_list}" var="quiz" varStatus="s">
     <fieldset>
