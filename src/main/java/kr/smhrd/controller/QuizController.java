@@ -88,47 +88,60 @@ public class QuizController {
 	}
 	
 	// 그림퀴즈 문제 이동
-	@RequestMapping("/quizDetailPic")          
+	@RequestMapping("/quizDetailPic")
 	public String quizDetailPic(Model model) {
-	    
-		// 문제를 위한 리스트
-		List<Word> word_list = studyMapper.selectAllWord();
-		// 보기를 위한 리스트
-		List<Word> word_list2 = studyMapper.selectAllWord();
-		Collections.shuffle(word_list);
-		
-		for (int i=0; i<10; i++) {
-			// 보기 데이터를 담기위한 리스트
-			ArrayList<Integer> word_see = new ArrayList<Integer>();
-			// 보기데이터 믹스
-			Collections.shuffle(word_list2);
-			
-			word_see.add(word_list.get(i).getWord_num());
-			int j = 0;
-			while(word_see.size()<4) {
-				if(word_list2.get(j).getWord_num() != word_list.get(i).getWord_num()) {
-					word_see.add(word_list2.get(j).getWord_num());
-				}
-				j++;
-			}
-			Collections.shuffle(word_see);
-			
-			int word_num = word_list.get(i).getWord_num();
-			String video_url = word_list.get(i).getVideo_url();
-			String word_img_url1 = quizMapper.selectWordImage(word_see.get(0));
-			String word_name1 = quizMapper.selectName(word_see.get(0));
-			
-			
-			
-			
-			
-		}
-		
-		
-		
-		
-		
-		
+	    List<Map<String, Object>> questionList = new ArrayList<>();
+
+	    for (int i = 0; i < 5; i++) {
+	        Word correctWord = quizMapper.selectRandomWord();
+	        List<Word> allRandomWords = quizMapper.selectRandomWords(10); // 충분히 많은 단어를 한 번에 가져옴
+
+	        Set<Word> randomWords = new HashSet<>();
+	        for (Word word : allRandomWords) {
+	            if (!word.getWord_name().equals(correctWord.getWord_name())) {
+	                randomWords.add(word);
+	            }
+	            if (randomWords.size() == 3) {
+	                break;
+	            }
+	        }
+
+	        // 만약 3개의 단어를 채우지 못했다면 추가로 선택
+	        while (randomWords.size() < 3) {
+	            Word newWord = quizMapper.selectRandomWord();
+	            if (!newWord.getWord_name().equals(correctWord.getWord_name()) && !randomWords.contains(newWord)) {
+	                randomWords.add(newWord);
+	            }
+	        }
+
+	        // 정답 단어를 포함한 리스트로 섞기
+	        List<Word> allWords = new ArrayList<>(randomWords);
+	        allWords.add(correctWord);
+	        Collections.shuffle(allWords);
+
+	        Map<String, String> choices = new HashMap<>();
+	        for (Word word : allWords) {
+	            String wordImage = quizMapper.selectWordImage(word.getWord_num());
+	            choices.put(word.getWord_name(), wordImage);
+	        }
+
+	        String correctWordImage = quizMapper.selectWordImage(correctWord.getWord_num());
+	        String correctWordName = correctWord.getWord_name();
+
+	        Map<String, Object> question = new HashMap<>();
+	        question.put("correctWord", correctWord);
+	        question.put("choices", choices);
+	        question.put("correctWordImage", correctWordImage);
+	        question.put("correctWordName", correctWordName);
+
+	        questionList.add(question);
+
+	        // 콘솔에 출력
+	        System.out.println("정답은 " + correctWordName);
+	        System.out.println("보기는 " + choices);
+	    }
+
+	    model.addAttribute("questionList", questionList);
 	    return "quiz_a_detail_pic";
 	}
 	
