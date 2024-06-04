@@ -304,12 +304,12 @@ margin-left:0px !important;}
             <div id="sh_aside">
     	        <div id="sh_snb">
                     <ul>
-                        <li><a href="goStudyA">음식</a></li> <!--  style="color: #4D869C;" -->
-                        <li><a href="goStudyB">스포츠</a></li>
-                        <li><a href="goStudyC">직업</a></li>
-                        <li><a href="goStudyFamily">가족구성원</a></li>
-                        <li><a href="goStudyColor">색깔</a></li>
-                        <li><a href="goStudyEco">환경</a></li>
+ 			<li><a href="goStudyA" style="${word.word_category == '음식' ? 'color: #4D869C;' : ''}">음식</a></li>
+            <li><a href="goStudyB" style="${word.word_category == '스포츠' ? 'color: #4D869C;' : ''}">스포츠</a></li>
+            <li><a href="goStudyC" style="${word.word_category == '직업' ? 'color: #4D869C;' : ''}">직업</a></li>
+            <li><a href="goStudyFamily" style="${word.word_category == '가족구성원' ? 'color: #4D869C;' : ''}">가족구성원</a></li>
+            <li><a href="goStudyColor" style="${word.word_category == '색깔' ? 'color: #4D869C;' : ''}">색깔</a></li>
+            <li><a href="goStudyEco" style="${word.word_category == '환경' ? 'color: #4D869C;' : ''}">환경</a></li>
                     </ul>            
 				</div>
             </div>
