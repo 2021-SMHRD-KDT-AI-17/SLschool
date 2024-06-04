@@ -20,7 +20,7 @@
 
 
     <select id="selectRandomWordOptions" resultType="String">
-        SELECT word_name FROM SSC_word ORDER BY RAND() LIMIT 4
+        SELECT word_name FROM (SELECT DISTINCT word_name FROM SSC_word) AS distinct_words ORDER BY RAND() LIMIT 4;
     </select>
 
 	<insert id="insertScore" parameterType="kr.smhrd.entity.QuizRank">
