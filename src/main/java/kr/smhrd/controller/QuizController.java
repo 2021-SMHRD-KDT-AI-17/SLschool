@@ -107,6 +107,13 @@ public class QuizController {
 	        // 정답 단어를 포함한 리스트로 섞기
 	        List<Word> allWords = new ArrayList<>(randomWords);
 	        allWords.add(correctWord);
+	        
+	        while (allWords.size()<4) {
+	        	Word newWord = quizMapper.selectRandomWord();
+	            if (!newWord.getWord_name().equals(correctWord.getWord_name())) {
+	                allWords.add(newWord);
+	            }
+	        }
 	        Collections.shuffle(allWords);
 
 	        Map<String, String> choices = new HashMap<>();

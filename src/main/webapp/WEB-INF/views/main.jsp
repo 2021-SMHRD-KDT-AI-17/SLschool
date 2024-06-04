@@ -367,8 +367,8 @@
                                 <li>
                                     <a href="goAnnouncement">
                                         <span class="cate">공지사항</span>
-                                        <p>공지 제목</p>
-                                        <span class="date">공지 날짜</span>
+                                        <p>${announcement.ann_title }</p>
+                                        <span class="date">${announcement.ann_time }</span>
                                     </a>
                                 </li>
                                 <li>

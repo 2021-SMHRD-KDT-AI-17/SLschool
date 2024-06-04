@@ -12,4 +12,6 @@ public interface AnnouncementMapper {
 
 	public Announcement selectAnn(int ann_num);
 
+	public Announcement selectANNF();
+
 }

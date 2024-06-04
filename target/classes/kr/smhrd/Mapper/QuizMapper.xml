@@ -53,7 +53,7 @@
 	</select>
 	
 	<select id="selectRandomWords" parameterType="int" resultType="kr.smhrd.entity.Word">
-    SELECT * FROM SSC_word ORDER BY RAND() LIMIT #{limit}
+    	SELECT * FROM (SELECT DISTINCT * FROM SSC_word) AS distinct_words ORDER BY RAND() LIMIT #{limit}
 	</select>
 	
 	<select id="selectNum" parameterType="String" resultType="int">
