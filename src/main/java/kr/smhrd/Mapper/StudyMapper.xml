@@ -48,6 +48,9 @@
 		select * from SSC_word_image where word_num = #{word_num}
 	</select>
 
+	<select id="selectAllWord" resultType="kr.smhrd.entity.Word">
+		select * from SSC_word
+	</select>
 
 
 </mapper>

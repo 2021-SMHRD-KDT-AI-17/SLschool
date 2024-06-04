@@ -40,4 +40,6 @@ public interface QuizMapper {
 
 	public int selectNum(String word_name);
 
+	public String selectName(Integer integer);
+
 }

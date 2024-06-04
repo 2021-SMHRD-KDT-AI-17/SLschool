@@ -126,7 +126,7 @@ public class MemberController {
 	
 	// 로그인 기능
 	@RequestMapping("/Login")
-	public String Login(HttpServletRequest request, HttpSession session) {
+	public String Login(HttpServletRequest request, HttpSession session, Model model) {
 		
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
@@ -139,6 +139,9 @@ public class MemberController {
 			
 		}else {
 			session.setAttribute("loginMember", member2);
+			Announcement announcement = announceMapper.selectANNF();
+			 
+			model.addAttribute("announcement", announcement);
 			return "main";
 		}
 		

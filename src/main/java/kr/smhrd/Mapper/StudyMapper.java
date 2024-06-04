@@ -32,6 +32,8 @@ public interface StudyMapper {
 	
 	public List<Word> selectWordAllEco();
 
+	public List<Word> selectAllWord();
+
 
 
 
