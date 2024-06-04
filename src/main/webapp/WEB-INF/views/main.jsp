@@ -90,7 +90,7 @@
                             <a href="quiz">퀴즈</a>
                             <ul>
                                 <li><a href="quiz2">단어 맞추기</a></li>
-                                <li><a href="">수화 해보기</a></li>
+                                <li><a href="">수어 해보기</a></li>
                             </ul>
                         </li>
                         <li>
@@ -180,7 +180,7 @@
                                 <button class="m_bmenu" type="button">퀴즈</button>
                                 <ul class="m_smenu">
                                     <li><a href="quiz2">단어 맞추기</a> </li>
-                                    <li><a href="">수화 해보기</a> </li>
+                                    <li><a href="">수어 해보기</a> </li>
                                 </ul>
                             </li>
                             
@@ -243,7 +243,7 @@
 							</div>
                             <div class="cont_tit">
                                 <p>내 모습을 보면서,</p>
-                                <span>수화를 배워보세요!</span>
+                                <span>수어를 배워보세요!</span>
                             </div>
                             <!-- 텍스트 [e] -->
                             
