@@ -12,10 +12,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import kr.smhrd.Mapper.AnnouncementMapper;
 import kr.smhrd.Mapper.MemberMapper;
 import kr.smhrd.Mapper.QuizMapper;
 import kr.smhrd.Mapper.StudyMapper;
 import kr.smhrd.Mapper.SuggestionMapper;
+import kr.smhrd.entity.Announcement;
 import kr.smhrd.entity.Member;
 import kr.smhrd.entity.QuizRank;
 import kr.smhrd.entity.Suggestion;
@@ -39,13 +41,25 @@ public class MemberController {
 	@Autowired
 	private QuizMapper quizMapper;
 	
+	@Autowired
+	private AnnouncementMapper announceMapper;
+	
 	 @RequestMapping("/")
-	   public String Main() {
+	   public String Main(Model model) {
+		 Announcement announcement = announceMapper.selectANNF();
+		 
+		 model.addAttribute("announcement", announcement);
+		 
 	      return "main";
 	   }
 	   
 	@RequestMapping("/goMain")
-	public String goMain() {
+	public String goMain(Model model) {
+		
+		Announcement announcement = announceMapper.selectANNF();
+		 
+		 model.addAttribute("announcement", announcement);
+		
 		return "main";
 	}
 	
