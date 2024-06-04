@@ -328,7 +328,7 @@
         place-items: center;
         color: white;
         position: absolute;
-        top: 40%;
+        top: 30%;
         translate: transforemy(-50%);
       }
       .slid i:first-child{
