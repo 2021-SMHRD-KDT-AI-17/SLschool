@@ -263,9 +263,13 @@
                                                             <c:forEach items="${suggestionList }" var="SL" varStatus="s">
                                                             	<a href="goSuggestionDetail?sug_num=${SL.sug_num }" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                                                                     ${SL.sug_title }
-                                                                    <span class="badge badge-light badge-pill">N</span>
+                                                                    <span class="badge badge-light badge-pill">+</span>
                                                                 </a>
                                                             </c:forEach>
+                                                            <a href="goHelp" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                                                    <strong>문의 바로 가기</strong>
+                                                                    <span class="badge badge-light badge-pill">></span>
+                                                                </a>
                                                             
                                                             </ul>
                                                         </div><!-- Détail-->
