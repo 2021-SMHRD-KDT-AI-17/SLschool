@@ -263,7 +263,7 @@
     <!-- progressbar -->
 
     <!-- fieldsets -->
-     <c:forEach items="${quiz_list}" var="Q" begin="0" end="4" step="1"  varStatus="s">
+     <c:forEach items="${quiz_list}" var="Q" begin="0" end="9" step="1"  varStatus="s">
     	<fieldset>
       <h2 class="fs-title">${s.count}번 문제</h2>
       <input type="hidden" name="question_number" value="${s.count }">
