@@ -150,7 +150,7 @@
                             <li>
                                 <button class="m_bmenu" type="button">수어사전</button>
                                  <ul class="m_smenu">
-                                    <li><a href="goDic">단어검색</a> </li>
+                                    <li><a href="goDic">수어사전</a> </li>
                                     <!-- <li><a href="">소분류</a> </li>
                                     <li><a href="">소분류</a> </li> -->
                                 </ul> 
@@ -159,7 +159,7 @@
                             <%if(loginMember != null) {%>
                            <button class="m_bmenu" type="button">마이페이지</button>
                                 <ul class="m_smenu">
-                            <li><a href="">수업 현황</a></li>
+                            <li><a href="goMyPage">수업 현황</a></li>
                             <li><a href="goUpdateMember">내 정보 수정</a></li>
                             <li><a href="goHelp">문의하기</a></li>
                             <%if(loginMember.getId().equals("admin")){ %>
