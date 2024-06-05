@@ -32,14 +32,14 @@ public class AnnouncementController {
 	}
 	
 	
-	// 공지사항 내용보러가기
+	// 공지사항 내용보러가기  @RequestParam : " " 이 이름으로 된 정보를 '자료형 A' 으로 받아온다.
 	@RequestMapping("/goDetailAnnouncement")
 	public String goDetailAnnouncement(@RequestParam("ann_num") int ann_num, Model model) {
 		
-		// 해당 번호에 대한 공지사항 정보 불러오기(1개) → 고유 번호에 대한 공지사항
+		// 해당 번호에 대한 공지사항 정보 불러오기(1개(고유번호)) → 고유 번호에 대한 공지사항
 		Announcement announcement = announcementMapper.selectAnn(ann_num);
 		
-		// 불러온 공지사항 보내주기
+		// 불러온 공지사항 보내주기 (MODEL 사용!)
 		model.addAttribute("announcement", announcement);
 		
 		return "announcement_detail";
