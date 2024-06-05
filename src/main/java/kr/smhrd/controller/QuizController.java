@@ -277,6 +277,8 @@ public class QuizController {
             options.remove(0);
             options.add(correctWord);
         }
+        
+        Collections.shuffle(options);
 
         model.addAttribute("question", "이 수화가 뜻하는 단어는 무엇일까요?");
         model.addAttribute("videoUrl", videoUrl);
@@ -298,6 +300,8 @@ public class QuizController {
             options.remove(0);
             options.add(correctWord);
         }
+        
+        Collections.shuffle(options);
 
         Map<String, Object> quizData = new HashMap<>();
         quizData.put("question", "이 수화가 뜻하는 단어는 무엇일까요?");
