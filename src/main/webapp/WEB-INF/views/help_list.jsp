@@ -140,7 +140,7 @@
                             <li>
                             <a href="goMyPage">마이페이지</a>
                             <ul>
-                            <li><a href="">수업 현황</a></li>
+                            <li><a href="goMyPage">수업 현황</a></li>
                             <li><a href="goUpdateMember">내 정보 수정</a></li>
                             <li><a href="goHelp">문의하기</a></li>
                             <%if(loginMember.getId().equals("admin")){ %>
@@ -223,7 +223,7 @@
                             <li>
                                 <button class="m_bmenu" type="button">수어사전</button>
                                  <ul class="m_smenu">
-                                    <li><a href="goDic">단어검색</a> </li>
+                                    <li><a href="goDic">수어사전</a> </li>
                                     <!-- <li><a href="">소분류</a> </li>
                                     <li><a href="">소분류</a> </li> -->
                                 </ul> 
@@ -232,7 +232,7 @@
                             <%if(loginMember != null) {%>
                            <button class="m_bmenu" type="button">마이페이지</button>
                                 <ul class="m_smenu">
-                            <li><a href="">수업 현황</a></li>
+                            <li><a href="goMyPage">수업 현황</a></li>
                             <li><a href="goUpdateMember">내 정보 수정</a></li>
                             <li><a href="goHelp">문의하기</a></li>
                             <%if(loginMember.getId().equals("admin")){ %>
@@ -260,9 +260,9 @@
             <!-- sub_main_banner [s] -->
             <div id="sub_main_banner">
                 <div id="sh_content_tit">
-                    <h3>내 정보</h3>
+                    <h3>수업 현황</h3>
                     <p><a href="goMain"><i class="fa fa-home"></i><span class="sound_only">홈으로</span></a>
-                        <i class="fa fa-angle-right"></i>마이페이지<i class="fa fa-angle-right"></i>내 정보</p>
+                        <i class="fa fa-angle-right"></i>마이페이지<i class="fa fa-angle-right"></i>수업 현황</p>
                 </div>
             </div>
             <!-- sub_main_banner [e] -->
@@ -304,13 +304,13 @@
                                                             <ul class="list-group list-group-flush">
                                                             
                                                             
-                                                            
                                                             <c:forEach items="${suggestionList }" var="SL" varStatus="s">
-                                                            	<a href="" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                                               <a href="goSuggestionDetail?sug_num=${SL.sug_num }" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                                                                     ${SL.sug_title }
                                                                     <span class="badge badge-light badge-pill">+</span>
                                                                 </a>
                                                             </c:forEach>
+                                                            
                                                             <a href="goMyPage" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                                                                     <strong>마이페이지로 돌아가기</strong>
                                                                     <span class="badge badge-light badge-pill"> < </span>

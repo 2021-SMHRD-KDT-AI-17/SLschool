@@ -121,7 +121,7 @@
                             <li>
                             <a href="goMyPage">마이페이지</a>
                             <ul>
-                            <li><a href="">수업 현황</a></li>
+                            <li><a href="goMyPage">수업 현황</a></li>
                             <li><a href="goUpdateMember">내 정보 수정</a></li>
                             <li><a href="goHelp">문의하기</a></li>
                             <%if(loginMember.getId().equals("admin")){ %>
@@ -154,6 +154,7 @@
             </div>
             <!-- topmenu_wrapper [e] -->
 
+            <!-- 반응형메뉴 [s] -->
             <!-- 반응형메뉴 [s] -->
             <div id="topmenuM">
                 <h1 id="m_logo"><a href="goMain"><img src="resources/img/common/logo_2.png" alt="Sample" /></a></h1>
@@ -204,7 +205,7 @@
                             <li>
                                 <button class="m_bmenu" type="button">수어사전</button>
                                  <ul class="m_smenu">
-                                    <li><a href="goDic">단어검색</a> </li>
+                                    <li><a href="goDic">수어사전</a> </li>
                                     <!-- <li><a href="">소분류</a> </li>
                                     <li><a href="">소분류</a> </li> -->
                                 </ul> 
@@ -213,7 +214,7 @@
                             <%if(loginMember != null) {%>
                            <button class="m_bmenu" type="button">마이페이지</button>
                                 <ul class="m_smenu">
-                            <li><a href="">수업 현황</a></li>
+                            <li><a href="goMyPage">수업 현황</a></li>
                             <li><a href="goUpdateMember">내 정보 수정</a></li>
                             <li><a href="goHelp">문의하기</a></li>
                             <%if(loginMember.getId().equals("admin")){ %>
@@ -233,6 +234,19 @@
             <!-- 반응형메뉴 [e] -->
 		</div>            
     </div>
+    <!-- sh_hd [e] -->
+    <!-- sh_container [s] -->
+    <div id="sh_container">
+        <!-- sh_container_wrapper [s] -->
+        <div id="sh_container_wrapper">
+            <!-- sub_main_banner [s] -->
+            <div id="sub_main_banner">
+                <div id="sh_content_tit">
+                    <h3>수업 현황</h3>
+                    <p><a href="goMain"><i class="fa fa-home"></i><span class="sound_only">홈으로</span></a>
+                        <i class="fa fa-angle-right"></i>마이페이지<i class="fa fa-angle-right"></i>수업 현황</p>
+                </div>
+            </div>
             <!-- sub_main_banner [e] -->
             <!-- sh_aside [s] -->
             <!-- sh_aside [e] -->
