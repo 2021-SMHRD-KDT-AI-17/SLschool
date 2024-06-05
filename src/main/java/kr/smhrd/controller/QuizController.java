@@ -73,8 +73,8 @@ public class QuizController {
         // 리스트를 랜덤하게 섞음
         Collections.shuffle(numbers);
 
-        // 랜덤하게 섞인 리스트에서 5개의 숫자만 선택하여 출력
-        List<Integer> selectedNumbers = numbers.subList(0, 5);
+        // 랜덤하게 섞인 리스트에서 10개의 숫자만 선택하여 출력
+        List<Integer> selectedNumbers = numbers.subList(0, 10);
         for (int quiz_num : selectedNumbers) {
             quiz_list.add(quizMapper.selectQuizNum(quiz_num));
         }
@@ -134,58 +134,6 @@ public class QuizController {
 		}
 		model.addAttribute("quiz_list", quiz_list);
 		
-//	    List<Map<String, Object>> questionList = new ArrayList<>();
-//
-//	    for (int i = 0; i < 5; i++) {
-//	        Word correctWord = quizMapper.selectRandomWord();
-//	        List<Word> allRandomWords = quizMapper.selectRandomWords(10); // 충분히 많은 단어를 한 번에 가져옴
-//
-//	        Set<Word> randomWords = new HashSet<>();
-//	        for (Word word : allRandomWords) {
-//	            if (!word.getWord_name().equals(correctWord.getWord_name())) {
-//	                randomWords.add(word);
-//	            }
-//	            if (randomWords.size() == 3) {
-//	                break;
-//	            }
-//	        }
-//
-//	        // 만약 3개의 단어를 채우지 못했다면 추가로 선택
-//	        while (randomWords.size() < 3) {
-//	            Word newWord = quizMapper.selectRandomWord();
-//	            if (!newWord.getWord_name().equals(correctWord.getWord_name()) && !randomWords.contains(newWord)) {
-//	                randomWords.add(newWord);
-//	            }
-//	        }
-//
-//	        // 정답 단어를 포함한 리스트로 섞기
-//	        List<Word> allWords = new ArrayList<>(randomWords);
-//	        allWords.add(correctWord);
-//	        Collections.shuffle(allWords);
-//
-//	        Map<String, String> choices = new HashMap<>();
-//	        for (Word word : allWords) {
-//	            String wordImage = quizMapper.selectWordImage(word.getWord_num());
-//	            choices.put(word.getWord_name(), wordImage);
-//	        }
-//
-//	        String correctWordImage = quizMapper.selectWordImage(correctWord.getWord_num());
-//	        String correctWordName = correctWord.getWord_name();
-//
-//	        Map<String, Object> question = new HashMap<>();
-//	        question.put("correctWord", correctWord);
-//	        question.put("choices", choices);
-//	        question.put("correctWordImage", correctWordImage);
-//	        question.put("correctWordName", correctWordName);
-//
-//	        questionList.add(question);
-//
-//	        // 콘솔에 출력
-//	        System.out.println("정답은 " + correctWordName);
-//	        System.out.println("보기는 " + choices);
-//	    }
-//
-//	    model.addAttribute("questionList", questionList);
 	    return "quiz_a_detail_pic";
 	}
 	
@@ -204,11 +152,11 @@ public class QuizController {
 		
 		int score = 0;
 		
-		for (int i=0;i<5;i++) {
+		for (int i=0;i<10;i++) {
 			int quiz_num = Integer.valueOf(quiz_numL[i]).intValue(); // 문제 번호를 가져오는 과정에서 String으로 변환이 되기 때문에 그 값을 다시 int 형태로 바꿔주는 작업
 			String quiz_label = quizMapper.selectLabel(quiz_num);
 			if(answer[i].equals(quiz_label)) {
-				score = score + 20; // score+=20;
+				score = score + 10; // score+=20;
 			}else {
 				int question_num = Integer.valueOf(question_number[i]).intValue();
 				wrong_question_list.add(question_num);    // 1~5 번 문제중 어떤 문제를 틀렸는지 저장하기 (짝수 번호 배열)

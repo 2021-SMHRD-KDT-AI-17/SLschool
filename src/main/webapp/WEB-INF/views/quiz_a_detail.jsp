@@ -274,7 +274,7 @@
     <input type="hidden" name="quiz_num" value="${Q.quiz_num }" >
       <input type="text" name="answer" placeholder="정답입력" />
       <c:choose>
-      	<c:when test="${s.count <= 4 }">
+      	<c:when test="${s.count <= 9 }">
       		<input type="button" name="next" class="next action-button" value="다음문제" />
       	</c:when>
       	<c:otherwise>
