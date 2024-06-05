@@ -50,9 +50,8 @@
 		}
 		
 		.inline-img {
-		    margin-left:390px;
-		    margin-top: 30px; /* 이미지에 여백 추가 */
-		    margin-bottom: -40px;
+		margin-left:-30px;
+		    margin-top: 10px; /* 이미지에 여백 추가 */
 		}
 		#buttonans{
 		margin-top:-10px !important;
@@ -66,6 +65,7 @@
 		margin-top:30px;
 		min-height:150px !important;
 		}
+
     </style>
 </head>
 <body>
@@ -292,10 +292,11 @@
                                                                    ${announcement.ann_content }
                                                                 </div>
                                                                 <div class="date">
+                                                                 <img src="resources/img/common/logo_2.png" alt="Sample" class="inline-img" style="width:100%"/>
                                                                    ${announcement.ann_time }
                                                                 </div>
                                                               <button class="btn btn-primary btn-sm mt-3"  onclick="location.href='goAnnouncement'">뒤로가기</button>
-                                                            </div><!-- row -->
+                                                            </div><!-- row -->        
                                                         </div><!-- sbody -->
                                                     </div><!-- dashbox -->
                                                 </div>

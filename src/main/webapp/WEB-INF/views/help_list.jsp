@@ -57,6 +57,15 @@
 		margin-left:583px;
 		margin-top:-10px !important;
 		}
+		    .list {
+    font-size: 1.2em; /* 원하는 크기로 조정 */
+    font-weight: bold; /* 굵게 지정 */
+    color:#4D869C;
+    
+}
+   .list2{
+      margin-left:30px;
+      margin-bottom:10px;
     </style>
 </head>
 <body>
@@ -287,14 +296,19 @@
                                                         <div class="mt-1 d-flex justify-content-center">
                                                             <button class="btn btn-primary btn-sm mt-3" onclick="location.href='goUpdateMember'">내 정보 수정</button>
                                                         </div>
-                                                        <div class="detail clearfix">
+                                                           
+                                                       <div class="detail clearfix">
+                                                           <div class="list2">
+                                                           <span class="list">내 문의 현황 </span>
+                                                           </div>
                                                             <ul class="list-group list-group-flush">
+                                                            
                                                             
                                                             
                                                             <c:forEach items="${suggestionList }" var="SL" varStatus="s">
                                                             	<a href="" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                                                                     ${SL.sug_title }
-                                                                    <span class="badge badge-light badge-pill">N</span>
+                                                                    <span class="badge badge-light badge-pill">+</span>
                                                                 </a>
                                                             </c:forEach>
                                                             <a href="goMyPage" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
