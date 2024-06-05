@@ -304,13 +304,13 @@
                                                             <ul class="list-group list-group-flush">
                                                             
                                                             
-                                                            
                                                             <c:forEach items="${suggestionList }" var="SL" varStatus="s">
-                                                            	<a href="" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                                               <a href="goSuggestionDetail?sug_num=${SL.sug_num }" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                                                                     ${SL.sug_title }
                                                                     <span class="badge badge-light badge-pill">+</span>
                                                                 </a>
                                                             </c:forEach>
+                                                            
                                                             <a href="goMyPage" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                                                                     <strong>마이페이지로 돌아가기</strong>
                                                                     <span class="badge badge-light badge-pill"> < </span>
