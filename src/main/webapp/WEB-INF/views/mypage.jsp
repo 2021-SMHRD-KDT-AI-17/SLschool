@@ -155,6 +155,7 @@
             <!-- topmenu_wrapper [e] -->
 
             <!-- 반응형메뉴 [s] -->
+            <!-- 반응형메뉴 [s] -->
             <div id="topmenuM">
                 <h1 id="m_logo"><a href="goMain"><img src="resources/img/common/logo_2.png" alt="Sample" /></a></h1>
                 <!-- 메뉴 버튼 [s] -->
@@ -233,6 +234,19 @@
             <!-- 반응형메뉴 [e] -->
 		</div>            
     </div>
+    <!-- sh_hd [e] -->
+    <!-- sh_container [s] -->
+    <div id="sh_container">
+        <!-- sh_container_wrapper [s] -->
+        <div id="sh_container_wrapper">
+            <!-- sub_main_banner [s] -->
+            <div id="sub_main_banner">
+                <div id="sh_content_tit">
+                    <h3>수업 현황</h3>
+                    <p><a href="goMain"><i class="fa fa-home"></i><span class="sound_only">홈으로</span></a>
+                        <i class="fa fa-angle-right"></i>마이페이지<i class="fa fa-angle-right"></i>수업 현황</p>
+                </div>
+            </div>
             <!-- sub_main_banner [e] -->
             <!-- sh_aside [s] -->
             <!-- sh_aside [e] -->
