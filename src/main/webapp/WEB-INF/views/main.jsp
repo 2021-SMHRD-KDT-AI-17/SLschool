@@ -397,13 +397,22 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                <% if(loginMember == null) {%>
+                                    <a href="goLogin">
                                         <span class="cate">문의하기</span>
                                         <p>1:1 문의</p>
                                          </a>
-                                        <% if(loginMember == null) {%>
+                                        
                                 <span class="date">로그인 후 사용해주세요</span>
-                                <%}%>
+                                <%} else{%>
+                                <a href="goHelp">
+                                        <span class="cate">문의하기</span>
+                                        <p>1:1 문의</p>
+                                         </a>
+                                
+                                
+                                
+                                <%} %>
                                    
                                 </li>
                             </ul>
