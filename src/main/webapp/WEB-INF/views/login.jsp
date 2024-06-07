@@ -212,10 +212,10 @@
                     <div class="login-form">
                       <div class="login-top">
                         <h1 class="login-header">로그인</h1>
-						<form action="Login" method="post" class="input-container">
+						<form action="Login" method="post" class="input-container" id="loginForm">
 
                             <div class="input-container">
-                              <input type="text" id="user-name" name="id" placeholder=" " />
+                              <input type="text" id="user-name" name="id" placeholder=" "/>
                               <label for="user-name" class="input-prefix">아이디</label>
                             </div>
                           
@@ -223,8 +223,8 @@
                               <input type="password" id="password" name="pw" placeholder=" " />
                               <label for="password" class="input-prefix">비밀번호</label>
                             </div>
-                          
-                            <input type="submit" id="sign-in" name="Sign-in" value="로그인" />
+                            <button type="button" onclick="loginC()">로그인</button><br>
+                            <span id="resultIdCheck"></span>
                         </form>
                       </div>
                       <div class="login-bottom">
@@ -307,6 +307,31 @@
         });
     </script>
      반응형 하단 전화번호 [e] -->
+     
+     <script type="text/javascript">
+     function loginC(){
+    	    var inputID = $('#user-name').val();
+    	    var inputPW = $('#password').val();
+    	    
+    	    $.ajax({
+    	        url : 'LoginCheck',
+    	        data : {'inputID': inputID, 'inputPW': inputPW},
+    	        type : 'post',
+    	        success : function(data){
+    	            if(data == 1){
+    	                $('#resultIdCheck').text('죄송합니다. 등록되지 않은 아이디입니다.');
+    	            } else if(data == 2){
+    	            	$('#loginForm').submit();
+    	            } else if(data == 3){
+    	                $('#resultIdCheck').text('죄송합니다. 비밀번호가 틀렸습니다.');
+    	            }
+    	        },
+    	        error : function(){
+    	            alert("통신실패!");
+    	        }
+    	    })
+    	}
+     </script>
     
     <!-- sh_ft [s] -->
     <div id="sh_ft">

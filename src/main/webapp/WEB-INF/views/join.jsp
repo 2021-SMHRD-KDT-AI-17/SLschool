@@ -218,6 +218,7 @@
                             
                               <input type="text" name="id" id="inputID" placeholder=" " />
                               <label for="user-name" class="input-prefix">아이디를 입력하세요</label>
+                              <span id="resultCheck"></span>
                               <button type="button" onclick="checkE()">아이디 중복체크</button>
                             </div>
                           
@@ -235,7 +236,7 @@
                             
                             <div class="input-container">
                             
-                              <input type="password" name="name"  placeholder=" " />
+                              <input type="text" name="name"  placeholder=" " />
                               <label for="password" class="input-prefix">이름을 입력하세요</label>
                             </div>
                             <input type="submit" id="sign-in" name="Sign-in" value="회원가입" />
@@ -359,12 +360,10 @@ function checkE() {
 	var inputID = document.getElementById("inputID").value;
 
 	$.ajax({
-		url: 'idCheck',
-		data: {
-			'inputID': inputID
-		},
-		type: 'GET',
-		success: function(data) {
+		url : 'idCheck',
+		data : {'inputID' : inputID},
+		type : 'GET',
+		success : function(data) {
 			if (data == 1) {
 				$('#resultCheck').text('사용 가능한 아이디입니다.');
 			} else {

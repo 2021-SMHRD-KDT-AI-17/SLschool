@@ -16,11 +16,10 @@ public class ResttController {
 	@Autowired
 	private MemberMapper memberMapper;
 	
-	@GetMapping("/idCheck")
-	public @ResponseBody int idCheck(@RequestParam("inputID") String id) {
+	@RequestMapping("/idCheck")
+	public @ResponseBody int idCheck(@RequestParam("inputID") String inputID) {
 		
-		System.out.println(id);
-		Member member = memberMapper.emailCheck(id);
+		Member member = memberMapper.emailCheck(inputID);
 		
 		
 		if (member == null) {
@@ -32,6 +31,24 @@ public class ResttController {
 		}
 	}
 	
+	@RequestMapping("/LoginCheck")
+	public @ResponseBody int LoginCheck(@RequestParam("inputID") String inputID,  @RequestParam("inputPW") String inputPW) {
+		
+		System.out.println(inputID);
+		Member member = memberMapper.emailCheck(inputID);
+		
+		if (member == null) {
+			// 사용가능
+			return 1;
+		} else {
+			if (member.getPw().equals(inputPW)) {
+				return 2;
+			}else {
+				return 3;
+			}
+		}
+
+	}
 	
 
 }
