@@ -224,7 +224,7 @@
                               <label for="password" class="input-prefix">비밀번호</label>
                             </div>
                             <button type="button" onclick="loginC()"  id="sign-in" >로그인</button><br>
-                            <span id="resultIdCheck"></span>
+                            <span id="resultIdCheck" style="color: blue;"></span>
                         </form>
                       </div>
                       <div class="login-bottom">
@@ -319,11 +319,11 @@
     	        type : 'post',
     	        success : function(data){
     	            if(data == 1){
-    	                $('#resultIdCheck').text('죄송합니다. 등록되지 않은 아이디입니다.');
+    	                $('#resultIdCheck').text('등록되지 않은 아이디입니다.');
     	            } else if(data == 2){
     	            	$('#loginForm').submit();
     	            } else if(data == 3){
-    	                $('#resultIdCheck').text('죄송합니다. 비밀번호가 틀렸습니다.');
+    	                $('#resultIdCheck').text('비밀번호가 틀렸습니다.');
     	            }
     	        },
     	        error : function(){

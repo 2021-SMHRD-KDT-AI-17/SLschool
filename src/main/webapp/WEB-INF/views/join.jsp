@@ -233,7 +233,7 @@
                               <input type="password" name="pwConfirm" id="inputPWConfirm"  placeholder=" " />
                               <label for="password" class="input-prefix">비밀번호를 확인하세요</label>
                             </div>
-                            <span id="passwordMatchMsg" style="color: red;"></span>
+                            <span id="passwordMatchMsg" style="color: red; margin-botton: 10px"></span>
                             
                             <div class="input-container">
                             
