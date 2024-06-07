@@ -223,7 +223,7 @@
                               <input type="password" id="password" name="pw" placeholder=" " />
                               <label for="password" class="input-prefix">비밀번호</label>
                             </div>
-                            <button type="button" onclick="loginC()">로그인</button><br>
+                            <button type="button" onclick="loginC()"  id="sign-in" >로그인</button><br>
                             <span id="resultIdCheck"></span>
                         </form>
                       </div>
