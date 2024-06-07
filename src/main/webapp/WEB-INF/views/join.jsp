@@ -218,8 +218,8 @@
                             
                               <input type="text" name="id" id="inputID" placeholder=" " />
                               <label for="user-name" class="input-prefix">아이디를 입력하세요</label>
-                              <span id="resultCheck"></span>
-                              <button type="button" onclick="checkE()">아이디 중복체크</button>
+                              <span id="resultCheck" style="margin-bottom: 10px; display: inline-block;"></span>
+                              <button type="button" onclick="checkE()" style="margin-top: 10px;">아이디 중복체크</button>
                             </div>
                           
                             <div class="input-container">
@@ -233,6 +233,7 @@
                               <input type="password" name="pwConfirm" id="inputPWConfirm"  placeholder=" " />
                               <label for="password" class="input-prefix">비밀번호를 확인하세요</label>
                             </div>
+                            <span id="passwordMatchMsg" style="color: red;"></span>
                             
                             <div class="input-container">
                             
