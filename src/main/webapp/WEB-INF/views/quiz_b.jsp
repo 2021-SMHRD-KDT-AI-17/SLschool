@@ -617,7 +617,9 @@ section {
     <script>
     $(document).ready(function() {
         AOS.init();
+
     });
+    
     async function startWebcam() {
         const videoElement = document.getElementById('webcam');
         try {
@@ -650,10 +652,25 @@ section {
                         invert: false,
                     },
                 });
+                var currentIndex = swiper.realIndex;
+            	 // 현재 화면에 표시된 슬라이드의 h2 요소 가져오기
+             	var currentSlide = swiper.slides[currentIndex];
+            	var h2Element = currentSlide.querySelector('h2');
+            	 console.log(h2Element.textContent);
+
 
                 // Infinite scroll
                 swiper.on('reachEnd', () => {
                     fetchRandomWord();
+                    
+                });
+                
+                swiper.on('slideChange', () => {
+                    // 슬라이드가 변경될 때마다 현재 화면에 표시된 슬라이드의 h2 요소 가져오기
+                    const currentIndex = swiper.realIndex;
+                    const currentSlide = swiper.slides[currentIndex];
+                    const h2Element = currentSlide.querySelector('h2');
+                    console.log(h2Element.textContent);
                 });
             }
 
@@ -663,6 +680,7 @@ section {
                     .then(response => response.json())
                     .then(data => {
                         console.log('Initial data:', data);  // JSON 데이터 구조 확인
+
                         const wrapper = document.getElementById('swiper-wrapper');
                         wrapper.innerHTML = ''; // 기존 슬라이드를 초기화합니다.
                         data.forEach(item => {
@@ -691,10 +709,10 @@ section {
                             // 슬라이드에 추가
                             slide.appendChild(img);
                             slide.appendChild(overlay);
-
                             console.log('Generated slide HTML:', slide.outerHTML);
                             wrapper.appendChild(slide);
 
+                            
                             // 마지막 단어 이름 업데이트
                             lastWordName = word.word_name;
                         });
@@ -774,6 +792,8 @@ section {
             // Initially load 10 slides
             loadInitialSlides();
         });
+        
+        
     </script>
 </body>
 </html>
