@@ -311,5 +311,45 @@ public class QuizController {
 
         return quizData;
     }
+    
+    
+    @RequestMapping(value = "/api/words/random", method = RequestMethod.GET, produces = "application/json")
+    @ResponseBody
+    public Map<String, Object> getRandomWord() {
+        Word randomWord = quizMapper.selectRandomWord();
+        String wordImgUrl = quizMapper.selectWordImage(randomWord.getWord_num());
 
+        Map<String, Object> response = new HashMap<>();
+        response.put("word", randomWord);
+        response.put("wordImage", wordImgUrl);
+
+        return response;
+    }
+
+    // 초기 10개의 단어와 이미지를 가져오는 API 엔드포인트 추가
+    @RequestMapping(value = "/api/words/initial", method = RequestMethod.GET, produces = "application/json")
+    @ResponseBody
+    public List<Map<String, Object>> getInitialWords() {
+        List<Map<String, Object>> initialWords = new ArrayList<>();
+
+        for (int i = 0; i < 10; i++) {
+            Word randomWord = quizMapper.selectRandomWord();
+            String wordImgUrl = quizMapper.selectWordImage(randomWord.getWord_num());
+
+            Map<String, Object> wordData = new HashMap<>();
+            wordData.put("word", randomWord);
+            wordData.put("wordImage", wordImgUrl);
+
+            initialWords.add(wordData);
+            System.out.println(wordData);
+        }
+
+        return initialWords;
+    }
+
+    // quiz_b.jsp 페이지로 이동
+    @RequestMapping("/quizB")
+    public String goQuizB() {
+        return "quiz_b";
+    }
 }

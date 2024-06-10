@@ -91,7 +91,7 @@
                             <a href="quiz">퀴즈</a>
                             <ul>
                                 <li><a href="quiz2">단어 맞추기</a></li>
-                                <li><a href="">수어 해보기</a></li>
+                                <li><a href="quizB">수어 해보기</a></li>
                             </ul>
                         </li>
                         <li>
@@ -181,7 +181,7 @@
                                 <button class="m_bmenu" type="button">퀴즈</button>
                                 <ul class="m_smenu">
                                     <li><a href="quiz2">단어 맞추기</a> </li>
-                                    <li><a href="">수어 해보기</a> </li>
+                                    <li><a href="quizB">수어 해보기</a> </li>
                                 </ul>
                             </li>
                             
@@ -246,7 +246,7 @@
     	        <div id="sh_snb">
                     <ul>
                         <li><a href="quiz2">단어 맞추기</a></li>
-                        <li><a href="">수어 해보기</a></li>
+                        <li><a href="quizB">수어 해보기</a></li>
                     </ul>            
 				</div>
             </div>

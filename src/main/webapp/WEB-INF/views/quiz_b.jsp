@@ -2,6 +2,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page import="java.util.List"%>
+<%@page import="kr.smhrd.entity.Quiz"%>
+<%@page import="java.util.ArrayList"%>
+
 <!doctype html>
 <html lang="ko">
 <head>
@@ -14,23 +18,306 @@
     <meta name="naver-site-verification" content=""/><!-- 네이버 소유확인 -->
     <meta name="description" content=""><!-- 사이트 설명문구 -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="모의고사-그림 맞추기">
+    <meta property="og:title" content="퀴즈-수어 해보기">
     <meta property="og:description" content=""><!-- 사이트 설명문구 -->
     <meta property="og:image" content="img/common/logo.png">
     <meta property="og:url" content="">
-	<title>모의고사-그림 맞추기</title>
+	<title>퀴즈-수어 해보기</title>
     <script src="resources/js/jquery-1.8.3.min.js"></script>
     <script src="resources/js/jquery-ui.js"></script>
     <script src="resources/js/topmenu_script.js"></script>
 	<link rel="stylesheet" href="resources/css/sh_common.css"> 
     <link rel="stylesheet" href="resources/css/sh_sub.css">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"> 
     <script src="https://kit.fontawesome.com/85915fb54c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="resources/css/aos.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="resources/js/aos.js"></script>
     <style>
-    .qt{width:80%;}
-    .tq{width:20%;}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section {
+  position: relative;
+  display: flex;
+  min-width:950px;
+  justify-content: center;
+  align-items: center;
+  min-height: 600px;
+  overflow: hidden;
+  margin-top:-50px;
+}
+
+.info video {
+  width: 100%;  /* 부모 요소의 너비에 맞게 비디오 크기 설정 */
+  height: auto; /* 비디오의 원래 비율을 유지하면서 높이 자동 조절 */
+  max-width: 450px;  /* 최대 너비를 info 요소의 최대 너비에 맞게 설정 */
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(30px);
+  border-radius: 20px;
+  width: min(900px, 100%);
+  box-shadow: 0 0.5px 0 1px rgba(255, 255, 255, 0.23) inset,
+    0 1px 0 0 rgba(255, 255, 255, 0.66) inset, 0 4px 16px rgba(0, 0, 0, 0.12);
+  z-index: 10;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 450px;
+  padding: 0 35px;
+  text-align: justify;
+}
+
+.info p {
+  color: #000;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.movie-night {
+  background: linear-gradient(225deg, #ff3cac 0%, #784ba0 50%, #2b86c5 100%);
+}
+
+.btn {
+  display: block;
+  padding: 10px 40px;
+  margin: 20px auto;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 4px;
+  outline: none;
+  text-decoration: none;
+  color: #784ba0;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active,
+.btn:visited {
+  transition-timing-function: cubic-bezier(0.6, 4, 0.3, 0.8);
+  animation: gelatine 0.5s 1;
+}
+
+@keyframes gelatine {
+  0%,
+  100% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    transform: scale(0.95, 1.05);
+  }
+}
+
+/* SWIPER */
+
+.swiper {
+  width: 250px;
+  height: 450px;
+  padding: 50px 0;
+}
+
+.swiper-slide {
+  position: relative;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  user-select: none;
+}
+
+.swiper-slide img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-position {
+  object-position: 50% 0%;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #0f2027, transparent, transparent);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.overlay span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+  padding: 7px 18px;
+  margin: 10px;
+  border-radius: 20px;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-family: inherit;
+  background: rgba(255, 255, 255, 0.095);
+  box-shadow: inset 2px -2px 20px rgba(214, 214, 214, 0.2),
+    inset -3px 3px 3px rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(74px);
+}
+
+.overlay h2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  margin: 0 0 20px 20px;
+}
+
+/* ANIMATED BACKGROUND */
+
+.circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.circles li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background-color: #ff3cac;
+  background-image: linear-gradient(
+    225deg,
+    #ff3cac 0%,
+    #784ba0 50%,
+    #2b86c5 100%
+  );
+  animation: animate 25s linear infinite;
+  bottom: -150px;
+}
+
+.circles li:nth-child(1) {
+  left: 25%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+
+.circles li:nth-child(2) {
+  left: 10%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 2s;
+  animation-duration: 12s;
+}
+
+.circles li:nth-child(3) {
+  left: 70%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 4s;
+}
+
+.circles li:nth-child(4) {
+  left: 40%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 0s;
+  animation-duration: 18s;
+}
+
+.circles li:nth-child(5) {
+  left: 65%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 0s;
+}
+
+.circles li:nth-child(6) {
+  left: 75%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 3s;
+}
+
+.circles li:nth-child(7) {
+  left: 35%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 7s;
+}
+
+.circles li:nth-child(8) {
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  animation-delay: 15s;
+  animation-duration: 45s;
+}
+
+.circles li:nth-child(9) {
+  left: 20%;
+  width: 15px;
+  height: 15px;
+  animation-delay: 2s;
+  animation-duration: 35s;
+}
+
+.circles li:nth-child(10) {
+  left: 85%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 0s;
+  animation-duration: 11s;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
+  }
+}
+
     </style>
 </head>
 <body>
@@ -218,8 +505,6 @@
             <!-- 반응형메뉴 [e] -->
 		</div>            
     </div>
-    <!-- sh_hd [e] -->
-    
     <!-- sh_container [s] -->
     <div id="sh_container">
         <!-- sh_container_wrapper [s] -->
@@ -227,9 +512,9 @@
             <!-- sub_main_banner [s] -->
             <div id="sub_main_banner">
 				<div id="sh_content_tit">
-					<h3>그림 맞추기</h3>
+					<h3>단어 맞추기</h3>
 					<p><a href="goMain"><i class="fa fa-home"></i><span class="sound_only">홈으로</span></a> 
-					<i class="fa fa-angle-right"></i> 모의고사 <i class="fa fa-angle-right"></i>그림 맞추기</p>
+					<i class="fa fa-angle-right"></i> 퀴즈 <i class="fa fa-angle-right"></i> 수어 해보기</p>
 				</div>
 			</div>
             <!-- sub_main_banner [e] -->
@@ -238,8 +523,8 @@
             <div id="sh_aside">
     	        <div id="sh_snb">
                     <ul>
-                            <li><a href="quizDetail">단어 맞추기</a></li>
-                            <li><a href="quizDetailPic" style="color:#4D869C">그림 맞추기</a></li>
+                        <li><a href="quiz2" >단어 맞추기</a></li>
+                        <li><a href="quizB" style="color: #4D869C;">수어 해보기</a></li>
                     </ul>            
 				</div>
             </div>
@@ -254,90 +539,31 @@
                         
                         <!-- cont01 [s] -->
                         <div class="tab_cont cont01">
-                            <div class="s_tit"  data-aos="fade-up">  
-                                <div class="container">
-                                    <div class="stop-game game-full-flex">
-                                      <div class="score">
-                                        <div class="score-container">
-                                            <h1>최종 점수는</h1>
-                                            <div class="final-score">${score}</div>                             
-                                            <div>
-                                                <a class="play-again" href="quizDetailPic">다시해보기</a>
-                                            </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                </div>
+                            <div>
+                            </div>
+                            <div class="s_tit"  data-aos="fade-up">
+                                
+    <section>
+        <div class="content">
+            <div class="info">
+				<video id="webcam" autoplay playsinline></video>
+                <button class="btn">수어해보기</button>
+            </div>
+            <div class="swiper">
+                <div class="swiper-wrapper" id="swiper-wrapper">
+                    <!-- Slides will be inserted here dynamically -->
+                </div>
+            </div>
+        </div>
+    </section>
+    
+                                   
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- 서브페이지 [e] -->
                 
-                <div data-aos="fade-down">
-                    <div id="faq" style="width:600px" >
-                        <h2 style="color:#4D869C;">오답 문제</h2>
-                        <ol class="qna-list accordion">
-                          <c:forEach items="${wrong_question_list}" end="${wrong_size}" varStatus="s">
-                          	 <li class="qna-item">
-                            <div class="question-article">
-                              <a href="goWrongStudy?word_num=${wrong_num_list[s.index] }" class="question btn-fold" style="display:flex;">
-                                <strong class="blind">질문:</strong>
-                                <div class="qt"><span class="q">${wrong_question_list[s.index] }번 문제   ${wrong_question_label_list[s.index] }</span></div>
-                                <div class="tq"> 바로가기</div>
-                              </a>
-                            </div>
-                          </li>
-                          </c:forEach>
-                          
-                          
-                          
-                          
-                          
-                          
-                          <!-- <li class="qna-item">
-                            <div class="question-article">
-                              <a href="#!" class="question btn-fold">
-                                <strong class="blind">질문:</strong>
-                                <span class="q">1번 영상</span> 바로가기
-                              </a>
-                            </div>
-                          </li>
-                          <li class="qna-item">
-                            <div class="question-article">
-                              <a href="#!" class="question btn-fold">
-                                <strong class="blind">질문:</strong>
-                                <span class="q">2번 영상</span> 바로가기
-                              </a>
-                            </div>
-                          </li>
-                          <li class="qna-item">
-                            <div class="question-article">
-                              <a href="#!" class="question btn-fold">
-                                <strong class="blind">질문:</strong>
-                                <span class="q">3번 영상</span> 바로가기
-                              </a>
-                            </div>
-                          </li>
-                          <li class="qna-item">
-                            <div class="question-article">
-                              <a href="#!" class="question btn-fold">
-                                <strong class="blind">질문:</strong>
-                                <span class="q">4번 영상</span> 바로가기
-                              </a>
-                            </div>
-                          </li>
-                          <li class="qna-item">
-                            <div class="question-article">
-                              <a href="#!" class="question btn-fold">
-                                <strong class="blind">질문:</strong>
-                                <span class="q">5번 영상</span> 바로가기
-                              </a>
-                            </div>
-                          </li> -->
-                        </ol>
-                      </div> 
-                </div>
               </div>
             <!-- sh_content [s] -->            
             
@@ -386,154 +612,169 @@
     <!-- sh_ft [e] -->
 </div>
 <!-- sh_wrapper [e] -->
-<script>
-$(document).ready(function() {
-    // 페이지 로드 시 가위(li 요소)에 on 클래스 추가
-    $("#service1014 .tabs li.li1").addClass("on");
 
-    $("#service1014 .tabs li").click(function() {
-        $("#service1014 .tabs li").removeClass("on");
-        $(this).addClass("on");
-
-        // 각 li 요소에 따라 비디오 주소 변경
-        if ($(this).hasClass("li1")) {
-            $("#service1014 video source").attr("src", "../img/main/abc.mp4");
-        } else if ($(this).hasClass("li2")) {
-            $("#service1014 video source").attr("src", "../img/main/def.mp4");
-        } else if ($(this).hasClass("li3")) {
-            $("#service1014 video source").attr("src", "../img/main/abc.mp4");
-        } else if ($(this).hasClass("li4")) {
-            $("#service1014 video source").attr("src", "../img/main/def.mp4");
-        } else if ($(this).hasClass("li5")) {
-            $("#service1014 video source").attr("src", "../img/main/abc.mp4");
-        } else if ($(this).hasClass("li6")) {
-            $("#service1014 video source").attr("src", "../img/main/def.mp4");
-        } else if ($(this).hasClass("li7")) {
-            $("#service1014 video source").attr("src", "../img/main/abc.mp4");
-        }
-
-        // 비디오 새로고침
-        $("#service1014 video")[0].load();
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        AOS.init();
+        bindOptionClickEvents();
     });
+    async function startWebcam() {
+        const videoElement = document.getElementById('webcam');
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+            videoElement.srcObject = stream;
+        } catch (error) {
+            console.error('Error accessing the webcam: ', error);
+            const imgElement = document.createElement('img');
+            imgElement.src = 'resources/img/common/webcamno.png';
+            imgElement.alt = 'No webcam available';
+            imgElement.style.width = '380px';  // 원하는 크기로 설정
+            imgElement.style.height = '285px';  // 원하는 높이로 설정
+            videoElement.parentNode.replaceChild(imgElement, videoElement);
+        }
+    }
 
-});
+    window.addEventListener('load', startWebcam);
+    
+        document.addEventListener('DOMContentLoaded', (event) => {
+            let swiper;
+            let lastWordName = null; // 마지막 단어 이름을 추적하는 변수
 
-let slidImg = document.querySelector(".slidImg"),
-bt = document.querySelectorAll(".slid i"),
-start = false,
-prevPageX, 
-prevScrollLeft,
-firstImg = document.images[0],
-imgWidth = firstImg.clientWidth + 10;
+            function initializeSwiper() {
+                swiper = new Swiper(".swiper", {
+                    effect: "cards",
+                    grabCursor: true,
+                    speed: 500,
+                    loop: true,
+                    mousewheel: {
+                        invert: false,
+                    },
+                });
 
+                // Infinite scroll
+                swiper.on('reachEnd', () => {
+                    fetchRandomWord();
+                });
+            }
 
-bt.forEach(el => {
-	el.addEventListener("click", () =>{
-		slidImg.scrollLeft += el.id == "left" ? -imgWidth : imgWidth;
-	})
-})
+            // 초기 10개의 슬라이드를 로드하는 함수
+            function loadInitialSlides() {
+                fetch('<%= request.getContextPath() %>/api/words/initial')
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Initial data:', data);  // JSON 데이터 구조 확인
+                        const wrapper = document.getElementById('swiper-wrapper');
+                        wrapper.innerHTML = ''; // 기존 슬라이드를 초기화합니다.
+                        data.forEach(item => {
+                            const word = item.word;
+                            const wordImage = item.wordImage;
 
+                            // 콘솔에 wordImage와 word.word_name을 출력
+                            console.log('wordImage:', wordImage);
+                            console.log('word.word_name:', word.word_name);
 
-let swip = (ev)=> {
-	if(!start) return;
-	ev.preventDefault();
-	let position = ev.pageX - prevPageX;
-	slidImg.scrollLeft = prevScrollLeft - position;
-};
+                            const slide = document.createElement('div');
+                            slide.classList.add('swiper-slide');
 
-let startSwip = (ev) => {
-	start = true
-	prevPageX = ev.pageX
-	prevScrollLeft = slidImg.scrollLeft
-};
+                            // 이미지 엘리먼트 생성
+                            const img = document.createElement('img');
+                            img.src = wordImage;
+                            img.alt = word.word_name;
 
-let stopSwip = () => {
-	start = false
-};
+                            // 오버레이 엘리먼트 생성
+                            const overlay = document.createElement('div');
+                            overlay.classList.add('overlay');
+                            const h2 = document.createElement('h2');
+                            h2.textContent = word.word_name;
+                            overlay.appendChild(h2);
 
+                            // 슬라이드에 추가
+                            slide.appendChild(img);
+                            slide.appendChild(overlay);
 
-$(document).ready(function() {
-    AOS.init();
-});
+                            console.log('Generated slide HTML:', slide.outerHTML);
+                            wrapper.appendChild(slide);
 
-var current_fs, next_fs, previous_fs; //fieldsets
-var left, opacity, scale; //fieldset properties which we will animate
-var animating; //flag to prevent quick multi-click glitches
+                            // 마지막 단어 이름 업데이트
+                            lastWordName = word.word_name;
+                        });
 
-$(".next").click(function(){
-	if(animating) return false;
-	animating = true;
-	
-	current_fs = $(this).parent();
-	next_fs = $(this).parent().next();
-	
-	//activate next step on progressbar using the index of next_fs
-	$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
-	
-	//show the next fieldset
-	next_fs.show(); 
-	//hide the current fieldset with style
-	current_fs.animate({opacity: 0}, {
-		step: function(now, mx) {
-			//as the opacity of current_fs reduces to 0 - stored in "now"
-			//1. scale current_fs down to 80%
-			scale = 1 - (1 - now) * 0.2;
-			//2. bring next_fs from the right(50%)
-			left = (now * 50)+"%";
-			//3. increase opacity of next_fs to 1 as it moves in
-			opacity = 1 - now;
-			current_fs.css({
-        'transform': 'scale('+scale+')',
-        'position': 'absolute'
-      });
-			next_fs.css({'left': left, 'opacity': opacity});
-		}, 
-		duration: 800, 
-		complete: function(){
-			current_fs.hide();
-			animating = false;
-		}, 
-		//this comes from the custom easing plugin
-		easing: 'easeInOutBack'
-	});
-});
+                        // Ensure there are enough slides for loop mode
+                        const slides = document.querySelectorAll('.swiper-slide');
+                        if (slides.length < 10) {
+                            for (let i = 0; i < 10 - slides.length; i++) {
+                                const clone = slides[i % slides.length].cloneNode(true);
+                                wrapper.appendChild(clone);
+                            }
+                        }
 
-$(".previous").click(function(){
-	if(animating) return false;
-	animating = true;
-	
-	current_fs = $(this).parent();
-	previous_fs = $(this).parent().prev();
-	
-	//de-activate current step on progressbar
-	$("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
-	
-	//show the previous fieldset
-	previous_fs.show(); 
-	//hide the current fieldset with style
-	current_fs.animate({opacity: 0}, {
-		step: function(now, mx) {
-			//as the opacity of current_fs reduces to 0 - stored in "now"
-			//1. scale previous_fs from 80% to 100%
-			scale = 0.8 + (1 - now) * 0.2;
-			//2. take current_fs to the right(50%) - from 0%
-			left = ((1-now) * 50)+"%";
-			//3. increase opacity of previous_fs to 1 as it moves in
-			opacity = 1 - now;
-			current_fs.css({'left': left});
-			previous_fs.css({'transform': 'scale('+scale+')', 'opacity': opacity});
-		}, 
-		duration: 800, 
-		complete: function(){
-			current_fs.hide();
-			animating = false;
-		}, 
-		//this comes from the custom easing plugin
-		easing: 'easeInOutBack'
-	});
-});
+                        // Initialize Swiper after slides are added
+                        if (!swiper) {
+                            initializeSwiper();
+                        } else {
+                            swiper.update();
+                        }
+                    })
+                    .catch(error => console.error('Error loading initial slides:', error));
+            }
 
-</script> 
+            // 랜덤 단어를 추가로 로드하는 함수
+            function fetchRandomWord() {
+                fetch('<%= request.getContextPath() %>/api/words/random')
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Random data:', data);  // JSON 데이터 구조 확인
+                        const wrapper = document.getElementById('swiper-wrapper');
+                        const word = data.word;
+                        const wordImage = data.wordImage;
+
+                        // 중복 체크: 바로 직전 단어와 동일하면 새로운 단어를 다시 요청
+                        if (word.word_name === lastWordName) {
+                            console.log('Duplicate word detected, fetching a new word...');
+                            return fetchRandomWord(); // 재귀 호출로 새로운 단어를 다시 요청
+                        }
+
+                        // 콘솔에 wordImage와 word.word_name을 출력
+                        console.log('wordImage:', wordImage);
+                        console.log('word.word_name:', word.word_name);
+
+                        const slide = document.createElement('div');
+                        slide.classList.add('swiper-slide');
+
+                        // 이미지 엘리먼트 생성
+                        const img = document.createElement('img');
+                        img.src = wordImage;
+                        img.alt = word.word_name;
+
+                        // 오버레이 엘리먼트 생성
+                        const overlay = document.createElement('div');
+                        overlay.classList.add('overlay');
+                        const h2 = document.createElement('h2');
+                        h2.textContent = word.word_name;
+                        overlay.appendChild(h2);
+
+                        // 슬라이드에 추가
+                        slide.appendChild(img);
+                        slide.appendChild(overlay);
+
+                        console.log('Generated random slide HTML:', slide.outerHTML);
+                        wrapper.appendChild(slide);
+
+                        // Update Swiper
+                        if (swiper) {
+                            swiper.update();
+                        }
+
+                        // 마지막 단어 이름 업데이트
+                        lastWordName = word.word_name;
+                    })
+                    .catch(error => console.error('Error loading random word:', error));
+            }
+
+            // Initially load 10 slides
+            loadInitialSlides();
+        });
+    </script>
 </body>
 </html>
-
