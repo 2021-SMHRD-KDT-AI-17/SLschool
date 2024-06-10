@@ -104,7 +104,7 @@ section {
   border-radius: 4px;
   outline: none;
   text-decoration: none;
-  color: #784ba0;
+  color: #7AB2B2;
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
