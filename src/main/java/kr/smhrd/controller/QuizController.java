@@ -332,7 +332,7 @@ public class QuizController {
     public List<Map<String, Object>> getInitialWords() {
         List<Map<String, Object>> initialWords = new ArrayList<>();
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 5; i++) {
             Word randomWord = quizMapper.selectRandomWord();
             String wordImgUrl = quizMapper.selectWordImage(randomWord.getWord_num());
 

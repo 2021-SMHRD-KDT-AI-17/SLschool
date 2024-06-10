@@ -617,7 +617,6 @@ section {
     <script>
     $(document).ready(function() {
         AOS.init();
-        bindOptionClickEvents();
     });
     async function startWebcam() {
         const videoElement = document.getElementById('webcam');
@@ -702,8 +701,8 @@ section {
 
                         // Ensure there are enough slides for loop mode
                         const slides = document.querySelectorAll('.swiper-slide');
-                        if (slides.length < 10) {
-                            for (let i = 0; i < 10 - slides.length; i++) {
+                        if (slides.length < 5) {
+                            for (let i = 0; i < 5 - slides.length; i++) {
                                 const clone = slides[i % slides.length].cloneNode(true);
                                 wrapper.appendChild(clone);
                             }
