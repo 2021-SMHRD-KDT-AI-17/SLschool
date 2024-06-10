@@ -390,11 +390,9 @@
                             <p class="tit">고객센터</p>
                             <ul>
                                 <li>
-                                    <a href="goAnnouncement">
                                         <span class="cate">공지사항</span>
-                                        <p>${announcement.ann_title }</p>
-                                        <span class="date">${announcement.ann_time }</span>
-                                    </a>
+                                        <a href="goDetailAnnouncement?ann_num=${announcement.ann_num }"><p>${announcement.ann_title }</p></a>
+                                        <a href="goAnnouncement"><span class="date">공지사항 바로가기</span></a>
                                 </li>
                                 <li>
                                     <a href="">
