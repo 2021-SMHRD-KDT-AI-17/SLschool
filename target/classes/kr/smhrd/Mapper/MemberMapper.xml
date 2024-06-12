@@ -7,7 +7,7 @@
 </select>
 
 <insert id="newMember" parameterType="kr.smhrd.entity.Member">
-	insert into Member values(#{id},#{pw},#{name},#{birth}, 0)
+	insert into Member values(#{id},#{pw},#{name},Now(), 0)
 </insert>
 
 	<select id="emailCheck" parameterType="String" resultType="kr.smhrd.entity.Member">
