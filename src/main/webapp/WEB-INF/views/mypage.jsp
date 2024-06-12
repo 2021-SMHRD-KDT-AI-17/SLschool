@@ -273,7 +273,7 @@
                                                                 class="img-fuid mb-3"
                                                                 width="80" height="80"
                                                                 alt="avatar"
-                                                                src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEyMjdfMTA1%2FMDAxNzAzNjYyMjg4MDQz.sJvE_4lC7aSvn2qNjDFqck8-QvTYqEjjFQ4Wy-idGNQg.51a80329ezIx2HeuIMF2C44V5mkqzWj_vfntWtvzELcg.JPEG.animalandhuman%2FGettyImages-491143647.jpg&type=sc960_832">
+                                                                src="resources/img/common/profile.jfif">
                                                         </div>
                                                         <div class="mt-1 d-flex justify-content-center">
                                                             <button class="btn btn-primary btn-sm mt-3" onclick="location.href='goUpdateMember'">내 정보 수정</button>
