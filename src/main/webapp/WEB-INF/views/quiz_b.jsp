@@ -648,9 +648,9 @@ section {
                     grabCursor: true,
                     speed: 500,
                     loop: true,
-                    mousewheel: {
+/*                     mousewheel: {
                         invert: false,
-                    },
+                    }, */
                 });
                 var currentIndex = swiper.realIndex;
             	 // 현재 화면에 표시된 슬라이드의 h2 요소 가져오기
@@ -671,6 +671,11 @@ section {
                     const currentSlide = swiper.slides[currentIndex];
                     const h2Element = currentSlide.querySelector('h2');
                     console.log(h2Element.textContent);
+                });
+                
+                document.addEventListener('click', function() {
+                	//document.getElementById('nextButton').addEventListener('click', function() {
+                    swiper.slideNext();
                 });
             }
 
