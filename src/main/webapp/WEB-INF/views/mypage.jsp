@@ -359,7 +359,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="dashborad-box">
-                                                        <h4 class="title">퀴즈 점수</h4>
+                                                        <h4 class="title">모의고사 점수</h4>
                                                         <div class="section-body">
                                                             <canvas id="myChart"></canvas>
                                                         </div>
