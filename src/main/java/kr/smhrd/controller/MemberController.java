@@ -92,24 +92,24 @@ public class MemberController {
 		int s_size = suggestionList.size();
 		
 
-		 intPre = new PythonInterpreter();
-		 
-		 System.setProperty("python.import.site", "false");
-	        PythonInterpreter intPre = new PythonInterpreter();
-
-	        // Python 스크립트 실행
-	        intPre.execfile("C:\\Users\\smhrd\\git\\HUMAN9\\src\\main\\webapp\\resources\\python\\testpy.py");
-	        
-	        // b 변수 업데이트
-	        intPre.set("b", new PyInteger(3));
-
-	        // update_variables 함수 호출하여 c 재계산
-	        PyFunction updateFunc = (PyFunction) intPre.get("update_variables", PyFunction.class);
-	        updateFunc.__call__(new PyInteger(3));
-
-	        // 변수 값 출력
-	        System.out.println("b: " + intPre.get("b"));
-	        System.out.println("c: " + intPre.get("c"));
+//		 intPre = new PythonInterpreter();
+//		 
+//		 System.setProperty("python.import.site", "false");
+//	        PythonInterpreter intPre = new PythonInterpreter();
+//
+//	        // Python 스크립트 실행
+//	        intPre.execfile("C:\\Users\\smhrd\\git\\HUMAN9\\src\\main\\webapp\\resources\\python\\testpy.py");
+//	        
+//	        // b 변수 업데이트
+//	        intPre.set("b", new PyInteger(3));
+//
+//	        // update_variables 함수 호출하여 c 재계산
+//	        PyFunction updateFunc = (PyFunction) intPre.get("update_variables", PyFunction.class);
+//	        updateFunc.__call__(new PyInteger(3));
+//
+//	        // 변수 값 출력
+//	        System.out.println("b: " + intPre.get("b"));
+//	        System.out.println("c: " + intPre.get("c"));
 		
 		// 가져온 데이터를 mypage에 보내주는 기능
 		model.addAttribute("s_size", s_size);
