@@ -70,25 +70,7 @@
     	<div id="sh_hd_wrapper">		
             <!-- topmenu_wrapper [s] -->
             <div id="topmenu_wrapper">
-                <!-- topmenu_line_wrap [s] -->
-<!--                <div class="topmenu_line_wrap">
-                    <div class="topmenu_line">
-                         SNS 메뉴 [s] -->
-                        <!--<ul class="left_menu">
-                            <li><a href="main.html">Home</a></li>
-                            <li><a href="">Blog</a></li>
-                            <li><a href="">Youtube</a><img src="img/common/menu_youtube.png" alt="유튜브"></li>
-                        </ul>
-                         SNS 메뉴 [e] -->
-                        
-                        <!-- 로그인 메뉴 [s] -->
-                        <!--<ul>
-                            <li><a href=""><i data-feather="log-in"></i>Login</a></li>
-                            <li><a href=""><i data-feather="user-plus"></i>Join us</a></li>
-                        </ul>
-                         로그인 메뉴 [e] -->
-                    <!--</div>
-                </div> -->
+
             
                 <!-- topmenu_line_wrap [e] -->
 

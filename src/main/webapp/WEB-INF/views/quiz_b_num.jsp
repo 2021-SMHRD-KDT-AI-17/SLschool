@@ -85,6 +85,7 @@ margin-top:00px;
     position: relative;
     z-index: 2;
     height: 70px;
+    min-width:800px;
     padding: 0 30px;
     background: #fff;
     border-radius: 5px 5px 0 0;
@@ -135,6 +136,7 @@ section{
 section .que_text{
     font-size: 23px;
     font-weight: 600;
+    margin-left:190px;
 }
 
 section .option_list{
@@ -146,7 +148,7 @@ section .option_list .option{
     background: aliceblue;
     border: 1px solid #84c5fe;
     border-radius: 5px;
-    padding: 8px 15px;
+    padding: 8px 40px;
     font-size: 17px;
     margin-bottom: 15px;
     cursor: pointer;
@@ -155,9 +157,11 @@ section .option_list .option{
     align-items: center;
     justify-content: space-between;
 }
-
+.video_container{
+margin-left:130px;
+}
 section .option_list .option:last-child{
-    margin-bottom: 0px;
+    margin-bottom: 10px;
 }
 
 section .option_list .option:hover{
