@@ -43,20 +43,20 @@ dropout = 0.2
 sequence_length = 10
 
 # YOLOv8 모델 로드
-yolo_model = YOLO('C:/Users/SMHRD/Desktop/alpha/Sbest.pt')  # verbose=False로 설정하여 로그 메시지를 숨김
+yolo_model = YOLO('C:/Users/smhrd/Desktop/alpha/Sbest.pt')  # verbose=False로 설정하여 로그 메시지를 숨김
 
 # LSTM 모델 로드(state_dict)
 lstm_model = LSTMModel(input_size, hidden_size, output_size, num_layers, dropout)
-lstm_model.load_state_dict(torch.load('C:/Users/SMHRD/Desktop/alpha/lstm_model_54_alltrain_bn_do_10.pth'))
+lstm_model.load_state_dict(torch.load('C:/Users/smhrd/Desktop/alpha/lstm_model_54_alltrain_bn_do_10.pth'))
 lstm_model.eval()
 
 # 라벨 로드 및 LabelEncoder 설정
-labels = np.load('C:/Users/SMHRD/Desktop/alpha/labels.npy')
+labels = np.load('C:/Users/smhrd/Desktop/alpha/labels.npy')
 label_encoder = LabelEncoder()
 label_encoder.fit(labels)
 
 # 비디오 파일 열기
-video_path = "C:/Users/SMHRD/Desktop/alpha/NIA_SL_WORD0005_REAL01_F.mp4"
+video_path = "C:/Users/smhrd/Desktop/alpha/NIA_SL_WORD0005_REAL01_F.mp4"
 cap = cv2.VideoCapture(video_path)
 
 # 시퀀스 생성 함수

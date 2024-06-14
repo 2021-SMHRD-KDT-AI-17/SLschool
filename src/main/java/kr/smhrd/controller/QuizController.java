@@ -423,4 +423,14 @@ public class QuizController {
 
  	   return "main";
     }
+    
+    @RequestMapping("/goSuccess")
+    public String goSuccess() {
+    	return "quiz_success";
+    }
+    
+    @RequestMapping("/goFail")
+    public String goFail() {
+    	return "quiz_fail";
+    }
 }
