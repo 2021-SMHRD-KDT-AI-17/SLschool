@@ -618,8 +618,8 @@
                                     <div class="latest">
                                         <div class="tit_area">
                                             <a href="">
-                                                <span class="tit">A난이도</span>
-                                                어린아이 수준
+                                                <span class="tit">환경</span>
+                                                
                                             </a>
                                             <div class="control">
                                                 <span class="prev"><i class="fa fa-solid fa-angle-left" aria-hidden="true"></i></span>
