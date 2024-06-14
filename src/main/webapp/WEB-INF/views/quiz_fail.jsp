@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="resources/css/aos.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="resources/js/aos.js"></script>
+	<link rel="stylesheet" href="resources/css/ssl.css">
     <style>
 *,
 *::before,
@@ -574,31 +575,78 @@ section {
                             <div>
                             </div>
                             <div class="s_tit"  data-aos="fade-up">
-                                
+                   
     <section>
         <div class="content">
+
+  <div class="rain front-row"></div>
+  <div class="rain back-row"></div>
+
             <div class="info">
-            <form action="doSSL">
-				 <p><br>
-				 <span class="movie-night1">사용방법</span><br>
-            1. 원하는 단어를 선택해주세요<br>
-2. 수어해보기 버튼을 클릭해주세요<br>
-3. 버튼 클릭 시 웹캠이 열립니다<br>
-4. 웹캠이 열리면 10초 이내에 수어를 진행해주세요<br><br>
-            <span class="movie-night">주의사항</span><br> 버튼 클릭 시 웹캠이 열리는 시간까지 기다려주세요<br>
-기다려도 열리지 않을 시 웹캠 연결을 확인해주세요
-          </p>
-				<input type="hidden" name="labelword">
-                <button class="btn" type="submit">수어해보기</button>
-                </form>
+          
+  <div id="error-box">
+    <div class="dot"></div>
+    <div class="dot two"></div>
+    <div class="face2">
+      <div class="eye"></div>
+      <div class="eye right"></div>
+      <div class="mouth sad"></div>
+    </div>
+    <div class="shadow move"></div>
+  </div>
             </div>
-            <div class="swiper">
-                <div class="swiper-wrapper" id="swiper-wrapper">
-                    <!-- Slides will be inserted here dynamically -->
-                </div>
+            <div class="swiper" id="right">
+                <div class="message"><h1 class="alert">오답입니다</h1><p>다시 도전하고 싶으시면<br>버튼을 눌러주세요.</p>                
+                <button class="btn" type="submit">돌아가기</button></div>
             </div>
         </div>
     </section>
+    <script>
+    var makeItRain = function() {
+    	  //clear out everything
+    	  $('.rain').empty();
+
+    	  var increment = 0;
+    	  var drops = "";
+    	  var backDrops = "";
+
+    	  while (increment < 100) {
+    	    //couple random numbers to use for various randomizations
+    	    //random number between 98 and 1
+    	    var randoHundo = (Math.floor(Math.random() * (98 - 1 + 1) + 1));
+    	    //random number between 5 and 2
+    	    var randoFiver = (Math.floor(Math.random() * (5 - 2 + 1) + 2));
+    	    //increment
+    	    increment += randoFiver;
+    	    //add in a new raindrop with various randomizations to certain CSS properties
+    	    drops += '<div class="drop" style="left: ' + increment + '%; bottom: ' + (randoFiver + randoFiver - 1 + 100) + '%; animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"><div class="stem" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div><div class="splat" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div></div>';
+    	    backDrops += '<div class="drop" style="right: ' + increment + '%; bottom: ' + (randoFiver + randoFiver - 1 + 100) + '%; animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"><div class="stem" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div><div class="splat" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div></div>';
+    	  }
+
+    	  $('.rain.front-row').append(drops);
+    	  $('.rain.back-row').append(backDrops);
+    	}
+
+    	$('.splat-toggle.toggle').on('click', function() {
+    	  $('body').toggleClass('splat-toggle');
+    	  $('.splat-toggle.toggle').toggleClass('active');
+    	  makeItRain();
+    	});
+
+    	$('.back-row-toggle.toggle').on('click', function() {
+    	  $('body').toggleClass('back-row-toggle');
+    	  $('.back-row-toggle.toggle').toggleClass('active');
+    	  makeItRain();
+    	});
+
+    	$('.single-toggle.toggle').on('click', function() {
+    	  $('body').toggleClass('single-toggle');
+    	  $('.single-toggle.toggle').toggleClass('active');
+    	  makeItRain();
+    	});
+
+    	makeItRain();
+    </script>
     
                                    
                             </div>
