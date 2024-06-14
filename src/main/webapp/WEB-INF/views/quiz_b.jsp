@@ -578,6 +578,7 @@ section {
     <section>
         <div class="content">
             <div class="info">
+            <form action="doSSL">
 				 <p><br>
 				 <span class="movie-night1">사용방법</span><br>
             1. 원하는 단어를 선택해주세요<br>
@@ -587,8 +588,9 @@ section {
             <span class="movie-night">주의사항</span><br> 버튼 클릭 시 웹캠이 열리는 시간까지 기다려주세요<br>
 기다려도 열리지 않을 시 웹캠 연결을 확인해주세요
           </p>
-				<input type="hidden" id="labelword">
-                <button class="btn">수어해보기</button>
+				<input type="hidden" name="labelword">
+                <button class="btn" type="submit">수어해보기</button>
+                </form>
             </div>
             <div class="swiper">
                 <div class="swiper-wrapper" id="swiper-wrapper">
