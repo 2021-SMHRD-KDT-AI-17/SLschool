@@ -407,8 +407,9 @@ public class QuizController {
  		    // model.addAttribute("result", word);
  		    
  		   String labelword = request.getParameter("labelword");
+ 		   System.out.println(labelword + "라벨단어");
  		   
- 		   System.out.println(word);
+ 		   System.out.println(word + "단어");
  		   
  		   if(labelword.equals(word)) {
  			   return "quiz_success";
