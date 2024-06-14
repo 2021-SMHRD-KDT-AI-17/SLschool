@@ -32,6 +32,7 @@
 #go{
 	margin-top:25px;
 	margin-bottom:70px;
+	font-size: 11px;
 }
 .mobile-wrap:before {
   top: 0;
