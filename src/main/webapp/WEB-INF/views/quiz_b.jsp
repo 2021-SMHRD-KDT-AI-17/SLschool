@@ -588,7 +588,7 @@ section {
             <span class="movie-night">주의사항</span><br> 버튼 클릭 시 웹캠이 열리는 시간까지 기다려주세요<br>
 기다려도 열리지 않을 시 웹캠 연결을 확인해주세요
           </p>
-				<input type="hidden" name="labelword">
+				<input type="hidden" value="" name="labelword" id="labelword">
                 <button class="btn" type="submit">수어해보기</button>
                 </form>
             </div>
@@ -657,10 +657,9 @@ section {
 <!-- sh_wrapper [e] -->
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script>
+<script>
     $(document).ready(function() {
         AOS.init();
-
     });
     
     async function startWebcam() {
@@ -681,130 +680,69 @@ section {
 
     window.addEventListener('load', startWebcam);
     
-        document.addEventListener('DOMContentLoaded', (event) => {
-            let swiper;
-            let lastWordName = null; // 마지막 단어 이름을 추적하는 변수
+    document.addEventListener('DOMContentLoaded', (event) => {
+        let swiper;
+        let lastWordName = null; // 마지막 단어 이름을 추적하는 변수
 
-            function initializeSwiper() {
-                swiper = new Swiper(".swiper", {
-                    effect: "cards",
-                    grabCursor: true,
-                    speed: 500,
-                    loop: true,/*
-                     mousewheel: {
-                        invert: false,
-                    }, */
-                });
-                var currentIndex = swiper.realIndex;
-            	 // 현재 화면에 표시된 슬라이드의 h2 요소 가져오기
-             	var currentSlide = swiper.slides[currentIndex];
-            	var h2Element = currentSlide.querySelector('h2');
-            	 console.log(h2Element.textContent);
-            	    const labelwordInput = document.getElementById('labelword');
-            	    labelwordInput.value = h2Element.textContent; // 단어 이름 설정
+        function initializeSwiper() {
+            swiper = new Swiper(".swiper", {
+                effect: "cards",
+                grabCursor: true,
+                speed: 500,
+                loop: true
+            });
 
+            // 초기 슬라이드의 단어 설정
+            updateLabelWordWithCurrentSlide();
 
-                // Infinite scroll
-                swiper.on('reachEnd', () => {
-                    fetchRandomWord();
-                    
-                });
-                
-                swiper.on('slideChange', () => {
-                    // 슬라이드가 변경될 때마다 현재 화면에 표시된 슬라이드의 h2 요소 가져오기
-                    const currentIndex = swiper.realIndex;
-                    const currentSlide = swiper.slides[currentIndex];
-                    const h2Element = currentSlide.querySelector('h2');
-                    console.log(h2Element.textContent);
-                    const labelwordInput = document.getElementById('labelword');
+            // Infinite scroll
+            swiper.on('reachEnd', () => {
+                fetchRandomWord();
+            });
+            
+            swiper.on('slideChange', () => {
+                // 슬라이드가 변경될 때마다 현재 화면에 표시된 슬라이드의 h2 요소 가져오기
+                updateLabelWordWithCurrentSlide();
+            });
+            
+            swiper.on('click', function (swiper, event) {
+                const clickedSlide = swiper.clickedSlide;
+                if (clickedSlide) {
+                    swiper.slideNext();
+                }
+            });
+        }
+
+        // 현재 슬라이드의 단어 이름을 labelwordInput에 설정하는 함수
+        function updateLabelWordWithCurrentSlide() {
+            const currentIndex = swiper.realIndex;
+            const currentSlide = swiper.slides[currentIndex];
+            const h2Element = currentSlide.querySelector('h2');
+            if (h2Element) {
+                console.log(h2Element.textContent);
+                const labelwordInput = document.getElementById('labelword');
+                if (labelwordInput) {
                     labelwordInput.value = h2Element.textContent; // 단어 이름 설정
-                });
-                
-                swiper.on('click', function (swiper, event) {
-                    const clickedSlide = swiper.clickedSlide;
-                    if (clickedSlide) {
-                        swiper.slideNext();
-                    }
-                });
+                } else {
+                    console.error('labelwordInput element not found.');
+                }
+            } else {
+                console.error('h2Element not found in the current slide.');
             }
+        }
 
-            // 초기 10개의 슬라이드를 로드하는 함수
-            function loadInitialSlides() {
-                fetch('<%= request.getContextPath() %>/api/words/initial')
-                    .then(response => response.json())
-                    .then(data => {
-                        console.log('Initial data:', data);  // JSON 데이터 구조 확인
+        // 초기 10개의 슬라이드를 로드하는 함수
+        function loadInitialSlides() {
+            fetch('<%= request.getContextPath() %>/api/words/initial')
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Initial data:', data);  // JSON 데이터 구조 확인
 
-                        const wrapper = document.getElementById('swiper-wrapper');
-                        wrapper.innerHTML = ''; // 기존 슬라이드를 초기화합니다.
-                        data.forEach(item => {
-                            const word = item.word;
-                            const wordImage = item.wordImage;
-
-                            // 콘솔에 wordImage와 word.word_name을 출력
-                            console.log('wordImage:', wordImage);
-                            console.log('word.word_name:', word.word_name);
-
-                            const slide = document.createElement('div');
-                            slide.classList.add('swiper-slide');
-
-                            // 이미지 엘리먼트 생성
-                            const img = document.createElement('img');
-                            img.src = wordImage;
-                            img.alt = word.word_name;
-
-                            // 오버레이 엘리먼트 생성
-                            const overlay = document.createElement('div');
-                            overlay.classList.add('overlay');
-                            const h2 = document.createElement('h2');
-                            h2.textContent = word.word_name;
-                            overlay.appendChild(h2);
-
-                            // 슬라이드에 추가
-                            slide.appendChild(img);
-                            slide.appendChild(overlay);
-                            console.log('Generated slide HTML:', slide.outerHTML);
-                            wrapper.appendChild(slide);
-
-                            
-                            // 마지막 단어 이름 업데이트
-                            lastWordName = word.word_name;
-                        });
-
-                        // Ensure there are enough slides for loop mode
-                        const slides = document.querySelectorAll('.swiper-slide');
-                        if (slides.length < 5) {
-                            for (let i = 0; i < 5 - slides.length; i++) {
-                                const clone = slides[i % slides.length].cloneNode(true);
-                                wrapper.appendChild(clone);
-                            }
-                        }
-
-                        // Initialize Swiper after slides are added
-                        if (!swiper) {
-                            initializeSwiper();
-                        } else {
-                            swiper.update();
-                        }
-                    })
-                    .catch(error => console.error('Error loading initial slides:', error));
-            }
-
-            // 랜덤 단어를 추가로 로드하는 함수
-            function fetchRandomWord() {
-                fetch('<%= request.getContextPath() %>/api/words/random')
-                    .then(response => response.json())
-                    .then(data => {
-                        console.log('Random data:', data);  // JSON 데이터 구조 확인
-                        const wrapper = document.getElementById('swiper-wrapper');
-                        const word = data.word;
-                        const wordImage = data.wordImage;
-
-                        // 중복 체크: 바로 직전 단어와 동일하면 새로운 단어를 다시 요청
-                        if (word.word_name === lastWordName) {
-                            console.log('Duplicate word detected, fetching a new word...');
-                            return fetchRandomWord(); // 재귀 호출로 새로운 단어를 다시 요청
-                        }
+                    const wrapper = document.getElementById('swiper-wrapper');
+                    wrapper.innerHTML = ''; // 기존 슬라이드를 초기화합니다.
+                    data.forEach(item => {
+                        const word = item.word;
+                        const wordImage = item.wordImage;
 
                         // 콘솔에 wordImage와 word.word_name을 출력
                         console.log('wordImage:', wordImage);
@@ -828,26 +766,88 @@ section {
                         // 슬라이드에 추가
                         slide.appendChild(img);
                         slide.appendChild(overlay);
-
-                        console.log('Generated random slide HTML:', slide.outerHTML);
+                        console.log('Generated slide HTML:', slide.outerHTML);
                         wrapper.appendChild(slide);
-
-                        // Update Swiper
-                        if (swiper) {
-                            swiper.update();
-                        }
 
                         // 마지막 단어 이름 업데이트
                         lastWordName = word.word_name;
-                    })
-                    .catch(error => console.error('Error loading random word:', error));
-            }
+                    });
 
-            // Initially load 10 slides
-            loadInitialSlides();
-        });
-        
-        
-    </script>
+                    // Ensure there are enough slides for loop mode
+                    const slides = document.querySelectorAll('.swiper-slide');
+                    if (slides.length < 5) {
+                        for (let i = 0; i < 5 - slides.length; i++) {
+                            const clone = slides[i % slides.length].cloneNode(true);
+                            wrapper.appendChild(clone);
+                        }
+                    }
+
+                    // Initialize Swiper after slides are added
+                    if (!swiper) {
+                        initializeSwiper();
+                    } else {
+                        swiper.update();
+                    }
+                })
+                .catch(error => console.error('Error loading initial slides:', error));
+        }
+
+        // 랜덤 단어를 추가로 로드하는 함수
+        function fetchRandomWord() {
+            fetch('<%= request.getContextPath() %>/api/words/random')
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Random data:', data);  // JSON 데이터 구조 확인
+                    const wrapper = document.getElementById('swiper-wrapper');
+                    const word = data.word;
+                    const wordImage = data.wordImage;
+
+                    // 중복 체크: 바로 직전 단어와 동일하면 새로운 단어를 다시 요청
+                    if (word.word_name === lastWordName) {
+                        console.log('Duplicate word detected, fetching a new word...');
+                        return fetchRandomWord(); // 재귀 호출로 새로운 단어를 다시 요청
+                    }
+
+                    // 콘솔에 wordImage와 word.word_name을 출력
+                    console.log('wordImage:', wordImage);
+                    console.log('word.word_name:', word.word_name);
+
+                    const slide = document.createElement('div');
+                    slide.classList.add('swiper-slide');
+
+                    // 이미지 엘리먼트 생성
+                    const img = document.createElement('img');
+                    img.src = wordImage;
+                    img.alt = word.word_name;
+
+                    // 오버레이 엘리먼트 생성
+                    const overlay = document.createElement('div');
+                    overlay.classList.add('overlay');
+                    const h2 = document.createElement('h2');
+                    h2.textContent = word.word_name;
+                    overlay.appendChild(h2);
+
+                    // 슬라이드에 추가
+                    slide.appendChild(img);
+                    slide.appendChild(overlay);
+
+                    console.log('Generated random slide HTML:', slide.outerHTML);
+                    wrapper.appendChild(slide);
+
+                    // Update Swiper
+                    if (swiper) {
+                        swiper.update();
+                    }
+
+                    // 마지막 단어 이름 업데이트
+                    lastWordName = word.word_name;
+                })
+                .catch(error => console.error('Error loading random word:', error));
+        }
+
+        // Initially load 10 slides
+        loadInitialSlides();
+    });
+</script>
 </body>
 </html>

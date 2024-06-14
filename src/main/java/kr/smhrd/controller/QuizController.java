@@ -408,6 +408,8 @@ public class QuizController {
  		    
  		   String labelword = request.getParameter("labelword");
  		   
+ 		   System.out.println(word);
+ 		   
  		   if(labelword.equals(word)) {
  			   return "quiz_success";
  		   }else {
