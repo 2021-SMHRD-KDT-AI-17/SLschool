@@ -27,6 +27,7 @@
     <script src="https://kit.fontawesome.com/85915fb54c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/aos.css">
     <script src="resources/js/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
 
     .s_tit .word-title {

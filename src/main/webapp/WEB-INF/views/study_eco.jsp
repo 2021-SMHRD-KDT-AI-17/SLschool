@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="resources/css/aos.css">
     <script src="resources/js/aos.js"></script>      
     <link rel="stylesheet" href="resources/css/side.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
