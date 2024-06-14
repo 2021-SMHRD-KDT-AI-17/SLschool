@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+*,
+:after,
+:before {
+  box-sizing: border-box
+}
+
+.clearfix:after,
+.clearfix:before {
+  content: '';
+  display: table
+}
+
+.clearfix:after {
+  clear: both;
+  display: block
+}
+
+.mobile-wrap {
+	  z-index: 99;
+  position:fixed;
+  margin: auto;
+  width: 200px;
+  height: 410px;
+  overflow: hidden;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 15px 40px rgba(0, 0, 0, 0.1);
+  top:55%;
+  left:83%;
+  background-color:#fff;
+}
+#go{
+	margin-top:25px;
+	margin-bottom:70px;
+}
+.mobile-wrap:before {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  background-color:#fff;
+}
+
+.mobile {
+  z-index: 99;
+  color: #000;
+  height: 100%;
+  padding: 15px;
+  position: relative;
+  background-color:#fff;
+}
+.animated{
+	margin-bottom:30px;
+	font-size:13px;
+	color:#666;
+	text-align: center;
+}
+
+
+.animated2{
+	margin-bottom:30px;
+	margin-top:60px;
+	font-size:30px;
+	color:#7AB2B2;
+	text-align: center;
+}
+
+a {
+    color: inherit; /* 기존의 링크 색상을 상속받음 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+
+a:hover {
+    color: #4D869C; /* 호버 시 적용할 색상 */
+}
