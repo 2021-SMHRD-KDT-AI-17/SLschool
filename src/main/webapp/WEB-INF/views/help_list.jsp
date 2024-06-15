@@ -287,9 +287,9 @@ align-items: center;
               </div>
             </div>
             <div class="certificate__body">
-              <div class="certificate__recipient-name">김아무</div>
+              <div class="certificate__recipient-name"><%=loginMember.getName() %></div>
               <div class="certificate__description">위 사람은 「수어스쿨」 교육 과정을 성실히 이수하였기에 본 증서를 수여합니다.</div>
-              <div class="certificate__description">2024. 06. 15</div>
+              <div class="certificate__description" id="currentDate"></div>
             </div>
             <div class="certificate__footer">
               <div class="certificate__date entry-column">
@@ -558,7 +558,7 @@ align-items: center;
                                                             <div class="row">
                                                                 <div class="question">
                                                                    ${suggestion.sug_content}
-                                                                </div>
+                                                                </div><br>
                                                                 <div class="date">
                                                                     ${suggestion.sug_time }
                                                                 </div>
@@ -705,6 +705,37 @@ $(document).ready(function() {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', (event) => {
+	  var modal = document.getElementById("myModal");
+	  var btn = document.getElementById("openModal");
+	  var span = document.getElementsByClassName("close")[0];
+
+	  // 모달 열기
+	  btn.onclick = function() {
+	    modal.style.display = "block";
+	  }
+
+	  // 모달 닫기 (X 버튼 클릭 시)
+	  span.onclick = function() {
+	    modal.style.display = "none";
+	  }
+
+	  // 모달 닫기 (모달 바깥 클릭 시)
+	  window.onclick = function(event) {
+	    if (event.target == modal) {
+	      modal.style.display = "none";
+	    }
+	  }
+	  var currentDate = new Date();
+	  var year = currentDate.getFullYear();
+	  var month = ('0' + (currentDate.getMonth() + 1)).slice(-2);
+	  var day = ('0' + currentDate.getDate()).slice(-2);
+	  var formattedDate = year + '. ' + month + '. ' + day;
+
+	  // 날짜를 HTML에 삽입
+	  document.getElementById("currentDate").textContent = formattedDate;
+	});
 // Configuration options go here
 </script>
 </body>
