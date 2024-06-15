@@ -69,7 +69,7 @@ public class QuizController {
 		ArrayList<Quiz> quiz_list = new ArrayList<Quiz>();
 		
 		List<Integer> numbers = new ArrayList<>();
-        for (int i = 7; i <= 70; i++) {
+        for (int i = 1; i <= 65; i++) {
             numbers.add(i);
         }
 
