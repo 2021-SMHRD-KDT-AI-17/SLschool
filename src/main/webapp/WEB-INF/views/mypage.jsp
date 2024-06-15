@@ -34,8 +34,200 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.4/css/mdb.min.css" rel="stylesheet">
     <link rel="stylesheet" href="resources/css/mypage.css">  
     <link rel="stylesheet" href="resources/css/login.css">  
-    <link rel="stylesheet" href="resources/css/bootstrap.css">  
+    <link rel="stylesheet" href="resources/css/bootstrap.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet"> 
     <style>
+    
+    @media (max-width:641px) {
+  html {
+    font-size: small;
+  }
+}
+@media (max-width:321px) {
+  html {
+    font-size: x-small;
+  }
+}
+
+.content {
+  width:500px;
+  height:600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.close{
+margin-left:480px;
+}
+.certificate-wrapper {
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.certificate {
+  padding: 1rem;
+  text-align: center;
+  background-color: #ffffff;
+}
+.certificate__body {
+  padding: 1rem 0;
+}
+.certificate__title {
+  font-size: 4rem;
+}
+.certificate__recipient-name {
+  font-size: 18px;
+  margin-top:15px;
+  margin-left:180px;
+  margin-bottom:30px;
+    color:#353535;
+}
+.certificate__content {
+  font-size: 2rem;
+  white-space: nowrap;
+}
+.certificate__description {
+  font-size: 14px;
+  margin: 0 auto;
+  margin-bottom:30px !important;
+  max-width: 70%;
+}
+.certificate__date {
+  font-size: 1.5rem;
+}
+.certificate__signature {
+  font-size: 1.5rem;
+}
+.certificate__footer {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom:20px;
+  font-family:'Nanum Myeongjo';
+  font-weight:bold;
+  letter-spacing:10px;
+}
+
+.entry-column {
+  display: flex;
+  flex-direction: column;
+}
+.entry-column__input {
+  font-size: 1.5rem;
+  font-family: cursive;
+}
+.entry-column__label {
+  border-top: 1px solid;
+  font-size: 1rem;
+}
+.certificate__signature .entry-column__input {
+  color: #5DADE2;
+}
+
+.title-decoration {
+  display: flex;
+  flex-direction: column;
+}
+.title-decoration__main {
+  line-height: 1em;
+  margin-top:30px;
+  font-size:40px;
+  margin-bottom:20px;
+  color:#353535;
+  font-family:'Nanum Myeongjo';
+  font-weight:700;
+  letter-spacing:5px;
+}
+.title-decoration__sub {
+  font-size: 0.25em;
+  margin-top:20px;
+}
+
+.ribbon {
+  display: inline-block;
+  position: relative;
+  height: 1.5em;
+  line-height: 1.5em;
+  text-align: center;
+  padding: 0 2em;
+  background: #5DADE2;
+  color: #FFF;
+  box-sizing: border-box;
+}
+.ribbon:before, .ribbon:after {
+  position: absolute;
+  content: '';
+  width: 0px;
+  height: 0px;
+  z-index: 1;
+}
+.ribbon:before {
+  top: 0;
+  left: 0;
+  border-width: 0.75em 0 0.75em 0.5em;
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
+}
+.ribbon:after {
+  top: 0;
+  right: 0;
+  border-width: 0.75em 0.5em 0.75em 0;
+  border-color: transparent #fff transparent transparent;
+  border-style: solid;
+}
+.frame {
+  position: relative;
+  padding: 1.25rem;
+  background:
+    radial-gradient(circle at top left, transparent 1.25rem, #ca4 1.25rem, #ca4 1.5rem, transparent 1.5rem) left top / 1.5rem 1.5rem no-repeat,
+    radial-gradient(circle at top right, transparent 1.25rem, #ca4 1.25rem, #ca4 1.5rem, transparent 1.5rem) right top / 1.5rem 1.5rem no-repeat,
+    radial-gradient(circle at bottom left, transparent 1.25rem, #ca4 1.25rem, #ca4 1.5rem, transparent 1.5rem) left bottom / 1.5rem 1.5rem no-repeat,
+    radial-gradient(circle at bottom right, transparent 1.25rem, #ca4 1.25rem, #ca4 1.5rem, transparent 1.5rem) right bottom / 1.5rem 1.5rem no-repeat,
+    linear-gradient(90deg, transparent 1.25rem, #ca4 1.5rem) left top / 51% 0.25rem no-repeat,
+    linear-gradient(-90deg, transparent 1.25rem, #ca4 1.5rem) right top / 51% 0.25rem no-repeat,
+    linear-gradient(90deg, transparent 1.25rem, #ca4 1.5rem) left bottom / 51% 0.25rem no-repeat,
+    linear-gradient(-90deg, transparent 1.25rem, #ca4 1.5rem) right bottom / 51% 0.25rem no-repeat,
+    linear-gradient(180deg, transparent 1.25rem, #ca4 1.5rem) left top / 0.25rem 51% no-repeat,
+    linear-gradient(0deg, transparent 1.25rem, #ca4 1.5rem) left bottom / 0.25rem 51% no-repeat,
+    linear-gradient(180deg, transparent 1.25rem, #ca4 1.5rem) right top / 0.25rem 51% no-repeat,
+    linear-gradient(0deg, transparent 1.25rem, #ca4 1.5rem) right bottom / 0.25rem 51% no-repeat;
+}
+.frame:before {
+    position: absolute;
+    content: "";
+    border: 0.25rem double #ca4;
+    margin: 0.5rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/* bug fix */
+@media print {
+  .ribbon:before {
+    left: -0.25px;
+  }
+  .ribbon:after {
+    right: -0.25px;
+  }
+  .certificate__description {
+    max-width: 90%;
+  }
+}
+    .modal {
+  display: none; /* 기본적으로 숨기기 */
+  position: fixed; /* 화면에 고정 */
+  left: 35%;
+  top: 20%;
+  width: 510px;
+  height: 100%;
+  overflow: auto; /* 스크롤 가능 */
+}
+.modal-content{
+align-items: center;
+}
     .list {
     font-size: 1.2em; /* 원하는 크기로 조정 */
     font-weight: bold; /* 굵게 지정 */
@@ -46,11 +238,67 @@
       margin-left:30px;
       margin-bottom:10px;
    }
+   .reward{
+   position: fixed;
+   top:72%;
+   left:78%;
+   width:200px;
+   height:200px;
+   }
+   
+   .sign {
+  position: absolute; /* 절대 위치 설정 */
+  top: 87%; /* 수직 가운데 정렬 */
+  right: 85px; /* 오른쪽으로 이동 (필요에 따라 조정) */
+  transform: translateY(-50%); /* 수직 가운데 정렬 보정 */
+  width:70px;
+  opacity:0.8;
+  height:70px;
+}
     </style>
 
 </head>
 <body>
 <% Member loginMember = (Member)session.getAttribute("loginMember"); %>
+
+    <c:if test="${point >= 10000 }">
+      <div id="openModal" class="reward-container">
+      		    
+      	<img class="reward" src="resources/img/common/sschool.gif" alt="Reward">
+      		    
+      </div>
+    </c:if>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="content">
+        <div class="certificate-wrapper frame">
+          <div class="certificate">
+            <div class="certificate__header">
+              <div class="certificate__title title-decoration">
+                <span class="title-decoration__sub">
+                  <img src="resources/img/common/reward.png" alt="Title Decoration">
+                </span>
+                <span class="title-decoration__main">교육수료증</span>
+              </div>
+            </div>
+            <div class="certificate__body">
+              <div class="certificate__recipient-name">김아무</div>
+              <div class="certificate__description">위 사람은 「수어스쿨」 교육 과정을 성실히 이수하였기에 본 증서를 수여합니다.</div>
+              <div class="certificate__description">2024. 06. 15</div>
+            </div>
+            <div class="certificate__footer">
+              <div class="certificate__date entry-column">
+                수어스쿨
+                <img class="sign" src="resources/img/common/ssc.png">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <!-- sh_wrapper [s] -->
 <div id="sh_wrapper">
@@ -332,9 +580,6 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                 <c:if test="${point >= 10000 }">
-                                                                	<button>수료증 발급</button>
-                                                                 </c:if>
                                                             </div><!-- row -->
                                                         </div><!-- sbody -->
                                                     </div><!-- dashbox -->
@@ -475,6 +720,30 @@ $(document).ready(function() {
     });
 });
 // Configuration options go here
+// 모달 관련 스크립트
+document.addEventListener('DOMContentLoaded', (event) => {
+  var modal = document.getElementById("myModal");
+  var btn = document.getElementById("openModal");
+  var span = document.getElementsByClassName("close")[0];
+
+  // 모달 열기
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+
+  // 모달 닫기 (X 버튼 클릭 시)
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  // 모달 닫기 (모달 바깥 클릭 시)
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+});
 </script>
+
 </body>
 </html>

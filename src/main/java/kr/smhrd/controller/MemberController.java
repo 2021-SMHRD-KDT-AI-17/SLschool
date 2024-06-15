@@ -196,7 +196,6 @@ public class MemberController {
 		return "help_page";
 	}
 	
-	
 
 	
 }
