@@ -81,6 +81,8 @@ margin-left:480px;
   margin-top:15px;
   margin-left:180px;
   margin-bottom:30px;
+  font-family:'Nanum Myeongjo';
+  font-weight:bold;
     color:#353535;
 }
 .certificate__content {
@@ -92,6 +94,8 @@ margin-left:480px;
   margin: 0 auto;
   margin-bottom:30px !important;
   max-width: 70%;
+  font-family:'Nanum Myeongjo';
+  font-weight:bold
 }
 .certificate__date {
   font-size: 1.5rem;
