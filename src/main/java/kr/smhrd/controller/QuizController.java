@@ -23,9 +23,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import kr.smhrd.Mapper.MemberMapper;
 import kr.smhrd.Mapper.QuizMapper;
 import kr.smhrd.Mapper.StudyMapper;
 import kr.smhrd.entity.Member;
+import kr.smhrd.entity.Member_point;
 import kr.smhrd.entity.Quiz;
 import kr.smhrd.entity.Word;
 import kr.smhrd.entity.WordImage;
@@ -36,6 +38,9 @@ import kr.smhrd.entity.QuizPic;
 
 @Controller
 public class QuizController {
+	
+	@Autowired
+	private MemberMapper memberMapper;
 	
 	@Autowired
 	private QuizMapper quizMapper;
@@ -177,6 +182,13 @@ public class QuizController {
 		if(member != null ) {
 			
 			String user_id = member.getId();
+			
+			if(score>=60) {
+				int mypoint = memberMapper.selectMyPoint(user_id);
+				int point = mypoint+500;
+				Member_point member_point = new Member_point(user_id, point);
+				memberMapper.updateMyPoint(member_point);
+			}
 			QuizRank quizRank = new QuizRank(user_id, score);
 			
 			int cnt = quizMapper.insertScore(quizRank);
@@ -228,6 +240,12 @@ public class QuizController {
 	    Member member = (Member) session.getAttribute("loginMember");
 	    if (member != null) {
 	        String user_id = member.getId();
+	        if(score>=60) {
+				int mypoint = memberMapper.selectMyPoint(user_id);
+				int point = mypoint+500;
+				Member_point member_point = new Member_point(user_id, point);
+				memberMapper.updateMyPoint(member_point);
+			}
 	        QuizRank quizRank = new QuizRank(user_id, score);
 	        int cnt = quizMapper.insertScore(quizRank);
 	    }

@@ -327,11 +327,14 @@
                                                                     <div class="item">
                                                                         <div class="icon"><span class="g-non-atteint fa fa-check-circle"></span></div>
                                                                         <div class="info">
-                                                                            <h6 class="number">${s_size }개</h6>
-                                                                            <p class="type"> 내 문의 현황</p>
+                                                                            <h6 class="number">${point}점</h6>
+                                                                            <p class="type">보유 포인트</p>
                                                                         </div>
                                                                     </div>
                                                                 </div>
+                                                                 <c:if test="${point >= 10000 }">
+                                                                	<button>수료증 발급</button>
+                                                                 </c:if>
                                                             </div><!-- row -->
                                                         </div><!-- sbody -->
                                                     </div><!-- dashbox -->

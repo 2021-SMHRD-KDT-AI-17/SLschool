@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
 import kr.smhrd.entity.Member;
+import kr.smhrd.entity.Member_point;
 import lombok.NonNull;
 
 @Mapper
@@ -22,6 +23,12 @@ public interface MemberMapper {
 	public Member SelectMember(Member member);
 
 	public int updateMember(Member member);
+
+	public int selectMyPoint(String sug_writer);
+	
+	public int updateMyPoint(Member_point member_point);
+
+	public int newMemberPoint(String id);
 
 
 

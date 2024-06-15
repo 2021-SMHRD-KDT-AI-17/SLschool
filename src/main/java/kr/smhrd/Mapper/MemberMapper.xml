@@ -22,6 +22,18 @@
 		update Member set pw=#{pw}, name=#{name} where id=#{id}
 	</update>
 	
+	<select id="selectMyPoint" parameterType="String" resultType="int">
+		select point from Member_point where user_id=#{user_id}
+	</select>
+	
+	<update id="updateMyPoint" parameterType="kr.smhrd.entity.Member_point">
+		update Member_point set point=#{point} where user_id=#{user_id}
+	</update>
+	
+	<insert id="newMemberPoint" parameterType="String">
+		insert into Member_point values(#{user_id},0)
+	</insert>
+	
 
 
 </mapper>
