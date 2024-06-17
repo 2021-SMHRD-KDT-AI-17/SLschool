@@ -430,6 +430,7 @@ public class QuizController {
  		   System.out.println(word + "단어");
  		   
  		   model.addAttribute("word",word);
+ 		   model.addAttribute("labelword", labelword);
  		   
  		   if(labelword.equals(word)) {
  			   return "quiz_success";

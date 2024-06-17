@@ -609,7 +609,7 @@ section {
             </div>
             <div class="swiper" id="right">
                 <div class="message"><h1 class="alert">오답입니다</h1><p>
-                하신 수어는 <strong>이것</strong>이고<br> 정답은 <strong>이것</strong>입니다<br>
+                하신 수어는 <strong>${word }</strong>이고<br> 정답은 <strong>${labelword }</strong>입니다<br>
                 다시 도전하고 싶으시면<br>버튼을 눌러주세요.</p>                
                 <button class="btn" type="submit">돌아가기</button></div>
             </div>
