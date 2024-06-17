@@ -664,23 +664,8 @@ section {
         AOS.init();
     });
     
-    async function startWebcam() {
-        const videoElement = document.getElementById('webcam');
-        try {
-            const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-            videoElement.srcObject = stream;
-        } catch (error) {
-            console.error('Error accessing the webcam: ', error);
-            const imgElement = document.createElement('img');
-            imgElement.src = 'resources/img/common/webcamno.png';
-            imgElement.alt = 'No webcam available';
-            imgElement.style.width = '380px';  // 원하는 크기로 설정
-            imgElement.style.height = '285px';  // 원하는 높이로 설정
-            videoElement.parentNode.replaceChild(imgElement, videoElement);
-        }
-    }
 
-    window.addEventListener('load', startWebcam);
+
     
     document.addEventListener('DOMContentLoaded', (event) => {
         let swiper;

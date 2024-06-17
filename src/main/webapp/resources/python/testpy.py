@@ -8,6 +8,12 @@ import io
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
 
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[1]:
+
+
 import numpy as np
 import cv2
 import torch
@@ -43,14 +49,14 @@ class LSTMModel(nn.Module):
 
 input_size = 96  
 hidden_size = 48
-output_size = 66
+output_size = 65
 num_layers = 2
 dropout = 0.2
-sequence_length = 30
+sequence_length = 15
 
 # LSTM 모델 로드(state_dict)
 lstm_model = LSTMModel(input_size, hidden_size, output_size, num_layers, dropout)
-lstm_model.load_state_dict(torch.load('C:/Users/smhrd/Desktop/LSTM/lstm_model_rel48_sequence30_10.pth'))
+lstm_model.load_state_dict(torch.load('C:/Users/smhrd/Desktop/LSTM/lstm_model_rel16_sequence15.pth'))
 lstm_model.eval()
 
 # 라벨 로드 및 LabelEncoder 설정
@@ -171,10 +177,11 @@ while cap.isOpened():
             mp.solutions.drawing_utils.draw_landmarks(frame, results.right_hand_landmarks, mp_holistic.HAND_CONNECTIONS)
         cv2.imshow("Mediapipe Holistic", frame)
 
-        # 10초 경과 여부 확인
+
+         # 10초 경과 여부 확인
         if time.time() - start_time > 10:
             break
-
+            
         # 'q' 키를 눌러 루프 종료
         if cv2.waitKey(1) & 0xFF == ord("q"):
             break
@@ -197,7 +204,7 @@ if video_keypoints:
         predictions.append(predicted_name[0])
 
     # 가장 많이 나온 단어 계산
-    most_common_word = max(set(predictions), key=predictions.count)
+    most_common_word = max(set(predictions[10:-15]), key=predictions.count)
     print("종료 후 결과:", most_common_word)
 else:
     print("No keypoints detected.")
@@ -205,3 +212,10 @@ else:
 # 비디오 캡처 객체 해제 및 창 닫기
 cap.release()
 cv2.destroyAllWindows()
+
+
+# In[4]:
+
+
+frame_keypoints
+
