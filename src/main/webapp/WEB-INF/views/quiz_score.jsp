@@ -292,8 +292,12 @@
                                       <div class="score">
                                         <div class="score-container">
                                             <h1>최종 점수는</h1>
-                                            <div class="final-score">${score}</div>   
-                                            <p><span class="five">500</span> 포인트를 획득하셨습니다 !</p>                        
+                                            <div class="final-score">${score}</div> 
+                                            <% if(loginMember != null) {%>
+                                            <c:if test="${score>=60}">
+                                            <p><span class="five">500</span> 포인트를 획득하셨습니다 !</p> 
+                                            </c:if>
+                                            <%} %>                       
                                             <div>
                                                 <a class="play-again" href="quizDetail">다시해보기</a>
                                             </div>
