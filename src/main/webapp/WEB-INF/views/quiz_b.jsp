@@ -335,7 +335,7 @@ section {
 
 <div class="mobile-wrap">
 	<div class="mobile clearfix">
-		<div class="content">
+		<div class="content1">
 			<div class="html welcome visible">
 				<div class="">
 					<div class="day lightSpeedIn animated" id="go">
