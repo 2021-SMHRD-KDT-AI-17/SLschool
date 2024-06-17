@@ -408,7 +408,7 @@ public class QuizController {
  		    String word = null;
  		    String[] lines = result.split("\n");
  		    for (String resultLine : lines) {
- 		        if (resultLine.startsWith("결과:")) {
+ 		        if (resultLine.startsWith("종료 후 결과:")) {
  		            word = resultLine.split(":")[1].trim();
  		            break;
  		        }
@@ -428,6 +428,9 @@ public class QuizController {
  		   System.out.println(labelword + "라벨단어");
  		   
  		   System.out.println(word + "단어");
+ 		   
+ 		   model.addAttribute("word",word);
+ 		   model.addAttribute("labelword", labelword);
  		   
  		   if(labelword.equals(word)) {
  			   return "quiz_success";
