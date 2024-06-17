@@ -597,7 +597,7 @@ section {
                 <div class="message"><h1 class="alert">정답입니다</h1>
                 하신 수어는 <strong>${word }</strong>이고<br> 정답은 <strong>${labelword }</strong>입니다<br>
                 다시 도전하고 싶으시면<br>버튼을 눌러주세요.</p>              
-                <button class="btn" type="submit">돌아가기</button></div>
+                <button class="btn" type="submit" onclick="location.href='quizB'">돌아가기</button></div>
             </div>
         </div>
     </section>
