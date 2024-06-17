@@ -116,6 +116,8 @@ section {
   box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
   cursor: pointer;
+  z-index:9999;
+   position: relative;
 }
 
 .btn:hover,
@@ -141,6 +143,16 @@ section {
     transform: scale(0.95, 1.05);
   }
 }
+
+        .rain {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            pointer-events: none; /* 비 내리는 요소의 포인터 이벤트 비활성화 */
+        }
 
 /* SWIPER */
 
@@ -596,7 +608,9 @@ section {
   </div>
             </div>
             <div class="swiper" id="right">
-                <div class="message"><h1 class="alert">오답입니다</h1><p>다시 도전하고 싶으시면<br>버튼을 눌러주세요.</p>                
+                <div class="message"><h1 class="alert">오답입니다</h1><p>
+                하신 수어는 <strong>이것</strong>이고<br> 정답은 <strong>이것</strong>입니다<br>
+                다시 도전하고 싶으시면<br>버튼을 눌러주세요.</p>                
                 <button class="btn" type="submit">돌아가기</button></div>
             </div>
         </div>

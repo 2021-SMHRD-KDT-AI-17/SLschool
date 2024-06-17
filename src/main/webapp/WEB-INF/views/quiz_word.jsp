@@ -38,6 +38,14 @@
 .icon_area dl:hover dt {
     transform: scale(1.3); /* dt 글씨 크기 증가 */
 }
+#quiz{
+width:230px;
+height:280px;
+z-index:999;
+top:58%;
+left:16%;
+position:fixed;
+}
     </style>
     <link rel="stylesheet" href="resources/css/side.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -45,8 +53,10 @@
 <body>
 
 <% Member loginMember = (Member)session.getAttribute("loginMember"); %>
-
-
+                        <%if(loginMember != null) {%>
+<div class="quiz">
+<a href="goMyPage"><img src="resources/img/common/point.png" id="quiz"></a>
+</div>                            <%}%>
 <div class="mobile-wrap">
 	<div class="mobile clearfix">
 		<div class="content">
