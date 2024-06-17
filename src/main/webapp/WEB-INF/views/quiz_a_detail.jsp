@@ -33,11 +33,25 @@
     <link rel="stylesheet" href="resources/css/aos.css">
     <script src="resources/js/aos.js"></script>
     <link rel="stylesheet" href="resources/css/side.css">
+    <style>
+    #quiz{
+width:230px;
+height:280px;
+z-index:999;
+top:58%;
+left:15%;
+position:fixed;
+}
+    </style>
 </head>
 <body>
 
 <% Member loginMember = (Member)session.getAttribute("loginMember"); %>
 
+                        <%if(loginMember != null) {%>
+<div class="quiz">
+<a href="goMyPage"><img src="resources/img/common/point.png" id="quiz"></a>
+</div>                            <%}%>
 
 <div class="mobile-wrap">
 	<div class="mobile clearfix">

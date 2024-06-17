@@ -43,7 +43,7 @@ width:230px;
 height:280px;
 z-index:999;
 top:58%;
-left:16%;
+left:15%;
 position:fixed;
 }
     </style>
