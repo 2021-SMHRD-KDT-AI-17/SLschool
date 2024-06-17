@@ -377,71 +377,79 @@ public class QuizController {
     @RequestMapping("/doSSL")
     public String doSSL(Model model, HttpServletRequest request) {
  	   
- 	   try {
- 		    // Python 스크립트 경로
- 		    String pythonScriptPath = "C:\\Users\\smhrd\\git\\SLschool\\src\\main\\webapp\\resources\\python\\testpy.py";
+    	try {
+    	    // Python 스크립트 경로
+    	    String pythonScriptPath = "C:\\Users\\smhrd\\git\\SLschool\\src\\main\\webapp\\resources\\python\\testpy.py";
 
- 		    // ProcessBuilder 설정
- 		    ProcessBuilder processBuilder = new ProcessBuilder("python", pythonScriptPath);
- 		    processBuilder.redirectErrorStream(true); // 표준 에러 스트림을 표준 출력 스트림으로 리다이렉션
+    	    // ProcessBuilder 설정
+    	    ProcessBuilder processBuilder = new ProcessBuilder("python", pythonScriptPath);
+    	    processBuilder.redirectErrorStream(true); // 표준 에러 스트림을 표준 출력 스트림으로 리다이렉션
 
- 		    // 프로세스 시작
- 		    Process process = processBuilder.start();
+    	    // 프로세스 시작
+    	    Process process = processBuilder.start();
 
- 		    // 스크립트의 출력 읽기 (UTF-8 인코딩)
- 		    BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream(), StandardCharsets.UTF_8));
- 		    StringBuilder output = new StringBuilder();
- 		    String line;
- 		    while ((line = reader.readLine()) != null) {
- 		        output.append(line).append("\n");  // 각 라인 뒤에 개행 문자 추가
- 		    }
+    	    // 스크립트의 출력 읽기 (UTF-8 인코딩)
+    	    BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream(), StandardCharsets.UTF_8));
+    	    StringBuilder output = new StringBuilder();
+    	    String line;
+    	    while ((line = reader.readLine()) != null) {
+    	        output.append(line).append("\n");  // 각 라인 뒤에 개행 문자 추가
+    	    }
 
- 		    // 프로세스 종료 대기
- 		    int exitCode = process.waitFor();
- 		    System.out.println("Exited with code: " + exitCode);
+    	    // 프로세스 종료 대기
+    	    int exitCode = process.waitFor();
+    	    System.out.println("Exited with code: " + exitCode);
 
- 		    // 결과 모델에 추가
- 		    String result = output.toString();
- 		    System.out.println("Result: " + result);
+    	    // 결과 모델에 추가
+    	    String result = output.toString();
+    	    System.out.println("Result: " + result);
 
- 		    // most_common_word 추출
- 		    String word = null;
- 		    String[] lines = result.split("\n");
- 		    for (String resultLine : lines) {
- 		        if (resultLine.startsWith("종료 후 결과:")) {
- 		            word = resultLine.split(":")[1].trim();
- 		            break;
- 		        }
- 		    }
+    	    // most_common_word 및 정확도 추출
+    	    String word = null;
+    	    String percent = null;
+    	    String[] lines = result.split("\n");
+    	    for (String resultLine : lines) {
+    	        if (resultLine.startsWith("종료 후 결과:")) {
+    	            word = resultLine.split(":")[1].trim();
+    	        } else if (resultLine.startsWith("정확도:")) {
+    	            percent = resultLine.split(":")[1].trim();
+    	        }
+    	    }
 
- 		    // 결과 출력
- 		    if (word != null) {
- 		        System.out.println("Most common word: " + word);
- 		    } else {
- 		        System.out.println("No word found in the result.");
- 		    }
+    	    // 결과 출력
+    	    if (word != null) {
+    	        System.out.println("Most common word: " + word);
+    	    } else {
+    	        System.out.println("No word found in the result.");
+    	    }
+    	    
+    	    if (percent != null) {
+    	        System.out.println("Accuracy: " + percent);
+    	    } else {
+    	        System.out.println("No accuracy found in the result.");
+    	    }
 
- 		    // 결과 모델에 추가
- 		    // model.addAttribute("result", word);
- 		    
- 		   String labelword = request.getParameter("labelword");
- 		   System.out.println(labelword + "라벨단어");
- 		   
- 		   System.out.println(word + "단어");
- 		   
- 		   model.addAttribute("word",word);
- 		   model.addAttribute("labelword", labelword);
- 		   
- 		   if(labelword.equals(word)) {
- 			   return "quiz_success";
- 		   }else {
- 			   return "quiz_fail";
- 		   }
- 		    
+    	    // 결과 모델에 추가
+    	    // model.addAttribute("result", word);
+    	    
+    	    String labelword = request.getParameter("labelword");
+    	    System.out.println(labelword + " : 정답단어");
+    	    System.out.println(percent+" : 정확도");
+    	    System.out.println(word + " : 단어");
+    	    
+    	    model.addAttribute("word", word);
+    	    model.addAttribute("labelword", labelword);
+    	    model.addAttribute("percent", percent);
+    	    
+    	    if (labelword.equals(word)) {
+    	        return "quiz_success";
+    	    } else {
+    	        return "quiz_fail";
+    	    }
 
- 		} catch (Exception e) {
- 		    e.printStackTrace();
- 		}
+    	} catch (Exception e) {
+    	    e.printStackTrace();
+    	}
 
  	   return "main";
     }

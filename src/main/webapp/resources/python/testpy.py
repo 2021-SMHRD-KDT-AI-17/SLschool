@@ -20,7 +20,6 @@ import torch
 import torch.nn as nn
 from sklearn.preprocessing import LabelEncoder
 import mediapipe as mp
-import time  # 추가된 부분
 
 # Mediapipe 초기화
 mp_holistic = mp.solutions.holistic
@@ -135,8 +134,6 @@ def draw_selected_landmarks(image, landmarks, connections, landmark_indices):
             end_point = (int(end.x * image.shape[1]), int(end.y * image.shape[0]))
             cv2.line(image, start_point, end_point, (0, 255, 0), 2)
 
-start_time = time.time()  # 시작 시간 기록
-
 while cap.isOpened():
     success, frame = cap.read()
 
@@ -177,11 +174,6 @@ while cap.isOpened():
             mp.solutions.drawing_utils.draw_landmarks(frame, results.right_hand_landmarks, mp_holistic.HAND_CONNECTIONS)
         cv2.imshow("Mediapipe Holistic", frame)
 
-
-         # 10초 경과 여부 확인
-        if time.time() - start_time > 10:
-            break
-            
         # 'q' 키를 눌러 루프 종료
         if cv2.waitKey(1) & 0xFF == ord("q"):
             break
@@ -203,9 +195,14 @@ if video_keypoints:
         predicted_name = label_encoder.inverse_transform([predicted_label])
         predictions.append(predicted_name[0])
 
-    # 가장 많이 나온 단어 계산
-    most_common_word = max(set(predictions[10:-15]), key=predictions.count)
+    # 가장 많이 나온 단어 계산 및 비율 출력
+    valid_predictions = predictions[10:-10]
+    most_common_word = max(set(valid_predictions), key=valid_predictions.count)
+    most_common_word_count = valid_predictions.count(most_common_word)
+    most_common_word_ratio = most_common_word_count / len(valid_predictions) * 100
+    
     print("종료 후 결과:", most_common_word)
+    print("정확도:", f'{most_common_word_ratio:.1f}', "%")
 else:
     print("No keypoints detected.")
 
@@ -218,4 +215,3 @@ cv2.destroyAllWindows()
 
 
 frame_keypoints
-
