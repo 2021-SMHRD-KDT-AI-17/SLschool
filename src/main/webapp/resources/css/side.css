@@ -34,6 +34,11 @@
 	margin-bottom:70px;
 	font-size: 11px;
 }
+
+#go img{
+	margin-left:10px !important;
+}
+
 .mobile-wrap:before {
   top: 0;
   left: 0;
