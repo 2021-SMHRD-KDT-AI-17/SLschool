@@ -35,11 +35,11 @@
     <link rel="stylesheet" href="resources/css/side.css">
     <style>
     #quiz{
-width:230px;
-height:280px;
+width:280px;
+height:300px;
 z-index:999;
-top:58%;
-left:15%;
+top:56%;
+left:12%;
 position:fixed;
 }
     </style>

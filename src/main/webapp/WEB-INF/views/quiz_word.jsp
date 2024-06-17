@@ -39,11 +39,11 @@
     transform: scale(1.3); /* dt 글씨 크기 증가 */
 }
 #quiz{
-width:230px;
-height:280px;
+width:280px;
+height:300px;
 z-index:999;
-top:58%;
-left:15%;
+top:56%;
+left:12%;
 position:fixed;
 }
     </style>
