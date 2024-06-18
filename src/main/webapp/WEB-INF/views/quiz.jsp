@@ -293,10 +293,12 @@
                                     <dd>수화 영상을 보고 무슨 단어일 지 맞춰보세요</dd>
                                 </dl>
                                  </a>
+                                 <a href="quizB">
                                 <dl data-aos="flip-left" data-aos-delay="300">
                                     <dt>수어 해보기</dt>
                                     <dd>단어 글자를 보고 수어를 직접 해보세요</dd>
                                 </dl>
+                                </a>
                             </div>
                         </div>
                 <!-- 서브페이지 [e] -->

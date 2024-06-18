@@ -592,8 +592,6 @@ section {
                 <button class="btn" type="submit">수어해보기</button>
                 </form>
             </div>
-            <a href="goSuccess">성공페이지</a>
-            <a href="goFail">실패페이지</a>
             <div class="swiper">
                 <div class="swiper-wrapper" id="swiper-wrapper">
                     <!-- Slides will be inserted here dynamically -->
