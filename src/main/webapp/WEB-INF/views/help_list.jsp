@@ -64,6 +64,19 @@ margin-left:480px;
   margin: 1rem;
   padding: 1rem;
 }
+.inline-img{margin-top:10px;
+margin-left:400px;
+}
+.date{
+margin-top:10px;
+margin-left:400px;
+font-size:13px;
+color:#cccccc;
+}
+.question{
+margin-left:40px;font-size:15px;}
+.answer{
+margin-left:40px;font-size:15px;}
 
 .certificate {
   padding: 1rem;
