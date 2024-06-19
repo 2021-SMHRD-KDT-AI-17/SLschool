@@ -437,6 +437,8 @@ public class QuizController {
     	    System.out.println(percent+" : 정확도");
     	    System.out.println(word + " : 단어");
     	    
+    	    
+    	    model.addAttribute("percent", percent);
     	    model.addAttribute("word", word);
     	    model.addAttribute("labelword", labelword);
     	    model.addAttribute("percent", percent);

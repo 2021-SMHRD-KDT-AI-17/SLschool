@@ -1,16 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-import sys
-import io
-
-# stdout과 stderr를 UTF-8로 인코딩
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
-
-#!/usr/bin/env python
-# coding: utf-8
-
 # In[1]:
 
 
@@ -20,6 +10,7 @@ import torch
 import torch.nn as nn
 from sklearn.preprocessing import LabelEncoder
 import mediapipe as mp
+import time
 
 # Mediapipe 초기화
 mp_holistic = mp.solutions.holistic
@@ -51,11 +42,11 @@ hidden_size = 48
 output_size = 65
 num_layers = 2
 dropout = 0.2
-sequence_length = 15
+sequence_length = 20
 
 # LSTM 모델 로드(state_dict)
 lstm_model = LSTMModel(input_size, hidden_size, output_size, num_layers, dropout)
-lstm_model.load_state_dict(torch.load('C:/Users/smhrd/Desktop/LSTM/lstm_model_rel16_sequence15.pth'))
+lstm_model.load_state_dict(torch.load('C:/Users/smhrd/Desktop/LSTM/lstm_model_rel16_sequence20.pth'))
 lstm_model.eval()
 
 # 라벨 로드 및 LabelEncoder 설정
@@ -133,7 +124,7 @@ def draw_selected_landmarks(image, landmarks, connections, landmark_indices):
             start_point = (int(start.x * image.shape[1]), int(start.y * image.shape[0]))
             end_point = (int(end.x * image.shape[1]), int(end.y * image.shape[0]))
             cv2.line(image, start_point, end_point, (0, 255, 0), 2)
-
+start_time=time.time()
 while cap.isOpened():
     success, frame = cap.read()
 
@@ -174,11 +165,13 @@ while cap.isOpened():
             mp.solutions.drawing_utils.draw_landmarks(frame, results.right_hand_landmarks, mp_holistic.HAND_CONNECTIONS)
         cv2.imshow("Mediapipe Holistic", frame)
 
+        if (time.time() - start_time) > 10:  # 10초 후 자동 종료
+            break
+
         # 'q' 키를 눌러 루프 종료
         if cv2.waitKey(1) & 0xFF == ord("q"):
             break
 
-        frame_count += 1
     else:
         print("Error: Could not read frame.")
         break
@@ -210,8 +203,3 @@ else:
 cap.release()
 cv2.destroyAllWindows()
 
-
-# In[4]:
-
-
-frame_keypoints

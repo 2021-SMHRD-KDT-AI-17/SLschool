@@ -11,7 +11,7 @@
 <head>
     <meta charset="utf-8">
     <!-- 반응형 [s] -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <meta name="format-detection" content="telephone=no">
     <meta http-equiv="imagetoolbar" content="no">
     <!-- 반응형 [e] -->
@@ -22,11 +22,11 @@
     <meta property="og:description" content=""><!-- 사이트 설명문구 -->
     <meta property="og:image" content="img/common/logo.png">
     <meta property="og:url" content="">
-	<title>퀴즈-수어 해보기</title>
+   <title>퀴즈-수어 해보기</title>
     <script src="resources/js/jquery-1.8.3.min.js"></script>
     <script src="resources/js/jquery-ui.js"></script>
     <script src="resources/js/topmenu_script.js"></script>
-	<link rel="stylesheet" href="resources/css/sh_common.css"> 
+   <link rel="stylesheet" href="resources/css/sh_common.css"> 
     <link rel="stylesheet" href="resources/css/sh_sub.css">  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"> 
@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="resources/css/aos.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="resources/js/aos.js"></script>
-	<link rel="stylesheet" href="resources/css/ssl.css">
+   <link rel="stylesheet" href="resources/css/ssl.css">
     <style>
 *,
 *::before,
@@ -43,7 +43,12 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+.per{
+font-weight: bold;
+    text-align: center;
+    margin-top: 250px;
+    font-size: 18px;
+    color: #7ab2b2;}
 section {
   position: relative;
   display: flex;
@@ -335,33 +340,33 @@ section {
 
 
 <div class="mobile-wrap">
-	<div class="mobile clearfix">
-		<div class="content1">
-			<div class="html welcome visible">
-				<div class="">
-					<div class="day lightSpeedIn animated" id="go">
-					<img src="resources/img/common/logo_2.png" alt="Sample" /><br>
-					수어 관련 사이트 바로가기</div>
-					<div class="date lightSpeedIn animated" id="sub1"><a href="https://sldict.korean.go.kr/front/main/main.do">
-						<img src="resources/img/common/kkk.gif" style="width:200px;"><br>
-						</a>
-					</div>
-					<div class="time lightSpeedIn animated" id="sub1"><a href="https://www.deafkorea.com/main/">
-						<img src="resources/img/common/nnn.gif" style="width:200px;"><br></a></div>
-						
-					<div class="time lightSpeedIn animated2">
-					<a href="#top"><i class="fa-solid fa-chevron-circle-up  link-icon"></i></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+   <div class="mobile clearfix">
+      <div class="content1">
+         <div class="html welcome visible">
+            <div class="">
+               <div class="day lightSpeedIn animated" id="go">
+               <img src="resources/img/common/logo_2.png" alt="Sample" /><br>
+               수어 관련 사이트 바로가기</div>
+               <div class="date lightSpeedIn animated" id="sub1"><a href="https://sldict.korean.go.kr/front/main/main.do">
+                  <img src="resources/img/common/kkk.gif" style="width:200px;"><br>
+                  </a>
+               </div>
+               <div class="time lightSpeedIn animated" id="sub1"><a href="https://www.deafkorea.com/main/">
+                  <img src="resources/img/common/nnn.gif" style="width:200px;"><br></a></div>
+                  
+               <div class="time lightSpeedIn animated2">
+               <a href="#top"><i class="fa-solid fa-chevron-circle-up  link-icon"></i></a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
 </div>
 <!-- sh_wrapper [s] -->
 <div id="sh_wrapper">
     <!-- sh_hd [s] -->
     <div id="sh_hd">
-    	<div id="sh_hd_wrapper">		
+       <div id="sh_hd_wrapper">      
             <!-- topmenu_wrapper [s] -->
             <div id="topmenu_wrapper">
                 <!-- topmenu_line_wrap [s] -->
@@ -392,12 +397,12 @@ section {
                         <li>
                             <a href="goStudy">강의 듣기</a>
                             <ul>
-	                                <li><a href="goStudyA">음식</a></li>
-	                                <li><a href="goStudyB">스포츠</a></li>
-	                                <li><a href="goStudyC">직업</a></li>
-	                                <li><a href="goStudyFamily">가족구성원</a></li>
-	                                <li><a href="goStudyColor">색깔</a></li>
-	                                <li><a href="goStudyEco">환경</a></li>
+                                   <li><a href="goStudyA">음식</a></li>
+                                   <li><a href="goStudyB">스포츠</a></li>
+                                   <li><a href="goStudyC">직업</a></li>
+                                   <li><a href="goStudyFamily">가족구성원</a></li>
+                                   <li><a href="goStudyColor">색깔</a></li>
+                                   <li><a href="goStudyEco">환경</a></li>
                             </ul>
                         </li>
                         <li>
@@ -471,7 +476,7 @@ section {
                     <div class="inner">
                         <ul class="user_tip">
                             <% if(loginMember == null) {%>
-                            	<li><a href="goJoin"class="small_tip"></i>회원가입</a></li>
+                               <li><a href="goJoin"class="small_tip"></i>회원가입</a></li>
                                 <li><a href="goLogin"class="small_tip"></i>로그인</a></li>
                                 <%} else{ %>
                                 <li><span><%=loginMember.getName() %>님</span></li>
@@ -482,12 +487,12 @@ section {
                             <li>
                                 <button class="m_bmenu" type="button">강의 듣기</button>
                                 <ul class="m_smenu">
-	                                <li><a href="goStudyA">음식</a></li>
-	                                <li><a href="goStudyB">스포츠</a></li>
-	                                <li><a href="goStudyC">직업</a></li>
-	                                <li><a href="goStudyFamily">가족구성원</a></li>
-	                                <li><a href="goStudyColor">색깔</a></li>
-	                                <li><a href="goStudyEco">환경</a></li>
+                                   <li><a href="goStudyA">음식</a></li>
+                                   <li><a href="goStudyB">스포츠</a></li>
+                                   <li><a href="goStudyC">직업</a></li>
+                                   <li><a href="goStudyFamily">가족구성원</a></li>
+                                   <li><a href="goStudyColor">색깔</a></li>
+                                   <li><a href="goStudyEco">환경</a></li>
                                 </ul>
                             </li>
                             <li>
@@ -536,7 +541,7 @@ section {
                 <!-- 오픈 메뉴 [e] -->
             </div>
             <!-- 반응형메뉴 [e] -->
-		</div>            
+      </div>            
     </div>
     <!-- sh_container [s] -->
     <div id="sh_container">
@@ -544,22 +549,22 @@ section {
         <div id="sh_container_wrapper">
             <!-- sub_main_banner [s] -->
             <div id="sub_main_banner">
-				<div id="sh_content_tit">
-					<h3>단어 맞추기</h3>
-					<p><a href="goMain"><i class="fa fa-home"></i><span class="sound_only">홈으로</span></a> 
-					<i class="fa fa-angle-right"></i> 퀴즈 <i class="fa fa-angle-right"></i> 수어 해보기</p>
-				</div>
-			</div>
+            <div id="sh_content_tit">
+               <h3>단어 맞추기</h3>
+               <p><a href="goMain"><i class="fa fa-home"></i><span class="sound_only">홈으로</span></a> 
+               <i class="fa fa-angle-right"></i> 퀴즈 <i class="fa fa-angle-right"></i> 수어 해보기</p>
+            </div>
+         </div>
             <!-- sub_main_banner [e] -->
             
-			<!-- sh_aside [s] -->
+         <!-- sh_aside [s] -->
             <div id="sh_aside">
-    	        <div id="sh_snb">
+               <div id="sh_snb">
                     <ul>
                         <li><a href="quiz2" >단어 맞추기</a></li>
                         <li><a href="quizB" style="color: #4D869C;">수어 해보기</a></li>
                     </ul>            
-				</div>
+            </div>
             </div>
             <!-- sh_aside [e] -->
             
@@ -581,17 +586,17 @@ section {
         <canvas id="canvas"></canvas>
             <div class="info">
           
-			  <div id="success-box">
-			    <div class="dot"></div>
-			    <div class="dot two"></div>
-			    <div class="face">
-			      <div class="eye"></div>
-			      <div class="eye right"></div>
-			      <div class="mouth happy"></div>
-			    </div>
-			    <div class="shadow scale"></div>
-			    
-			  </div>
+           <div id="success-box">
+             <div class="dot"></div>
+             <div class="dot two"></div>
+             <div class="face">
+               <div class="eye"></div>
+               <div class="eye right"></div>
+               <div class="mouth happy"></div>
+             </div>
+             <div class="shadow scale"></div><div class="per">정확도는 ${percent }</div>
+             
+           </div>
             </div>
             <div class="swiper" id="right">
                 <div class="message"><h1 class="alert">정답입니다</h1>
@@ -627,7 +632,7 @@ section {
     canvas.height = height;
 
     /*
-     *	Controls the emitter
+     *   Controls the emitter
      */
     function Emitter() {
         this.reset();
@@ -706,7 +711,7 @@ section {
 
 
     /*
-     *	Controls the individual particles
+     *   Controls the individual particles
      */
     function Particle(x, y, z, color) {
         this.x = x;
