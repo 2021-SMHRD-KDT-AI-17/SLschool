@@ -142,7 +142,7 @@
     <td align="center"><img src ="https://item.kakaocdn.net/do/d97f27efd1d10d84215842e2e12752939f5287469802eca457586a25a096fd31" width="100" height="100"/></td>
     <td align="center"><img src="https://i.ibb.co/yS0wnSk/image.png" width="100" height="100"/></td>
     <td align="center"><img src="https://github.com/2021-SMHRD-KDT-AI-17/WithSmart/assets/157410342/f588d6f6-158d-4c3d-b843-f1bf16f49811" width="100" height="100"/></td>
-    <td align="center"><img src="https://github.com/2021-SMHRD-KDT-AI-17/WithSmart/assets/157410342/ed1f6fc4-fd37-4d33-bbf8-bb020b14f7a8" width="100" height="100"/></td>
+    <td align="center"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWGkRSo6snU44wyzDqcXn9sjH3iynRMBcesw&s" width="100" height="100"/></td>
     <td align="center"><img src="https://search4.kakaocdn.net/argon/656x0_80_wr/E48EF3FbAgh" width="100" height="100"/></td>
   </tr>
   <tr>
