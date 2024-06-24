@@ -92,7 +92,7 @@
 <br>
 
 ## 📌 서비스 흐름도
-![KakaoTalk_20240404_151539192](https://github.com/2021-SMHRD-KDT-AI-17/WithSmart/assets/157354042/41327c68-2071-43b2-8d86-e985a19a3ffc)
+![KakaoTalk_20240404_151539192](https://i.ibb.co/q0VXMk1/image.jpg)
 <br>
 
 ## 📌 ER다이어그램
