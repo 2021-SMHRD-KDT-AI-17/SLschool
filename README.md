@@ -105,29 +105,23 @@
 
 ### 메인페이지
 ![image](https://i.ibb.co/KjTBTjB/image.jpg)
+- 강의듣기, 퀴즈, 모의고사, 수어사전 등 여러 기능을 사용할 수 있습니다.
+- 고객센터에 있는 공지사항과 문의사항 확인이 가능합니다.
 <br>
 ### 각종 게시판
-![image](https://github.com/2021-SMHRD-KDT-AI-17/WithSmart/assets/157354042/a7c7cd5a-c8be-46d3-88ba-138d303c61df)
-![image](https://github.com/2021-SMHRD-KDT-AI-17/WithSmart/assets/157354042/5b29ff95-669b-4658-9b60-75e778e15db2)
-![image](https://github.com/2021-SMHRD-KDT-AI-17/WithSmart/assets/157354042/63eff1c0-7161-4a44-bc8b-86ff4765ae04)
-![image](https://github.com/2021-SMHRD-KDT-AI-17/WithSmart/assets/157354042/d85a984f-9139-4b05-b4fe-7b185a9c94db)
-![image](https://github.com/2021-SMHRD-KDT-AI-17/WithSmart/assets/157354042/9221fd9a-df6b-46df-98fa-447bd5f81042)
+
 <br>
 ### 채용공고 및 공모전
-![image](https://github.com/2021-SMHRD-KDT-AI-17/WithSmart/assets/157354042/213398e9-1eb4-41f0-b708-ab7f7144cae1)
-![image](https://github.com/2021-SMHRD-KDT-AI-17/WithSmart/assets/157354042/b0b2a920-76cf-46fd-ac9b-4a83a8391ee3)
+
 <br>
 ### 오늘의 퀴즈
-![image](https://github.com/2021-SMHRD-KDT-AI-17/WithSmart/assets/157354042/9eb94757-d0c6-4927-88ee-3a94700e7728)
-![image](https://github.com/2021-SMHRD-KDT-AI-17/WithSmart/assets/157354042/af7c7732-7fe4-481e-8274-e7cbf7d1671a)
+
 <br>
 ### 점심메뉴 추천 및 룰렛
-![image](https://github.com/2021-SMHRD-KDT-AI-17/WithSmart/assets/157354042/061bc0c2-f9d1-4733-94c9-3c02a06a38b9)
-![image](https://github.com/2021-SMHRD-KDT-AI-17/WithSmart/assets/157354042/f2eb8be7-611f-46c6-895b-7746a7c1e408)
+
 <br>
 ### 쪽지 및 채팅
-![image](https://github.com/2021-SMHRD-KDT-AI-17/WithSmart/assets/157354042/775d7d4d-e081-47cd-8cf9-eccdbdc35760)
-![image](https://github.com/2021-SMHRD-KDT-AI-17/WithSmart/assets/157354042/64025792-2709-437e-b011-7636e9dc3188)
+
 <br>
 ### 마이페이지
 ![image](https://i.ibb.co/d7S188q/image.jpg)
