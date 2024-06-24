@@ -77,8 +77,7 @@
 <br>
 
 ## ⚙ 시스템 아키텍처(구조)
-<img src="https://github.com/2021-SMHRD-KDT-AI-17/HUMAN/assets/157432737/3dffb091-8ec7-4f33-915f-155053937d0b"/>
-<img src="https://github.com/2021-SMHRD-KDT-AI-17/HUMAN/assets/157432737/9db0e4eb-cec2-4da4-a659-b9cc12f574d9"/>
+<img src="https://i.ibb.co/Yk20KjP/image.jpg"/>
 
 <br>
 
