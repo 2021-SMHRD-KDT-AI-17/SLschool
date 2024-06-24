@@ -143,7 +143,7 @@
     <td align="center"><img src="https://github.com/2021-SMHRD-KDT-AI-17/WithSmart/assets/157410342/0dbc27ef-f72e-4a38-a71e-4f088ab273c8" width="100" height="100"/></td>
     <td align="center"><img src="https://github.com/2021-SMHRD-KDT-AI-17/WithSmart/assets/157410342/f588d6f6-158d-4c3d-b843-f1bf16f49811" width="100" height="100"/></td>
     <td align="center"><img src="https://github.com/2021-SMHRD-KDT-AI-17/WithSmart/assets/157410342/ed1f6fc4-fd37-4d33-bbf8-bb020b14f7a8" width="100" height="100"/></td>
-    <td align="center"><img src="https://github.com/2021-SMHRD-KDT-AI-17/WithSmart/assets/157410342/1a0a713c-6d91-4839-8be9-52190fa7c319" width="100" height="100"/></td>
+    <td align="center"><img src="https://search4.kakaocdn.net/argon/656x0_80_wr/E48EF3FbAgh" width="100" height="100"/></td>
   </tr>
   <tr>
     <td align="center"><strong>권승호</strong></td>
