@@ -104,7 +104,9 @@
 ## 🖥 화면 구성
 
 ### 메인페이지
-![image]([https://github.com/2021-SMHRD-KDT-AI-17/WithSmart/assets/157354042/cb8d4f8a-90df-4561-8b95-ee069adf2bf4](https://i.ibb.co/KjTBTjB/image.jpg))
+![image](https://i.ibb.co/KjTBTjB/image.jpg)
+- 강의듣기, 퀴즈, 모의고사, 수어사전 등 여러 기능을 사용할 수 있습니다.
+- 고객센터에 있는 공지사항과 문의사항 확인이 가능합니다.
 <br>
 ### 각종 게시판
 ![image](https://github.com/2021-SMHRD-KDT-AI-17/WithSmart/assets/157354042/a7c7cd5a-c8be-46d3-88ba-138d303c61df)
