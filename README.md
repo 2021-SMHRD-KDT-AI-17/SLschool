@@ -129,9 +129,8 @@
 ![image](https://github.com/2021-SMHRD-KDT-AI-17/WithSmart/assets/157354042/775d7d4d-e081-47cd-8cf9-eccdbdc35760)
 ![image](https://github.com/2021-SMHRD-KDT-AI-17/WithSmart/assets/157354042/64025792-2709-437e-b011-7636e9dc3188)
 <br>
-### 회원정보 수정 및 회원 탈퇴
-![image](https://github.com/2021-SMHRD-KDT-AI-17/WithSmart/assets/157354042/3b597f87-9bf3-4c8b-bf3e-fe063fd7957a)
-![image](https://github.com/2021-SMHRD-KDT-AI-17/WithSmart/assets/157354042/143a5fce-ce0b-4f31-8ebd-7cf6c45ab8d8)
+### 마이페이지
+![image](https://i.ibb.co/d7S188q/image.jpg)
 <br>
 ## 👨‍👩‍👦‍👦 팀원 역할
 <table>
