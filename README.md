@@ -146,18 +146,18 @@
     <td align="center"><img src="https://github.com/2021-SMHRD-KDT-AI-17/WithSmart/assets/157410342/1a0a713c-6d91-4839-8be9-52190fa7c319" width="100" height="100"/></td>
   </tr>
   <tr>
+    <td align="center"><strong>권승호</strong></td>
+    <td align="center"><strong>이  봄</strong></td>
     <td align="center"><strong>서동현</strong></td>
-    <td align="center"><strong>장지오</strong></td>
-    <td align="center"><strong>김동준</strong></td>
-    <td align="center"><strong>김대원</strong></td>
-    <td align="center"><strong>윤정원</strong></td>
+    <td align="center"><strong>강민규</strong></td>
+    <td align="center"><strong>오현진</strong></td>
   </tr>
   <tr>
-    <td align="center"><b>Frontend / PM</b></td>
-    <td align="center"><b>Backend / DB</b></td>
-    <td align="center"><b>Backend</b></td>
-    <td align="center"><b>Backend</b></td>
+    <td align="center"><b>Backend / PM</b></td>
     <td align="center"><b>Frontend</b></td>
+    <td align="center"><b>Backend / DB</b></td>
+    <td align="center"><b>AI Model</b></td>
+    <td align="center"><b>AI Model</b></td>
   </tr>
   <tr>
     <td align="center"><b>전체 UI/UX 구현<br>게시판 전체 화면 구상 및 구현<br>산출문서 및 PPT 제작<br>룰렛 기능 구현</b></td>
@@ -174,13 +174,3 @@
     <td align="center"><a href="https://github.com/" target='_blank'>github</a></td>
   </tr>
 </table>
-
-## 🤾‍♂️ 트러블슈팅
-* 문제1<br>
-문제점 : 데이터의 값을 입력하고 글을 작성하였으나 해당 게시판에는 글이 출력되지 않는 문제 발생
-해결방안 : JSTL문법을 사용해서 View에서 출력을 하고자 하였으나 태그라이브러리를 불러오지않아서 발생함을 인지 -> 태그라이브러리를 추가해 게시물이 잘 출력이 됨.
- 
-* 문제2<br>
-문제점 : 관리자 계정으로 접속 시 댓글이 있는 게시글만 삭제기능 미작동
-해결방안 : On Delete RESTRICT -> On Delete CASCADE 변경해주니 해결
-          자식테이블이 참조하고있을 경우 데이터 삭제 불가능 ->  부모데이터 삭제시 자식데이터도 삭제가능
