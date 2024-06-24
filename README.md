@@ -162,7 +162,7 @@
   <tr>
     <td align="center"><b>관리자 페이지 기능 구현<br>마이페이지 기능구현<br>AI모델 웹페이지 연결<br>산출문서 총괄 관리<br>프로젝트 진행 관리</b></td>
     <td align="center"><b>전체적인 UI&UX 구현<br>[총괄 Front-end]<br>화면설계서 작성<br>WBS 관리</b></td>
-    <td align="center"><b>모의고사 및 퀴즈 기능 구현<br>게시판 기능 구현<br>DB구축 및 관리</b></td>
+    <td align="center"><b>모의고사 및 퀴즈 기능 구현<br>게시판 기능 구현<br>DB구축 및 관리<br>멘토링 진행일지 관리</b></td>
     <td align="center"><b>AI Hub 수어 데이터 분석<br>데이터 전처리<br>MediaPipe를 통한<br>Keypoint 추출 모델 설계<br>LSTM을 통한 단어 <br>추론 모델 설계<br>멘토링 진행일지 관리</b></td>
     <td align="center"><b>AI Hub 수어 데이터 분석<br>데이터 전처리<br>MediaPipe를 통한<br>Keypoint 추출 모델 설계<br>LSTM을 통한 단어 <br>추론 모델 설계<br>WBS 관리</b></td>
   </tr>
