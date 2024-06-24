@@ -103,8 +103,8 @@
 
 ## 🖥 화면 구성
 
-### 로그인/회원가입
-![image](https://github.com/2021-SMHRD-KDT-AI-17/WithSmart/assets/157354042/cb8d4f8a-90df-4561-8b95-ee069adf2bf4)
+### 메인페이지
+![image]([https://github.com/2021-SMHRD-KDT-AI-17/WithSmart/assets/157354042/cb8d4f8a-90df-4561-8b95-ee069adf2bf4](https://i.ibb.co/KjTBTjB/image.jpg))
 <br>
 ### 각종 게시판
 ![image](https://github.com/2021-SMHRD-KDT-AI-17/WithSmart/assets/157354042/a7c7cd5a-c8be-46d3-88ba-138d303c61df)
