@@ -111,25 +111,23 @@
 
 ### 강의듣기
 ![image](https://i.ibb.co/f08vnmf/1.jpg)
+<br>
 - 강의 영상과 내 모습을 동시에 보면서 공부가 가능합니다.
 - 해당 단어의 이미지를 첨부하여 보다 쉽게 어떤 단어인지를 확인할 수 있습니다.
+
+### 퀴즈 및 모의고사
+![image](https://i.ibb.co/8gR6vWp/2.jpg)
+![image](https://i.ibb.co/L6GS8wv/image.png)
 <br>
+- 웹캠과의 연결을 통해 직접 수어를 해볼 수 있는 수어해보기를 해볼 수 있습니다.
+- 모의고사를 통해 내 실력을 확인할 수 있습니다.
 
-### 채용공고 및 공모전
-
+### 공지사항 및 문의사항
+![image](https://i.ibb.co/DDSn692/image.png)
+![image](https://i.ibb.co/Z2PrsNF/image.png)
 <br>
-
-### 오늘의 퀴즈
-
-<br>
-
-### 점심메뉴 추천 및 룰렛
-
-<br>
-
-### 쪽지 및 채팅
-
-<br>
+- 공지사항 페이지를 통해 공지사항을 확인할 수 있습니다.
+- 로그인 시 문의작성이 가능하며 내 문의내역 및 답변을 확인할 수 있습니다.
 
 ### 마이페이지
 ![image](https://i.ibb.co/d7S188q/image.jpg)
