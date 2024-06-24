@@ -160,11 +160,11 @@
     <td align="center"><b>AI Model</b></td>
   </tr>
   <tr>
-    <td align="center"><b>전체 UI/UX 구현<br>게시판 전체 화면 구상 및 구현<br>산출문서 및 PPT 제작<br>룰렛 기능 구현</b></td>
-    <td align="center"><b>회원가입 및 로그인 기능 구현<br>게시판 전체 기능 구현<br>쪽지 기능 구현<br>채팅 API 연동</b></td>
-    <td align="center"><b>채용공고 및 공모전 구현<br>게시판 댓글 및 추천 기능 구현<br>게시판 페이징 구현<br>PPT 발표</b></td>
-    <td align="center"><b>일일퀴즈 게임 기능 구현<br>룰렛 세부 기능 구현<br>트리거 기능 사용</b></td>
-    <td align="center"><b>카카오맵 API 연동<br>점심메뉴 추천 기능 구현<br>메인페이지 영상삽입</b></td>
+    <td align="center"><b>관리자 페이지 기능 구현<br>마이페이지 기능구현<br>AI모델 웹페이지 연결<br>산출문서 총괄 관리 및 프로젝트 진행 관리</b></td>
+    <td align="center"><b>전체적인 UI&UX 구현 - 총괄 Front-end<br>화면설계서 작성<br>WBS 관리</b></td>
+    <td align="center"><b>모의고사 및 퀴즈 기능 구현<br>게시판 기능 구현<br>DB구축 및 관리</b></td>
+    <td align="center"><b>AI Hub 수어 데이터 분석 및 전처리<br>MediaPipe를 통한 Keypoint 추출 모델 설계<br>LSTM을 통한 단어 추론 모델 설계<br>멘토링 진행일지 관리</b></td>
+    <td align="center"><b>AI Hub 수어 데이터 분석 및 전처리<br>MediaPipe를 통한 Keypoint 추출 모델 설계<br>LSTM을 통한 단어 추론 모델 설계<br>WBS 관리</b></td>
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/SeoDongHyeon2" target='_blank'>github</a></td>
