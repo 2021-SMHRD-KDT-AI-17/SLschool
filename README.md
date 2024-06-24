@@ -88,7 +88,7 @@
 <br>
 
 ## 📌 SW유스케이스
-![image](https://github.com/2021-SMHRD-KDT-AI-17/WithSmart/assets/157354042/7b868c67-d882-42db-a6ec-33fd1ee63caf)
+![image](https://i.ibb.co/GHyL0SZ/image.jpg)
 <br>
 
 ## 📌 서비스 흐름도
